@@ -1,0 +1,175 @@
+digraph graphname {
+	node [shape=plaintext];
+n25924[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25924) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25923[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25923) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw lime.utils.TAError.RangeError</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25922[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25922) BKConditional</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25921[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25921) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _this = new lime.utils.ArrayBufferView(0, cast 2)</td></tr>
+	<tr><td port="e1" align="left">var in_byteOffset = byte_offset</td></tr>
+	<tr><td port="e2" align="left">var this = in_byteOffset &lt; 0</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25920[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25920) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var buffer = this.buffer</td></tr>
+	<tr><td port="e1" align="left">var this</td></tr>
+	<tr><td port="e2" align="left">var view = buffer != null</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch view</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25919[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25919) BKNormal</td></tr>
+	<tr><td port="e0" align="left">view = cast this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25918[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25918) BKNormal</td></tr>
+	<tr><td port="e0" align="left">_this.buffer = buffer</td></tr>
+	<tr><td port="e1" align="left">_this.byteOffset = in_byteOffset</td></tr>
+	<tr><td port="e2" align="left">_this.byteLength = newByteLength</td></tr>
+	<tr><td port="e3" align="left">var this = newByteLength / _this.bytesPerElement</td></tr>
+	<tr><td port="e4" align="left">_this.length = Std.int(this)</td></tr>
+	<tr><td port="e5" align="left">this = _this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25917[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25917) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25916[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25916) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw lime.utils.TAError.RangeError</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25915[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25915) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25914[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25914) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw lime.utils.TAError.RangeError</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25913[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25913) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var this = newByteLength &lt; 0</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25912[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25912) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw lime.utils.TAError.RangeError</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25911[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25911) BKConditional</td></tr>
+	<tr><td port="e0" align="left">newByteLength = len * _this.bytesPerElement</td></tr>
+	<tr><td port="e1" align="left">var newRange = in_byteOffset + newByteLength</td></tr>
+	<tr><td port="e2" align="left">var this = newRange &gt; bufferByteLength</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25910[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25910) BKConditional</td></tr>
+	<tr><td port="e0" align="left">newByteLength = bufferByteLength - in_byteOffset</td></tr>
+	<tr><td port="e1" align="left">var this = bufferByteLength % _this.bytesPerElement</td></tr>
+	<tr><td port="e2" align="left">var this = this != 0</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25909[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25909) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var bufferByteLength = buffer.length</td></tr>
+	<tr><td port="e1" align="left">var elementSize = _this.bytesPerElement</td></tr>
+	<tr><td port="e2" align="left">var newByteLength = bufferByteLength</td></tr>
+	<tr><td port="e3" align="left">var this = len == null</td></tr>
+	<tr><td port="e4" align="left">@:cond-branch this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25908[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25908) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw lime.utils.TAError.RangeError</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25907[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25907) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var this = in_byteOffset % _this.bytesPerElement</td></tr>
+	<tr><td port="e1" align="left">var this = this != 0</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25906[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25906) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw lime.utils.TAError.RangeError</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25905[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25905) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw \"Invalid constructor arguments for Int8Array\"</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25904[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25904) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _this = new lime.utils.ArrayBufferView(0, cast 1)</td></tr>
+	<tr><td port="e1" align="left">var in_byteOffset = byte_offset</td></tr>
+	<tr><td port="e2" align="left">var this = in_byteOffset &lt; 0</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch this</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25903[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25903) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var buffer = this.buffer</td></tr>
+	<tr><td port="e1" align="left">var this</td></tr>
+	<tr><td port="e2" align="left">var view = buffer != null</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch view</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25902[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25902) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw \"subarray on a blank ArrayBufferView\"</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25901[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25901) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var len = end - begin</td></tr>
+	<tr><td port="e1" align="left">var byte_offset = begin * this.bytesPerElement</td></tr>
+	<tr><td port="e2" align="left">var byte_offset = byte_offset + this.byteOffset</td></tr>
+	<tr><td port="e3" align="left">var view</td></tr>
+	<tr><td port="e4" align="left">var ` = this.type</td></tr>
+	<tr><td port="e5" align="left">var ` = @:exhaustive `</td></tr>
+	<tr><td port="e6" align="left">@:cond-branch `</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25900[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25900) BKConditional</td></tr>
+	<tr><td port="e0" align="left">end = this.length</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25899[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25899) BKFunctionEnd</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n25898[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(25898) BKFunctionBegin</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = end == null</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(1) BKRoot</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1:out -> n25898:in[label="CFGFunction"];
+}

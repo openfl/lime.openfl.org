@@ -1,0 +1,77 @@
+digraph graphname {
+n9562 [shape=box,label="(9562)\nvar _hx_tmp = this.dataLength * 8\nvar _hx_tmp = this.parent.buffer.channels * this.parent.buffer.bitsPerSample\nvar _hx_tmp = _hx_tmp / _hx_tmp\nthis.samples = Std.int(_hx_tmp)"];
+n9561 [shape=box,label="(9561)"];
+n9560 [shape=box,label="(9560)\nlime.media.openal.AL.sourcei(this.handle, 4105, this.parent.buffer.__srcBuffer)"];
+n9559 [shape=box,label="(9559)\nthis.dataLength = cast this.parent.buffer.data.length\nthis.handle = lime.media.openal.AL.createSource()\nvar _hx_tmp = this.handle != null\n@:cond-branch _hx_tmp"];
+n9559 -> n9560[style="dashed",color="gray",label="then"];
+n9559 -> n9561[style="dashed",color="gray",label="next"];
+n9558 [shape=box,label="(9558)"];
+n9557 [shape=box,label="(9557)\nlime.media.openal.AL.bufferData(this.parent.buffer.__srcBuffer, this.format, this.parent.buffer.data, cast this.parent.buffer.data.length, this.parent.buffer.sampleRate)"];
+n9556 [shape=box,label="(9556)\nthis.parent.buffer.__srcBuffer = lime.media.openal.AL.createBuffer()\nvar _hx_tmp = this.parent.buffer.__srcBuffer != null\n@:cond-branch _hx_tmp"];
+n9556 -> n9557[style="dashed",color="gray",label="then"];
+n9556 -> n9558[style="dashed",color="gray",label="next"];
+n9555 [shape=box,label="(9555)\nthis.handle = lime.media.openal.AL.createSource()"];
+n9554 [shape=box,label="(9554)"];
+n9553 [shape=box,label="(9553)\n`1 = `1 + 1\nvar i = `1 - 1\nvar _hx_tmp = this.buffers\nvar _hx_tmp = lime.media.openal.AL.createBuffer()\n_hx_tmp.push(_hx_tmp)"];
+n9552 [shape=box,label="(9552)\nbreak"];
+n9551 [shape=box,label="(9551)\nvar _hx_tmp = ! ((`1 < `))\n@:cond-branch _hx_tmp"];
+n9551 -> n9552[style="dashed",color="gray",label="then"];
+n9551 -> n9553[style="dashed",color="gray",label="next"];
+n9550 [shape=box,label="<loop-head>
+(9550)"];
+n9549 [shape=box,label="(9549)\nwhile ((true)) @:block 9551"];
+n9549 -> n9550[style="dashed",color="gray",label="loop-head"];
+n9549 -> n9551[style="dashed",color="gray",label="loop-body"];
+n9549 -> n9554[style="dashed",color="gray",label="next"];
+n9548 [shape=box,label="(9548)\nvar `1 = 0\nvar ` = lime._internal.backend.native.NativeAudioSource.STREAM_NUM_BUFFERS"];
+n9548 -> n9549[style="dashed",color="gray",label="merge"];
+n9547 [shape=box,label="(9547)\nvar _hx_tmp = haxe._Int64.___Int64.low(cast x)\nvar _hx_tmp = _hx_tmp * this.parent.buffer.channels\nvar _hx_tmp = this.parent.buffer.bitsPerSample / 8\nvar _hx_tmp = _hx_tmp * _hx_tmp\nthis.dataLength = Std.int(_hx_tmp)\nthis.buffers = new Array()"];
+n9547 -> n9548[style="dashed",color="gray",label="sub"];
+n9547 -> n9555[style="dashed",color="gray",label="next"];
+n9546 [shape=box,label="(9546)\nthrow \"Overflow\""];
+n9545 [shape=box,label="(9545)\nvar _hx_tmp = this.parent.buffer.__srcBuffer == null\n@:cond-branch _hx_tmp"];
+n9545 -> n9556[style="dashed",color="gray",label="then"];
+n9545 -> n9559[style="dashed",color="gray",label="next"];
+n9544 [shape=box,label="(9544)\nthis.stream = true\nvar vorbisFile = this.parent.buffer.__srcVorbisFile\nvar x = vorbisFile.pcmTotal(null)\nvar _hx_tmp = haxe._Int64.___Int64.high(cast x)\nvar _hx_tmp = haxe._Int64.___Int64.low(cast x)\nvar _hx_tmp = cast _hx_tmp != cast _hx_tmp >> 31\n@:cond-branch _hx_tmp"];
+n9544 -> n9546[style="dashed",color="gray",label="then"];
+n9544 -> n9547[style="dashed",color="gray",label="next"];
+n9543 [shape=box,label="(9543)\nvar _hx_tmp = this.parent.buffer.__srcVorbisFile != null\n@:cond-branch _hx_tmp"];
+n9543 -> n9544[style="dashed",color="gray",label="then"];
+n9543 -> n9545[style="dashed",color="gray",label="else"];
+n9543 -> n9562[style="dashed",color="gray",label="next"];
+n9542 [shape=box,label="(9542)"];
+n9541 [shape=box,label="(9541)"];
+n9540 [shape=box,label="(9540)"];
+n9539 [shape=box,label="(9539)\nthis.format = 4355"];
+n9538 [shape=box,label="(9538)\nvar _hx_tmp = this.parent.buffer.bitsPerSample == 16\n@:cond-branch _hx_tmp"];
+n9538 -> n9539[style="dashed",color="gray",label="then"];
+n9538 -> n9540[style="dashed",color="gray",label="next"];
+n9537 [shape=box,label="(9537)\nthis.format = 4354"];
+n9536 [shape=box,label="(9536)\nvar _hx_tmp = this.parent.buffer.bitsPerSample == 8\n@:cond-branch _hx_tmp"];
+n9536 -> n9537[style="dashed",color="gray",label="then"];
+n9536 -> n9538[style="dashed",color="gray",label="else"];
+n9536 -> n9541[style="dashed",color="gray",label="next"];
+n9535 [shape=box,label="(9535)"];
+n9534 [shape=box,label="(9534)"];
+n9533 [shape=box,label="(9533)\nthis.format = 4353"];
+n9532 [shape=box,label="(9532)\nvar _hx_tmp = this.parent.buffer.bitsPerSample == 16\n@:cond-branch _hx_tmp"];
+n9532 -> n9533[style="dashed",color="gray",label="then"];
+n9532 -> n9534[style="dashed",color="gray",label="next"];
+n9531 [shape=box,label="(9531)\nthis.format = 4352"];
+n9530 [shape=box,label="(9530)\nvar _hx_tmp = this.parent.buffer.channels == 2\n@:cond-branch _hx_tmp"];
+n9530 -> n9536[style="dashed",color="gray",label="then"];
+n9530 -> n9542[style="dashed",color="gray",label="next"];
+n9529 [shape=box,label="(9529)\nvar _hx_tmp = this.parent.buffer.bitsPerSample == 8\n@:cond-branch _hx_tmp"];
+n9529 -> n9531[style="dashed",color="gray",label="then"];
+n9529 -> n9532[style="dashed",color="gray",label="else"];
+n9529 -> n9535[style="dashed",color="gray",label="next"];
+n9528 [shape=box,label="<function-end>
+(9528)"];
+n9527 [shape=box,label="<function-begin>
+(9527)\nthis.dataLength = 0\nthis.format = 0\nvar _hx_tmp = this.parent.buffer.channels == 1\n@:cond-branch _hx_tmp"];
+n9527 -> n9529[style="dashed",color="gray",label="then"];
+n9527 -> n9530[style="dashed",color="gray",label="else"];
+n9527 -> n9543[style="dashed",color="gray",label="next"];
+n1 [shape=box,label="<root>
+(1)"];
+}

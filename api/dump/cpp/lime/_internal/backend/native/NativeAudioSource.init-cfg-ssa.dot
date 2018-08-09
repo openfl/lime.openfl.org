@@ -1,0 +1,260 @@
+digraph graphname {
+	node [shape=plaintext];
+n9562[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9562) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.dataLength * 8</td></tr>
+	<tr><td port="e1" align="left">var _hx_tmp = this.parent.buffer.channels * this.parent.buffer.bitsPerSample</td></tr>
+	<tr><td port="e2" align="left">var _hx_tmp = _hx_tmp / _hx_tmp</td></tr>
+	<tr><td port="e3" align="left">this.samples = Std.int(_hx_tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9561[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9561) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9560[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9560) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.media.openal.AL.sourcei(this.handle, 4105, this.parent.buffer.__srcBuffer)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9559[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9559) BKNormal</td></tr>
+	<tr><td port="e0" align="left">this.dataLength = cast this.parent.buffer.data.length</td></tr>
+	<tr><td port="e1" align="left">this.handle = lime.media.openal.AL.createSource()</td></tr>
+	<tr><td port="e2" align="left">var _hx_tmp = this.handle != null</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9558[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9558) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9557[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9557) BKConditional</td></tr>
+	<tr><td port="e0" align="left">lime.media.openal.AL.bufferData(this.parent.buffer.__srcBuffer, this.format, this.parent.buffer.data, cast this.parent.buffer.data.length, this.parent.buffer.sampleRate)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9556[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9556) BKConditional</td></tr>
+	<tr><td port="e0" align="left">this.parent.buffer.__srcBuffer = lime.media.openal.AL.createBuffer()</td></tr>
+	<tr><td port="e1" align="left">var _hx_tmp = this.parent.buffer.__srcBuffer != null</td></tr>
+	<tr><td port="e2" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9555[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9555) BKNormal</td></tr>
+	<tr><td port="e0" align="left">this.handle = lime.media.openal.AL.createSource()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9554[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9554) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9553[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9553) BKNormal</td></tr>
+	<tr><td port="e0" align="left">`1 = `1 + 1</td></tr>
+	<tr><td port="e1" align="left">var i = `1 - 1</td></tr>
+	<tr><td port="e2" align="left">var _hx_tmp = this.buffers</td></tr>
+	<tr><td port="e3" align="left">var _hx_tmp = lime.media.openal.AL.createBuffer()</td></tr>
+	<tr><td port="e4" align="left">_hx_tmp.push(_hx_tmp)</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9552[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9552) BKConditional</td></tr>
+	<tr><td port="e0" align="left">break</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9551[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9551) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = ! ((`1 &lt; `))</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9550[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9550) BKLoopHead</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9549[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9549) BKNormal</td></tr>
+	<tr><td port="e0" align="left">while ((true)) @:block 9551</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9548[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9548) BKSub</td></tr>
+	<tr><td port="e0" align="left">var `1 = 0</td></tr>
+	<tr><td port="e1" align="left">var ` = lime._internal.backend.native.NativeAudioSource.STREAM_NUM_BUFFERS</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9547[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9547) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = haxe._Int64.___Int64.low(cast x)</td></tr>
+	<tr><td port="e1" align="left">var _hx_tmp = _hx_tmp * this.parent.buffer.channels</td></tr>
+	<tr><td port="e2" align="left">var _hx_tmp = this.parent.buffer.bitsPerSample / 8</td></tr>
+	<tr><td port="e3" align="left">var _hx_tmp = _hx_tmp * _hx_tmp</td></tr>
+	<tr><td port="e4" align="left">this.dataLength = Std.int(_hx_tmp)</td></tr>
+	<tr><td port="e5" align="left">this.buffers = new Array()</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9546[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9546) BKConditional</td></tr>
+	<tr><td port="e0" align="left">throw \"Overflow\"</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9545[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9545) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.parent.buffer.__srcBuffer == null</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9544[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9544) BKConditional</td></tr>
+	<tr><td port="e0" align="left">this.stream = true</td></tr>
+	<tr><td port="e1" align="left">var vorbisFile = this.parent.buffer.__srcVorbisFile</td></tr>
+	<tr><td port="e2" align="left">var x = vorbisFile.pcmTotal(null)</td></tr>
+	<tr><td port="e3" align="left">var _hx_tmp = haxe._Int64.___Int64.high(cast x)</td></tr>
+	<tr><td port="e4" align="left">var _hx_tmp = haxe._Int64.___Int64.low(cast x)</td></tr>
+	<tr><td port="e5" align="left">var _hx_tmp = cast _hx_tmp != cast _hx_tmp &gt;&gt; 31</td></tr>
+	<tr><td port="e6" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9543[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9543) BKNormal</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.parent.buffer.__srcVorbisFile != null</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9542[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9542) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9541[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9541) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9540[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9540) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9539[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9539) BKConditional</td></tr>
+	<tr><td port="e0" align="left">this.format = 4355</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9538[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9538) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.parent.buffer.bitsPerSample == 16</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9537[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9537) BKConditional</td></tr>
+	<tr><td port="e0" align="left">this.format = 4354</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9536[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9536) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.parent.buffer.bitsPerSample == 8</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9535[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9535) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9534[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9534) BKNormal</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9533[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9533) BKConditional</td></tr>
+	<tr><td port="e0" align="left">this.format = 4353</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9532[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9532) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.parent.buffer.bitsPerSample == 16</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9531[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9531) BKConditional</td></tr>
+	<tr><td port="e0" align="left">this.format = 4352</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9530[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9530) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.parent.buffer.channels == 2</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9529[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9529) BKConditional</td></tr>
+	<tr><td port="e0" align="left">var _hx_tmp = this.parent.buffer.bitsPerSample == 8</td></tr>
+	<tr><td port="e1" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9528[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9528) BKFunctionEnd</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n9527[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(9527) BKFunctionBegin</td></tr>
+	<tr><td port="e0" align="left">this.dataLength = 0</td></tr>
+	<tr><td port="e1" align="left">this.format = 0</td></tr>
+	<tr><td port="e2" align="left">var _hx_tmp = this.parent.buffer.channels == 1</td></tr>
+	<tr><td port="e3" align="left">@:cond-branch _hx_tmp</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<tr><td port="in" bgcolor="lightgray">(1) BKRoot</td></tr>
+	<tr><td port="out"></td></tr>
+</table>>];
+n1:out -> n9527:in[label="CFGFunction"];
+n9527:out -> n9530:in[label="CFGCondElse"];
+n9527:out -> n9529:in[label="CFGCondBranch true"];
+n9529:out -> n9532:in[label="CFGCondElse"];
+n9529:out -> n9531:in[label="CFGCondBranch true"];
+n9531:out -> n9535:in[label="CFGGoto"];
+n9535:out -> n9543:in[label="CFGGoto"];
+n9532:out -> n9534:in[label="CFGCondElse"];
+n9532:out -> n9533:in[label="CFGCondBranch true"];
+n9533:out -> n9534:in[label="CFGGoto"];
+n9534:out -> n9535:in[label="CFGGoto"];
+n9543:out -> n9545:in[label="CFGCondElse"];
+n9543:out -> n9544:in[label="CFGCondBranch true"];
+n9544:out -> n9547:in[label="CFGCondElse"];
+n9544:out -> n9546:in[label="CFGCondBranch true"];
+n9546:out -> n9528:in[label="CFGGoto"];
+n9547:out -> n9548:in[label="CFGGoto"];
+n9548:out -> n9549:in[label="CFGGoto"];
+n9549:out -> n9550:in[label="CFGGoto"];
+n9550:out -> n9551:in[label="CFGGoto"];
+n9551:out -> n9553:in[label="CFGCondElse"];
+n9551:out -> n9552:in[label="CFGCondBranch true"];
+n9552:out -> n9554:in[label="CFGGoto"];
+n9554:out -> n9555:in[label="CFGGoto"];
+n9555:out -> n9562:in[label="CFGGoto"];
+n9553:out -> n9550:in[label="CFGGoto"];
+n9562:out -> n9528:in[label="CFGGoto"];
+n9545:out -> n9559:in[label="CFGCondElse"];
+n9545:out -> n9556:in[label="CFGCondBranch true"];
+n9556:out -> n9558:in[label="CFGCondElse"];
+n9556:out -> n9557:in[label="CFGCondBranch true"];
+n9557:out -> n9558:in[label="CFGGoto"];
+n9558:out -> n9559:in[label="CFGGoto"];
+n9559:out -> n9561:in[label="CFGCondElse"];
+n9559:out -> n9560:in[label="CFGCondBranch true"];
+n9560:out -> n9561:in[label="CFGGoto"];
+n9561:out -> n9562:in[label="CFGGoto"];
+n9530:out -> n9542:in[label="CFGCondElse"];
+n9530:out -> n9536:in[label="CFGCondBranch true"];
+n9536:out -> n9538:in[label="CFGCondElse"];
+n9536:out -> n9537:in[label="CFGCondBranch true"];
+n9537:out -> n9541:in[label="CFGGoto"];
+n9541:out -> n9542:in[label="CFGGoto"];
+n9538:out -> n9540:in[label="CFGCondElse"];
+n9538:out -> n9539:in[label="CFGCondBranch true"];
+n9539:out -> n9540:in[label="CFGGoto"];
+n9540:out -> n9541:in[label="CFGGoto"];
+n9542:out -> n9543:in[label="CFGGoto"];
+}
