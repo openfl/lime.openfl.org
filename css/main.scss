@@ -44,15 +44,16 @@ body {
 .header-container {
   background-color: black;
   background: url('../img/bg.jpg') no-repeat 50% 0;
-  color: #fff;
+  // color: #fff;
 
   h1 {
-    color: #fff;
+    // color: #fff;
   }
   // background-attachment: fixed;
   background-size: cover;
   background-position: center 36%;
   margin-top: -37px;
+  border-bottom: solid 1px #F3F3F3;
 }
 .navbar-container {
   font-size: 16px;
@@ -67,7 +68,10 @@ body {
   height: 46px;
   padding-top: 10px;
   background-color: $gray-lighter;
-  color: $gray-dark;
+  color: $gray;
+  a {
+    color: $gray;
+  }
 }
 
 .post-list-container {
