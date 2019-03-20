@@ -14,10 +14,6 @@ In order to build Neko applications for Windows, no further dependencies are req
 
 Currently, Lime requires a version of Visual Studio capable of targeting Win32. For newer versions of Visual Studio, this requires the "Windows Desktop" version of the software.
 
-We recommend Visual Studio C++ 2010 Express, but newer versions should also be compatible:
-
- * [http://go.microsoft.com/?linkid=9709949](http://go.microsoft.com/?linkid=9709949)
-
 You can only target Windows from a Windows system right now. If you are interested in contributing to cross-desktop builds to Windows, please open a topic on the forums.
 
 ## Forums
