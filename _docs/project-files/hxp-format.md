@@ -6,53 +6,67 @@ title: HXP Format
 
 The \*.hxp format is based upon Haxe, it mirrors the internal project format used within Lime tools. There is a lot of flexibility and power that can come from using an \*.hxp project, but be aware that as the Lime tools evolve, the specification may change slightly.
 
+Using the HXP format requires the `hxp` haxelib:
+
+```bash
+haxelib install hxp
+```
+
 ### Structure
 
 The basic structure of an \*.hxp project looks like this:
 
 ```java
-import lime.project.*;
+import hxp.*;
+import lime.tools.*;
 
 class Project extends HXProject {
-
+    
     public function new () {
-
+        
         super ();
-
-        // Code goes here!
-
+        
+        haxelibs.push (new Haxelib ("lime"));
+        sources.push ("Source");
+        
+        // Other code goes here!
+        
     }
-
+    
 }
 ```
 
-You can put all of your settings within the `new` function, or you can create additional methods, if you prefer.
+You can put all of your settings within the `new` function, or you can create additional methods if you prefer.
 
 ### Conditionals
 
 Being in Haxe, you can use standard if/else logic in order to control your build process.
 
-A variety of values are set for you. For example, the `platformType` value may be PlatformType.MOBILE, PlatformType.DESKTOP or PlatformType.WEB.
+A variety of values are set for you. For example, the `platformType` value may be `PlatformType.MOBILE`, `PlatformType.DESKTOP` or `PlatformType.WEB`.
 
-There is also a `target` value, which may be Platform.IOS, Platform.ANDROID, Platform.WINDOWS, Platform.MAC, Platform.LINUX, Platform.FLASH or Platform.HTML5, among others.
+There is also a `target` value, which may be `Platform.IOS`, `Platform.ANDROID`, `Platform.WINDOWS`, `Platform.MAC`, `Platform.LINUX`, `Platform.FLASH` or `Platform.HTML5`, among others.
 
-If needed, you can also check the `host` property, which should define Platform.WINDOWS, Platform.MAC or Platform.LINUX.
+If needed, you can also check the `host` property, which should define `Platform.WINDOWS`, `Platform.MAC` or `Platform.LINUX`.
 
 You can also set your own values (of course):
 
 ```java
-import lime.project.*;
+import hxp.*;
+import lime.tools.*;
 
 class Project extends HXProject {
 
     public function new () {
 
         super ();
+        
+        haxelibs.push(new Haxelib("lime"));
+        sources.push("Source");
 
         if (platformType == PlatformType.WEB) {
 
-            windows[0].width = 800;
-            windows[0].height = 600;
+            window.width = 800;
+            window.height = 600;
 
         }
 
@@ -102,29 +116,29 @@ Similar to the `meta` property, the `app` property is a typedef, so you can defi
 
 ### window
 
-You can use the `window` array to control how an application will be initialized. Lime currently supports only one window, but this has been updated to be an array of typedefs in order to be prepared when multi-monitor support is available.
+You can use the `window` property to control how your primary window will be initialized, or use the `windows` array to provide options for multiple windows.
 
-Each `window` includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.
+Each window includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.
 
-By default, mobile platforms use a window width and height of 0, which is a special value that uses the resolution of the current display. This is available on desktop platforms, but usually it is recommended to enable the `fullscreen` value instead, and to set the `width` and `height` values to a good windowed resolution. There is a special `fps="0"` value for HTML5, which is default, which uses "requestAnimationFrame" instead of forcing a frame rate.
+By default, mobile platforms use a window width and height of 0, which is a special value that uses the resolution of the current display. This is available on desktop platforms, but usually it is recommended to enable the `fullscreen` value instead, and to set the `width` and `height` values to a good windowed resolution. There is a special `fps="0"` value for HTML5, which is default, which uses `requestAnimationFrame` instead of forcing a frame rate.
 
-    windows[0].width = 640;
-    windows[0].height = 480;
-    windows[0].background = 0xFFFFFF;
-    windows[0].fps = 30;
-    windows[0].hardware = true;
-    windows[0].allowShaders = true;
-    windows[0].requireShaders = true;
-    windows[0].depthBuffer = false;
-    windows[0].stencilBuffer = false;
-    windows[0].fullscreen = false;
-    windows[0].resizable = true;
-    windows[0].borderless = false;
-    windows[0].vsync = false;
-    windows[0].orientation = Orientation.PORTRAIT;
-    windows[0].antialiasing = 0;
+    window.width = 640;
+    window.height = 480;
+    window.background = 0xFFFFFF;
+    window.fps = 30;
+    window.hardware = true;
+    window.allowShaders = true;
+    window.requireShaders = true;
+    window.depthBuffer = false;
+    window.stencilBuffer = false;
+    window.fullscreen = false;
+    window.resizable = true;
+    window.borderless = false;
+    window.vsync = false;
+    window.orientation = Orientation.PORTRAIT;
+    window.antialiasing = 0;
 
-Similar to `app` and `meta`, the `window` property is a typedef, so you can use either an object literal or set each property, depending on your preference. If you use an object literal, any values you do not define will be added later with default values by the tools.
+Similar to `app` and `meta`, each window property is a typedef, so you can use either an object literal or set each property, depending on your preference. If you use an object literal, any values you do not define will be added later with default values by the tools.
 
     windows[0] = { width: 640, height: 480, background: 0xFFFFFF, fps: 30, hardware: true, allowShaders: true, requireShaders: true, depthBuffer: false, stencilBuffer: false, fullscreen:false, resizable: true, borderless: false, vsync: false, orientation: Orientation.PORTRAIT, antialiasing: 0 };
 
