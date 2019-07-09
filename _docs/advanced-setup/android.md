@@ -4,11 +4,7 @@ title: Setup Android
 
 ## Automatic Install
 
-Open a command-prompt or terminal and run the following command:
-
-    lime setup android
-
-If you intend to use an Android emulator, create an AVD with hardware acceleration that targets Android 4.1 or greater. If you are using an Android device, you may need to install drivers before it will be recognized by the Android tools.
+There is no automatic setup available for Android.
 
 ## Manual Install
 
@@ -16,14 +12,13 @@ Similar to standard Android native development, you will need the following inst
 
  * [Android SDK](http://developer.android.com/sdk/index.html)
  * [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
- * [Apache Ant](http://ant.apache.org/bindownload.cgi)
  * [Java JDK](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR)
 
-After installing the Android SDK, you should install the `Android SDK platform-tools` and `Android API 26` packages from the Android SDK Manager. Unfortunately, Gradle requires specific versions of the `Android SDK Build Tools`. We currently are linked against version 24.0.1.
+After installing the Android SDK, you should install the `Android SDK platform-tools` and `Android API 26` packages from the Android SDK Manager. Gradle requires specific versions of the `Android SDK Build Tools`, and Lime will try to find the latest version installed. You can override this by setting `<config:android build-tools-version="" />` in your project file.
 
-Lime uses API 26 to support modern Android features, but is still compatible with API 9 devices. You only need to install the newer API package.
+Lime uses API 26 to support modern Android features, but is still compatible with API 16 devices. You only need to install the newer API package.
 
-Using the latest HXCPP, and targeting modern Android platforms properly, requires NDK version r15c. Newer versions have not been tested, but may also work.
+Using the latest HXCPP, and targeting modern Android platforms properly, requires NDK version r15c. Newer versions are not compatible with the release version of HXCPP, but an update is coming soon that will support later releases.
 
 The Android build tools did not properly support new versions of Java for a long time, but now Java 8 is recommended to work properly with the current Android Gradle build system. Make sure that you have a JDK version installed.
 
