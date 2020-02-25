@@ -68,17 +68,18 @@ You can include more than one copy of each tag, so do not worry about putting it
 
 If you create a haxelib, you can add "include.xml" to the top-level directory. The build tools will automatically add the contents of the file to the user's project. You can use this to add binary dependencies, additional classpaths, etc.
 
-## Common Tags
-
-### `<meta />`
+## Common Tags (click to expand)
+<details>
+<summary>### `<meta />`</summary>
 
 Use `<meta />` tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:
 
 ```xml
 <meta title="My Application" package="com.example.myapplication" version="1.0.0" company="My Company" />
 ```
-
-### `<app />`
+</details>
+<details>
+<summary>### `<app />`</summary>
 
 The `<app />` tag sets values important to building your project, including the entry point (main class), the output file directory, or if you want to customize the executable filename or define a custom preloader for a web platform:
 
@@ -86,8 +87,9 @@ The `<app />` tag sets values important to building your project, including the 
 <app main="com.example.MyApplication" file="MyApplication" path="Export" preloader="CustomPreloader" />
 <app swf-version="11" />
 ```
-
-### `<window />`
+</details>
+<details>
+<summary>### `<window />`</summary>
 
 You can use `<window />` tags to control how an application will be initialized. This includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.
 
@@ -102,7 +104,9 @@ By default, mobile platforms use a window width and height of 0, which is a spec
 
 The `orientation` value expects either "portrait" or "landscape" ... the default is "auto" which allows the operating system to decide which orientation to use.
 
-### `<source />`
+</details>
+<details>
+<summary>### `<source />`</summary>
 
 Use `<source />` tags to add Haxe class paths:
 
@@ -112,7 +116,9 @@ Use `<source />` tags to add Haxe class paths:
 
 If you are using `@:file`, `@:bitmap`, `@:sound` or `@:file` tags in your project, be sure that the asset files are available within your Haxe source paths.
 
-### `<haxelib />`
+</details>
+<details>
+<summary>### `<haxelib />`</summary>
 
 Use `<haxelib />` tags to include Haxe libraries:
 
@@ -126,7 +132,9 @@ You can also specify a version, if you prefer:
 <haxelib name="actuate" version="1.0.0" />
 ```
 
-### `<section />`
+</details>
+<details>
+<summary>### `<section />`</summary>
 
 The `<section />` tag is used to group other tags together. This is usually most valuable when combined with "if" and/or "unless" logic:
 
@@ -135,8 +143,9 @@ The `<section />` tag is used to group other tags together. This is usually most
 	<source path="extra/src/html5" />
 </section>
 ```
-
-### `<ndll />`
+</details>
+<details>
+<summary>### `<ndll />`</summary>
 
 You can use `<ndll />` tags to include native libraries. These are usually located under an "ndll" directory, with additional directories based upon the target platform. Usually an `<ndll />` tag will be included as a part of an extension, and is rare to be used directly:
 
@@ -144,7 +153,9 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 <ndll name="std" haxelib="hxcpp" />
 ```
 
-### `<include />`
+</details>
+<details>
+<summary>### `<include />`</summary>
 
 Use `<include />` tags to add the tags found in another project file, or to find an "include.xml" file in the target directory:
 
@@ -153,7 +164,9 @@ Use `<include />` tags to add the tags found in another project file, or to find
 <include path="to/shared/library" />
 ```
 
-### `<icon />`
+</details>
+<details>
+<summary>### `<icon />`</summary>
 
 Use `<icon />` nodes to add icon files to your project. When the command-line tools request icons for a target platform, it will either use an exact size match you have provided, or it will attempt to find the closest match possible and resize. If you include an SVG vector icon, it should prefer this file over resizing bitmap files.
 
@@ -163,7 +176,9 @@ Use `<icon />` nodes to add icon files to your project. When the command-line to
 <icon path="icon.svg" />
 ```
 
-### `<assets />`
+</details>
+<details>
+<summary>### `<assets />`</summary>
 
 Use asset nodes to add resources to your project, available using `lime.Assets`.
 
@@ -217,9 +232,10 @@ If an asset is specified as "template", it will not be copied/embedded as an ord
 </assets>
 ```
 
-## Additional Tags
 
-### `<template />`
+</details>
+<details>
+<summary>### `<template />`</summary>
 
 Use `<template />` tags to add paths which can override the templates used by the command-line tools.
 
@@ -234,8 +250,9 @@ Otherwise, you can override a single file like this:
 ```xml
 <template path="Assets/index.html" rename="index.html" />
 ```
-
-### `<haxeflag />`
+</details>
+<details>
+<summary>### `<haxeflag />`</summary>
 
 Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
 
@@ -243,7 +260,9 @@ Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
 <haxeflag name="-dce" value="std" />
 ```
 
-### `<haxedef />`
+</details>
+<details>
+<summary>### `<haxedef />`</summary>
 
 Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` with "-D"):
 
@@ -251,7 +270,9 @@ Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` wi
 <haxedef name="define" />
 ```
 
-### `<setenv />`
+</details>
+<details>
+<summary>### `<setenv />`</summary>
 
 Use `<setenv />` tags to set environment variables:
 
@@ -259,7 +280,9 @@ Use `<setenv />` tags to set environment variables:
 <setenv name="GLOBAL_DEFINE" />
 ```
 
-### `<java />`
+</details>
+<details>
+<summary>### `<java />`</summary>
 
 Use `<java />` tags to add Java classes to the project when targeting Android:
 
@@ -267,7 +290,9 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 <java path="to/classes" />
 ```
 
-### `<certificate />`
+</details>
+<details>
+<summary>### `<certificate />`</summary>
 
 Use `<certificate />` tags to add a keystore for release signing on certain platforms.
 
@@ -287,7 +312,9 @@ iOS does not use a certificate `path` and `password`, but instead uses a `team-i
 <certificate team-id="SK12FH34" />
 ```
 
-### `<config:ios />`
+</details>
+<details>
+<summary>### `<config:ios />`</summary>
 
 Control iOS-specific values when compiling.
 
@@ -298,7 +325,9 @@ The `deployment` attribute can set the minimum iOS version you wish to target. T
 <config:ios prerendered-icon="false" />
 ```
 
-### `<config:android />`
+</details>
+<details>
+<summary>### `<config:android />`</summary>
 
 Use `<config:android />` tags to set Android-specific values:
 
@@ -308,7 +337,9 @@ Use `<config:android />` tags to set Android-specific values:
 <config:android target-sdk-version="16" />
 ```
 
-### `<architecture />`
+</details>
+<details>
+<summary>### `<architecture />`</summary>
 
 Use `<architecture />` tags to set or exclude Android-specific architectures. These can be `ARMv7`, `ARMv6`, `ARMv5` and `X86`.
 
@@ -320,7 +351,9 @@ For example, if you want to enable `ARMv6` and disable `ARMv7` you would set the
 <architecture name="armv6" exclude="armv7" if="android" />
 ```
 
-### `<dependency />`
+</details>
+<details>
+<summary>### `<dependency />`</summary>
 
 Use `<dependency />` tags to specify native frameworks or references that are required to compile your project, as well as additional libraries you need copied.
 
@@ -328,10 +361,47 @@ Use `<dependency />` tags to specify native frameworks or references that are re
 <dependency name="GameKit.framework" if="ios" />
 ```
 
-### `<path />`
+</details>
+<details>
+<summary>### `<path />`</summary>
 
 Use `<path />` tags to add directories to your system's PATH environment variable.
 
 ```xml
 <path value="path/to/add/to/system/PATH" />
 ```
+
+</details>
+<details>
+<summary>### `<library />`</summary>
+
+All assets go into the “default” library, but by adding `<library>` tags it is possible to modify the default library and also define additional libraries and load/unload them as needed.
+
+To disable preloading on the default library:
+
+`<library name="default" preload="false" />`
+
+To load assets at runtime,:
+
+```
+Assets.loadLibrary ("default").onComplete (function (library) {
+
+    var bitmapData = Assets.getBitmapData ("default:image.png");
+    // or
+    var bitmapData = Assets.getBitmapData ("image.png");
+    // "default:" prefix is implied, if no library prefix is included
+});
+```
+
+####Using Additional Asset Libraries
+
+You can easily add assets to libraries other than the “default” library. These are not preloaded by default, unless you add: `<library name="myOtherLibrary" preload="true" />`
+
+Then to have certain assets allocated to the above library:
+`<assets path="assets/other" library="myOtherLibrary" />`
+
+Be sure to specify the correct library when retrieving the assets in your code. See the above example for using the library prefix.
+
+You can also use `Assets.unloadLibrary` when you are doing using those resources.
+
+</details>
