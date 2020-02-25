@@ -70,7 +70,7 @@ If you create a haxelib, you can add "include.xml" to the top-level directory. T
 
 ## Common Tags (click to expand)
 <details>
-<summary><meta /></summary>
+<summary>&gt;meta /&lt;</summary>
 
 Use `<meta />` tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:
 
