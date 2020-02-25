@@ -204,6 +204,17 @@ The `deployment` attribute can set the minimum iOS version you wish to target. T
 </details>
 
 <details>
+<summary>&lt;define /&gt;</summary>
+
+Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the “Conditionals” section above.
+
+```xml
+<dependency name="GameKit.framework" if="ios" />
+```
+
+</details>
+
+<details>
 <summary>&lt;dependency /&gt;</summary>
 
 Use `<dependency />` tags to specify native frameworks or references that are required to compile your project, as well as additional libraries you need copied.
@@ -368,6 +379,17 @@ The `<section />` tag is used to group other tags together. This is usually most
 </details>
 
 <details>
+<summary>&lt;set /&gt;</summary>
+
+Use `<set />` tags to set variables for conditional logic. See the “Conditionals” section above.
+
+```xml
+<set name="red" />
+```
+
+</details>
+
+<details>
 <summary>&lt;setenv /&gt;</summary>
 
 Use `<setenv />` tags to set environment variables:
@@ -405,7 +427,7 @@ You can add a full template path like this:
 Otherwise, you can override a single file like this:
 
 ```xml
-<template path="Assets/index.html" rename="index.html" />
+<template path="Assets/index.html" rename="index.php" />
 ```
 </details>
 
