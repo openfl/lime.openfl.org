@@ -68,17 +68,7 @@ You can include more than one copy of each tag, so do not worry about putting it
 
 If you create a haxelib, you can add "include.xml" to the top-level directory. The build tools will automatically add the contents of the file to the user's project. You can use this to add binary dependencies, additional classpaths, etc.
 
-## Common Tags (click to expand)
-<details>
-<summary>&lt;meta /&gt;</summary>
-
-Use `<meta />` tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:
-
-```xml
-<meta title="My Application" package="com.example.myapplication" version="1.0.0" company="My Company" />
-```
-</details>
-
+## XML Tag Glossary (click to expand)
 <details>
 <summary>&lt;app /&gt;</summary>
 
@@ -91,97 +81,16 @@ The `<app />` tag sets values important to building your project, including the 
 </details>
 
 <details>
-<summary>&lt;window /&gt;</summary>
+<summary>&lt;architecture /&gt;</summary>
 
-You can use `<window />` tags to control how an application will be initialized. This includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.
+Use `<architecture />` tags to set or exclude Android-specific architectures. These can be `ARMv7`, `ARMv6`, `ARMv5` and `X86`.
 
-By default, mobile platforms use a window width and height of 0, which is a special value that uses the resolution of the current display. This is available on desktop platforms, but usually it is recommended to enable the `fullscreen` flag instead, and to set the `width` and `height` values to a good windowed resolution. There is a special `fps="0"` value for HTML5, which is default, which uses "requestAnimationFrame" instead of forcing a frame rate.
+By default the only architecture built will be `ARMv7`.
 
-```xml
-<window width="640" height="480" background="#FFFFFF" fps="30" />
-<window hardware="true" allow-shaders="true" require-shaders="true" depth-buffer="false" stencil-buffer="false" />
-<window fullscreen="false" resizable="true" borderless="false" vsync="false" />
-<window orientation="portrait" />
-```
-
-The `orientation` value expects either "portrait" or "landscape" ... the default is "auto" which allows the operating system to decide which orientation to use.
-
-</details>
-
-<details>
-<summary>&lt;source /&gt;</summary>
-
-Use `<source />` tags to add Haxe class paths:
+For example, if you want to enable `ARMv6` and disable `ARMv7` you would set the `<architecture />` tag to:
 
 ```xml
-<source path="Source" />
-```
-
-If you are using `@:file`, `@:bitmap`, `@:sound` or `@:file` tags in your project, be sure that the asset files are available within your Haxe source paths.
-
-</details>
-
-<details>
-<summary>&lt;haxelib /&gt;</summary>
-
-Use `<haxelib />` tags to include Haxe libraries:
-
-```xml
-<haxelib name="actuate" />
-```
-
-You can also specify a version, if you prefer:
-
-```xml
-<haxelib name="actuate" version="1.0.0" />
-```
-
-</details>
-
-<details>
-<summary>&lt;section /&gt;</summary>
-
-The `<section />` tag is used to group other tags together. This is usually most valuable when combined with "if" and/or "unless" logic:
-
-```xml
-<section if="html5">
-	<source path="extra/src/html5" />
-</section>
-```
-</details>
-
-<details>
-<summary>&lt;ndll /&gt;</summary>
-
-You can use `<ndll />` tags to include native libraries. These are usually located under an "ndll" directory, with additional directories based upon the target platform. Usually an `<ndll />` tag will be included as a part of an extension, and is rare to be used directly:
-
-```xml
-<ndll name="std" haxelib="hxcpp" />
-```
-
-</details>
-
-<details>
-<summary>&lt;include /&gt;</summary>
-
-Use `<include />` tags to add the tags found in another project file, or to find an "include.xml" file in the target directory:
-
-```xml
-<include path="to/another/project.xml" />
-<include path="to/shared/library" />
-```
-
-</details>
-
-<details>
-<summary>&lt;icon /&gt;</summary>
-
-Use `<icon />` nodes to add icon files to your project. When the command-line tools request icons for a target platform, it will either use an exact size match you have provided, or it will attempt to find the closest match possible and resize. If you include an SVG vector icon, it should prefer this file over resizing bitmap files.
-
-```xml
-<icon path="icon.png" size="64" />
-<icon path="icon.png" width="96" height="96" />
-<icon path="icon.svg" />
+<architecture name="armv6" exclude="armv7" if="android" />
 ```
 
 </details>
@@ -245,68 +154,6 @@ If an asset is specified as "template", it will not be copied/embedded as an ord
 </details>
 
 <details>
-<summary>&lt;template /&gt;</summary>
-
-Use `<template />` tags to add paths which can override the templates used by the command-line tools.
-
-You can add a full template path like this:
-
-```xml
-<template path="templates" />
-```
-
-Otherwise, you can override a single file like this:
-
-```xml
-<template path="Assets/index.html" rename="index.html" />
-```
-</details>
-
-<details>
-<summary>&lt;haxeflag /&gt;</summary>
-
-Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
-
-```xml
-<haxeflag name="-dce" value="std" />
-```
-
-</details>
-
-<details>
-<summary>&lt;haxedef /&gt;</summary>
-
-Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` with "-D"):
-
-```xml
-<haxedef name="define" />
-```
-
-</details>
-
-<details>
-<summary>&lt;setenv /&gt;</summary>
-
-Use `<setenv />` tags to set environment variables:
-
-```xml
-<setenv name="GLOBAL_DEFINE" />
-```
-
-</details>
-
-<details>
-<summary>&lt;java /&gt;</summary>
-
-Use `<java />` tags to add Java classes to the project when targeting Android:
-
-```xml
-<java path="to/classes" />
-```
-
-</details>
-
-<details>
 <summary>&lt;certificate /&gt;</summary>
 
 Use `<certificate />` tags to add a keystore for release signing on certain platforms.
@@ -330,20 +177,6 @@ iOS does not use a certificate `path` and `password`, but instead uses a `team-i
 </details>
 
 <details>
-<summary>&lt;config:ios /&gt;</summary>
-
-Control iOS-specific values when compiling.
-
-The `deployment` attribute can set the minimum iOS version you wish to target. The `prerendered-icon` attribute can help control the style of your icon.
-
-```xml
-<config:ios deployment="5.1" />
-<config:ios prerendered-icon="false" />
-```
-
-</details>
-
-<details>
 <summary>&lt;config:android /&gt;</summary>
 
 Use `<config:android />` tags to set Android-specific values:
@@ -357,16 +190,15 @@ Use `<config:android />` tags to set Android-specific values:
 </details>
 
 <details>
-<summary>&lt;architecture /&gt;</summary>
+<summary>&lt;config:ios /&gt;</summary>
 
-Use `<architecture />` tags to set or exclude Android-specific architectures. These can be `ARMv7`, `ARMv6`, `ARMv5` and `X86`.
+Control iOS-specific values when compiling.
 
-By default the only architecture built will be `ARMv7`.
-
-For example, if you want to enable `ARMv6` and disable `ARMv7` you would set the `<architecture />` tag to:
+The `deployment` attribute can set the minimum iOS version you wish to target. The `prerendered-icon` attribute can help control the style of your icon.
 
 ```xml
-<architecture name="armv6" exclude="armv7" if="android" />
+<config:ios deployment="5.1" />
+<config:ios prerendered-icon="false" />
 ```
 
 </details>
@@ -383,12 +215,76 @@ Use `<dependency />` tags to specify native frameworks or references that are re
 </details>
 
 <details>
-<summary>&lt;path /&gt;</summary>
+<summary>&lt;haxedef /&gt;</summary>
 
-Use `<path />` tags to add directories to your system's PATH environment variable.
+Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` with "-D"):
 
 ```xml
-<path value="path/to/add/to/system/PATH" />
+<haxedef name="define" />
+```
+
+</details>
+
+<details>
+<summary>&lt;haxeflag /&gt;</summary>
+
+Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
+
+```xml
+<haxeflag name="-dce" value="std" />
+```
+
+</details>
+
+<details>
+<summary>&lt;haxelib /&gt;</summary>
+
+Use `<haxelib />` tags to include Haxe libraries:
+
+```xml
+<haxelib name="actuate" />
+```
+
+You can also specify a version, if you prefer:
+
+```xml
+<haxelib name="actuate" version="1.0.0" />
+```
+
+</details>
+
+<details>
+<summary>&lt;icon /&gt;</summary>
+
+Use `<icon />` nodes to add icon files to your project. When the command-line tools request icons for a target platform, it will either use an exact size match you have provided, or it will attempt to find the closest match possible and resize. If you include an SVG vector icon, it should prefer this file over resizing bitmap files.
+
+```xml
+<icon path="icon.png" size="64" />
+<icon path="icon.png" width="96" height="96" />
+<icon path="icon.svg" />
+```
+
+</details>
+
+<details>
+<summary>&lt;include /&gt;</summary>
+
+Use `<include />` tags to add the tags found in another project file, or to find an "include.xml" file in the target directory:
+
+```xml
+<include path="to/another/project.xml" />
+<include path="to/shared/library" />
+```
+
+</details>
+
+<details>
+<summary>&lt;java /&gt;</summary>
+
+Use `<java />` tags to add Java classes to the project when targeting Android:
+
+```xml
+<java path="to/classes" />
 ```
 
 </details>
@@ -426,3 +322,108 @@ Be sure to specify the correct library when retrieving the assets in your code. 
 You can also use `Assets.unloadLibrary` when you are doing using those resources.
 
 </details>
+
+<details>
+<summary>&lt;meta /&gt;</summary>
+
+Use `<meta />` tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:
+
+```xml
+<meta title="My Application" package="com.example.myapplication" version="1.0.0" company="My Company" />
+```
+</details>
+
+<details>
+<summary>&lt;ndll /&gt;</summary>
+
+You can use `<ndll />` tags to include native libraries. These are usually located under an "ndll" directory, with additional directories based upon the target platform. Usually an `<ndll />` tag will be included as a part of an extension, and is rare to be used directly:
+
+```xml
+<ndll name="std" haxelib="hxcpp" />
+```
+
+</details>
+
+<details>
+<summary>&lt;path /&gt;</summary>
+
+Use `<path />` tags to add directories to your system's PATH environment variable.
+
+```xml
+<path value="path/to/add/to/system/PATH" />
+```
+
+</details>
+
+<details>
+<summary>&lt;section /&gt;</summary>
+
+The `<section />` tag is used to group other tags together. This is usually most valuable when combined with "if" and/or "unless" logic:
+
+```xml
+<section if="html5">
+	<source path="extra/src/html5" />
+</section>
+```
+</details>
+
+<details>
+<summary>&lt;setenv /&gt;</summary>
+
+Use `<setenv />` tags to set environment variables:
+
+```xml
+<setenv name="GLOBAL_DEFINE" />
+```
+
+</details>
+
+<details>
+<summary>&lt;source /&gt;</summary>
+
+Use `<source />` tags to add Haxe class paths:
+
+```xml
+<source path="Source" />
+```
+
+If you are using `@:file`, `@:bitmap`, `@:sound` or `@:file` tags in your project, be sure that the asset files are available within your Haxe source paths.
+
+</details>
+
+<details>
+<summary>&lt;template /&gt;</summary>
+
+Use `<template />` tags to add paths which can override the templates used by the command-line tools.
+
+You can add a full template path like this:
+
+```xml
+<template path="templates" />
+```
+
+Otherwise, you can override a single file like this:
+
+```xml
+<template path="Assets/index.html" rename="index.html" />
+```
+</details>
+
+<details>
+<summary>&lt;window /&gt;</summary>
+
+You can use `<window />` tags to control how an application will be initialized. This includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.
+
+By default, mobile platforms use a window width and height of 0, which is a special value that uses the resolution of the current display. This is available on desktop platforms, but usually it is recommended to enable the `fullscreen` flag instead, and to set the `width` and `height` values to a good windowed resolution. There is a special `fps="0"` value for HTML5, which is default, which uses "requestAnimationFrame" instead of forcing a frame rate.
+
+```xml
+<window width="640" height="480" background="#FFFFFF" fps="30" />
+<window hardware="true" allow-shaders="true" require-shaders="true" depth-buffer="false" stencil-buffer="false" />
+<window fullscreen="false" resizable="true" borderless="false" vsync="false" />
+<window orientation="portrait" />
+```
+
+The `orientation` value expects either "portrait" or "landscape" ... the default is "auto" which allows the operating system to decide which orientation to use.
+
+</details>
+
