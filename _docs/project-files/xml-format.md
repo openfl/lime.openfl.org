@@ -321,7 +321,7 @@ Assets.loadLibrary ("default").onComplete (function (library) {
 });
 ```
 
-####Using Additional Asset Libraries
+**Using Additional Asset Libraries**
 
 You can easily add assets to libraries other than the “default” library. These are not preloaded by default, unless you add: `<library name="myOtherLibrary" preload="true" />`
 
