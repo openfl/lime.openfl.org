@@ -511,7 +511,7 @@ More to come.
 
 <details>
 <summary>&lt;swf /&gt;</summary>
-More to come.
+See “library“.
 </details>
 
 <details>
