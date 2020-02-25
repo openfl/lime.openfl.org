@@ -177,9 +177,42 @@ iOS does not use a certificate `path` and `password`, but instead uses a `team-i
 </details>
 
 <details>
-<summary>&lt;config:android /&gt;</summary>
+<summary>&lt;classpath /&gt;</summary>
+Same as “source”.
+</details>
 
-Use `<config:android />` tags to set Android-specific values:
+<details>
+<summary>&lt;compilerflag /&gt;</summary>
+Same as "haxeflag".
+</details>
+
+<details>
+<summary>&lt;config /&gt;</summary>
+Use `<config />` tags to set platform-specific values. These targets are currently supported:
+- air
+- android
+- blackberry
+- console-pc
+- firefox
+- flash
+- html5
+- ios
+- linux
+- mac
+- ps3
+- ps4
+- tizen
+- vita
+- windows
+- webos
+- wiiu
+- xbox1
+- emscripten
+- tvos
+
+**One must append a suffix to the tag depending on the platform. **
+
+For example, use `<config:android />` tags to set Android-specific values:
 
 ```xml
 <config:android install-location="preferExternal" />
@@ -187,14 +220,7 @@ Use `<config:android />` tags to set Android-specific values:
 <config:android target-sdk-version="16" />
 ```
 
-</details>
-
-<details>
-<summary>&lt;config:ios /&gt;</summary>
-
-Control iOS-specific values when compiling.
-
-The `deployment` attribute can set the minimum iOS version you wish to target. The `prerendered-icon` attribute can help control the style of your icon.
+Use `<config:ios />` tags to set iOS-specific values when compiling. The `deployment` attribute can set the minimum iOS version you wish to target. The `prerendered-icon` attribute can help control the style of your icon.
 
 ```xml
 <config:ios deployment="5.1" />
@@ -223,6 +249,16 @@ Use `<dependency />` tags to specify native frameworks or references that are re
 <dependency name="GameKit.framework" if="ios" />
 ```
 
+</details>
+
+<details>
+<summary>&lt;echo /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;error /&gt;</summary>
+More to come.
 </details>
 
 <details>
@@ -301,6 +337,21 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 </details>
 
 <details>
+<summary>&lt;language /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;launchimage /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;launchstoryboard /&gt;</summary>
+More to come.
+</details>
+
+<details>
 <summary>&lt;library /&gt;</summary>
 
 All assets go into the “default” library, but by adding `<library>` tags it is possible to modify the default library and also define additional libraries and load/unload them as needed.
@@ -311,7 +362,7 @@ To disable preloading on the default library:
 
 To load assets at runtime,:
 
-```
+```haxe
 Assets.loadLibrary ("default").onComplete (function (library) {
 
     var bitmapData = Assets.getBitmapData ("default:image.png");
@@ -335,6 +386,11 @@ You can also use `Assets.unloadLibrary` when you are doing using those resources
 </details>
 
 <details>
+<summary>&lt;log /&gt;</summary>
+More to come.
+</details>
+
+<details>
 <summary>&lt;meta /&gt;</summary>
 
 Use `<meta />` tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:
@@ -342,6 +398,11 @@ Use `<meta />` tags to add information about your application, which usually wil
 ```xml
 <meta title="My Application" package="com.example.myapplication" version="1.0.0" company="My Company" />
 ```
+</details>
+
+<details>
+<summary>&lt;module /&gt;</summary>
+More to come.
 </details>
 
 <details>
@@ -356,6 +417,11 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 </details>
 
 <details>
+<summary>&lt;output /&gt;</summary>
+More to come.
+</details>
+
+<details>
 <summary>&lt;path /&gt;</summary>
 
 Use `<path />` tags to add directories to your system's PATH environment variable.
@@ -364,6 +430,26 @@ Use `<path />` tags to add directories to your system's PATH environment variabl
 <path value="path/to/add/to/system/PATH" />
 ```
 
+</details>
+
+<details>
+<summary>&lt;postbuild /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;prebuild /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;preloader /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;sample /&gt;</summary>
+More to come.
 </details>
 
 <details>
@@ -414,6 +500,26 @@ If you are using `@:file`, `@:bitmap`, `@:sound` or `@:file` tags in your projec
 </details>
 
 <details>
+<summary>&lt;splashscreen /&gt;</summary>
+Same as “launchimage”.
+</details>
+
+<details>
+<summary>&lt;ssl /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;swf /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;target /&gt;</summary>
+More to come.
+</details>
+
+<details>
 <summary>&lt;template /&gt;</summary>
 
 Use `<template />` tags to add paths which can override the templates used by the command-line tools.
@@ -429,6 +535,21 @@ Otherwise, you can override a single file like this:
 ```xml
 <template path="Assets/index.html" rename="index.php" />
 ```
+</details>
+
+<details>
+<summary>&lt;templatepath /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;undefine /&gt;</summary>
+More to come.
+</details>
+
+<details>
+<summary>&lt;unset /&gt;</summary>
+More to come.
 </details>
 
 <details>
