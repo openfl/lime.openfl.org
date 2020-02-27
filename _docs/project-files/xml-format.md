@@ -577,7 +577,7 @@ Same as “launchimage”.
 
 <details>
 <summary>&lt;ssl /&gt;</summary>
-More to come.
+Not implemented!!!
 </details>
 
 <details>
@@ -587,7 +587,10 @@ See “library“.
 
 <details>
 <summary>&lt;target /&gt;</summary>
-More to come.
+Lets you redefine build process for specific target by running custom haxelib command (might be useful if you want to use your own library for building your project, i.e. you are know what you're doing and you know how Lime build system works)
+	
+`<target name="customTarget" handler="yourHandler" />`
+
 </details>
 
 <details>
