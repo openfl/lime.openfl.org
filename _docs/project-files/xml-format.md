@@ -253,7 +253,7 @@ Use `<dependency />` tags to specify native frameworks or references that are re
 
 <details>
 <summary>&lt;echo /&gt;</summary>
-Prints specified message to the console:
+Prints a specified message to the console.
 
 ```
 <echo value="Some output message" />
@@ -264,7 +264,7 @@ Prints specified message to the console:
 <details>
 <summary>&lt;error /&gt;</summary>
 
-Logs error with `lime.utils.Log.error()`, which by default throws `value` message and stops compilation (if `lime.utils.Log.throwErrors` is set to `true`)
+Logs an error with `lime.utils.Log.error()` which by default throws `value` message and stops compilation (if `lime.utils.Log.throwErrors` is set to `true`).
 
 Example:
 
@@ -354,7 +354,7 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 <details>
 <summary>&lt;language /&gt;</summary>
 
-Adds language to the list of supported languages (by default the list is empty)
+Adds a language to the list of supported languages (by default the list is empty).
 
 `<language name="en-US" />`
 
@@ -370,7 +370,7 @@ Sets the path to launch image of the app (image which will be shown at applicati
 
 <details>
 <summary>&lt;launchstoryboard /&gt;</summary>
-Sets launch screen storyboard (useful only for iOS development)
+Sets the launch screen storyboard (useful only for iOS development).
 
 `<launchstoryboard path="image.png" />`
 
@@ -378,7 +378,7 @@ or
 
 `<launchstoryboard name="image.png" />`
 
-You can also use `template` for it (will be documented in the future)
+You can also use `template` for this purpose (to be documented in the future).
 
 </details>
 
@@ -418,7 +418,7 @@ You can also use `Assets.unloadLibrary` when you are doing using those resources
 
 <details>
 <summary>&lt;log /&gt;</summary>
-Logs error (see "error"), warning or info message.
+Logs an error (see "error"), warning or info message.
 
 Examples:
 
@@ -484,7 +484,7 @@ Use `<path />` tags to add directories to your system's PATH environment variabl
 
 <details>
 <summary>&lt;postbuild /&gt;</summary>
-Lets you set post build commands, which could be Haxe code (will be interpeted by the Haxe interpreter), run file command or console command:
+Lets you set post-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.
 	
 ```
 <postbuild haxe="Haxe code"/>
@@ -497,7 +497,7 @@ Lets you set post build commands, which could be Haxe code (will be interpeted b
 
 <details>
 <summary>&lt;prebuild /&gt;</summary>
-Lets you set pre build commands, which could be Haxe code (will be interpeted by the Haxe interpreter), run file command or console command:
+Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command:
 	
 ```
 <prebuild haxe="Haxe code"/>
@@ -587,7 +587,7 @@ See “library“.
 
 <details>
 <summary>&lt;target /&gt;</summary>
-Lets you redefine build process for specific target by running custom haxelib command (might be useful if you want to use your own library for building your project, i.e. you are know what you're doing and you know how Lime build system works)
+Lets you redefine the build process for a specific target by running a custom haxelib command. This might be useful if you want to use your own library for building your project, i.e. you know what you're doing and you know how the Lime build system works.
 	
 `<target name="customTarget" handler="yourHandler" />`
 
@@ -613,7 +613,7 @@ Otherwise, you can override a single file like this:
 
 <details>
 <summary>&lt;templatepath /&gt;</summary>
-See "template"
+See “template”.
 
 `<templatepath name="path"/>`
 
@@ -621,7 +621,7 @@ See "template"
 
 <details>
 <summary>&lt;undefine /&gt;</summary>
-Resets previously defined flag. See entry for `&lt;define /&gt;`.
+Unsets a previously defined flag. See entry for `&lt;define /&gt;`.
 
 ```
 <undefine name="red" />
@@ -632,7 +632,7 @@ Resets previously defined flag. See entry for `&lt;define /&gt;`.
 <details>
 <summary>&lt;unset /&gt;</summary>
 
-Unsets previously defined value. See entry for `<set />`.
+Unsets a previously set value. See entry for `<set />`.
 	
 ```
 <set name="red" value="0xff0000" />
