@@ -253,12 +253,27 @@ Use `<dependency />` tags to specify native frameworks or references that are re
 
 <details>
 <summary>&lt;echo /&gt;</summary>
-More to come.
+Prints specified message to the console:
+
+```
+<echo value="Some output message" />
+```
+
 </details>
 
 <details>
 <summary>&lt;error /&gt;</summary>
-More to come.
+
+Logs error with `lime.utils.Log.error()`, which by default throws `value` message and stops compilation (if `lime.utils.Log.throwErrors` is set to `true`)
+
+Example:
+
+```
+<section if="html5">
+	<error value="html5 isn't supported!" />
+</section>
+```
+
 </details>
 
 <details>
@@ -338,17 +353,33 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 
 <details>
 <summary>&lt;language /&gt;</summary>
-More to come.
+
+Adds language to the list of supported languages (by default the list is empty)
+
+`<language name="en-US" />`
+
 </details>
 
 <details>
 <summary>&lt;launchimage /&gt;</summary>
-More to come.
+Sets the path to launch image of the app (image which will be shown at application start up)
+
+`<launchimage path="launchImage.png" />`
+	
 </details>
 
 <details>
 <summary>&lt;launchstoryboard /&gt;</summary>
-More to come.
+Sets launch screen storyboard (useful only for iOS development)
+
+`<launchstoryboard path="image.png" />`
+
+or
+
+`<launchstoryboard name="image.png" />`
+
+You can also use `template` for it (will be documented in the future)
+
 </details>
 
 <details>
@@ -387,7 +418,18 @@ You can also use `Assets.unloadLibrary` when you are doing using those resources
 
 <details>
 <summary>&lt;log /&gt;</summary>
-More to come.
+Logs error (see "error"), warning or info message.
+
+Examples:
+
+```
+<log error="error message" />
+<log warn="warn message" />
+<log info="info message" />
+<log value="your message" />
+<log verbose="verbose message" />
+```
+	
 </details>
 
 <details>
@@ -418,7 +460,15 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 
 <details>
 <summary>&lt;output /&gt;</summary>
-More to come.
+Deprecated!!!
+Can be used for setting app file name, app path and app swf-version:
+
+```
+<output name="app file name" />
+<output name="app path" />
+<output swf-version="11" />
+```
+
 </details>
 
 <details>
@@ -434,17 +484,38 @@ Use `<path />` tags to add directories to your system's PATH environment variabl
 
 <details>
 <summary>&lt;postbuild /&gt;</summary>
-More to come.
+Lets you set post build commands, which could be Haxe code (will be interpeted by the Haxe interpreter), run file command or console command:
+	
+```
+<postbuild haxe="Haxe code"/>
+<postbuild open="file to run"/>
+<postbuild command="command to run"/>
+<postbuild cmd="command to run"/>
+```
+
 </details>
 
 <details>
 <summary>&lt;prebuild /&gt;</summary>
-More to come.
+Lets you set pre build commands, which could be Haxe code (will be interpeted by the Haxe interpreter), run file command or console command:
+	
+```
+<prebuild haxe="Haxe code"/>
+<prebuild open="file to run"/>
+<prebuild command="command to run"/>
+<prebuild cmd="command to run"/>
+```
 </details>
 
 <details>
 <summary>&lt;preloader /&gt;</summary>
-More to come.
+Deprecated!!!
+Use `<app preloader="preloaderClass" />` instead
+	
+```
+<preloader name="preloaderClass" />
+```
+	
 </details>
 
 <details>
@@ -506,7 +577,7 @@ Same as “launchimage”.
 
 <details>
 <summary>&lt;ssl /&gt;</summary>
-More to come.
+Not implemented!!!
 </details>
 
 <details>
@@ -516,7 +587,10 @@ See “library“.
 
 <details>
 <summary>&lt;target /&gt;</summary>
-More to come.
+Lets you redefine build process for specific target by running custom haxelib command (might be useful if you want to use your own library for building your project, i.e. you are know what you're doing and you know how Lime build system works)
+	
+`<target name="customTarget" handler="yourHandler" />`
+
 </details>
 
 <details>
@@ -539,17 +613,32 @@ Otherwise, you can override a single file like this:
 
 <details>
 <summary>&lt;templatepath /&gt;</summary>
-More to come.
+See "template"
+
+`<templatepath name="path"/>`
+
 </details>
 
 <details>
 <summary>&lt;undefine /&gt;</summary>
-See entry for `&lt;define /&gt;`.
+Resets previously defined flag. See entry for `&lt;define /&gt;`.
+
+```
+<undefine name="red" />
+```
+
 </details>
 
 <details>
 <summary>&lt;unset /&gt;</summary>
-See entry for `&lt;set /&gt;`.
+
+Unsets previously defined value. See entry for `<set />`.
+	
+```
+<set name="red" value="0xff0000" />
+<unset name="red" />
+```
+
 </details>
 
 <details>
