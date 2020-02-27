@@ -370,7 +370,16 @@ Sets the path to launch image of the app (image which will be shown at applicati
 
 <details>
 <summary>&lt;launchstoryboard /&gt;</summary>
-More to come.
+Sets launch screen storyboard (useful only for iOS development)
+
+`<launchstoryboard path="image.png" />`
+
+or
+
+`<launchstoryboard name="image.png" />`
+
+You can also use `template` for it (will be documented in the future)
+
 </details>
 
 <details>
