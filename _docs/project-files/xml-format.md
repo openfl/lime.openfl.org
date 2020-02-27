@@ -30,7 +30,7 @@ This can also be used to pass special values:
 <window background="${color}" if="color" />
 ```
 
-Similarly, you can `<define />` which also passes values to Haxe
+Similarly, you can `<define />` or `<undefine />` values which are also passed to Haxe.
 
 ```xml
 <define name="red" />
@@ -544,12 +544,12 @@ More to come.
 
 <details>
 <summary>&lt;undefine /&gt;</summary>
-More to come.
+See entry for `<define />`.
 </details>
 
 <details>
 <summary>&lt;unset /&gt;</summary>
-More to come.
+See entry for `<set />`.
 </details>
 
 <details>
