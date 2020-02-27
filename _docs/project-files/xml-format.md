@@ -253,7 +253,12 @@ Use `<dependency />` tags to specify native frameworks or references that are re
 
 <details>
 <summary>&lt;echo /&gt;</summary>
-More to come.
+Prints specified message to the console:
+
+```
+<echo value="Some output message" />
+```
+
 </details>
 
 <details>
