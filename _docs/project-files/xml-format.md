@@ -484,7 +484,7 @@ Use `<path />` tags to add directories to your system's PATH environment variabl
 
 <details>
 <summary>&lt;postbuild /&gt;</summary>
-Lets you set post build command, which could be Haxe code (will be interpeted by the Haxe interpreter), file open command or console command:
+Lets you set post build commands, which could be Haxe code (will be interpeted by the Haxe interpreter), run file command or console command:
 	
 ```
 <postbuild haxe="Haxe code"/>
@@ -497,7 +497,14 @@ Lets you set post build command, which could be Haxe code (will be interpeted by
 
 <details>
 <summary>&lt;prebuild /&gt;</summary>
-More to come.
+Lets you set pre build commands, which could be Haxe code (will be interpeted by the Haxe interpreter), run file command or console command:
+	
+```
+<prebuild haxe="Haxe code"/>
+<prebuild open="file to run"/>
+<prebuild command="command to run"/>
+<prebuild cmd="command to run"/>
+```
 </details>
 
 <details>
