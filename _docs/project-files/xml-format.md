@@ -621,7 +621,7 @@ See "template"
 
 <details>
 <summary>&lt;undefine /&gt;</summary>
-Resets previously defined flag. See entry for `<define />`.
+Resets previously defined flag. See entry for `&lt;define /&gt;`.
 
 ```
 <undefine name="red" />
