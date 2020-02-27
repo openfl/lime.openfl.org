@@ -544,12 +544,12 @@ More to come.
 
 <details>
 <summary>&lt;undefine /&gt;</summary>
-See entry for `<define />`.
+See entry for `&lt;define /&gt;`.
 </details>
 
 <details>
 <summary>&lt;unset /&gt;</summary>
-See entry for `<set />`.
+See entry for `&lt;set /&gt;`.
 </details>
 
 <details>
