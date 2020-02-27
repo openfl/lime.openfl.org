@@ -418,7 +418,18 @@ You can also use `Assets.unloadLibrary` when you are doing using those resources
 
 <details>
 <summary>&lt;log /&gt;</summary>
-More to come.
+Logs error (see "error"), warning or info message.
+
+Examples:
+
+```
+<log error="error message" />
+<log warn="warn message" />
+<log info="info message" />
+<log value="your message" />
+<log verbose="verbose message" />
+```
+	
 </details>
 
 <details>
