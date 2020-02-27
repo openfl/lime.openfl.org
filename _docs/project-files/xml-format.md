@@ -621,7 +621,7 @@ See "template"
 
 <details>
 <summary>&lt;undefine /&gt;</summary>
-Resets previously defined flag. See entry for `&lt;define /&gt;`.
+Resets previously defined flag. See entry for `<define />`.
 
 ```
 <undefine name="red" />
@@ -632,7 +632,7 @@ Resets previously defined flag. See entry for `&lt;define /&gt;`.
 <details>
 <summary>&lt;unset /&gt;</summary>
 
-Unsets previously defined value. See entry for `&lt;set /&gt;`.
+Unsets previously defined value. See entry for `<set />`.
 	
 ```
 <set name="red" value="0xff0000" />
