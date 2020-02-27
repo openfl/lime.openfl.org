@@ -362,7 +362,10 @@ Adds language to the list of supported languages (by default the list is empty)
 
 <details>
 <summary>&lt;launchimage /&gt;</summary>
-More to come.
+Sets the path to launch image of the app (image which will be shown at application start up)
+
+`<launchimage path="launchImage.png" />`
+	
 </details>
 
 <details>
