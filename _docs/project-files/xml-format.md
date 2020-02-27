@@ -258,7 +258,17 @@ More to come.
 
 <details>
 <summary>&lt;error /&gt;</summary>
-More to come.
+
+Logs error with `lime.utils.Log.error()`, which by default throws `value` message and stops compilation (if `lime.utils.Log.throwErrors` is set to `true`)
+
+Example:
+
+```
+<section if="html5">
+	<error value="html5 isn't supported!" />
+</section>
+```
+
 </details>
 
 <details>
