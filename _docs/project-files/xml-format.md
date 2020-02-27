@@ -460,7 +460,15 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 
 <details>
 <summary>&lt;output /&gt;</summary>
-More to come.
+Deprecated!!!
+Can be used for setting app file name, app path and app swf-version:
+
+```
+<output name="app file name" />
+<output name="app path" />
+<output swf-version="11" />
+```
+
 </details>
 
 <details>
