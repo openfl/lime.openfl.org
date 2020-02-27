@@ -354,7 +354,7 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 <details>
 <summary>&lt;language /&gt;</summary>
 
-Add language to the list of supported languages (by default the list is empty)
+Adds language to the list of supported languages (by default the list is empty)
 
 `<language name="en-US" />`
 
