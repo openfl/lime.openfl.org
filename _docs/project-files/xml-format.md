@@ -509,7 +509,13 @@ Lets you set pre build commands, which could be Haxe code (will be interpeted by
 
 <details>
 <summary>&lt;preloader /&gt;</summary>
-More to come.
+Deprecated!!!
+Use `<app preloader="preloaderClass" />` instead
+	
+```
+<preloader name="preloaderClass" />
+```
+	
 </details>
 
 <details>
