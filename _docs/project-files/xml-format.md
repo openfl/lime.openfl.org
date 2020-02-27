@@ -613,17 +613,30 @@ Otherwise, you can override a single file like this:
 
 <details>
 <summary>&lt;templatepath /&gt;</summary>
-More to come.
+See "template"
+
+`<templatepath name="path"/>`
+
 </details>
 
 <details>
 <summary>&lt;undefine /&gt;</summary>
-More to come.
+Resets previously defined flag
+
+```
+<undefine name="red" />
+```
+
 </details>
 
 <details>
 <summary>&lt;unset /&gt;</summary>
-More to come.
+Unsets previously defined value:
+	
+```
+<set name="red" value="0xff0000" />
+<unset name="red" />
+```
 </details>
 
 <details>
