@@ -69,8 +69,8 @@ You can include more than one copy of each tag, so do not worry about putting it
 If you create a haxelib, you can add "include.xml" to the top-level directory. The build tools will automatically add the contents of the file to the user's project. You can use this to add binary dependencies, additional classpaths, etc.
 
 ## XML Tag Glossary (click to expand)
-<details>
-<summary>&lt;app /&gt;</summary>
+
+###&lt;app /&gt;
 
 The `<app />` tag sets values important to building your project, including the entry point (main class), the output file directory, or if you want to customize the executable filename or define a custom preloader for a web platform:
 
@@ -78,10 +78,10 @@ The `<app />` tag sets values important to building your project, including the 
 <app main="com.example.MyApplication" file="MyApplication" path="Export" preloader="CustomPreloader" />
 <app swf-version="11" />
 ```
-</details>
 
-<details>
-<summary>&lt;architecture /&gt;</summary>
+
+
+###&lt;architecture /&gt;
 
 Use `<architecture />` tags to set or exclude Android-specific architectures. These can be `ARMv7`, `ARMv6`, `ARMv5` and `X86`.
 
@@ -93,10 +93,10 @@ For example, if you want to enable `ARMv6` and disable `ARMv7` you would set the
 <architecture name="armv6" exclude="armv7" if="android" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;assets /&gt;</summary>
+
+
+###&lt;assets /&gt;
 
 Use asset nodes to add resources to your project, available using `lime.Assets`.
 
@@ -151,10 +151,10 @@ If an asset is specified as "template", it will not be copied/embedded as an ord
 ```
 
 
-</details>
 
-<details>
-<summary>&lt;certificate /&gt;</summary>
+
+
+###&lt;certificate /&gt;
 
 Use `<certificate />` tags to add a keystore for release signing on certain platforms.
 
@@ -174,20 +174,20 @@ iOS does not use a certificate `path` and `password`, but instead uses a `team-i
 <certificate team-id="SK12FH34" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;classpath /&gt;</summary>
+
+
+###&lt;classpath /&gt;
 Same as “source”.
-</details>
 
-<details>
-<summary>&lt;compilerflag /&gt;</summary>
+
+
+###&lt;compilerflag /&gt;
 Same as "haxeflag".
-</details>
 
-<details>
-<summary>&lt;config /&gt;</summary>
+
+
+###&lt;config /&gt;
 Use `<config />` tags to set platform-specific values. These targets are currently supported:
 - air
 - android
@@ -227,10 +227,10 @@ Use `<config:ios />` tags to set iOS-specific values when compiling. The `deploy
 <config:ios prerendered-icon="false" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;define /&gt;</summary>
+
+
+###&lt;define /&gt;
 
 Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the “Conditionals” section above.
 
@@ -238,10 +238,10 @@ Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the 
 <dependency name="GameKit.framework" if="ios" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;dependency /&gt;</summary>
+
+
+###&lt;dependency /&gt;
 
 Use `<dependency />` tags to specify native frameworks or references that are required to compile your project, as well as additional libraries you need copied.
 
@@ -249,20 +249,20 @@ Use `<dependency />` tags to specify native frameworks or references that are re
 <dependency name="GameKit.framework" if="ios" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;echo /&gt;</summary>
+
+
+###&lt;echo /&gt;
 Prints a specified message to the console.
 
 ```
 <echo value="Some output message" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;error /&gt;</summary>
+
+
+###&lt;error /&gt;
 
 Logs an error with `lime.utils.Log.error()` which by default throws `value` message and stops compilation (if `lime.utils.Log.throwErrors` is set to `true`).
 
@@ -274,10 +274,10 @@ Example:
 </section>
 ```
 
-</details>
 
-<details>
-<summary>&lt;haxedef /&gt;</summary>
+
+
+###&lt;haxedef /&gt;
 
 Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` with "-D"):
 
@@ -285,10 +285,10 @@ Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` wi
 <haxedef name="define" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;haxeflag /&gt;</summary>
+
+
+###&lt;haxeflag /&gt;
 
 Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
 
@@ -296,10 +296,10 @@ Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
 <haxeflag name="-dce" value="std" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;haxelib /&gt;</summary>
+
+
+###&lt;haxelib /&gt;
 
 Use `<haxelib />` tags to include Haxe libraries:
 
@@ -313,10 +313,10 @@ You can also specify a version, if you prefer:
 <haxelib name="actuate" version="1.0.0" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;icon /&gt;</summary>
+
+
+###&lt;icon /&gt;
 
 Use `<icon />` nodes to add icon files to your project. When the command-line tools request icons for a target platform, it will either use an exact size match you have provided, or it will attempt to find the closest match possible and resize. If you include an SVG vector icon, it should prefer this file over resizing bitmap files.
 
@@ -326,10 +326,10 @@ Use `<icon />` nodes to add icon files to your project. When the command-line to
 <icon path="icon.svg" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;include /&gt;</summary>
+
+
+###&lt;include /&gt;
 
 Use `<include />` tags to add the tags found in another project file, or to find an "include.xml" file in the target directory:
 
@@ -338,10 +338,10 @@ Use `<include />` tags to add the tags found in another project file, or to find
 <include path="to/shared/library" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;java /&gt;</summary>
+
+
+###&lt;java /&gt;
 
 Use `<java />` tags to add Java classes to the project when targeting Android:
 
@@ -349,27 +349,27 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 <java path="to/classes" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;language /&gt;</summary>
+
+
+###&lt;language /&gt;
 
 Adds a language to the list of supported languages (by default the list is empty).
 
 `<language name="en-US" />`
 
-</details>
 
-<details>
-<summary>&lt;launchimage /&gt;</summary>
+
+
+###&lt;launchimage /&gt;
 Sets the path to launch image of the app (image which will be shown at application start up)
 
 `<launchimage path="launchImage.png" />`
 	
-</details>
 
-<details>
-<summary>&lt;launchstoryboard /&gt;</summary>
+
+
+###&lt;launchstoryboard /&gt;
 Sets the launch screen storyboard (useful only for iOS development).
 
 `<launchstoryboard path="image.png" />`
@@ -380,10 +380,10 @@ or
 
 You can also use `template` for this purpose (to be documented in the future).
 
-</details>
 
-<details>
-<summary>&lt;library /&gt;</summary>
+
+
+###&lt;library /&gt;
 
 All assets go into the “default” library, but by adding `<library>` tags it is possible to modify the default library and also define additional libraries and load/unload them as needed.
 
@@ -414,10 +414,10 @@ Be sure to specify the correct library when retrieving the assets in your code. 
 
 You can also use `Assets.unloadLibrary` when you are doing using those resources.
 
-</details>
 
-<details>
-<summary>&lt;log /&gt;</summary>
+
+
+###&lt;log /&gt;
 Logs an error (see "error"), warning or info message.
 
 Examples:
@@ -430,25 +430,25 @@ Examples:
 <log verbose="verbose message" />
 ```
 	
-</details>
 
-<details>
-<summary>&lt;meta /&gt;</summary>
+
+
+###&lt;meta /&gt;
 
 Use `<meta />` tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:
 
 ```xml
 <meta title="My Application" package="com.example.myapplication" version="1.0.0" company="My Company" />
 ```
-</details>
 
-<details>
-<summary>&lt;module /&gt;</summary>
+
+
+###&lt;module /&gt;
 More to come.
-</details>
 
-<details>
-<summary>&lt;ndll /&gt;</summary>
+
+
+###&lt;ndll /&gt;
 
 You can use `<ndll />` tags to include native libraries. These are usually located under an "ndll" directory, with additional directories based upon the target platform. Usually an `<ndll />` tag will be included as a part of an extension, and is rare to be used directly:
 
@@ -456,10 +456,10 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 <ndll name="std" haxelib="hxcpp" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;output /&gt;</summary>
+
+
+###&lt;output /&gt;
 Deprecated!!!
 Can be used for setting app file name, app path and app swf-version:
 
@@ -469,10 +469,10 @@ Can be used for setting app file name, app path and app swf-version:
 <output swf-version="11" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;path /&gt;</summary>
+
+
+###&lt;path /&gt;
 
 Use `<path />` tags to add directories to your system's PATH environment variable.
 
@@ -480,10 +480,10 @@ Use `<path />` tags to add directories to your system's PATH environment variabl
 <path value="path/to/add/to/system/PATH" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;postbuild /&gt;</summary>
+
+
+###&lt;postbuild /&gt;
 Lets you set post-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.
 	
 ```
@@ -493,10 +493,10 @@ Lets you set post-build commands such as Haxe code (interpeted by the Haxe inter
 <postbuild cmd="command to run"/>
 ```
 
-</details>
 
-<details>
-<summary>&lt;prebuild /&gt;</summary>
+
+
+###&lt;prebuild /&gt;
 Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command:
 	
 ```
@@ -505,10 +505,10 @@ Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interp
 <prebuild command="command to run"/>
 <prebuild cmd="command to run"/>
 ```
-</details>
 
-<details>
-<summary>&lt;preloader /&gt;</summary>
+
+
+###&lt;preloader /&gt;
 Deprecated!!!
 Use `<app preloader="preloaderClass" />` instead
 	
@@ -516,15 +516,15 @@ Use `<app preloader="preloaderClass" />` instead
 <preloader name="preloaderClass" />
 ```
 	
-</details>
 
-<details>
-<summary>&lt;sample /&gt;</summary>
+
+
+###&lt;sample /&gt;
 More to come.
-</details>
 
-<details>
-<summary>&lt;section /&gt;</summary>
+
+
+###&lt;section /&gt;
 
 The `<section />` tag is used to group other tags together. This is usually most valuable when combined with "if" and/or "unless" logic:
 
@@ -533,10 +533,10 @@ The `<section />` tag is used to group other tags together. This is usually most
 	<source path="extra/src/html5" />
 </section>
 ```
-</details>
 
-<details>
-<summary>&lt;set /&gt;</summary>
+
+
+###&lt;set /&gt;
 
 Use `<set />` tags to set variables for conditional logic. See the “Conditionals” section above.
 
@@ -544,10 +544,10 @@ Use `<set />` tags to set variables for conditional logic. See the “Conditiona
 <set name="red" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;setenv /&gt;</summary>
+
+
+###&lt;setenv /&gt;
 
 Use `<setenv />` tags to set environment variables:
 
@@ -555,10 +555,10 @@ Use `<setenv />` tags to set environment variables:
 <setenv name="GLOBAL_DEFINE" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;source /&gt;</summary>
+
+
+###&lt;source /&gt;
 
 Use `<source />` tags to add Haxe class paths:
 
@@ -568,33 +568,33 @@ Use `<source />` tags to add Haxe class paths:
 
 If you are using `@:file`, `@:bitmap`, `@:sound` or `@:file` tags in your project, be sure that the asset files are available within your Haxe source paths.
 
-</details>
 
-<details>
-<summary>&lt;splashscreen /&gt;</summary>
+
+
+###&lt;splashscreen /&gt;
 Same as “launchimage”.
-</details>
 
-<details>
-<summary>&lt;ssl /&gt;</summary>
+
+
+###&lt;ssl /&gt;
 Not implemented!!!
-</details>
 
-<details>
-<summary>&lt;swf /&gt;</summary>
+
+
+###&lt;swf /&gt;
 See “library“.
-</details>
 
-<details>
-<summary>&lt;target /&gt;</summary>
+
+
+###&lt;target /&gt;
 Lets you redefine the build process for a specific target by running a custom haxelib command. This might be useful if you want to use your own library for building your project, i.e. you know what you're doing and you know how the Lime build system works.
 	
 `<target name="customTarget" handler="yourHandler" />`
 
-</details>
 
-<details>
-<summary>&lt;template /&gt;</summary>
+
+
+###&lt;template /&gt;
 
 Use `<template />` tags to add paths which can override the templates used by the command-line tools.
 
@@ -609,28 +609,28 @@ Otherwise, you can override a single file like this:
 ```xml
 <template path="Assets/index.html" rename="index.php" />
 ```
-</details>
 
-<details>
-<summary>&lt;templatepath /&gt;</summary>
+
+
+###&lt;templatepath /&gt;
 See “template”.
 
 `<templatepath name="path"/>`
 
-</details>
 
-<details>
-<summary>&lt;undefine /&gt;</summary>
+
+
+###&lt;undefine /&gt;
 Unsets a previously defined flag. See entry for `&lt;define /&gt;`.
 
 ```
 <undefine name="red" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;unset /&gt;</summary>
+
+
+###&lt;unset /&gt;
 
 Unsets a previously set value. See entry for `<set />`.
 	
@@ -639,10 +639,10 @@ Unsets a previously set value. See entry for `<set />`.
 <unset name="red" />
 ```
 
-</details>
 
-<details>
-<summary>&lt;window /&gt;</summary>
+
+
+###&lt;window /&gt;
 
 You can use `<window />` tags to control how an application will be initialized. This includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.
 
@@ -657,5 +657,5 @@ By default, mobile platforms use a window width and height of 0, which is a spec
 
 The `orientation` value expects either "portrait" or "landscape" ... the default is "auto" which allows the operating system to decide which orientation to use.
 
-</details>
+
 
