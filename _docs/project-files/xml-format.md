@@ -29,6 +29,7 @@ This can also be used to pass special values:
 
 <window background="${color}" if="color" />
 ```
+You can use these values in your [templates](#template) like this: `::SET_COLOR::`
 
 Similarly, you can `<define />` or `<undefine />` values which are also passed to Haxe.
 
@@ -42,6 +43,7 @@ Similarly, you can `<define />` or `<undefine />` values which are also passed t
 trace ("Background is red");
 #end
 ```
+You can use these values in your [templates](#template) like this: `::DEFINE_RED::` (`::SET_RED::` also works).
 
 You can add defines using the command-line as well:
 
@@ -232,7 +234,7 @@ Use `<config:ios />` tags to set iOS-specific values when compiling. The `deploy
 
 ### define 
 
-Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the “Conditionals” section above.
+Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the [Conditionals](#Conditionals) section above.
 
 ```xml
 <dependency name="GameKit.framework" if="ios" />
@@ -538,7 +540,7 @@ The `<section />` tag is used to group other tags together. This is usually most
 
 ### set 
 
-Use `<set />` tags to set variables for conditional logic. See the “Conditionals” section above.
+Use `<set />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above.
 
 ```xml
 <set name="red" />
