@@ -380,8 +380,61 @@ or
 
 `<launchstoryboard name="image.png" />`
 
-You can also use `template` for this purpose (to be documented in the future).
+You can also use `template` for this purpose.
 
+**The default template**
+
+The launch storyboard feature uses Haxe templates and your project.xml configuration to generate an Xcode storyboard file. Lime includes one default storyboard template `splash.storyboard`, which can be configured with the following options.
+
+```xml
+<launchStoryboard template="splash.storyboard" assetsPath="Images/splash"
+	bg:RGB="0xFFFFFF"
+	contentMode="center"
+	ipad="ipad-splash-sb.png"
+	portrait="iphone-splash-sb.png">
+	
+	<imageset name="ipad-splash-sb.png" />
+	<imageset name="iphone-splash-sb.png" />
+	
+</launchStoryboard>
+```
+
+`template` is the specific storyboard template you’re using, chosen from the templates available at `templates/ios/storyboards`.
+
+`assetsPath` is the path from your openfl/lime project root to where your launch storyboard images are saved.
+
+`bg` is a hexadecimal formatted color to use as the background, in case you’re not using a full-screen content mode.
+
+`contentMode` determines how the image scales to fit the screen.
+
+- `center` is unscaled
+- `caleAspectFill` scales to fill the entire screen, with original aspect ratio
+- `scaleAspectFit` scales to fit inside the screen (letterbox), with original aspect ratio
+- `scaleToFill` stretches the image to fill the screen
+
+There are three optional attributes, (`portrait`, `landscape` and `ipad`) which you can choose from based on the target devices and orientation of your game. (The above example includes just ipad and portrait.)
+
+- `ipad` determines the image to use for iPads.
+- `portrait` determines the image to use for iPods and iPhones in portrait orientation.
+- `landscape` determines the image to use for iPods and iPhones in landscape orientation.
+
+Finally, you have the `imageset` child elements. For each imageset, lime looks for `{name}.png`, `{name}@2x.png`, and `{name}@3x.png` in the specified `assetsPath`, copying any of those that exist into an Xcode imageset. Most iPhones these days require the @2x or @3x image, while iPads require @2x.
+
+**About templates and custom storyboard**
+
+`template`, `assetsPath`, and the `imageset` elements are standard parts of the configuration. All the other attributes listed above are available based on the chosen default template, `splash.storyboard`.
+
+If the default template doesn’t meet your needs, you have two options, but both require you to open your exported iOS project in Xcode and create your own storyboard.
+
+1. Take the storyboard you built in Xcode and put it into your project. In this case, you would use the name or path attribute instead of template, and you would have no template-specific attributes to set, but you would still need to provide the appropriate imagesets.
+
+```xml
+<launchStoryboard path="custom.storyboard" assetsPath="Images/splash">	
+	<imageset name="ipad-splash-sb.png" />
+</launchStoryboard>
+```
+
+2. Using the default template as an example, take the storyboard you built in Xcode and add it to your lime templates. You would use it in the same manner as the default template, but use any attributes you specified instead.
 
 
 
