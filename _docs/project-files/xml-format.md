@@ -237,7 +237,7 @@ Use `<config:ios />` tags to set iOS-specific values when compiling. The `deploy
 Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the [Conditionals](#Conditionals) section above.
 
 ```xml
-<dependency name="GameKit.framework" if="ios" />
+<define name="myDefineFlag" />
 ```
 
 
