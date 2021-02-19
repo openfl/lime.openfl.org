@@ -6,6 +6,17 @@ title: XML Format
 
 Usually a simple project file is all you need to build projects using Lime, but it can be extended based on your needs. Here is a reference of what you can do.
 
+### XML Schema
+
+If you are using an XSD aware XML editor you can use the following declaration to enable XML validation and type hinting/auto completion.
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <project
+        xmlns="https://lime.software/project/1.0.0"
+		xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="https://lime.software/project/1.0.0 https://lime.software/xsd/project-1.0.0.xsd">
+    </project>
+
 ### Conditionals
 
 First, every node in the project file format supports `if` and `unless` attributes. These are conditional values to help you customize your build process, based upon a number of values. Here are some of the default values:
