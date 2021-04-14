@@ -374,22 +374,22 @@ Adds a language to the list of supported languages (by default the list is empty
 
 
 
-### launchimage 
+### launchImage 
 Sets the path to launch image of the app (image which will be shown at application start up)
 
-`<launchimage path="launchImage.png" />`
+`<launchImage path="launchImage.png" />`
 	
 
 
 
-### launchstoryboard 
+### launchStoryboard 
 Sets the launch screen storyboard (useful only for iOS development).
 
-`<launchstoryboard path="image.png" />`
+`<launchStoryboard path="image.png" />`
 
 or
 
-`<launchstoryboard name="image.png" />`
+`<launchStoryboard name="image.png" />`
 
 You can also use `template` for this purpose.
 
@@ -419,7 +419,7 @@ The launch storyboard feature uses Haxe templates and your project.xml configura
 `contentMode` determines how the image scales to fit the screen.
 
 - `center` is unscaled
-- `caleAspectFill` scales to fill the entire screen, with original aspect ratio
+- `scaleAspectFill` scales to fill the entire screen, with original aspect ratio
 - `scaleAspectFit` scales to fit inside the screen (letterbox), with original aspect ratio
 - `scaleToFill` stretches the image to fill the screen
 
