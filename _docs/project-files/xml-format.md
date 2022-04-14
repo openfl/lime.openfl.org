@@ -245,7 +245,7 @@ Use `<config:ios />` tags to set iOS-specific values when compiling. The `deploy
 
 ### define 
 
-Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the [Conditionals](#Conditionals) section above.
+Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the [Conditionals](#conditionals) section above.
 
 ```xml
 <define name="myDefineFlag" />
