@@ -59,3 +59,5 @@ lime setup mac
 lime setup android
 lime setup ios
 ```
+
+Follow the pages under the "Advanced Setup" section for more detailed information to setup each platform.
