@@ -38,7 +38,7 @@ There are also additional "target flags" you can use to specify adjustments to t
  * `(android) -emulator` -- Target the device emulator
  * `(html5) -minify` -- Minify application file
  * `(flash) -web` -- Test Flash target using a web template
- * `(windows|mac|ios|android)` -air -- Build with AIR instead of C++
+ * `(windows|mac|ios|android) -air` -- Build with AIR instead of C++
  * `(air) -ios` -- Target iOS instead of AIR desktop
  * `(air) -android` -- Target Android instead of AIR desktop
 
@@ -62,8 +62,8 @@ All of the same flags and targets apply.
 
 The "setup" command can help download and install the dependencies needed to target certain platforms, or to tell the command-line tools where it can find where these tools are installed. For example, the Android SDK and NDK when targeting Android, or installing Visual Studio C++ for Windows.
 
-Follow the directions under [Advanced Setup](/docs/advanced-setup/) to setup each platform.
+Follow the pages under the Advanced Setup section to setup each platform.
 
 ## lime help
 
-For more information about the command-line tools, and the commands available, run "lime help"
+For more information about the command-line tools, and the commands available, run `lime help`
