@@ -62,7 +62,7 @@ All of the same flags and targets apply.
 
 The "setup" command can help download and install the dependencies needed to target certain platforms, or to tell the command-line tools where it can find where these tools are installed. For example, the Android SDK and NDK when targeting Android, or installing Visual Studio C++ for Windows.
 
-Follow the pages under the Advanced Setup section to setup each platform.
+Follow the pages under the "Advanced Setup" section to setup each platform.
 
 ## lime help
 
