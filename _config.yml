@@ -1,4 +1,3 @@
-# Site settings
 title: Lime
 # email: your-email@domain.com
 description: >
@@ -17,11 +16,14 @@ bootwatch: paper
 # Build settings
 markdown: kramdown
 highlighter: rouge
-gems:
-  - jekyll-feed
-  - jekyll-redirect-from
-  - jekyll-seo-tag
-  - jekyll-sitemap
+plugins:
+ - jekyll-feed
+ - jekyll-optional-front-matter
+ - jekyll-paginate
+ - jekyll-redirect-from
+ - jekyll-relative-links
+ - jekyll-seo-tag
+ - jekyll-sitemap
 
 exclude:
   - Gemfile
@@ -29,6 +31,7 @@ exclude:
   - .idea/
   - .gitignore
   - README.md
+  - vendor
 timezone: US/Pacific
 defaults:
 - scope:
