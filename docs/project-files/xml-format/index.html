@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>XML Format</title>
+    <meta name="description" content="Overview">
+
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>XML Format | Lime</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="XML Format" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview" />
+<meta property="og:description" content="Overview" />
+<link rel="canonical" href="http://lime.software/docs/project-files/xml-format/" />
+<meta property="og:url" content="http://lime.software/docs/project-files/xml-format/" />
+<meta property="og:site_name" content="Lime" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-26T10:20:27-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="XML Format" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-04-26T10:20:27-07:00","datePublished":"2022-04-26T10:20:27-07:00","description":"Overview","headline":"XML Format","url":"http://lime.software/docs/project-files/xml-format/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://lime.software/docs/project-files/xml-format/">
+    <link rel="alternate" type="application/rss+xml" title="Lime" href="http://lime.software/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png"></span> Lime
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://api.lime.software">API</a></li>
+                <li  class="active" ><a href="/docs/home/">Docs</a></li>
+                <!-- <li ><a href="/blog/2017/05/03/jekyll-doc-theme/">Blog</a></li> -->
+                <li><a href="http://community.openfl.org/c/lime">Community</a></li>
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="text" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="https://github.com/openfl/lime.software"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+          Command-Line Tools
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/docs/command-line-tools/basic-commands/">Basic Commands</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/command-line-tools/create-new-project/">Create New Project</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/command-line-tools/samples/">Samples</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+          Project Files
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item active" href="/docs/project-files/xml-format/">XML Format</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/project-files/hxp-format/">HXP Format</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+          Advanced Setup
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/windows/">Setup Windows</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/macos/">Setup macOS</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/linux/">Setup Linux</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/ios/">Setup iOS</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/android/">Setup Android</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/flash/">Setup Flash</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/html5/">Setup HTML5</a>
+        
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+
+        <div class="col-md-9">
+            <h1>XML Format</h1>
+            <div id="markdown-content-container"><h2 id="overview">Overview</h2>
+
+<p>Usually a simple project file is all you need to build projects using Lime, but it can be extended based on your needs. Here is a reference of what you can do.</p>
+
+<h3 id="xml-schema">XML Schema</h3>
+
+<p>If you are using an XSD aware XML editor you can use the following declaration to enable XML validation and type hinting/auto completion.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;project
+    xmlns="http://lime.software/project/1.0.3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://lime.software/project/1.0.3 http://lime.software/xsd/project-1.0.3.xsd"&gt;
+&lt;/project&gt;
+</code></pre></div></div>
+
+<h3 id="conditionals">Conditionals</h3>
+
+<p>First, every node in the project file format supports <code class="language-plaintext highlighter-rouge">if</code> and <code class="language-plaintext highlighter-rouge">unless</code> attributes. These are conditional values to help you customize your build process, based upon a number of values. Here are some of the default values:</p>
+
+<ul>
+  <li>mobile, desktop or web</li>
+  <li>ios, android, windows, mac, linux or html5</li>
+  <li>cpp, neko, flash or js</li>
+</ul>
+
+<p>You can <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;unset /&gt;</code> values for conditional logic:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"#FF0000"</span> <span class="na">if=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>This can also be used to pass special values:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"#FF0000"</span> <span class="na">if=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"#0000FF"</span> <span class="na">if=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"${color}"</span> <span class="na">if=</span><span class="s">"color"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>You can use these values in your <a href="#template">templates</a> like this: <code class="language-plaintext highlighter-rouge">::SET_COLOR::</code></p>
+
+<p>Similarly, you can <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;undefine /&gt;</code> values which are also passed to Haxe.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"#FF0000"</span> <span class="na">if=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="k">if</span> <span class="n">red</span>
+<span class="nf">trace</span> <span class="o">(</span><span class="s">"Background is red"</span><span class="o">);</span>
+<span class="err">#</span><span class="n">end</span>
+</code></pre></div></div>
+<p>You can use these values in your <a href="#template">templates</a> like this: <code class="language-plaintext highlighter-rouge">::DEFINE_RED::</code> (<code class="language-plaintext highlighter-rouge">::SET_RED::</code> also works).</p>
+
+<p>You can add defines using the command-line as well:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime <span class="nb">test </span>flash <span class="nt">-Ddefine</span>
+</code></pre></div></div>
+
+<p>If you need to have multiple values in a conditional, spaces imply an “and” and vertical bars imply an “or”, like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;window</span> <span class="na">width=</span><span class="s">"640"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">if=</span><span class="s">"define define2"</span> <span class="na">unless=</span><span class="s">"define3 || define4"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="duplicates">Duplicates</h3>
+
+<p>You can include more than one copy of each tag, so do not worry about putting it all in one place. All of the values you define will be used. If you define the same value more than once, the last definition will be used.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;window</span> <span class="na">width=</span><span class="s">"640"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;window</span> <span class="na">height=</span><span class="s">"480"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="includexml">include.xml</h3>
+
+<p>If you create a haxelib, you can add “include.xml” to the top-level directory. The build tools will automatically add the contents of the file to the user’s project. You can use this to add binary dependencies, additional classpaths, etc.</p>
+
+<h2 id="xml-tag-glossary">XML Tag Glossary</h2>
+
+<h3 id="app">app</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;app /&gt;</code> tag sets values important to building your project, including the entry point (main class), the output file directory, or if you want to customize the executable filename or define a custom preloader for a web platform:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;app</span> <span class="na">main=</span><span class="s">"com.example.MyApplication"</span> <span class="na">file=</span><span class="s">"MyApplication"</span> <span class="na">path=</span><span class="s">"Export"</span> <span class="na">preloader=</span><span class="s">"CustomPreloader"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;app</span> <span class="na">swf-version=</span><span class="s">"11"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="architecture">architecture</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;architecture /&gt;</code> tags to set or exclude Android-specific architectures. These can be <code class="language-plaintext highlighter-rouge">ARMv7</code>, <code class="language-plaintext highlighter-rouge">ARMv6</code>, <code class="language-plaintext highlighter-rouge">ARMv5</code> and <code class="language-plaintext highlighter-rouge">X86</code>.</p>
+
+<p>By default the only architecture built will be <code class="language-plaintext highlighter-rouge">ARMv7</code>.</p>
+
+<p>For example, if you want to enable <code class="language-plaintext highlighter-rouge">ARMv6</code> and disable <code class="language-plaintext highlighter-rouge">ARMv7</code> you would set the <code class="language-plaintext highlighter-rouge">&lt;architecture /&gt;</code> tag to:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;architecture</span> <span class="na">name=</span><span class="s">"armv6"</span> <span class="na">exclude=</span><span class="s">"armv7"</span> <span class="na">if=</span><span class="s">"android"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="assets">assets</h3>
+
+<p>Use asset nodes to add resources to your project, available using <code class="language-plaintext highlighter-rouge">lime.Assets</code>.</p>
+
+<p>The path attribute can point to either a file or a directory. These files will be copied (or embedded) in your final project, and can be accessed using the <code class="language-plaintext highlighter-rouge">lime.Assets</code> class.</p>
+
+<p>For example, if you include the following node in your project file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"images/MyImage.jpg"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>You can access it in your application like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">bitmapData</span> <span class="o">=</span> <span class="nc">Assets</span><span class="o">.</span><span class="na">getBitmapData</span> <span class="o">(</span><span class="s">"images/MyImage.png"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>The target path will mirror the source path by default, but you also can include a rename attribute, if you wish to use a different target path. The <code class="language-plaintext highlighter-rouge">lime.Assets</code> class will use the <em>target</em> path by default, so using the rename attribute will alter the names you use to reference your files.</p>
+
+<p>If you would prefer to set the ID for your asset file yourself, use an “id” attribute. This only applies to asset nodes which point to a file, not a directory path.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>When pointing to a directory, you can use the include or exclude attributes to specify patterns for including files automatically. Wildcards are supported. To include all the files under the directory, for example, use an include value of “*”. You can separate multiple patterns using “</td>
+      <td>” characters.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can nest assets nodes inside of each other. If you specify a directory in the top assets node, its path will be appended to the paths you specify in subsequent nodes.</p>
+
+<p>The type for each file will be determined automatically, based on each file extension, but you can use the type attribute to set it for the file or directory yourself. If you are nesting a node inside of another assets node, you can also use the name of the type as the name of your node.</p>
+
+<p>These are the current types:</p>
+
+<ul>
+  <li>binary</li>
+  <li>font</li>
+  <li>image</li>
+  <li>music</li>
+  <li>sound</li>
+  <li>template</li>
+  <li>text</li>
+</ul>
+
+<p>Some targets can only support playing one music file at a time. You should use “music” for files which are designed to play as background music, and “sound” for all other audio. “binary” and “text” are generic types which are available as a ByteArray or String in your application. Most targets can use them interchangeably.</p>
+
+<p>If an asset is specified as “template”, it will not be copied/embedded as an ordinary asset, but instead will be copied to the root directory of your project, so you can replace any of the template HX, HXML or platform-specific files for the target.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"assets"</span> <span class="na">include=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"../../assets"</span> <span class="na">rename=</span><span class="s">"assets"</span> <span class="na">include=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"assets/images"</span> <span class="na">rename=</span><span class="s">"images"</span> <span class="na">include=</span><span class="s">"*.jpg|*.png"</span> <span class="na">exclude=</span><span class="s">"example.jpg"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"assets"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"images"</span> <span class="na">include=</span><span class="s">"*"</span> <span class="na">type=</span><span class="s">"image"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"assets"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;sound</span> <span class="na">path=</span><span class="s">"sound/MySound.wav"</span> <span class="na">id=</span><span class="s">"MySound"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;music</span> <span class="na">path=</span><span class="s">"sound/BackgroundMusic.ogg"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/assets&gt;</span>
+</code></pre></div></div>
+
+<h3 id="certificate">certificate</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;certificate /&gt;</code> tags to add a keystore for release signing on certain platforms.</p>
+
+<p>If you do not include the password attribute, you will be prompted for your certificate password at the command-line.</p>
+
+<p>For Android, the alias will be set to the file name of your certificate by default, without the extension. If the alias name is different, you can use the alias attribute.</p>
+
+<p>If you have set the password attribute, the alias_password attribute will default to the same value. Otherwise you can add an alias-password attribute to specify a different value.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;certificate</span> <span class="na">path=</span><span class="s">"to/certificate.crt"</span> <span class="na">password=</span><span class="s">"1234"</span> <span class="na">alias=</span><span class="s">"my-alias"</span> <span class="na">alias-password=</span><span class="s">"4321"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>iOS does not use a certificate <code class="language-plaintext highlighter-rouge">path</code> and <code class="language-plaintext highlighter-rouge">password</code>, but instead uses a <code class="language-plaintext highlighter-rouge">team-id</code> attribute matching the ID provided in the Apple Developer portal for your team:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;certificate</span> <span class="na">team-id=</span><span class="s">"SK12FH34"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="classpath">classpath</h3>
+<p>Same as “source”.</p>
+
+<h3 id="compilerflag">compilerflag</h3>
+<p>Same as “haxeflag”.</p>
+
+<h3 id="config">config</h3>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;config /&gt;</code> tags to set platform-specific values. These targets are currently supported:</p>
+<ul>
+  <li>air</li>
+  <li>android</li>
+  <li>blackberry</li>
+  <li>console-pc</li>
+  <li>firefox</li>
+  <li>flash</li>
+  <li>html5</li>
+  <li>ios</li>
+  <li>linux</li>
+  <li>mac</li>
+  <li>ps3</li>
+  <li>ps4</li>
+  <li>tizen</li>
+  <li>vita</li>
+  <li>windows</li>
+  <li>webos</li>
+  <li>wiiu</li>
+  <li>xbox1</li>
+  <li>emscripten</li>
+  <li>tvos</li>
+</ul>
+
+<p>**One must append a suffix to the tag depending on the platform. **</p>
+
+<p>For example, use <code class="language-plaintext highlighter-rouge">&lt;config:android /&gt;</code> tags to set Android-specific values:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:android</span> <span class="na">install-location=</span><span class="s">"preferExternal"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:android</span> <span class="na">permission=</span><span class="s">"com.android.vending.BILLING"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:android</span> <span class="na">target-sdk-version=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;config:ios /&gt;</code> tags to set iOS-specific values when compiling. The <code class="language-plaintext highlighter-rouge">deployment</code> attribute can set the minimum iOS version you wish to target. The <code class="language-plaintext highlighter-rouge">prerendered-icon</code> attribute can help control the style of your icon.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">deployment=</span><span class="s">"5.1"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">prerendered-icon=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="define">define</h3>
+
+<p>Similar to <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> tag, use <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> to also pass values to Haxe. See the <a href="#conditionals">Conditionals</a> section above.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"myDefineFlag"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="dependency">dependency</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;dependency /&gt;</code> tags to specify native frameworks or references that are required to compile your project, as well as additional libraries you need copied.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency</span> <span class="na">name=</span><span class="s">"GameKit.framework"</span> <span class="na">if=</span><span class="s">"ios"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="echo">echo</h3>
+<p>Prints a specified message to the console.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;echo value="Some output message" /&gt;
+</code></pre></div></div>
+
+<h3 id="error">error</h3>
+
+<p>Logs an error with <code class="language-plaintext highlighter-rouge">lime.utils.Log.error()</code> which by default throws <code class="language-plaintext highlighter-rouge">value</code> message and stops compilation (if <code class="language-plaintext highlighter-rouge">lime.utils.Log.throwErrors</code> is set to <code class="language-plaintext highlighter-rouge">true</code>).</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;section if="html5"&gt;
+	&lt;error value="html5 isn't supported!" /&gt;
+&lt;/section&gt;
+</code></pre></div></div>
+
+<h3 id="haxedef">haxedef</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxedef /&gt;</code> tags to add Haxe defines (similar to using a <code class="language-plaintext highlighter-rouge">&lt;haxeflag /&gt;</code> with “-D”):</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxedef</span> <span class="na">name=</span><span class="s">"define"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="haxeflag">haxeflag</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxeflag /&gt;</code> tags to add additional arguments in the Haxe compile process:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxeflag</span> <span class="na">name=</span><span class="s">"-dce"</span> <span class="na">value=</span><span class="s">"std"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="haxelib">haxelib</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxelib /&gt;</code> tags to include Haxe libraries:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>You can also specify a version, if you prefer:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="na">version=</span><span class="s">"1.0.0"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="icon">icon</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;icon /&gt;</code> nodes to add icon files to your project. When the command-line tools request icons for a target platform, it will either use an exact size match you have provided, or it will attempt to find the closest match possible and resize. If you include an SVG vector icon, it should prefer this file over resizing bitmap files.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;icon</span> <span class="na">path=</span><span class="s">"icon.png"</span> <span class="na">size=</span><span class="s">"64"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;icon</span> <span class="na">path=</span><span class="s">"icon.png"</span> <span class="na">width=</span><span class="s">"96"</span> <span class="na">height=</span><span class="s">"96"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;icon</span> <span class="na">path=</span><span class="s">"icon.svg"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="include">include</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;include /&gt;</code> tags to add the tags found in another project file, or to find an “include.xml” file in the target directory:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;include</span> <span class="na">path=</span><span class="s">"to/another/project.xml"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;include</span> <span class="na">path=</span><span class="s">"to/shared/library"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="java">java</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;java /&gt;</code> tags to add Java classes to the project when targeting Android:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;java</span> <span class="na">path=</span><span class="s">"to/classes"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="language">language</h3>
+
+<p>Adds a language to the list of supported languages (by default the list is empty).</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;language name="en-US" /&gt;</code></p>
+
+<h3 id="launchimage">launchImage</h3>
+<p>Sets the path to launch image of the app (image which will be shown at application start up)</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;launchImage path="launchImage.png" /&gt;</code></p>
+
+<h3 id="launchstoryboard">launchStoryboard</h3>
+<p>Sets the launch screen storyboard (useful only for iOS development).</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;launchStoryboard path="image.png" /&gt;</code></p>
+
+<p>or</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;launchStoryboard name="image.png" /&gt;</code></p>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">template</code> for this purpose.</p>
+
+<p><strong>The default template</strong></p>
+
+<p>The launch storyboard feature uses Haxe templates and your project.xml configuration to generate an Xcode storyboard file. Lime includes one default storyboard template <code class="language-plaintext highlighter-rouge">splash.storyboard</code>, which can be configured with the following options.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;launchStoryboard</span> <span class="na">template=</span><span class="s">"splash.storyboard"</span> <span class="na">assetsPath=</span><span class="s">"Images/splash"</span>
+	<span class="na">bg:RGB=</span><span class="s">"0xFFFFFF"</span>
+	<span class="na">contentMode=</span><span class="s">"center"</span>
+	<span class="na">ipad=</span><span class="s">"ipad-splash-sb.png"</span>
+	<span class="na">portrait=</span><span class="s">"iphone-splash-sb.png"</span><span class="nt">&gt;</span>
+	
+	<span class="nt">&lt;imageset</span> <span class="na">name=</span><span class="s">"ipad-splash-sb.png"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;imageset</span> <span class="na">name=</span><span class="s">"iphone-splash-sb.png"</span> <span class="nt">/&gt;</span>
+	
+<span class="nt">&lt;/launchStoryboard&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">template</code> is the specific storyboard template you’re using, chosen from the templates available at <code class="language-plaintext highlighter-rouge">templates/ios/storyboards</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">assetsPath</code> is the path from your openfl/lime project root to where your launch storyboard images are saved.</p>
+
+<p><code class="language-plaintext highlighter-rouge">bg</code> is a hexadecimal formatted color to use as the background, in case you’re not using a full-screen content mode.</p>
+
+<p><code class="language-plaintext highlighter-rouge">contentMode</code> determines how the image scales to fit the screen.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">center</code> is unscaled</li>
+  <li><code class="language-plaintext highlighter-rouge">scaleAspectFill</code> scales to fill the entire screen, with original aspect ratio</li>
+  <li><code class="language-plaintext highlighter-rouge">scaleAspectFit</code> scales to fit inside the screen (letterbox), with original aspect ratio</li>
+  <li><code class="language-plaintext highlighter-rouge">scaleToFill</code> stretches the image to fill the screen</li>
+</ul>
+
+<p>There are three optional attributes, (<code class="language-plaintext highlighter-rouge">portrait</code>, <code class="language-plaintext highlighter-rouge">landscape</code> and <code class="language-plaintext highlighter-rouge">ipad</code>) which you can choose from based on the target devices and orientation of your game. (The above example includes just ipad and portrait.)</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ipad</code> determines the image to use for iPads.</li>
+  <li><code class="language-plaintext highlighter-rouge">portrait</code> determines the image to use for iPods and iPhones in portrait orientation.</li>
+  <li><code class="language-plaintext highlighter-rouge">landscape</code> determines the image to use for iPods and iPhones in landscape orientation.</li>
+</ul>
+
+<p>Finally, you have the <code class="language-plaintext highlighter-rouge">imageset</code> child elements. For each imageset, lime looks for <code class="language-plaintext highlighter-rouge">{name}.png</code>, <code class="language-plaintext highlighter-rouge">{name}@2x.png</code>, and <code class="language-plaintext highlighter-rouge">{name}@3x.png</code> in the specified <code class="language-plaintext highlighter-rouge">assetsPath</code>, copying any of those that exist into an Xcode imageset. Most iPhones these days require the @2x or @3x image, while iPads require @2x.</p>
+
+<p><strong>About templates and custom storyboard</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">template</code>, <code class="language-plaintext highlighter-rouge">assetsPath</code>, and the <code class="language-plaintext highlighter-rouge">imageset</code> elements are standard parts of the configuration. All the other attributes listed above are available based on the chosen default template, <code class="language-plaintext highlighter-rouge">splash.storyboard</code>.</p>
+
+<p>If the default template doesn’t meet your needs, you have two options, but both require you to open your exported iOS project in Xcode and create your own storyboard.</p>
+
+<ol>
+  <li>Take the storyboard you built in Xcode and put it into your project. In this case, you would use the name or path attribute instead of template, and you would have no template-specific attributes to set, but you would still need to provide the appropriate imagesets.</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;launchStoryboard</span> <span class="na">path=</span><span class="s">"custom.storyboard"</span> <span class="na">assetsPath=</span><span class="s">"Images/splash"</span><span class="nt">&gt;</span>	
+	<span class="nt">&lt;imageset</span> <span class="na">name=</span><span class="s">"ipad-splash-sb.png"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/launchStoryboard&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Using the default template as an example, take the storyboard you built in Xcode and add it to your lime templates. You would use it in the same manner as the default template, but use any attributes you specified instead.</li>
+</ol>
+
+<h3 id="library">library</h3>
+
+<p>All assets go into the “default” library, but by adding <code class="language-plaintext highlighter-rouge">&lt;library&gt;</code> tags it is possible to modify the default library and also define additional libraries and load/unload them as needed.</p>
+
+<p>To disable preloading on the default library:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;library name="default" preload="false" /&gt;</code></p>
+
+<p>To load assets at runtime,:</p>
+
+<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Assets</span><span class="p">.</span><span class="nx">loadLibrary</span> <span class="p">(</span><span class="s2">"default"</span><span class="p">).</span><span class="nx">onComplete</span> <span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">library</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">bitmapData</span> <span class="o">=</span> <span class="nx">Assets</span><span class="p">.</span><span class="nx">getBitmapData</span> <span class="p">(</span><span class="s2">"default:image.png"</span><span class="p">);</span>
+    <span class="c1">// or</span>
+    <span class="kd">var</span> <span class="nx">bitmapData</span> <span class="o">=</span> <span class="nx">Assets</span><span class="p">.</span><span class="nx">getBitmapData</span> <span class="p">(</span><span class="s2">"image.png"</span><span class="p">);</span>
+    <span class="c1">// "default:" prefix is implied, if no library prefix is included</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>Using Additional Asset Libraries</strong></p>
+
+<p>You can easily add assets to libraries other than the “default” library. These are not preloaded by default, unless you add: <code class="language-plaintext highlighter-rouge">&lt;library name="myOtherLibrary" preload="true" /&gt;</code></p>
+
+<p>Then to have certain assets allocated to the above library:
+<code class="language-plaintext highlighter-rouge">&lt;assets path="assets/other" library="myOtherLibrary" /&gt;</code></p>
+
+<p>Be sure to specify the correct library when retrieving the assets in your code. See the above example for using the library prefix.</p>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">Assets.unloadLibrary</code> when you are doing using those resources.</p>
+
+<h3 id="log">log</h3>
+<p>Logs an error (see “error”), warning or info message.</p>
+
+<p>Examples:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;log error="error message" /&gt;
+&lt;log warn="warn message" /&gt;
+&lt;log info="info message" /&gt;
+&lt;log value="your message" /&gt;
+&lt;log verbose="verbose message" /&gt;
+</code></pre></div></div>
+
+<h3 id="meta">meta</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;meta /&gt;</code> tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">title=</span><span class="s">"My Application"</span> <span class="na">package=</span><span class="s">"com.example.myapplication"</span> <span class="na">version=</span><span class="s">"1.0.0"</span> <span class="na">company=</span><span class="s">"My Company"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="module">module</h3>
+<p>More to come.</p>
+
+<h3 id="ndll">ndll</h3>
+
+<p>You can use <code class="language-plaintext highlighter-rouge">&lt;ndll /&gt;</code> tags to include native libraries. These are usually located under an “ndll” directory, with additional directories based upon the target platform. Usually an <code class="language-plaintext highlighter-rouge">&lt;ndll /&gt;</code> tag will be included as a part of an extension, and is rare to be used directly:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ndll</span> <span class="na">name=</span><span class="s">"std"</span> <span class="na">haxelib=</span><span class="s">"hxcpp"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="output">output</h3>
+<p>Deprecated!!!
+Can be used for setting app file name, app path and app swf-version:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;output name="app file name" /&gt;
+&lt;output name="app path" /&gt;
+&lt;output swf-version="11" /&gt;
+</code></pre></div></div>
+
+<h3 id="path">path</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;path /&gt;</code> tags to add directories to your system’s PATH environment variable.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;path</span> <span class="na">value=</span><span class="s">"path/to/add/to/system/PATH"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="postbuild">postbuild</h3>
+<p>Lets you set post-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;postbuild haxe="Haxe code"/&gt;
+&lt;postbuild open="file to run"/&gt;
+&lt;postbuild command="command to run"/&gt;
+&lt;postbuild cmd="command to run"/&gt;
+</code></pre></div></div>
+
+<h3 id="prebuild">prebuild</h3>
+<p>Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;prebuild haxe="Haxe code"/&gt;
+&lt;prebuild open="file to run"/&gt;
+&lt;prebuild command="command to run"/&gt;
+&lt;prebuild cmd="command to run"/&gt;
+</code></pre></div></div>
+
+<h3 id="preloader">preloader</h3>
+<p>Deprecated!!!
+Use <code class="language-plaintext highlighter-rouge">&lt;app preloader="preloaderClass" /&gt;</code> instead</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;preloader name="preloaderClass" /&gt;
+</code></pre></div></div>
+
+<h3 id="sample">sample</h3>
+<p>Make a sample available in <code class="language-plaintext highlighter-rouge">lime create</code> command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;sample path="${haxelib:flixel-demos}/Arcade" /&gt;</code></p>
+
+<p>Then you can use:</p>
+
+<p><code class="language-plaintext highlighter-rouge">lime create flixel:Arcade</code></p>
+
+<h3 id="section">section</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;section /&gt;</code> tag is used to group other tags together. This is usually most valuable when combined with “if” and/or “unless” logic:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">if=</span><span class="s">"html5"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;source</span> <span class="na">path=</span><span class="s">"extra/src/html5"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h3 id="set">set</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> tags to set variables for conditional logic. See the <a href="#Conditionals">Conditionals</a> section above.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="setenv">setenv</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;setenv /&gt;</code> tags to set environment variables:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;setenv</span> <span class="na">name=</span><span class="s">"GLOBAL_DEFINE"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="source">source</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;source /&gt;</code> tags to add Haxe class paths:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;source</span> <span class="na">path=</span><span class="s">"Source"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>If you are using <code class="language-plaintext highlighter-rouge">@:file</code>, <code class="language-plaintext highlighter-rouge">@:bitmap</code>, <code class="language-plaintext highlighter-rouge">@:sound</code> or <code class="language-plaintext highlighter-rouge">@:file</code> tags in your project, be sure that the asset files are available within your Haxe source paths.</p>
+
+<h3 id="splashscreen">splashscreen</h3>
+<p>Same as “launchimage”.</p>
+
+<h3 id="ssl">ssl</h3>
+<p>Not implemented!!!</p>
+
+<h3 id="swf">swf</h3>
+<p>See “library“.</p>
+
+<h3 id="target">target</h3>
+<p>Lets you redefine the build process for a specific target by running a custom haxelib command. This might be useful if you want to use your own library for building your project, i.e. you know what you’re doing and you know how the Lime build system works.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;target name="customTarget" handler="yourHandler" /&gt;</code></p>
+
+<h3 id="template">template</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;template /&gt;</code> tags to add paths which can override the templates used by the command-line tools.</p>
+
+<p>You can add a full template path like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">path=</span><span class="s">"templates"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Otherwise, you can override a single file like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">path=</span><span class="s">"Assets/index.html"</span> <span class="na">rename=</span><span class="s">"index.php"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="templatepath">templatepath</h3>
+<p>See “template”.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;templatepath name="path"/&gt;</code></p>
+
+<h3 id="undefine">undefine</h3>
+<p>Unsets a previously defined flag. See entry for <code class="language-plaintext highlighter-rouge">&amp;lt;define /&amp;gt;</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;undefine name="red" /&gt;
+</code></pre></div></div>
+
+<h3 id="unset">unset</h3>
+
+<p>Unsets a previously set value. See entry for <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;set name="red" value="0xff0000" /&gt;
+&lt;unset name="red" /&gt;
+</code></pre></div></div>
+
+<h3 id="window">window</h3>
+
+<p>You can use <code class="language-plaintext highlighter-rouge">&lt;window /&gt;</code> tags to control how an application will be initialized. This includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.</p>
+
+<p>By default, mobile platforms use a window width and height of 0, which is a special value that uses the resolution of the current display. This is available on desktop platforms, but usually it is recommended to enable the <code class="language-plaintext highlighter-rouge">fullscreen</code> flag instead, and to set the <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">height</code> values to a good windowed resolution. There is a special <code class="language-plaintext highlighter-rouge">fps="0"</code> value for HTML5, which is default, which uses “requestAnimationFrame” instead of forcing a frame rate.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;window</span> <span class="na">width=</span><span class="s">"640"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">background=</span><span class="s">"#FFFFFF"</span> <span class="na">fps=</span><span class="s">"30"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;window</span> <span class="na">hardware=</span><span class="s">"true"</span> <span class="na">allow-shaders=</span><span class="s">"true"</span> <span class="na">require-shaders=</span><span class="s">"true"</span> <span class="na">depth-buffer=</span><span class="s">"false"</span> <span class="na">stencil-buffer=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;window</span> <span class="na">fullscreen=</span><span class="s">"false"</span> <span class="na">resizable=</span><span class="s">"true"</span> <span class="na">borderless=</span><span class="s">"false"</span> <span class="na">vsync=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;window</span> <span class="na">orientation=</span><span class="s">"portrait"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">orientation</code> value expects either “portrait” or “landscape” … the default is “auto” which allows the operating system to decide which orientation to use.</p>
+
+</div>
+            <p class="text-center">
+              <br />
+              <a target="_blank" href="https://github.com/openfl/lime.software/blob/master/_docs/project-files/xml-format.md" class="btn btn-default githubEditButton" role="button">
+                <i class="fa fa-pencil fa-lg"></i> Improve this page
+              </a>
+            </p>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/command-line-tools/samples/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/project-files/hxp-format/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+    </div>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            &copy;2013-2022 Lime |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

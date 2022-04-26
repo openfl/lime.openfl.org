@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://lime.software/project/1.0.1" xmlns:tns="http://lime.software/project/1.0.1" elementFormDefault="qualified" version="1.0.1" attributeFormDefault="unqualified">
+
+	<element name="app">
+		<complexType>
+			<attribute name="main" type="string" />
+			<attribute name="file" type="string" />
+			<attribute name="path" type="string" />
+			<attribute name="preloader" type="string" />
+			<attribute name="swf-version" type="tns:natural-number" />
+			<attribute name="min-swf-version" type="tns:natural-number" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	
+	<element name="assets">
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element name="font" type="tns:asset" />
+				<element name="image" type="tns:asset" />
+				<element name="music" type="tns:asset" />
+				<element name="sound" type="tns:asset" />
+				<element name="template" type="tns:asset" />
+				<element name="library" type="tns:asset" />
+				<element name="manifest" type="tns:asset" />
+				<element name="binary" type="tns:asset" />
+				<element name="text" type="tns:asset" />
+			</choice>
+			<attribute name="path" type="tns:string-min-len-1" use="required" />
+			<attribute name="embed" type="boolean" />
+			<attribute name="rename" type="string" />
+			<attribute name="library" type="tns:string-min-len-1" />
+			<attribute name="glyphs" type="string" />
+			<attribute name="include" type="string" default="*" />
+			<attribute name="exclude" type="string" />
+			<attribute name="type">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="binary" />
+						<enumeration value="bundle" />
+						<enumeration value="font" />
+						<enumeration value="image" />
+						<enumeration value="music" />
+						<enumeration value="sound" />
+						<enumeration value="template" />
+						<enumeration value="text" />
+						<enumeration value="manifest" />
+						<enumeration value="bytes" />
+					</restriction>
+				</simpleType>
+			</attribute>
+			
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+		
+	<element name="meta">
+		<complexType>
+			<attribute name="title" type="string" />
+			<attribute name="description" type="string" />
+			<attribute name="package" type="string" />
+			<attribute name="version" type="string" />
+			<attribute name="company" type="string" />
+			<attribute name="company-id" type="string" />
+			<attribute name="build-number" type="string" />
+			<attribute name="company-url" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	
+	<element name="window">
+		<complexType>
+			<attribute name="id" type="tns:natural-number" />
+			<attribute name="background" type="string">
+				<annotation>
+					<documentation>Set to empty, null or transparent for transparent background. Use 0x000000 format.</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="orientation" default="auto">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="auto">
+							<annotation>
+								<documentation>Allows the operating system to decide which orientation to use</documentation>
+							</annotation>
+						</enumeration>
+						<enumeration value="portrait" />
+						<enumeration value="landscape" />
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="width" type="tns:natural-number" />
+			<attribute name="height" type="tns:natural-number" />
+			<attribute name="fps" type="tns:natural-number">
+				<annotation>
+					<documentation>There is a special fps="0" value for HTML5, which is default, which uses "requestAnimationFrame" instead of forcing a
+						frame rate
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="antialiasing" type="tns:natural-number" />
+			<attribute name="parameters" type="string" />
+			<attribute name="title" type="string" />
+			<attribute name="allow-high-dpi" type="boolean" />
+			<attribute name="color-depth" type="tns:natural-number" />
+			
+			<attribute name="hardware" type="boolean" />
+			<attribute name="allow-shaders" type="boolean" />
+			<attribute name="require-shaders" type="boolean" />
+			<attribute name="depth-buffer" type="boolean" />
+			<attribute name="stencil-buffer" type="boolean" />
+			<attribute name="fullscreen" type="boolean" />
+			<attribute name="resizable" type="boolean" />
+			<attribute name="borderless" type="boolean" />
+			<attribute name="vsync" type="boolean" />
+			
+			<attribute name="minimized" type="boolean" />
+			<attribute name="maximized" type="boolean" />
+			<attribute name="alwaysOnTop" type="boolean" />
+			
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="source">
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="classpath">
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="sample">
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="haxelib">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="version" type="string" />
+			<attribute name="optional" type="boolean" />
+			<attribute name="path" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="ndll">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="haxelib" type="string" />
+			<attribute name="dir" type="string" />
+			<attribute name="type" type="string" />
+			<attribute name="register" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="include">
+		<annotation>
+			<documentation>Include another project file</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" />
+			<attribute name="haxelib" type="tns:string-min-len-1" />
+			<attribute name="name" type="tns:string-min-len-1" />
+			<attribute name="noerror" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="language">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="icon">
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" use="required" />
+			<attribute name="width" type="tns:natural-number" />
+			<attribute name="height" type="tns:natural-number" />
+			<attribute name="size" type="tns:natural-number" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	
+	<element name="template">
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" use="required" />
+			<attribute name="rename" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="library">
+		<annotation>
+			<documentation>
+				Organise your assets by libraries so you can load/unload them when needed.
+			</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="embed" type="boolean" />
+			<attribute name="preload" type="boolean" />
+			<attribute name="generate" type="boolean" />
+			<attribute name="prefix" type="string" />
+			<attribute name="type" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="target">
+		<complexType>
+			<attribute name="handler" type="tns:string-min-len-1" />
+			<attribute name="name" type="tns:string-min-len-1" />
+			<attribute name="path" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="haxeflag">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="value" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="compilerflag">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="value" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="haxedef">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" />
+			<attribute name="value" type="string" />
+			<attribute name="remove" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="setenv">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="set">
+		<annotation>
+			<documentation>Set value for conditional logic in this project file or in a template (::SET_NAME::)</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="value" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="unset">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="define">
+		<annotation>
+			<documentation>Set value for conditional logic in this project file or in a template (::DEFINE_NAME::). This value is also passed to Haxe.</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="undefine">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="java">
+		<annotation>
+			<documentation>Adds Java classes to the project when targeting Android.</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" use="required">
+				<annotation>
+					<documentation>path to Java classes</documentation>
+				</annotation>
+			</attribute>
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="certificate">
+		<annotation>
+			<documentation>Used to add a keystore for release signing.</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" use="required" />
+			<attribute name="type" type="string" />
+			<attribute name="password" type="string" />
+			<attribute name="alias" type="string" />
+			<attribute name="alias-password" type="string" />
+			<attribute name="identity" type="string" />
+			<attribute name="team-id" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="ios">
+		<complexType>
+			<attribute name="deployment" type="string">
+				<annotation>
+					<documentation>minimum iOS target version</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="binaries">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="armv6" />
+						<enumeration value="armv7" />
+						<enumeration value="fat" />
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="devices">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="iphone" />
+						<enumeration value="ipad" />
+						<enumeration value="universal" />
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="linker-flags" type="string" />
+			<attribute name="prerendered-icon" type="boolean" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="android">
+		<complexType>
+			<attribute name="install-location" type="string" />
+			<attribute name="permission" type="string" />
+			<attribute name="target-sdk-version" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="architecture">
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="exclude" type="string" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="launchImage">
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" />
+			<attribute name="width" type="tns:natural-number" />
+			<attribute name="height" type="tns:natural-number" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="splashscreen">
+		<complexType>
+			<attribute name="path" type="tns:string-min-len-1" />
+			<attribute name="width" type="tns:natural-number" />
+			<attribute name="height" type="tns:natural-number" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="launchStoryboard">
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element name="imageset" type="tns:image" />
+			</choice>
+			<attribute name="path" type="tns:string-min-len-1" />
+			<attribute name="name" type="tns:string-min-len-1" />
+			<attribute name="template" type="tns:string-min-len-1" />
+			<attribute name="assetsPath" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="dependency">
+		<annotation>
+			<documentation>
+				Native framework or reference that is required to compile your project, or additional library you need copied.
+			</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="tns:string-min-len-1" use="required" />
+			<attribute name="embed" type="boolean" />
+			<attribute name="force-load" type="boolean" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="config">
+		<annotation>
+			<documentation>
+				Set platform-specific values. E.g: config type="android" install-location="preferExternal"
+			</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="type">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="air" />
+						<enumeration value="android" />
+						<enumeration value="blackberry" />
+						<enumeration value="console-pc" />
+						<enumeration value="firefox" />
+						<enumeration value="flash" />
+						<enumeration value="html5" />
+						<enumeration value="ios" />
+						<enumeration value="linux" />
+						<enumeration value="mac" />
+						<enumeration value="ps3" />
+						<enumeration value="ps4" />
+						<enumeration value="tizen" />
+						<enumeration value="vita" />
+						<enumeration value="windows" />
+						<enumeration value="webos" />
+						<enumeration value="wiiu" />
+						<enumeration value="xbox1" />
+						<enumeration value="emscripten" />
+						<enumeration value="tvos" />
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="minimum-sdk-version" type="tns:natural-number">
+				<annotation>
+					<documentation>Android only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="target-sdk-version" type="tns:natural-number">
+				<annotation>
+					<documentation>Android only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="install-location" type="string">
+				<annotation>
+					<documentation>Android only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="extension" type="string">
+				<annotation>
+					<documentation>Android only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="permission" type="string">
+				<annotation>
+					<documentation>Android only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="gradle-version" type="string">
+				<annotation>
+					<documentation>Android only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="build-library" type="string">
+				<annotation>
+					<documentation>Cpp only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="deployment" type="decimal">
+				<annotation>
+					<documentation>iOS only: minimum iOS target version
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="binaries">
+				<annotation>
+					<documentation>iOS only
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="fat" />
+						<enumeration value="armv6" />
+						<enumeration value="armv7" />
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="devices">
+				<annotation>
+					<documentation>iOS only
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="iphone" />
+						<enumeration value="ipad" />
+						<enumeration value="universal" />
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="linker-flags" type="string">
+				<annotation>
+					<documentation>iOS only
+					</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="prerendered-icon" type="boolean" >
+				<annotation>
+					<documentation>iOS only
+					</documentation>
+				</annotation>
+			</attribute>
+			
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="path">
+		<annotation>
+			<documentation>Adds a directory to your system's PATH environment variable</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="value" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="echo">
+		<annotation>
+			<documentation>Prints a specified message to the console.</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="value" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	<element name="log">
+		<annotation>
+			<documentation>Throw an error or log a warning or info message to the console.</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="error" type="tns:string-min-len-1" />
+			<attribute name="warn" type="tns:string-min-len-1" />
+			<attribute name="info" type="tns:string-min-len-1" />
+			<attribute name="value" type="tns:string-min-len-1" />
+			<attribute name="verbose" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+		</complexType>
+	</element>
+	<element name="error">
+		<annotation>
+			<documentation>Throws an error.</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="value" type="tns:string-min-len-1" use="required" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	
+	<element name="prebuild">
+		<annotation>
+			<documentation>Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.</documentation>
+		</annotation>
+		<complexType>
+			<choice maxOccurs="unbounded" minOccurs="0">
+				<element name="arg" maxOccurs="unbounded" minOccurs="0"/>
+			</choice>
+			<attribute name="haxe" type="tns:string-min-len-1" />
+			<attribute name="open" type="tns:string-min-len-1" />
+			<attribute name="command" type="tns:string-min-len-1" />
+			<attribute name="cmd" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	
+	<element name="postbuild">
+		<annotation>
+			<documentation>Lets you set post-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.</documentation>
+		</annotation>
+		<complexType>
+			<choice maxOccurs="unbounded" minOccurs="0">
+				<element name="arg" maxOccurs="unbounded" minOccurs="0"/>
+			</choice>
+			<attribute name="haxe" type="tns:string-min-len-1" />
+			<attribute name="open" type="tns:string-min-len-1" />
+			<attribute name="command" type="tns:string-min-len-1" />
+			<attribute name="cmd" type="tns:string-min-len-1" />
+			<attributeGroup ref="tns:conditional" />
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+	
+	<element name="project">
+		<annotation>
+			<documentation>Root element of the OpenFL project descriptor.</documentation>
+		</annotation>
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="tns:app" maxOccurs="unbounded" minOccurs="1"/>
+				<element ref="tns:window" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:meta" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxelib" maxOccurs="unbounded" minOccurs="1"/>
+				<element ref="tns:source" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:classpath" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:include" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:language" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:icon" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:assets" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:template" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:library" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:target" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxeflag" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:compilerflag" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxedef" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:section" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:setenv" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:set" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:unset" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:define" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:undefine" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:java" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:certificate" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:ndll" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:ios" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:android" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:architecture" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:launchImage" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:splashscreen" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:launchStoryboard" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:dependency" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:config" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:path" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:echo" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:log" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:error" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:prebuild" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:postbuild" maxOccurs="unbounded" minOccurs="0"/>
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="extension">
+		<annotation>
+			<documentation>Alternative root element of the OpenFL project descriptor.</documentation>
+		</annotation>
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="tns:app" maxOccurs="unbounded" minOccurs="1"/>
+				<element ref="tns:window" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:meta" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxelib" maxOccurs="unbounded" minOccurs="1"/>
+				<element ref="tns:source" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:classpath" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:include" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:language" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:icon" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:assets" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:template" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:library" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:target" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxeflag" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:compilerflag" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxedef" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:section" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:setenv" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:set" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:unset" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:define" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:undefine" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:java" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:certificate" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:ndll" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:ios" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:android" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:architecture" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:launchImage" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:splashscreen" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:launchStoryboard" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:dependency" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:config" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:path" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:echo" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:log" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:error" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:prebuild" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:postbuild" maxOccurs="unbounded" minOccurs="0"/>
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="section">
+		<annotation>
+			<documentation>Group other tags together. This is usually most valuable when combined with “if” and/or “unless” logic.</documentation>
+		</annotation>
+		<complexType>
+			<choice maxOccurs="unbounded" minOccurs="0">
+				<element ref="tns:app" maxOccurs="unbounded" minOccurs="0" />
+				<element ref="tns:window" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:meta" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxelib" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:source" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:classpath" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:include" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:language" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:icon" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:assets" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:template" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:library" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:target" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxeflag" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:compilerflag" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:haxedef" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:section" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:setenv" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:set" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:unset" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:define" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:undefine" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:java" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:certificate" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:ndll" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:ios" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:android" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:architecture" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:launchImage" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:splashscreen" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:launchStoryboard" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:dependency" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:config" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:path" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:echo" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:log" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:error" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:prebuild" maxOccurs="unbounded" minOccurs="0"/>
+				<element ref="tns:postbuild" maxOccurs="unbounded" minOccurs="0"/>
+			</choice>
+			<attributeGroup ref="tns:conditional"/>
+			<anyAttribute processContents="lax" />
+		</complexType>
+	</element>
+
+	<attributeGroup name="conditional">
+		<attribute type="string" name="if"></attribute>
+		<attribute type="string" name="unless"></attribute>
+	</attributeGroup>
+
+	<complexType name="asset">
+		<attribute name="path" type="tns:string-min-len-1" use="required" />
+		<attribute name="id" type="string" />
+	</complexType>
+	
+	<complexType name="image">
+		<attribute name="name" type="tns:string-min-len-1" use="required" />
+		<attribute name="width" type="tns:natural-number" />
+		<attribute name="height" type="tns:natural-number" />
+	</complexType>
+
+	<simpleType name="natural-number">
+		<restriction base="string">
+			<pattern value="[0-9]+" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="string-min-len-1">
+		<restriction base="string">
+			<minLength value="1" />
+		</restriction>
+	</simpleType>
+</schema>
