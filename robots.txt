@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: /lime.software/sitemap.xml
