@@ -4,10 +4,10 @@ description: >
   A cross-platform development framework
   for web, mobile and desktop targets
 
-baseurl: "/lime.software" # the subpath of your site, e.g. /blog/
-#url: http://lime.software # the base hostname & protocol for your site
-git_address: https://github.com/openfl/lime.software
-git_edit_address: https://github.com/openfl/lime.software/blob/master
+baseurl: "/" # the subpath of your site, e.g. /blog/
+# url: http://lime.software # the base hostname & protocol for your site
+git_address: https://github.com/openfl/lime.openfl.org
+git_edit_address: https://github.com/openfl/lime.openfl.org/blob/master
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
