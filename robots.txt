@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: https://lime.openfl.org/sitemap.xml
