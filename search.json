@@ -5,7 +5,7 @@
     
     {
       "title": "Basic Commands",
-      "url": "/lime.software/docs/command-line-tools/basic-commands/"
+      "url": "//docs/command-line-tools/basic-commands/"
 
     },
   
@@ -13,7 +13,7 @@
     
     {
       "title": "Create New Project",
-      "url": "/lime.software/docs/command-line-tools/create-new-project/"
+      "url": "//docs/command-line-tools/create-new-project/"
 
     },
   
@@ -21,7 +21,7 @@
     
     {
       "title": "Samples",
-      "url": "/lime.software/docs/command-line-tools/samples/"
+      "url": "//docs/command-line-tools/samples/"
 
     },
   
@@ -31,7 +31,7 @@
     
     {
       "title": "XML Format",
-      "url": "/lime.software/docs/project-files/xml-format/"
+      "url": "//docs/project-files/xml-format/"
 
     },
   
@@ -39,7 +39,7 @@
     
     {
       "title": "HXP Format",
-      "url": "/lime.software/docs/project-files/hxp-format/"
+      "url": "//docs/project-files/hxp-format/"
 
     },
   
@@ -49,7 +49,7 @@
     
     {
       "title": "Setup Windows",
-      "url": "/lime.software/docs/advanced-setup/windows/"
+      "url": "//docs/advanced-setup/windows/"
 
     },
   
@@ -57,7 +57,7 @@
     
     {
       "title": "Setup macOS",
-      "url": "/lime.software/docs/advanced-setup/macos/"
+      "url": "//docs/advanced-setup/macos/"
 
     },
   
@@ -65,7 +65,7 @@
     
     {
       "title": "Setup Linux",
-      "url": "/lime.software/docs/advanced-setup/linux/"
+      "url": "//docs/advanced-setup/linux/"
 
     },
   
@@ -73,7 +73,7 @@
     
     {
       "title": "Setup iOS",
-      "url": "/lime.software/docs/advanced-setup/ios/"
+      "url": "//docs/advanced-setup/ios/"
 
     },
   
@@ -81,7 +81,7 @@
     
     {
       "title": "Setup Android",
-      "url": "/lime.software/docs/advanced-setup/android/"
+      "url": "//docs/advanced-setup/android/"
 
     },
   
@@ -89,7 +89,7 @@
     
     {
       "title": "Setup Flash",
-      "url": "/lime.software/docs/advanced-setup/flash/"
+      "url": "//docs/advanced-setup/flash/"
 
     },
   
@@ -97,7 +97,7 @@
     
     {
       "title": "Setup HTML5",
-      "url": "/lime.software/docs/advanced-setup/html5/"
+      "url": "//docs/advanced-setup/html5/"
 
     },
   
@@ -106,12 +106,12 @@
   
   {
   "title": "Jekyll Doc Theme is published!",
-  "url": "/lime.software/blog/2017/05/03/jekyll-doc-theme/"
+  "url": "//blog/2017/05/03/jekyll-doc-theme/"
   },
   
   {
   "title": "Welcome to Jekyll!",
-  "url": "/lime.software/blog/2017/02/01/welcome-to-jekyll/"
+  "url": "//blog/2017/02/01/welcome-to-jekyll/"
   }
   
 ]
