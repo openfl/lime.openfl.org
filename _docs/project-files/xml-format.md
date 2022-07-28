@@ -12,9 +12,9 @@ If you are using an XSD aware XML editor you can use the following declaration t
 
     <?xml version="1.0" encoding="utf-8"?>
     <project
-        xmlns="http://lime.software/project/1.0.3"
+        xmlns="http://lime.openfl.org/project/1.0.4"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://lime.software/project/1.0.3 http://lime.software/xsd/project-1.0.3.xsd">
+		xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
     </project>
 
 ### Conditionals
