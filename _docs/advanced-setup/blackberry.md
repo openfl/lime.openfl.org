@@ -2,6 +2,8 @@
 title: Setup BlackBerry
 ---
 
+BlackBerry ended support for BlackBerry 10 and BlackBerry OS on January 4, 2022.
+
 ## Automatic Install
 
 Open a command-prompt or terminal and run the following command:

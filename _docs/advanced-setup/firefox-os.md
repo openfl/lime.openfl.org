@@ -2,6 +2,8 @@
 title: Setup Firefox OS
 ---
 
+Mozilla has ended support for Firefox OS.
+
 ## Automatic Install
 
 There is no automatic setup available for Firefox OS.

@@ -2,6 +2,8 @@
 title: Setup Windows
 ---
 
+Create native [Windows](https://developer.microsoft.com/en-us/windows/) desktop applications with Lime and OpenFL by [compiling to C++](https://haxe.org/manual/target-cpp-getting-started.html).
+
 ## Automatic Install
 
 Open a command-prompt or terminal and run the following command:

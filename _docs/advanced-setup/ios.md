@@ -2,6 +2,8 @@
 title: Setup iOS
 ---
 
+Create native [iOS and iPadOS](https://developer.apple.com/ios/) mobile applications with Lime and OpenFL by [compiling to C++](https://haxe.org/manual/target-cpp-getting-started.html).
+
 ## Automatic Install
 
 There is no automatic setup available for iOS.

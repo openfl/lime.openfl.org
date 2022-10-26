@@ -2,6 +2,8 @@
 title: Setup macOS
 ---
 
+Create native [macOS](https://developer.apple.com/macos/) desktop applications with Lime and OpenFL by [compiling to C++](https://haxe.org/manual/target-cpp-getting-started.html).
+
 ## Automatic Install
 
 There is no automatic setup available for macOS.
