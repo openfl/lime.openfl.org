@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Getting Started</title>
-    <meta name="description" content="Install Haxe">
+    <title>Setup Electron</title>
+    <meta name="description" content="Electron allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Lime and OpenFL may be configured to create an Electron app.">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -15,25 +15,25 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Getting Started | Lime</title>
+<title>Setup Electron | Lime</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="Getting Started" />
+<meta property="og:title" content="Setup Electron" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Install Haxe" />
-<meta property="og:description" content="Install Haxe" />
-<link rel="canonical" href="https://lime.openfl.org/docs/home/" />
-<meta property="og:url" content="https://lime.openfl.org/docs/home/" />
+<meta name="description" content="Electron allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Lime and OpenFL may be configured to create an Electron app." />
+<meta property="og:description" content="Electron allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Lime and OpenFL may be configured to create an Electron app." />
+<link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/electron/" />
+<meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/electron/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-10-26T14:03:47-07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Getting Started" />
+<meta property="twitter:title" content="Setup Electron" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T14:03:47-07:00","datePublished":"2022-10-26T14:03:47-07:00","description":"Install Haxe","headline":"Getting Started","url":"https://lime.openfl.org/docs/home/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T14:03:47-07:00","datePublished":"2022-10-26T14:03:47-07:00","description":"Electron allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Lime and OpenFL may be configured to create an Electron app.","headline":"Setup Electron","url":"https://lime.openfl.org/docs/advanced-setup/electron/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://lime.openfl.org/docs/home/">
+    <link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/electron/">
     <link rel="alternate" type="application/rss+xml" title="Lime" href="https://lime.openfl.org/feed.xml" />
 </head>
 
@@ -178,7 +178,7 @@
         
           
           
-          <a class="list-group-item " href="/docs/advanced-setup/electron/">Setup Electron</a>
+          <a class="list-group-item active" href="/docs/advanced-setup/electron/">Setup Electron</a>
         
       </ul>
     </div>
@@ -189,60 +189,35 @@
         </div>
 
         <div class="col-md-9">
-            <h1>Getting Started</h1>
-            <div id="markdown-content-container"><h2 id="install-haxe">Install Haxe</h2>
+            <h1>Setup Electron</h1>
+            <div id="markdown-content-container"><p><a href="https://www.electronjs.org">Electron</a> allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Lime and OpenFL may be configured to create an Electron app.</p>
 
-<p>If you have not already, install <a href="https://haxe.org/download/">Haxe</a> for your current platform. Lime supports Windows, macOS and Linux host platforms.</p>
+<h2 id="automatic-install">Automatic Install</h2>
 
-<h2 id="install-lime">Install Lime</h2>
+<p>There is no automatic setup available for Electron.</p>
 
-<p>Next, open a command-prompt (Windows) or terminal (macOS/Linux) and run the following commands:</p>
+<h2 id="manual-install">Manual Install</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>haxelib <span class="nb">install </span>lime
-haxelib run lime setup
+<p>In order to build Lime applications using Electron, you must install Node.js and Electron.</p>
+
+<p><a href="https://nodejs.org/en/download/">Download Node.js</a> and run the installer.</p>
+
+<p>Then, open a command-prompt or terminal and run the following command to install Electron globally:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> electron
 </code></pre></div></div>
 
-<p>To confirm that Lime is installed and working properly, try running the “lime” command:</p>
+<h2 id="build--run">Build &amp; Run</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime
-</code></pre></div></div>
+<p>Run <code class="language-plaintext highlighter-rouge">lime test electron</code> to compile and run the Electron application.</p>
 
-<h2 id="install-a-code-editor">Install a Code Editor</h2>
+<h2 id="forums">Forums</h2>
 
-<p>We recommend <a href="https://code.visualstudio.com">Visual Studio Code</a>, using the <a href="https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension">Lime Extension</a>, but many other code editors are also compatible with Haxe development.</p>
-
-<h2 id="run-a-sample">Run a Sample</h2>
-
-<p>Lime includes some simple sample projects to help you get started. For example, the “SimpleImage” sample illustrates an example of rendering graphics for multiple platforms and renderers:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime create SimpleImage
-<span class="nb">cd </span>SimpleImage
-lime <span class="nb">test </span>html5
-lime <span class="nb">test </span>html5 <span class="nt">-Dcanvas</span>
-lime <span class="nb">test </span>html5 <span class="nt">-Ddom</span>
-lime <span class="nb">test </span>neko
-lime <span class="nb">test </span>neko <span class="nt">-Dcairo</span>
-lime <span class="nb">test </span>flash
-</code></pre></div></div>
-
-<p>Lime will use a OpenGL-based renderer by default, but attempts to fallback to a software renderer (such as HTML5 canvas or Cairo) when it is unavailable.</p>
-
-<h2 id="use-additional-platforms">Use Additional Platforms</h2>
-
-<p>Some platforms require some setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime setup windows
-lime setup linux
-lime setup mac
-lime setup android
-lime setup ios
-</code></pre></div></div>
-
-<p>Follow the pages under the “Advanced Setup” section for more detailed information to setup each platform.</p>
+<p>If you encounter any problems when setting up Lime for Electron, please visit the <a href="http://community.openfl.org/c/help">forums</a>.</p>
 </div>
             <p class="text-center">
               <br />
-              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/index.md" class="btn btn-default githubEditButton" role="button">
+              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/advanced-setup/electron.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a>
             </p>
@@ -294,7 +269,27 @@ lime setup ios
 
   
   
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/advanced-setup/html5/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
 
+      
+        <li class="next disabled">
+          <a>
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+    </div>
+    <div class="clear"></div>
+    
 
         </div>
 
