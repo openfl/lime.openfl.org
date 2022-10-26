@@ -2,7 +2,7 @@
 title: Setup Flash
 ---
 
-[Adobe ended support for Flash Player on December 31, 2020](https://www.adobe.com/products/flashplayer/end-of-life-alternative.html) However, contributors to OpenFL often test their changes with old versions of Adobe Flash Player to ensure backwards compatibility. The instructions below explain how that can be done.
+[Adobe ended support for Flash Player on December 31, 2020.](https://www.adobe.com/products/flashplayer/end-of-life-alternative.html) However, contributors to OpenFL often test their changes with old versions of Adobe Flash Player to ensure backwards compatibility. The instructions below explain how that can be done.
 
 If you want to target web browsers with OpenFL, consider following the [Setup HTML5](../html5/) instructions instead.
 
