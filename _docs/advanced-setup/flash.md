@@ -17,6 +17,10 @@ There is generally no setup required for the Flash target. However, you will nee
  *  [Adobe Flash Player 32 Content Debugger for Windows](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.exe)
  *  [Adobe Flash Player 32 Content Debugger for macOS](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.dmg)
 
+## Build & Run
+
+Run `lime test flash` to compile a _.swf_ file and run it using Adobe Flash Player.
+
 ## Using SWC libraries
 
 To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe's `-swf-lib` command line option. For instance, you can add it to your [_project.xml_](../../project-files/xml-format/) file using the [`<haxeflag/>`](../../project-files/xml-format/#haxeflag) element.
@@ -24,10 +28,6 @@ To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe'
 ```xml
 <haxeflag name="-swf-lib" value="libs/example.swc"/>
 ```
-
-## Build & Run
-
-Run `lime test flash` to compile a _.swf_ file and run it using Adobe Flash Player.
 
 ## Forums
 
