@@ -258,10 +258,23 @@ Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the 
 
 Use `<dependency />` tags to specify native frameworks or references that are required to compile your project, as well as additional libraries you need copied.
 
+When targeting [iOS](../../advanced-setup/ios/), it may be used to add a native framework.
+
 ```xml
 <dependency name="GameKit.framework" if="ios" />
 ```
 
+When targeting [Android](../../advanced-setup/android/), it may be used to add a native library.
+
+```xml
+<dependency name="example-sdk" path="dependencies/android/example-sdk" if="android" />
+```
+
+When targeting [Adobe AIR](../../advanced-setup/air/), it may be used to add a native extension.
+
+```xml
+<dependency name="GameKit.framework" path="" if="air" />
+```
 
 
 
