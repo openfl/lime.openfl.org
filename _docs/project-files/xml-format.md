@@ -10,12 +10,14 @@ Usually a simple project file is all you need to build projects using Lime, but 
 
 If you are using an XSD aware XML editor you can use the following declaration to enable XML validation and type hinting/auto completion.
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <project
-        xmlns="http://lime.openfl.org/project/1.0.4"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
-    </project>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<project
+	xmlns="http://lime.openfl.org/project/1.0.4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
+</project>
+```
 
 ### Conditionals
 
@@ -40,6 +42,7 @@ This can also be used to pass special values:
 
 <window background="${color}" if="color" />
 ```
+
 You can use these values in your [templates](#template) like this: `::SET_COLOR::`
 
 Similarly, you can `<define />` or `<undefine />` values which are also passed to Haxe.
@@ -54,11 +57,12 @@ Similarly, you can `<define />` or `<undefine />` values which are also passed t
 trace ("Background is red");
 #end
 ```
+
 You can use these values in your [templates](#template) like this: `::DEFINE_RED::` (`::SET_RED::` also works).
 
 You can add defines using the command-line as well:
 
-```bash
+```sh
 lime test flash -Ddefine
 ```
 
@@ -191,16 +195,19 @@ iOS does not use a certificate `path` and `password`, but instead uses a `team-i
 
 
 ### classpath 
-Same as “source”.
+
+Same as [`<source/>`](#source).
 
 
 
 ### compilerflag 
-Same as "haxeflag".
+
+Same as [`<haxeflag/>`](#haxeflag).
 
 
 
 ### config 
+
 Use `<config />` tags to set platform-specific values. These targets are currently supported:
 - air
 - android
@@ -223,7 +230,7 @@ Use `<config />` tags to set platform-specific values. These targets are current
 - emscripten
 - tvos
 
-**One must append a suffix to the tag depending on the platform. **
+**One must append a suffix to the tag depending on the platform.**
 
 For example, use `<config:android />` tags to set Android-specific values:
 
@@ -245,7 +252,7 @@ Use `<config:ios />` tags to set iOS-specific values when compiling. The `deploy
 
 ### define 
 
-Similar to `<set />` tag, use `<define />` to also pass values to Haxe. See the [Conditionals](#conditionals) section above.
+Similar to [`<set />`](#set) tag, use `<define />` to also pass values to Haxe. See the [Conditionals](#conditionals) section above.
 
 ```xml
 <define name="myDefineFlag" />
@@ -279,10 +286,25 @@ When targeting [Adobe AIR](../../advanced-setup/air/), it may be used to add a n
 
 
 ### echo 
+
 Prints a specified message to the console.
 
-```
+```xml
 <echo value="Some output message" />
+```
+
+The `<echo/>` element is often combined with `if` or `unless`.
+
+```xml
+<echo value="You are using advanced mode. Proceed with caution!" if="advanced_mode"/>
+```
+
+Or it may be added inside a `<section/>` element:
+
+```xml
+<section if="advanced_mode">
+	<error value="You are using advanced mode. Proceed with caution!" />
+</section>
 ```
 
 
@@ -292,9 +314,15 @@ Prints a specified message to the console.
 
 Logs an error with `lime.utils.Log.error()` which by default throws `value` message and stops compilation (if `lime.utils.Log.throwErrors` is set to `true`).
 
-Example:
+The `<error/>` element is often combined with `if` or `unless`.
 
+```xml
+<error value="html5 isn't supported!" if="html5 />
 ```
+
+Or it may be added inside a `<section/>` element:
+
+```xml
 <section if="html5">
 	<error value="html5 isn't supported!" />
 </section>
@@ -305,7 +333,7 @@ Example:
 
 ### haxedef 
 
-Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` with "-D"):
+Use `<haxedef />` tags to add Haxe defines (similar to using a [`<haxeflag />`](#haxeflag) with "-D"):
 
 ```xml
 <haxedef name="define" />
@@ -316,7 +344,7 @@ Use `<haxedef />` tags to add Haxe defines (similar to using a `<haxeflag />` wi
 
 ### haxeflag 
 
-Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
+Use `<haxeflag />` tags to add additional [Haxe compiler arguments](https://haxe.org/manual/compiler-usage.html):
 
 ```xml
 <haxeflag name="-dce" value="std" />
@@ -327,7 +355,7 @@ Use `<haxeflag />` tags to add additional arguments in the Haxe compile process:
 
 ### haxelib 
 
-Use `<haxelib />` tags to include Haxe libraries:
+Use `<haxelib />` tags to include [Haxe libraries](https://lib.haxe.org):
 
 ```xml
 <haxelib name="actuate" />
@@ -357,7 +385,7 @@ Use `<icon />` nodes to add icon files to your project. When the command-line to
 
 ### include 
 
-Use `<include />` tags to add the tags found in another project file, or to find an "include.xml" file in the target directory:
+Use `<include />` tags to add the tags found in another project file, or to find an _include.xml_ file in the target directory:
 
 ```xml
 <include path="to/another/project.xml" />
@@ -382,27 +410,37 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 
 Adds a language to the list of supported languages (by default the list is empty).
 
-`<language name="en-US" />`
+```xml
+<language name="en-US" />
+```
 
 
 
 
 ### launchImage 
+
 Sets the path to launch image of the app (image which will be shown at application start up)
 
-`<launchImage path="launchImage.png" />`
+```xml
+<launchImage path="launchImage.png" />
+```
 	
 
 
 
 ### launchStoryboard 
+
 Sets the launch screen storyboard (useful only for iOS development).
 
-`<launchStoryboard path="image.png" />`
+```xml
+<launchStoryboard path="image.png" />
+```
 
 or
 
-`<launchStoryboard name="image.png" />`
+```xml
+<launchStoryboard name="image.png" />
+```
 
 You can also use `template` for this purpose.
 
@@ -464,11 +502,13 @@ If the default template doesn’t meet your needs, you have two options, but bot
 
 ### library 
 
-All assets go into the “default” library, but by adding `<library>` tags it is possible to modify the default library and also define additional libraries and load/unload them as needed.
+All assets go into the "default" library, but by adding `<library>` tags it is possible to modify the default library and also define additional libraries and load/unload them as needed.
 
 To disable preloading on the default library:
 
-`<library name="default" preload="false" />`
+```xml
+<library name="default" preload="false" />
+```
 
 To load assets at runtime,:
 
@@ -484,10 +524,17 @@ Assets.loadLibrary ("default").onComplete (function (library) {
 
 **Using Additional Asset Libraries**
 
-You can easily add assets to libraries other than the “default” library. These are not preloaded by default, unless you add: `<library name="myOtherLibrary" preload="true" />`
+You can easily add assets to libraries other than the "default" library. These are not preloaded by default, unless you add:
+
+```xml
+<library name="myOtherLibrary" preload="true" />
+```
 
 Then to have certain assets allocated to the above library:
-`<assets path="assets/other" library="myOtherLibrary" />`
+
+```xml
+<assets path="assets/other" library="myOtherLibrary" />
+```
 
 Be sure to specify the correct library when retrieving the assets in your code. See the above example for using the library prefix.
 
@@ -497,18 +544,36 @@ You can also use `Assets.unloadLibrary` when you are doing using those resources
 
 
 ### log 
-Logs an error (see "error"), warning or info message.
+
+Logs an error (see [`<error/>`](#error)), warning or info message.
 
 Examples:
 
-```
+```xml
 <log error="error message" />
 <log warn="warn message" />
 <log info="info message" />
 <log value="your message" />
 <log verbose="verbose message" />
 ```
+
+The `<log/>` element is often combined with `if` or `unless`.
+
+```xml
+<log info="You are using advanced mode. Proceed with caution!" if="advanced_mode"/>
+```
 	
+```xml
+<log error="Missing this_is_required" unless="this_is_required"/>
+```
+
+Or it may be added inside a `<section/>` element:
+
+```xml
+<section if="advanced_mode">
+	<log info="You are using advanced mode. Proceed with caution!" />
+</section>
+```
 
 
 
@@ -523,6 +588,7 @@ Use `<meta />` tags to add information about your application, which usually wil
 
 
 ### module 
+
 More to come.
 
 
@@ -539,10 +605,12 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 
 
 ### output 
-Deprecated!!!
+
+**Deprecated!** Use the [`<app/>](#app) element instead.
+
 Can be used for setting app file name, app path and app swf-version:
 
-```
+```xml
 <output name="app file name" />
 <output name="app path" />
 <output swf-version="11" />
@@ -563,9 +631,10 @@ Use `<path />` tags to add directories to your system's PATH environment variabl
 
 
 ### postbuild 
+
 Lets you set post-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.
-	
-```
+
+```xml
 <postbuild haxe="Haxe code"/>
 <postbuild open="file to run"/>
 <postbuild command="command to run"/>
@@ -576,9 +645,10 @@ Lets you set post-build commands such as Haxe code (interpeted by the Haxe inter
 
 
 ### prebuild 
+
 Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command:
-	
-```
+
+```xml
 <prebuild haxe="Haxe code"/>
 <prebuild open="file to run"/>
 <prebuild command="command to run"/>
@@ -588,24 +658,29 @@ Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interp
 
 
 ### preloader 
-Deprecated!!!
-Use `<app preloader="preloaderClass" />` instead
+
+**Deprecated!** Use [`<app preloader="preloaderClass" />`](#app) instead.
 	
-```
+```xml
 <preloader name="preloaderClass" />
 ```
-	
+
 
 
 
 ### sample 
-Make a sample available in `lime create` command.
 
-`<sample path="${haxelib:flixel-demos}/Arcade" />`
+In a library that targets Lime, makes a sample available using the `lime create` command.
+
+```xml
+<sample path="${haxelib:flixel-demos}/Arcade" />
+```
 
 Then you can use:
 
-`lime create flixel:Arcade`
+```sh
+lime create flixel:Arcade
+```
 
 
 ### section 
@@ -656,24 +731,30 @@ If you are using `@:file`, `@:bitmap`, `@:sound` or `@:file` tags in your projec
 
 
 ### splashscreen 
-Same as “launchimage”.
+
+Same as [`<launchimage/>`](#launchimage).
 
 
 
 ### ssl 
-Not implemented!!!
+
+Not implemented
 
 
 
 ### swf 
-See “library“.
+
+See [`<library/>`](#library).
 
 
 
 ### target 
+
 Lets you redefine the build process for a specific target by running a custom haxelib command. This might be useful if you want to use your own library for building your project, i.e. you know what you're doing and you know how the Lime build system works.
 	
-`<target name="customTarget" handler="yourHandler" />`
+```xml
+<target name="customTarget" handler="yourHandler" />
+```
 
 
 
@@ -697,17 +778,21 @@ Otherwise, you can override a single file like this:
 
 
 ### templatepath 
-See “template”.
 
-`<templatepath name="path"/>`
+See [`<template/>`](#template).
+
+```xml
+<templatepath name="path"/>
+```
 
 
 
 
 ### undefine 
-Unsets a previously defined flag. See entry for `&lt;define /&gt;`.
 
-```
+Unsets a previously defined flag. See entry for [`<define/>`](#define).
+
+```xml
 <undefine name="red" />
 ```
 
@@ -716,9 +801,9 @@ Unsets a previously defined flag. See entry for `&lt;define /&gt;`.
 
 ### unset 
 
-Unsets a previously set value. See entry for `<set />`.
+Unsets a previously set value. See entry for [`<set/>`](#set).
 	
-```
+```xml
 <set name="red" value="0xff0000" />
 <unset name="red" />
 ```
