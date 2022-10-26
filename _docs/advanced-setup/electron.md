@@ -2,7 +2,7 @@
 title: Setup Electron
 ---
 
-[Electron](https://www.electronjs.org) allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Lime and OpenFL may be configured to create an Electron app.
+[Electron](https://www.electronjs.org) allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Electron can run on Windows, macOS, and Linux.
 
 ## Automatic Install
 

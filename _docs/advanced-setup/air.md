@@ -2,7 +2,7 @@
 title: Setup AIR
 ---
 
-[Adobe AIR](https://airsdk.dev) is a cross-platform framework used by a wide range of applications and games. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See [The future of Adobe AIR](https://theblog.adobe.com/the-future-of-adobe-air/) and [HARMAN's AIR SDK Website](https://airsdk.dev) for more details.
+[Adobe AIR](https://airsdk.dev) is a cross-platform framework used by a wide range of applications and games on desktop and mobile. AIR can run on Windows, macOS, Linux, iOS, and Android. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See [The future of Adobe AIR](https://theblog.adobe.com/the-future-of-adobe-air/) and [HARMAN's AIR SDK Website](https://airsdk.dev) for more details.
 
 ## Automatic Install
 
