@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-26T14:53:58-07:00" />
+<meta property="article:published_time" content="2022-10-26T15:28:17-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XML Format" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T14:53:58-07:00","datePublished":"2022-10-26T14:53:58-07:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T15:28:17-07:00","datePublished":"2022-10-26T15:28:17-07:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -206,12 +206,12 @@
 
 <p>If you are using an XSD aware XML editor you can use the following declaration to enable XML validation and type hinting/auto completion.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;project
-    xmlns="http://lime.openfl.org/project/1.0.4"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd"&gt;
-&lt;/project&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;project</span>
+	<span class="na">xmlns=</span><span class="s">"http://lime.openfl.org/project/1.0.4"</span>
+	<span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+	<span class="na">xsi:schemaLocation=</span><span class="s">"http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
 </code></pre></div></div>
 
 <h3 id="conditionals">Conditionals</h3>
@@ -237,6 +237,7 @@
 
 <span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"${color}"</span> <span class="na">if=</span><span class="s">"color"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
+
 <p>You can use these values in your <a href="#template">templates</a> like this: <code class="language-plaintext highlighter-rouge">::SET_COLOR::</code></p>
 
 <p>Similarly, you can <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;undefine /&gt;</code> values which are also passed to Haxe.</p>
@@ -245,15 +246,16 @@
 <span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"#FF0000"</span> <span class="na">if=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="k">if</span> <span class="n">red</span>
-<span class="nf">trace</span> <span class="o">(</span><span class="s">"Background is red"</span><span class="o">);</span>
-<span class="err">#</span><span class="n">end</span>
+<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="k">if</span> <span class="nx">red</span>
+<span class="kr">trace</span> <span class="p">(</span><span class="s2">"Background is red"</span><span class="p">);</span>
+<span class="cp">#end</span>
 </code></pre></div></div>
+
 <p>You can use these values in your <a href="#template">templates</a> like this: <code class="language-plaintext highlighter-rouge">::DEFINE_RED::</code> (<code class="language-plaintext highlighter-rouge">::SET_RED::</code> also works).</p>
 
 <p>You can add defines using the command-line as well:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime <span class="nb">test </span>flash <span class="nt">-Ddefine</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime <span class="nb">test </span>flash <span class="nt">-Ddefine</span>
 </code></pre></div></div>
 
 <p>If you need to have multiple values in a conditional, spaces imply an “and” and vertical bars imply an “or”, like this:</p>
@@ -307,7 +309,7 @@
 
 <p>You can access it in your application like this:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">bitmapData</span> <span class="o">=</span> <span class="nc">Assets</span><span class="o">.</span><span class="na">getBitmapData</span> <span class="o">(</span><span class="s">"images/MyImage.png"</span><span class="o">);</span>
+<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">bitmapData</span> <span class="o">=</span> <span class="nx">Assets</span><span class="p">.</span><span class="nx">getBitmapData</span> <span class="p">(</span><span class="s2">"images/MyImage.png"</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>The target path will mirror the source path by default, but you also can include a rename attribute, if you wish to use a different target path. The <code class="language-plaintext highlighter-rouge">lime.Assets</code> class will use the <em>target</em> path by default, so using the rename attribute will alter the names you use to reference your files.</p>
@@ -373,12 +375,15 @@
 </code></pre></div></div>
 
 <h3 id="classpath">classpath</h3>
-<p>Same as “source”.</p>
+
+<p>Same as <a href="#source"><code class="language-plaintext highlighter-rouge">&lt;source/&gt;</code></a>.</p>
 
 <h3 id="compilerflag">compilerflag</h3>
-<p>Same as “haxeflag”.</p>
+
+<p>Same as <a href="#haxeflag"><code class="language-plaintext highlighter-rouge">&lt;haxeflag/&gt;</code></a>.</p>
 
 <h3 id="config">config</h3>
+
 <p>Use <code class="language-plaintext highlighter-rouge">&lt;config /&gt;</code> tags to set platform-specific values. These targets are currently supported:</p>
 <ul>
   <li>air</li>
@@ -403,7 +408,7 @@
   <li>tvos</li>
 </ul>
 
-<p>**One must append a suffix to the tag depending on the platform. **</p>
+<p><strong>One must append a suffix to the tag depending on the platform.</strong></p>
 
 <p>For example, use <code class="language-plaintext highlighter-rouge">&lt;config:android /&gt;</code> tags to set Android-specific values:</p>
 
@@ -420,7 +425,7 @@
 
 <h3 id="define">define</h3>
 
-<p>Similar to <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> tag, use <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> to also pass values to Haxe. See the <a href="#conditionals">Conditionals</a> section above.</p>
+<p>Similar to <a href="#set"><code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code></a> tag, use <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> to also pass values to Haxe. See the <a href="#conditionals">Conditionals</a> section above.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"myDefineFlag"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
@@ -445,39 +450,57 @@
 </code></pre></div></div>
 
 <h3 id="echo">echo</h3>
+
 <p>Prints a specified message to the console.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;echo value="Some output message" /&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"Some output message"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;echo/&gt;</code> element is often combined with <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">unless</code>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"You are using advanced mode. Proceed with caution!"</span> <span class="na">if=</span><span class="s">"advanced_mode"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Or it may be added inside a <code class="language-plaintext highlighter-rouge">&lt;section/&gt;</code> element:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">if=</span><span class="s">"advanced_mode"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;error</span> <span class="na">value=</span><span class="s">"You are using advanced mode. Proceed with caution!"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
 <h3 id="error">error</h3>
 
 <p>Logs an error with <code class="language-plaintext highlighter-rouge">lime.utils.Log.error()</code> which by default throws <code class="language-plaintext highlighter-rouge">value</code> message and stops compilation (if <code class="language-plaintext highlighter-rouge">lime.utils.Log.throwErrors</code> is set to <code class="language-plaintext highlighter-rouge">true</code>).</p>
 
-<p>Example:</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;error/&gt;</code> element is often combined with <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">unless</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;section if="html5"&gt;
-	&lt;error value="html5 isn't supported!" /&gt;
-&lt;/section&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;error</span> <span class="na">value=</span><span class="s">"html5 isn't supported!"</span> <span class="na">if=</span><span class="s">"html5</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Or it may be added inside a <code class="language-plaintext highlighter-rouge">&lt;section/&gt;</code> element:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">if=</span><span class="s">"html5"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;error</span> <span class="na">value=</span><span class="s">"html5 isn't supported!"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
 <h3 id="haxedef">haxedef</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxedef /&gt;</code> tags to add Haxe defines (similar to using a <code class="language-plaintext highlighter-rouge">&lt;haxeflag /&gt;</code> with “-D”):</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxedef /&gt;</code> tags to add Haxe defines (similar to using a <a href="#haxeflag"><code class="language-plaintext highlighter-rouge">&lt;haxeflag /&gt;</code></a> with “-D”):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxedef</span> <span class="na">name=</span><span class="s">"define"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="haxeflag">haxeflag</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxeflag /&gt;</code> tags to add additional arguments in the Haxe compile process:</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxeflag /&gt;</code> tags to add additional <a href="https://haxe.org/manual/compiler-usage.html">Haxe compiler arguments</a>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxeflag</span> <span class="na">name=</span><span class="s">"-dce"</span> <span class="na">value=</span><span class="s">"std"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="haxelib">haxelib</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxelib /&gt;</code> tags to include Haxe libraries:</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;haxelib /&gt;</code> tags to include <a href="https://lib.haxe.org">Haxe libraries</a>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
@@ -498,7 +521,7 @@
 
 <h3 id="include">include</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;include /&gt;</code> tags to add the tags found in another project file, or to find an “include.xml” file in the target directory:</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;include /&gt;</code> tags to add the tags found in another project file, or to find an <em>include.xml</em> file in the target directory:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;include</span> <span class="na">path=</span><span class="s">"to/another/project.xml"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;include</span> <span class="na">path=</span><span class="s">"to/shared/library"</span> <span class="nt">/&gt;</span>
@@ -515,21 +538,27 @@
 
 <p>Adds a language to the list of supported languages (by default the list is empty).</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;language name="en-US" /&gt;</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;language</span> <span class="na">name=</span><span class="s">"en-US"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="launchimage">launchImage</h3>
+
 <p>Sets the path to launch image of the app (image which will be shown at application start up)</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;launchImage path="launchImage.png" /&gt;</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;launchImage</span> <span class="na">path=</span><span class="s">"launchImage.png"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="launchstoryboard">launchStoryboard</h3>
+
 <p>Sets the launch screen storyboard (useful only for iOS development).</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;launchStoryboard path="image.png" /&gt;</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;launchStoryboard</span> <span class="na">path=</span><span class="s">"image.png"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>or</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;launchStoryboard name="image.png" /&gt;</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;launchStoryboard</span> <span class="na">name=</span><span class="s">"image.png"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>You can also use <code class="language-plaintext highlighter-rouge">template</code> for this purpose.</p>
 
@@ -599,7 +628,8 @@
 
 <p>To disable preloading on the default library:</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;library name="default" preload="false" /&gt;</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;library</span> <span class="na">name=</span><span class="s">"default"</span> <span class="na">preload=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>To load assets at runtime,:</p>
 
@@ -614,25 +644,46 @@
 
 <p><strong>Using Additional Asset Libraries</strong></p>
 
-<p>You can easily add assets to libraries other than the “default” library. These are not preloaded by default, unless you add: <code class="language-plaintext highlighter-rouge">&lt;library name="myOtherLibrary" preload="true" /&gt;</code></p>
+<p>You can easily add assets to libraries other than the “default” library. These are not preloaded by default, unless you add:</p>
 
-<p>Then to have certain assets allocated to the above library:
-<code class="language-plaintext highlighter-rouge">&lt;assets path="assets/other" library="myOtherLibrary" /&gt;</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;library</span> <span class="na">name=</span><span class="s">"myOtherLibrary"</span> <span class="na">preload=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Then to have certain assets allocated to the above library:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;assets</span> <span class="na">path=</span><span class="s">"assets/other"</span> <span class="na">library=</span><span class="s">"myOtherLibrary"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>Be sure to specify the correct library when retrieving the assets in your code. See the above example for using the library prefix.</p>
 
 <p>You can also use <code class="language-plaintext highlighter-rouge">Assets.unloadLibrary</code> when you are doing using those resources.</p>
 
 <h3 id="log">log</h3>
-<p>Logs an error (see “error”), warning or info message.</p>
+
+<p>Logs an error (see <a href="#error"><code class="language-plaintext highlighter-rouge">&lt;error/&gt;</code></a>), warning or info message.</p>
 
 <p>Examples:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;log error="error message" /&gt;
-&lt;log warn="warn message" /&gt;
-&lt;log info="info message" /&gt;
-&lt;log value="your message" /&gt;
-&lt;log verbose="verbose message" /&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;log</span> <span class="na">error=</span><span class="s">"error message"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;log</span> <span class="na">warn=</span><span class="s">"warn message"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;log</span> <span class="na">info=</span><span class="s">"info message"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;log</span> <span class="na">value=</span><span class="s">"your message"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;log</span> <span class="na">verbose=</span><span class="s">"verbose message"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;log/&gt;</code> element is often combined with <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">unless</code>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;log</span> <span class="na">info=</span><span class="s">"You are using advanced mode. Proceed with caution!"</span> <span class="na">if=</span><span class="s">"advanced_mode"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;log</span> <span class="na">error=</span><span class="s">"Missing this_is_required"</span> <span class="na">unless=</span><span class="s">"this_is_required"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Or it may be added inside a <code class="language-plaintext highlighter-rouge">&lt;section/&gt;</code> element:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">if=</span><span class="s">"advanced_mode"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;log</span> <span class="na">info=</span><span class="s">"You are using advanced mode. Proceed with caution!"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
 <h3 id="meta">meta</h3>
@@ -643,6 +694,7 @@
 </code></pre></div></div>
 
 <h3 id="module">module</h3>
+
 <p>More to come.</p>
 
 <h3 id="ndll">ndll</h3>
@@ -653,12 +705,14 @@
 </code></pre></div></div>
 
 <h3 id="output">output</h3>
-<p>Deprecated!!!
-Can be used for setting app file name, app path and app swf-version:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;output name="app file name" /&gt;
-&lt;output name="app path" /&gt;
-&lt;output swf-version="11" /&gt;
+<p><strong>Deprecated!</strong> Use the <a href="#app">`<app></app></a> element instead.</p>
+
+<p>Can be used for setting app file name, app path and app swf-version:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;output</span> <span class="na">name=</span><span class="s">"app file name"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;output</span> <span class="na">name=</span><span class="s">"app path"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;output</span> <span class="na">swf-version=</span><span class="s">"11"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="path">path</h3>
@@ -669,38 +723,43 @@ Can be used for setting app file name, app path and app swf-version:</p>
 </code></pre></div></div>
 
 <h3 id="postbuild">postbuild</h3>
+
 <p>Lets you set post-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;postbuild haxe="Haxe code"/&gt;
-&lt;postbuild open="file to run"/&gt;
-&lt;postbuild command="command to run"/&gt;
-&lt;postbuild cmd="command to run"/&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;postbuild</span> <span class="na">haxe=</span><span class="s">"Haxe code"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;postbuild</span> <span class="na">open=</span><span class="s">"file to run"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;postbuild</span> <span class="na">command=</span><span class="s">"command to run"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;postbuild</span> <span class="na">cmd=</span><span class="s">"command to run"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="prebuild">prebuild</h3>
+
 <p>Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;prebuild haxe="Haxe code"/&gt;
-&lt;prebuild open="file to run"/&gt;
-&lt;prebuild command="command to run"/&gt;
-&lt;prebuild cmd="command to run"/&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;prebuild</span> <span class="na">haxe=</span><span class="s">"Haxe code"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;prebuild</span> <span class="na">open=</span><span class="s">"file to run"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;prebuild</span> <span class="na">command=</span><span class="s">"command to run"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;prebuild</span> <span class="na">cmd=</span><span class="s">"command to run"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="preloader">preloader</h3>
-<p>Deprecated!!!
-Use <code class="language-plaintext highlighter-rouge">&lt;app preloader="preloaderClass" /&gt;</code> instead</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;preloader name="preloaderClass" /&gt;
+<p><strong>Deprecated!</strong> Use <a href="#app"><code class="language-plaintext highlighter-rouge">&lt;app preloader="preloaderClass" /&gt;</code></a> instead.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;preloader</span> <span class="na">name=</span><span class="s">"preloaderClass"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="sample">sample</h3>
-<p>Make a sample available in <code class="language-plaintext highlighter-rouge">lime create</code> command.</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;sample path="${haxelib:flixel-demos}/Arcade" /&gt;</code></p>
+<p>In a library that targets Lime, makes a sample available using the <code class="language-plaintext highlighter-rouge">lime create</code> command.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sample</span> <span class="na">path=</span><span class="s">"${haxelib:flixel-demos}/Arcade"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>Then you can use:</p>
 
-<p><code class="language-plaintext highlighter-rouge">lime create flixel:Arcade</code></p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime create flixel:Arcade
+</code></pre></div></div>
 
 <h3 id="section">section</h3>
 
@@ -735,18 +794,23 @@ Use <code class="language-plaintext highlighter-rouge">&lt;app preloader="preloa
 <p>If you are using <code class="language-plaintext highlighter-rouge">@:file</code>, <code class="language-plaintext highlighter-rouge">@:bitmap</code>, <code class="language-plaintext highlighter-rouge">@:sound</code> or <code class="language-plaintext highlighter-rouge">@:file</code> tags in your project, be sure that the asset files are available within your Haxe source paths.</p>
 
 <h3 id="splashscreen">splashscreen</h3>
-<p>Same as “launchimage”.</p>
+
+<p>Same as <a href="#launchimage"><code class="language-plaintext highlighter-rouge">&lt;launchimage/&gt;</code></a>.</p>
 
 <h3 id="ssl">ssl</h3>
-<p>Not implemented!!!</p>
+
+<p>Not implemented</p>
 
 <h3 id="swf">swf</h3>
-<p>See “library“.</p>
+
+<p>See <a href="#library"><code class="language-plaintext highlighter-rouge">&lt;library/&gt;</code></a>.</p>
 
 <h3 id="target">target</h3>
+
 <p>Lets you redefine the build process for a specific target by running a custom haxelib command. This might be useful if you want to use your own library for building your project, i.e. you know what you’re doing and you know how the Lime build system works.</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;target name="customTarget" handler="yourHandler" /&gt;</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">"customTarget"</span> <span class="na">handler=</span><span class="s">"yourHandler"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="template">template</h3>
 
@@ -763,22 +827,25 @@ Use <code class="language-plaintext highlighter-rouge">&lt;app preloader="preloa
 </code></pre></div></div>
 
 <h3 id="templatepath">templatepath</h3>
-<p>See “template”.</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;templatepath name="path"/&gt;</code></p>
+<p>See <a href="#template"><code class="language-plaintext highlighter-rouge">&lt;template/&gt;</code></a>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;templatepath</span> <span class="na">name=</span><span class="s">"path"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="undefine">undefine</h3>
-<p>Unsets a previously defined flag. See entry for <code class="language-plaintext highlighter-rouge">&amp;lt;define /&amp;gt;</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;undefine name="red" /&gt;
+<p>Unsets a previously defined flag. See entry for <a href="#define"><code class="language-plaintext highlighter-rouge">&lt;define/&gt;</code></a>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;undefine</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="unset">unset</h3>
 
-<p>Unsets a previously set value. See entry for <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code>.</p>
+<p>Unsets a previously set value. See entry for <a href="#set"><code class="language-plaintext highlighter-rouge">&lt;set/&gt;</code></a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;set name="red" value="0xff0000" /&gt;
-&lt;unset name="red" /&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"red"</span> <span class="na">value=</span><span class="s">"0xff0000"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;unset</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="window">window</h3>

@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/command-line-tools/create-new-project/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-26T14:53:58-07:00" />
+<meta property="article:published_time" content="2022-10-26T15:28:17-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Create New Project" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T14:53:58-07:00","datePublished":"2022-10-26T14:53:58-07:00","description":"Using the “create” Command","headline":"Create New Project","url":"https://lime.openfl.org/docs/command-line-tools/create-new-project/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T15:28:17-07:00","datePublished":"2022-10-26T15:28:17-07:00","description":"Using the “create” Command","headline":"Create New Project","url":"https://lime.openfl.org/docs/command-line-tools/create-new-project/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -248,28 +248,28 @@
 
 <p>Here is a sample Haxe project file:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">lime.project.*</span><span class="o">;</span>
+<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">lime</span><span class="p">.</span><span class="nx">project</span><span class="p">.</span><span class="o">*</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nc">Project</span> <span class="kd">extends</span> <span class="nc">HXProject</span> <span class="o">{</span>
+<span class="k">class</span> <span class="nx">Project</span> <span class="kd">extends</span> <span class="nx">HXProject</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="n">function</span> <span class="nf">new</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="k">new</span> <span class="p">()</span> <span class="p">{</span>
 
-        <span class="kd">super</span> <span class="o">();</span>
+        <span class="kr">super</span> <span class="p">();</span>
 
-        <span class="n">meta</span> <span class="o">=</span> <span class="o">{</span> <span class="nl">title:</span> <span class="s">"My Project"</span><span class="o">,</span> <span class="nl">packageName:</span> <span class="s">"com.mycompany.myproject"</span><span class="o">,</span> <span class="nl">version:</span> <span class="s">"1.0.0"</span><span class="o">,</span> <span class="nl">company:</span> <span class="s">"My Company"</span> <span class="o">};</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="o">{</span> <span class="nl">main:</span> <span class="s">"Main"</span><span class="o">,</span> <span class="nl">path:</span> <span class="s">"Export"</span><span class="o">,</span> <span class="nl">file:</span> <span class="s">"MyProject"</span> <span class="o">};</span>
+        <span class="nx">meta</span> <span class="o">=</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s2">"My Project"</span><span class="p">,</span> <span class="na">packageName</span><span class="p">:</span> <span class="s2">"com.mycompany.myproject"</span><span class="p">,</span> <span class="na">version</span><span class="p">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="s2">"My Company"</span> <span class="p">};</span>
+        <span class="nx">app</span> <span class="o">=</span> <span class="p">{</span> <span class="na">main</span><span class="p">:</span> <span class="s2">"Main"</span><span class="p">,</span> <span class="na">path</span><span class="p">:</span> <span class="s2">"Export"</span><span class="p">,</span> <span class="na">file</span><span class="p">:</span> <span class="s2">"MyProject"</span> <span class="p">};</span>
 
-        <span class="n">sources</span><span class="o">.</span><span class="na">push</span> <span class="o">(</span><span class="s">"Source"</span><span class="o">);</span>
+        <span class="nx">sources</span><span class="p">.</span><span class="nx">push</span> <span class="p">(</span><span class="s2">"Source"</span><span class="p">);</span>
 
-        <span class="n">haxelibs</span><span class="o">.</span><span class="na">push</span> <span class="o">(</span><span class="k">new</span> <span class="nc">Haxelib</span> <span class="o">(</span><span class="s">"lime"</span><span class="o">));</span>
+        <span class="nx">haxelibs</span><span class="p">.</span><span class="nx">push</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Haxelib</span> <span class="p">(</span><span class="s2">"lime"</span><span class="p">));</span>
 
-        <span class="n">includeAssets</span> <span class="o">(</span><span class="s">"Assets"</span><span class="o">,</span> <span class="s">"assets"</span><span class="o">,</span> <span class="o">[</span> <span class="s">"*"</span> <span class="o">],</span> <span class="o">[</span> <span class="s">"lime.svg"</span> <span class="o">]);</span>
+        <span class="nx">includeAssets</span> <span class="p">(</span><span class="s2">"Assets"</span><span class="p">,</span> <span class="s2">"assets"</span><span class="p">,</span> <span class="p">[</span> <span class="s2">"*"</span> <span class="p">],</span> <span class="p">[</span> <span class="s2">"lime.svg"</span> <span class="p">]);</span>
 
-        <span class="n">icons</span><span class="o">.</span><span class="na">push</span> <span class="o">(</span><span class="k">new</span> <span class="nc">Icon</span> <span class="o">(</span><span class="s">"Assets/lime.svg"</span><span class="o">));</span>
+        <span class="nx">icons</span><span class="p">.</span><span class="nx">push</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Icon</span> <span class="p">(</span><span class="s2">"Assets/lime.svg"</span><span class="p">));</span>
 
-   <span class="o">}</span>
+   <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="haxe-main-class">Haxe Main Class</h3>
@@ -278,23 +278,23 @@
 
 <p>“Main” is the default, but you can use any name you want, so long as it is a valid Haxe class. If you specify a different name, you will need to set the <code class="language-plaintext highlighter-rouge">&lt;app main="" /&gt;</code> or <code class="language-plaintext highlighter-rouge">app.main</code> value in your project file (depending on the type).</p>
 
-<p>You will also want to create it in the source path. For example, if the project includes “Source” as a source path, create “Source\Main.hx” for a class called “Main”.</p>
+<p>You will also want to create it in the source path. For example, if the project includes “Source” as a source path, create “Source/Main.hx” for a class called “Main”.</p>
 
 <p>Here is a sample entry class:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span><span class="err">;</span>
+<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span><span class="p">;</span>
 
-<span class="nn">import</span> <span class="n">flash</span><span class="o">.</span><span class="na">display</span><span class="o">.</span><span class="na">Sprite</span><span class="o">;</span>
+<span class="k">import</span> <span class="nx">openfl</span><span class="p">.</span><span class="nx">display</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nc">Main</span> <span class="kd">extends</span> <span class="nc">Sprite</span> <span class="o">{</span>
+<span class="k">class</span> <span class="nx">Main</span> <span class="kd">extends</span> <span class="nx">Sprite</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="n">function</span> <span class="nf">new</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="k">new</span> <span class="p">()</span> <span class="p">{</span>
 
-        <span class="kd">super</span> <span class="o">();</span>
+        <span class="kr">super</span> <span class="p">();</span>
 
-    <span class="o">}</span>
+    <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 </div>
             <p class="text-center">

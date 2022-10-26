@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/project-files/hxp-format/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-26T14:53:58-07:00" />
+<meta property="article:published_time" content="2022-10-26T15:28:17-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="HXP Format" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T14:53:58-07:00","datePublished":"2022-10-26T14:53:58-07:00","description":"Overview","headline":"HXP Format","url":"https://lime.openfl.org/docs/project-files/hxp-format/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T15:28:17-07:00","datePublished":"2022-10-26T15:28:17-07:00","description":"Overview","headline":"HXP Format","url":"https://lime.openfl.org/docs/project-files/hxp-format/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -211,23 +211,23 @@
 
 <p>The basic structure of an *.hxp project looks like this:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">hxp.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lime.tools.*</span><span class="o">;</span>
+<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">hxp</span><span class="p">.</span><span class="o">*</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">lime</span><span class="p">.</span><span class="nx">tools</span><span class="p">.</span><span class="o">*</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nc">Project</span> <span class="kd">extends</span> <span class="nc">HXProject</span> <span class="o">{</span>
+<span class="k">class</span> <span class="nx">Project</span> <span class="kd">extends</span> <span class="nx">HXProject</span> <span class="p">{</span>
     
-    <span class="kd">public</span> <span class="n">function</span> <span class="nf">new</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="k">new</span> <span class="p">()</span> <span class="p">{</span>
         
-        <span class="kd">super</span> <span class="o">();</span>
+        <span class="kr">super</span> <span class="p">();</span>
         
-        <span class="n">haxelibs</span><span class="o">.</span><span class="na">push</span> <span class="o">(</span><span class="k">new</span> <span class="nc">Haxelib</span> <span class="o">(</span><span class="s">"lime"</span><span class="o">));</span>
-        <span class="n">sources</span><span class="o">.</span><span class="na">push</span> <span class="o">(</span><span class="s">"Source"</span><span class="o">);</span>
+        <span class="nx">haxelibs</span><span class="p">.</span><span class="nx">push</span> <span class="p">(</span><span class="k">new</span> <span class="nx">Haxelib</span> <span class="p">(</span><span class="s2">"lime"</span><span class="p">));</span>
+        <span class="nx">sources</span><span class="p">.</span><span class="nx">push</span> <span class="p">(</span><span class="s2">"Source"</span><span class="p">);</span>
         
         <span class="c1">// Other code goes here!</span>
         
-    <span class="o">}</span>
+    <span class="p">}</span>
     
-<span class="o">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>You can put all of your settings within the <code class="language-plaintext highlighter-rouge">new</code> function, or you can create additional methods if you prefer.</p>
@@ -244,36 +244,36 @@
 
 <p>You can also set your own values (of course):</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">hxp.*</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">lime.tools.*</span><span class="o">;</span>
+<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">hxp</span><span class="p">.</span><span class="o">*</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">lime</span><span class="p">.</span><span class="nx">tools</span><span class="p">.</span><span class="o">*</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nc">Project</span> <span class="kd">extends</span> <span class="nc">HXProject</span> <span class="o">{</span>
+<span class="k">class</span> <span class="nx">Project</span> <span class="kd">extends</span> <span class="nx">HXProject</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="n">function</span> <span class="nf">new</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="k">new</span> <span class="p">()</span> <span class="p">{</span>
 
-        <span class="kd">super</span> <span class="o">();</span>
+        <span class="kr">super</span> <span class="p">();</span>
         
-        <span class="n">haxelibs</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="k">new</span> <span class="nc">Haxelib</span><span class="o">(</span><span class="s">"lime"</span><span class="o">));</span>
-        <span class="n">sources</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="s">"Source"</span><span class="o">);</span>
+        <span class="nx">haxelibs</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">Haxelib</span><span class="p">(</span><span class="s2">"lime"</span><span class="p">));</span>
+        <span class="nx">sources</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">"Source"</span><span class="p">);</span>
 
-        <span class="k">if</span> <span class="o">(</span><span class="n">platformType</span> <span class="o">==</span> <span class="nc">PlatformType</span><span class="o">.</span><span class="na">WEB</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">platformType</span> <span class="o">==</span> <span class="nx">PlatformType</span><span class="p">.</span><span class="nx">WEB</span><span class="p">)</span> <span class="p">{</span>
 
-            <span class="n">window</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="mi">800</span><span class="o">;</span>
-            <span class="n">window</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="mi">600</span><span class="o">;</span>
+            <span class="nx">window</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">;</span>
+            <span class="nx">window</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
 
-        <span class="o">}</span>
+        <span class="p">}</span>
 
-        <span class="kt">var</span> <span class="n">iOSSimulator</span> <span class="o">=</span> <span class="o">(</span><span class="n">target</span> <span class="o">==</span> <span class="nc">Platform</span><span class="o">.</span><span class="na">IOS</span> <span class="o">&amp;&amp;</span> <span class="n">targetFlags</span><span class="o">.</span><span class="na">exists</span> <span class="o">(</span><span class="s">"simulator"</span><span class="o">));</span>
+        <span class="kd">var</span> <span class="nx">iOSSimulator</span> <span class="o">=</span> <span class="p">(</span><span class="nx">target</span> <span class="o">==</span> <span class="nx">Platform</span><span class="p">.</span><span class="nx">IOS</span> <span class="o">&amp;&amp;</span> <span class="nx">targetFlags</span><span class="p">.</span><span class="nx">exists</span> <span class="p">(</span><span class="s2">"simulator"</span><span class="p">));</span>
 
-        <span class="k">if</span> <span class="o">(</span><span class="n">iOSSimulator</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">iOSSimulator</span><span class="p">)</span> <span class="p">{</span>
 
-            <span class="n">trace</span> <span class="o">(</span><span class="s">"Targeting the iOS simulator"</span><span class="o">);</span>
+            <span class="kr">trace</span> <span class="p">(</span><span class="s2">"Targeting the iOS simulator"</span><span class="p">);</span>
 
-        <span class="o">}</span>
+        <span class="p">}</span>
 
-    <span class="o">}</span>
+    <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="common-values">Common Values</h2>
