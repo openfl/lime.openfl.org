@@ -16,7 +16,7 @@ haxelib install hxp
 
 The basic structure of an \*.hxp project looks like this:
 
-```java
+```haxe
 import hxp.*;
 import lime.tools.*;
 
@@ -50,7 +50,7 @@ If needed, you can also check the `host` property, which should define `Platform
 
 You can also set your own values (of course):
 
-```java
+```haxe
 import hxp.*;
 import lime.tools.*;
 

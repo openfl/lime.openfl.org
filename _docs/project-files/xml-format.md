@@ -49,7 +49,7 @@ Similarly, you can `<define />` or `<undefine />` values which are also passed t
 <window background="#FF0000" if="red" />
 ```
 
-```java
+```haxe
 #if red
 trace ("Background is red");
 #end
@@ -123,7 +123,7 @@ For example, if you include the following node in your project file:
 
 You can access it in your application like this:
 
-```java
+```haxe
 var bitmapData = Assets.getBitmapData ("images/MyImage.png");
 ```
 
