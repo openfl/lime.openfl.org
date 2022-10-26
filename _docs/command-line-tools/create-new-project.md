@@ -80,7 +80,7 @@ You also need a Haxe entry class. This does not need to be very complicated.
 
 "Main" is the default, but you can use any name you want, so long as it is a valid Haxe class. If you specify a different name, you will need to set the `<app main="" />` or `app.main` value in your project file (depending on the type).
 
-You will also want to create it in the source path. For example, if the project includes "Source" as a source path, create "Source\Main.hx" for a class called "Main".
+You will also want to create it in the source path. For example, if the project includes "Source" as a source path, create "Source/Main.hx" for a class called "Main".
 
 Here is a sample entry class:
 
