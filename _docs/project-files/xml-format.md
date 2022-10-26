@@ -273,7 +273,7 @@ When targeting [Android](../../advanced-setup/android/), it may be used to add a
 When targeting [Adobe AIR](../../advanced-setup/air/), it may be used to add a native extension.
 
 ```xml
-<dependency name="GameKit.framework" path="" if="air" />
+<dependency name="com.example.MyNativeExtension" path="path/to/com.example.MyNativeExtension.ane" if="air"/>
 ```
 
 
