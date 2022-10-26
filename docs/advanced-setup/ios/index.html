@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/ios/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-26T14:23:23-07:00" />
+<meta property="article:published_time" content="2022-10-26T14:41:13-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup iOS" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T14:23:23-07:00","datePublished":"2022-10-26T14:23:23-07:00","description":"Create native iOS and iPadOS mobile applications with Lime and OpenFL by compiling to C++.","headline":"Setup iOS","url":"https://lime.openfl.org/docs/advanced-setup/ios/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T14:41:13-07:00","datePublished":"2022-10-26T14:41:13-07:00","description":"Create native iOS and iPadOS mobile applications with Lime and OpenFL by compiling to C++.","headline":"Setup iOS","url":"https://lime.openfl.org/docs/advanced-setup/ios/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -180,6 +180,14 @@
           
           <a class="list-group-item " href="/docs/advanced-setup/electron/">Setup Electron</a>
         
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/hashlink/">Setup HashLink</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/advanced-setup/neko/">Setup Neko</a>
+        
       </ul>
     </div>
   </div>
@@ -205,6 +213,12 @@
 <p>Before you can build for a device, you will also need to connect your device and make sure that you have valid developer certificates set up in Xcode, and that you have provisioned the device.</p>
 
 <p>Due to the nature of Apple’s developer tools, there is only support for iOS development when running macOS. We do not have plans to support iOS development from other host systems at this time, however, you can use the Flash target (if you prefer) to publish Lime applications to iOS, using AIR. If you are interested in contributing a stable way to develop iOS applications from other host systems, please open a topic on the forums.</p>
+
+<h2 id="build--run">Build &amp; Run</h2>
+
+<p>Run <code class="language-plaintext highlighter-rouge">lime test ios</code> to compile an iOS or iPadOS application bundle, and run it on a device connected to your computer with USB.</p>
+
+<p><em>Note:</em> The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the <code class="language-plaintext highlighter-rouge">-clean</code> option.</p>
 
 <h2 id="forums">Forums</h2>
 
