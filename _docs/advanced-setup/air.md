@@ -22,7 +22,7 @@ lime config AIR_SDK path/to/air/sdk
 
 ## Using SWC libraries
 
-To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe's `-swf-lib` command line option. For instance, you can add it to your [_project.xml_](../project-files/xml-format.md) file using the [`<haxeflag/>`](../project-files/xml-format.md#haxeflag) element.
+To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe's `-swf-lib` command line option. For instance, you can add it to your [_project.xml_](../../project-files/xml-format/) file using the [`<haxeflag/>`](../../project-files/xml-format/#haxeflag) element.
 
 ```xml
 <haxeflag name="-swf-lib" value="path/to/example.swc"/>
@@ -30,7 +30,7 @@ To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe'
 
 ## Using AIR Native Extensions
 
-To use a _.ane_ native extension, use the [`<dependency/>`](../project-files/xml-format.md#dependency) element.
+To use a _.ane_ native extension, use the [`<dependency/>`](../../project-files/xml-format/#dependency) element.
 
 ```xml
 <dependency name="com.example.MyNativeExtension" path="path/to/com.example.MyNativeExtension.ane" if="air"/>

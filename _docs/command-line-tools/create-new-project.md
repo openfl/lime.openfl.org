@@ -41,7 +41,7 @@ Here is an example of a project XML file:
 
     </project>
 
-This is just the start, you can read more about the full project XML format here: [Project XML Format](../project-files/xml-format.md).
+This is just the start, you can read more about the full project XML format here: [Project XML Format](../project-files/xml-format/).
 
 ### Haxe Project
 
