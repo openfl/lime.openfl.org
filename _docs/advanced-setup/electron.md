@@ -24,6 +24,12 @@ npm install -g electron
 
 Run `lime test electron` to compile and run the Electron application.
 
+## Using JavaScript libraries
+
+To use an external JavaScript library with Lime, you need [Haxe externs](https://haxe.org/manual/lf-externs.html). See also [Haxe: Using external JavaScript libraries](https://haxe.org/manual/target-javascript-external-libraries.html).
+
+Members of the Haxe community have already created open source externs for a number of popular JavaScript libraries, so be sure to search [Haxelib](https://lib.haxe.org/search) or [Github](https://github.com/search) to see if JS externs exist for your library before you try to create your own.
+
 ## Forums
 
 If you encounter any problems when setting up Lime for Electron, please visit the [forums](http://community.openfl.org/c/help).
