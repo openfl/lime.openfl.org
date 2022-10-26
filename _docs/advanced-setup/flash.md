@@ -14,8 +14,8 @@ There is no automatic setup available for the Flash target.
 
 There is generally no setup required for the Flash target. However, you will need the **standalone** version of Adobe Flash Player (the plugin for web browsers is no longer available). You should download a "Content Debugger" version of the standalone Flash Player on your system, configured as your operating system's default application for _*.swf_ files:
 
- *  [Adobe Flash Player Content Debugger for Windows](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.exe)
- *  [Adobe Flash Player Content Debugger for macOS](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.dmg)
+ *  [Adobe Flash Player 32 Content Debugger for Windows](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.exe)
+ *  [Adobe Flash Player 32 Content Debugger for macOS](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.dmg)
 
 ## Using SWC libraries
 
