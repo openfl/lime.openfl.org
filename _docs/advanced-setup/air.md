@@ -10,7 +10,7 @@ There is no automatic setup available for Adobe AIR.
 
 ## Manual Install
 
-In order to build applications using Adobe AIR, you must have the Adobe AIR SDK installed.
+In order to build applications using Adobe AIR, you must have the AIR SDK installed.
 
 [Download the Adobe AIR SDK from HARMAN](https://airsdk.harman.com/download), and extract it on your system.
 
@@ -19,6 +19,10 @@ Next, open a command-prompt or terminal and run the following command (using the
 ```sh
 lime config AIR_SDK path/to/air/sdk
 ```
+
+## Build & Run
+
+Run `lime test air` to compile and run the Adobe AIR application using the AIR Debug Launcher (ADL).
 
 ## Using SWC libraries
 
@@ -30,13 +34,13 @@ To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe'
 
 ## Using AIR Native Extensions
 
-To use a _.ane_ native extension, use the [`<dependency/>`](../../project-files/xml-format/#dependency) element.
+To use _.ane_ native extension files, add each one to your project's native dependencies. For instance, you can add it to your [_project.xml_](../../project-files/xml-format/) file using the [`<dependency/>`](../../project-files/xml-format/#dependency) element.
 
 ```xml
 <dependency name="com.example.MyNativeExtension" path="path/to/com.example.MyNativeExtension.ane" if="air"/>
 ```
 
-The `name` attribute is the extension ID. The `path` attribute is the relative path to the _.ane_ file.
+The `name` attribute is the native extension's ID. The `path` attribute is the relative path to the _.ane_ file.
 
 ## Forums
 

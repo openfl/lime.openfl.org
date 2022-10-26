@@ -25,6 +25,10 @@ To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe'
 <haxeflag name="-swf-lib" value="libs/example.swc"/>
 ```
 
+## Build & Run
+
+Run `lime test flash` to compile a _.swf_ file and run it using Adobe Flash Player.
+
 ## Forums
 
 If you encounter any problems when setting up Lime for Flash, please visit the [forums](http://community.openfl.org/c/help).
