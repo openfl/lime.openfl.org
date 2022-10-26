@@ -2,7 +2,7 @@
 title: Setup HTML5
 ---
 
-Lime and OpenFL may be used to create HTML5 applications and games for web browsers by [compiling to JavaScript](https://haxe.org/manual/target-javascript.html)
+Lime and OpenFL may be used to create [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) applications and games for web browsers by [compiling to JavaScript](https://haxe.org/manual/target-javascript.html)
 
 ## Automatic Install
 
