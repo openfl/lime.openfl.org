@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Setup AIR</title>
-    <meta name="description" content="Automatic Install">
+    <meta name="description" content="Adobe AIR is a cross-platform framework used by a wide range of applications and games. While AIR was originally created by Adobe, it is currently maintained...">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -19,17 +19,17 @@
 <meta name="generator" content="Jekyll v3.9.2" />
 <meta property="og:title" content="Setup AIR" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Automatic Install" />
-<meta property="og:description" content="Automatic Install" />
+<meta name="description" content="Adobe AIR is a cross-platform framework used by a wide range of applications and games. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See The future of Adobe AIR and HARMAN’s AIR SDK Website for more details." />
+<meta property="og:description" content="Adobe AIR is a cross-platform framework used by a wide range of applications and games. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See The future of Adobe AIR and HARMAN’s AIR SDK Website for more details." />
 <link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/air/" />
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/air/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-08-30T14:44:17-07:00" />
+<meta property="article:published_time" content="2022-10-26T13:39:59-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup AIR" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-08-30T14:44:17-07:00","datePublished":"2022-08-30T14:44:17-07:00","description":"Automatic Install","headline":"Setup AIR","url":"https://lime.openfl.org/docs/advanced-setup/air/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-10-26T13:39:59-07:00","datePublished":"2022-10-26T13:39:59-07:00","description":"Adobe AIR is a cross-platform framework used by a wide range of applications and games. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See The future of Adobe AIR and HARMAN’s AIR SDK Website for more details.","headline":"Setup AIR","url":"https://lime.openfl.org/docs/advanced-setup/air/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -170,6 +170,10 @@
         
           
           
+          <a class="list-group-item active" href="/docs/advanced-setup/air/">Setup AIR</a>
+        
+          
+          
           <a class="list-group-item " href="/docs/advanced-setup/html5/">Setup HTML5</a>
         
       </ul>
@@ -182,20 +186,38 @@
 
         <div class="col-md-9">
             <h1>Setup AIR</h1>
-            <div id="markdown-content-container"><h2 id="automatic-install">Automatic Install</h2>
+            <div id="markdown-content-container"><p><a href="https://airsdk.dev">Adobe AIR</a> is a cross-platform framework used by a wide range of applications and games. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See <a href="https://theblog.adobe.com/the-future-of-adobe-air/">The future of Adobe AIR</a> and <a href="https://airsdk.dev">HARMAN’s AIR SDK Website</a> for more details.</p>
 
-<p>There is no automatic setup available for AIR.</p>
+<h2 id="automatic-install">Automatic Install</h2>
+
+<p>There is no automatic setup available for Adobe AIR.</p>
 
 <h2 id="manual-install">Manual Install</h2>
 
-<p>In order to build applications using AIR, you must have the Adobe AIR SDK installed.</p>
+<p>In order to build applications using Adobe AIR, you must have the Adobe AIR SDK installed.</p>
 
-<p><a href="http://www.adobe.com/devnet/air/air-sdk-download.html">Download</a> the Adobe AIR SDK, and extract it on your system.</p>
+<p><a href="https://airsdk.harman.com/download">Download the Adobe AIR SDK from HARMAN</a>, and extract it on your system.</p>
 
 <p>Next, open a command-prompt or terminal and run the following command (using the path to your AIR SDK):</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime config AIR_SDK path/to/air/sdk
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime config AIR_SDK path/to/air/sdk
 </code></pre></div></div>
+
+<h2 id="using-swc-libraries">Using SWC libraries</h2>
+
+<p>To use a <em>.swc</em> library with Haxe that was compiled from ActionScript, add Haxe’s <code class="language-plaintext highlighter-rouge">-swf-lib</code> command line option. For instance, you can add it to your <a href="../project-files/xml-format.md"><em>project.xml</em></a> file using the <a href="../project-files/xml-format.md#haxeflag"><code class="language-plaintext highlighter-rouge">&lt;haxeflag/&gt;</code></a> element.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxeflag</span> <span class="na">name=</span><span class="s">"-swf-lib"</span> <span class="na">value=</span><span class="s">"path/to/example.swc"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="using-air-native-extensions">Using AIR Native Extensions</h2>
+
+<p>To use a <em>.ane</em> native extension, use the <a href="../project-files/xml-format.md#dependency"><code class="language-plaintext highlighter-rouge">&lt;dependency/&gt;</code></a> element.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency</span> <span class="na">name=</span><span class="s">"com.example.MyNativeExtension"</span> <span class="na">path=</span><span class="s">"path/to/com.example.MyNativeExtension.ane"</span> <span class="na">if=</span><span class="s">"air"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">name</code> attribute is the extension ID. The <code class="language-plaintext highlighter-rouge">path</code> attribute is the relative path to the <em>.ane</em> file.</p>
 
 <h2 id="forums">Forums</h2>
 
@@ -249,7 +271,29 @@
 
   
   
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/advanced-setup/flash/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
 
+      
+        
+        
+        <li class="next">
+          <a href="/docs/advanced-setup/html5/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+    </div>
+    <div class="clear"></div>
+    
 
         </div>
 
