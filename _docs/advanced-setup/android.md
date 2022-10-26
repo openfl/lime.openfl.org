@@ -26,11 +26,19 @@ The Android build tools did not properly support new versions of Java for a long
 
 After these tools are installed, Lime still needs to know where they are installed. Open a command-prompt or terminal and run the following command:
 
-    lime setup android
+```sh
+lime setup android
+```
 
 When prompted to automatically download and install each component, type "n" and press enter. At the end, the setup process will ask for each location. When prompted, enter the path to where the Android SDK, NDK and other components are installed.
 
 If you intend to use an Android emulator, create an AVD with hardware acceleration that targets Android 4.1 or greater. You may also need to install drivers for your Android device, before you can deploy to it. Note that x86 emulators and devices are supported.
+
+## Build & Run
+
+Run `lime test android` to compile an Android application bundle, and run it on a device connected to your computer with USB.
+
+_Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
 ## Forums
 

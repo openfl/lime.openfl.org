@@ -8,15 +8,23 @@ Create native [Windows](https://developer.microsoft.com/en-us/windows/) desktop 
 
 Open a command-prompt or terminal and run the following command:
 
-    lime setup windows
+```sh
+lime setup windows
+```
 
 ## Manual Install
 
-In order to build Neko applications for Windows, no further dependencies are required. However, in order to build C++ applications for Windows, you must have a compatible version of Visual Studio C++ installed on your system.
+In order to build C++ applications for Windows, you must have a compatible version of Visual Studio C++ installed on your system.
 
 Currently, Lime requires a version of Visual Studio capable of targeting Win32. For newer versions of Visual Studio, this requires the "Windows Desktop" version of the software.
 
 You can only target Windows from a Windows system right now. If you are interested in contributing to cross-desktop builds to Windows, please open a topic on the forums.
+
+## Build & Run
+
+Run `lime test windows` to compile an _.exe_ file and run it.
+
+_Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
 ## Forums
 
