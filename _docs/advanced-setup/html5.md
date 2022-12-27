@@ -16,6 +16,10 @@ There is generally no setup required for the HTML5 target.
 
 Run `lime test html5` to compile, start a local development server, and launch in a web browser.
 
+### Minification
+
+Adding either the `-minify` option or the `-final` option to your build command will apply more advanced minification to the generated JavaScript. By default, [Closure Compiler](https://developers.google.com/closure/compiler) will be used to minify, but you can specify `-yui` to use [YUI Compressor](https://yui.github.io/yuicompressor/) instead. Both minification tools require Java to be installed.
+
 ## Using JavaScript libraries
 
 To use an external JavaScript library with Lime, you need [Haxe externs](https://haxe.org/manual/lf-externs.html). See also [Haxe: Using external JavaScript libraries](https://haxe.org/manual/target-javascript-external-libraries.html).
