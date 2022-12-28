@@ -24,7 +24,7 @@ You can only target Windows from a Windows system right now. If you are interest
 
 Run `lime test windows` to compile an _.exe_ file and run it.
 
-_Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
+> _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
 ## Forums
 
