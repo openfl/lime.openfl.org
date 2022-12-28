@@ -606,7 +606,7 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 
 ### output 
 
-**Deprecated!** Use the [`<app/>](#app) element instead.
+**Deprecated!** Use the [`<app/>`](#app) element instead.
 
 Can be used for setting app file name, app path and app swf-version:
 
