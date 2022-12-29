@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/macos/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-12-28T16:06:15-08:00" />
+<meta property="article:published_time" content="2022-12-28T17:05:35-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup macOS" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-28T16:06:15-08:00","datePublished":"2022-12-28T16:06:15-08:00","description":"Create native macOS desktop applications with Lime and OpenFL by compiling to C++.","headline":"Setup macOS","url":"https://lime.openfl.org/docs/advanced-setup/macos/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-28T17:05:35-08:00","datePublished":"2022-12-28T17:05:35-08:00","description":"Create native macOS desktop applications with Lime and OpenFL by compiling to C++.","headline":"Setup macOS","url":"https://lime.openfl.org/docs/advanced-setup/macos/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -214,7 +214,9 @@
 
 <h2 id="build--run">Build &amp; Run</h2>
 
-<p>Run <code class="language-plaintext highlighter-rouge">lime test mac</code> to compile an <em>.app</em> file and run it.</p>
+<p>To compile a macOS <em>.app</em> file, run <code class="language-plaintext highlighter-rouge">lime build mac</code>. Add the <code class="language-plaintext highlighter-rouge">-debug</code> option to create a build that can connect to the HXCPP debugger. Add the <code class="language-plaintext highlighter-rouge">-release</code> option to create a release build.</p>
+
+<p>To compile and launch a macOS <em>.app</em> file with one command, run <code class="language-plaintext highlighter-rouge">lime test mac</code>.</p>
 
 <blockquote>
   <p><em>Note:</em> The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the <code class="language-plaintext highlighter-rouge">-clean</code> option.</p>

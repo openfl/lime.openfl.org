@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/ios/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-12-28T16:06:15-08:00" />
+<meta property="article:published_time" content="2022-12-28T17:05:35-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup iOS" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-28T16:06:15-08:00","datePublished":"2022-12-28T16:06:15-08:00","description":"Create native iOS and iPadOS mobile applications with Lime and OpenFL by compiling to C++.","headline":"Setup iOS","url":"https://lime.openfl.org/docs/advanced-setup/ios/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-28T17:05:35-08:00","datePublished":"2022-12-28T17:05:35-08:00","description":"Create native iOS and iPadOS mobile applications with Lime and OpenFL by compiling to C++.","headline":"Setup iOS","url":"https://lime.openfl.org/docs/advanced-setup/ios/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -218,13 +218,34 @@
 
 <h2 id="build--run">Build &amp; Run</h2>
 
-<p>Run <code class="language-plaintext highlighter-rouge">lime test ios</code> to compile an iOS or iPadOS application bundle, and run it on a device connected to your computer with USB. Add the <code class="language-plaintext highlighter-rouge">-simulator</code> option to target the iOS simulator included with Xcode instead.</p>
+<p>To compile an iOS or iPadOS application bundle, run <code class="language-plaintext highlighter-rouge">lime build ios</code>. Add the <code class="language-plaintext highlighter-rouge">-debug</code> option to create a debug build. Add the <code class="language-plaintext highlighter-rouge">-release</code> option to create a release build.</p>
+
+<p>To compile and launch an iOS application with one command, run <code class="language-plaintext highlighter-rouge">lime test ios</code>. The app will run on a device connected to your computer with USB. Add the <code class="language-plaintext highlighter-rouge">-simulator</code> option to target the iOS simulator included with Xcode instead of a device.</p>
 
 <blockquote>
   <p><em>Note:</em> The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the <code class="language-plaintext highlighter-rouge">-clean</code> option.</p>
 </blockquote>
 
 <p>Specify the <code class="language-plaintext highlighter-rouge">-appstore</code> option to create a build to be submitted to the iOS App Store. Alternatively, specify the <code class="language-plaintext highlighter-rouge">-adhoc</code> option for ad hoc distribution to specific devices outside of the App Store. For enterprise distribution within your organization, specify the <code class="language-plaintext highlighter-rouge">-enterprise</code> option.</p>
+
+<h3 id="code-signing">Code Signing</h3>
+
+<p>To compile for iOS, you must specify <a href="https://developer.apple.com/support/code-signing/">code signing</a> options. These may be added to a <code class="language-plaintext highlighter-rouge">&lt;config:ios/&gt;</code> element in your <em>project.xml</em> file.</p>
+
+<p>To specify your Apple Developer <a href="https://developer.apple.com/help/account/manage-your-team/locate-your-team-id/">Team ID</a>, add the <code class="language-plaintext highlighter-rouge">team-id</code> attribute.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">team-id=</span><span class="s">"XXXXXXXXXX"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>If you need to manually specify the path to a <a href="https://developer.apple.com/help/account/manage-profiles/edit-download-or-delete-profiles/">provisioning profile</a> (typically with a <em>.mobileprovision</em> extension), add the <code class="language-plaintext highlighter-rouge">provisioning-profile</code> attribute.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">provisioning-profile=</span><span class="s">"path/to/file.mobileprovision"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>If you need to manually specify a code signing identity, add the <code class="language-plaintext highlighter-rouge">identity</code> attribute.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">identity=</span><span class="s">"iPhone Developer"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h2 id="forums">Forums</h2>
 

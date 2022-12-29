@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/flash/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-12-28T16:06:15-08:00" />
+<meta property="article:published_time" content="2022-12-28T17:05:35-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup Flash" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-28T16:06:15-08:00","datePublished":"2022-12-28T16:06:15-08:00","description":"Adobe ended support for Flash Player on December 31, 2020. However, contributors to OpenFL often test their changes with old versions of Adobe Flash Player to ensure backwards compatibility. The instructions below explain how that can be done.","headline":"Setup Flash","url":"https://lime.openfl.org/docs/advanced-setup/flash/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-28T17:05:35-08:00","datePublished":"2022-12-28T17:05:35-08:00","description":"Adobe ended support for Flash Player on December 31, 2020. However, contributors to OpenFL often test their changes with old versions of Adobe Flash Player to ensure backwards compatibility. The instructions below explain how that can be done.","headline":"Setup Flash","url":"https://lime.openfl.org/docs/advanced-setup/flash/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -217,7 +217,9 @@
 
 <h2 id="build--run">Build &amp; Run</h2>
 
-<p>Run <code class="language-plaintext highlighter-rouge">lime test flash</code> to compile a <em>.swf</em> file and run it using Adobe Flash Player.</p>
+<p>To compile a Flash <em>.swf</em> file, run <code class="language-plaintext highlighter-rouge">lime build flash</code>. Add the <code class="language-plaintext highlighter-rouge">-debug</code> option to create a build that can connect to a SWF debugger. Add the <code class="language-plaintext highlighter-rouge">-release</code> option to create a release build.</p>
+
+<p>To compile and launch a Flash <em>.swf</em> file with one command, run <code class="language-plaintext highlighter-rouge">lime test flash</code>.</p>
 
 <h2 id="using-swc-libraries">Using SWC libraries</h2>
 
