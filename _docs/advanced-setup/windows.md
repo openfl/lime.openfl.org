@@ -22,7 +22,7 @@ You can only target Windows from a Windows system right now. If you are interest
 
 ## Build & Run
 
-To compile a Windows _.exe_ file, run `lime build windows`.
+To compile a Windows _.exe_ file, run `lime build windows`. Add the `-debug` option to create a build that can connect to the HXCPP debugger. Add the `-release` option to create a release build.
 
 To compile and launch a Windows _.exe_ file with one command, run `lime test windows`.
 

@@ -19,7 +19,7 @@ There is generally no setup required for the Flash target. However, you will nee
 
 ## Build & Run
 
-To compile a Flash _.swf_ file, run `lime build flash`.
+To compile a Flash _.swf_ file, run `lime build flash`. Add the `-debug` option to create a build that can connect to a SWF debugger. Add the `-release` option to create a release build.
 
 To compile and launch a Flash _.swf_ file with one command, run `lime test flash`.
 

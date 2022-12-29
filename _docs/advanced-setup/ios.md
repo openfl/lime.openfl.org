@@ -20,7 +20,7 @@ Before you can build for a device, you will also need to connect your device to 
 
 ## Build & Run
 
-To compile an iOS or iPadOS application bundle, run `lime build ios`.
+To compile an iOS or iPadOS application bundle, run `lime build ios`. Add the `-debug` option to create a debug build. Add the `-release` option to create a release build.
 
 To compile and launch an iOS application with one command, run `lime test ios`. The app will run on a device connected to your computer with USB. Add the `-simulator` option to target the iOS simulator included with Xcode instead of a device.
 

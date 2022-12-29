@@ -18,7 +18,7 @@ You can only target macOS from an Apple system right now. If you are interested 
 
 ## Build & Run
 
-To compile a macOS _.app_ file, run `lime build mac`.
+To compile a macOS _.app_ file, run `lime build mac`. Add the `-debug` option to create a build that can connect to the HXCPP debugger. Add the `-release` option to create a release build.
 
 To compile and launch a macOS _.app_ file with one command, run `lime test mac`.
 

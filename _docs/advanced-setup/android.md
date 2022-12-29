@@ -36,7 +36,7 @@ If you intend to use an Android emulator, create an AVD with hardware accelerati
 
 ## Build & Run
 
-To compile an Android application bundle, run `lime build android`.
+To compile an Android application bundle, run `lime build android`. Add the `-debug` option to create a debug build. Add the `-release` option to create a release build.
 
 To compile and launch an Android application with one command, run `lime test android`. The app will run on a device connected to your computer with USB. Add the `-emulator` option to target the Android emulator included with the Android SDK instead of a device.
 

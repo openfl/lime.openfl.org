@@ -14,7 +14,7 @@ There is generally no setup required for the HashLink target.
 
 ## Build & Run
 
-To compile a HashLink application, run `lime build hl`.
+To compile a HashLink application, run `lime build hl`. Add the `-debug` option to create a debug build. Add the `-release` option to create a release build.
 
 To compile and launch a HashLink application with one command, run `lime test hl`.
 

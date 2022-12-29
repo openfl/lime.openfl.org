@@ -20,7 +20,7 @@ You can only target Linux from a Linux system right now. If you are interested i
 
 ## Build & Run
 
-To compile a Linux executable, run `lime build linux`.
+To compile a Linux executable, run `lime build linux`. Add the `-debug` option to create a build that can connect to the HXCPP debugger. Add the `-release` option to create a release build.
 
 To compile and launch a Linux executable with one command, run `lime test linux`.
 
