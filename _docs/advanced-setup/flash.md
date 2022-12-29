@@ -19,7 +19,9 @@ There is generally no setup required for the Flash target. However, you will nee
 
 ## Build & Run
 
-Run `lime test flash` to compile a _.swf_ file and run it using Adobe Flash Player.
+To compile a Flash _.swf_ file, run `lime build flash`.
+
+To compile and launch a Flash _.swf_ file with one command, run `lime test flash`.
 
 ## Using SWC libraries
 

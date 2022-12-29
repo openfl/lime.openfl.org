@@ -14,7 +14,9 @@ There is generally no setup required for the HashLink target.
 
 ## Build & Run
 
-Run `lime test hl` to compile and run with HashLink.
+To compile a HashLink application, run `lime build hl`.
+
+To compile and launch a HashLink application with one command, run `lime test hl`.
 
 ## Forums
 

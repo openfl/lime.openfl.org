@@ -14,7 +14,9 @@ There is generally no setup required for the HTML5 target.
 
 ## Build & Run
 
-Run `lime test html5` to compile, start a local development server, and launch in a web browser.
+To compile an HTML5 application, run `lime build html5`.
+
+To compile and launch an HTML5 application with one command, run `lime test html5`. This will start a local development server, and launch the page in a web browser.
 
 ### Minification
 

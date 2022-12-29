@@ -14,7 +14,9 @@ There is generally no setup required for the Neko target.
 
 ## Build & Run
 
-Run `lime test neko` to compile and run with Neko.
+To compile a Neko application, run `lime build neko`.
+
+To compile and launch a Neko application with one command, run `lime test neko`.
 
 ## Forums
 

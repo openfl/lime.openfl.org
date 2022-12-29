@@ -20,7 +20,9 @@ You can only target Linux from a Linux system right now. If you are interested i
 
 ## Build & Run
 
-Run `lime test linux` to compile an executable file and run it.
+To compile a Linux executable, run `lime build linux`.
+
+To compile and launch a Linux executable with one command, run `lime test linux`.
 
 > _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 

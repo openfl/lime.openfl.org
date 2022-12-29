@@ -22,7 +22,9 @@ npm install -g electron
 
 ## Build & Run
 
-Run `lime test electron` to compile and run the Electron application.
+To compile an Electron application, run `lime build electron`.
+
+To compile and launch an Electron application with one command, run `lime test electron`.
 
 ## Using JavaScript libraries
 

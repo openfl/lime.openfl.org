@@ -22,7 +22,9 @@ lime config AIR_SDK path/to/air/sdk
 
 ## Build & Run
 
-Run `lime test air` to compile and run the Adobe AIR application using the AIR Debug Launcher (ADL).
+To compile an Adobe AIR application package, run `lime build air`.
+
+To compile and launch an Adobe AIR application package with one command, run `lime test air`. The application will run on your computer using the AIR Debug Launcher (ADL).
 
 To build an AIR app targeting Android, add the `-android` option. This will package an _.apk_ file.
 

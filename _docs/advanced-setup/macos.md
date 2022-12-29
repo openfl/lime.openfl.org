@@ -18,7 +18,9 @@ You can only target macOS from an Apple system right now. If you are interested 
 
 ## Build & Run
 
-Run `lime test mac` to compile an _.app_ file and run it.
+To compile a macOS _.app_ file, run `lime build mac`.
+
+To compile and launch a macOS _.app_ file with one command, run `lime test mac`.
 
 > _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 

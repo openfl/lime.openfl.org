@@ -20,7 +20,9 @@ Before you can build for a device, you will also need to connect your device to 
 
 ## Build & Run
 
-Run `lime test ios` to compile an iOS or iPadOS application bundle, and run it on a device connected to your computer with USB. Add the `-simulator` option to target the iOS simulator included with Xcode instead.
+To compile an iOS or iPadOS application bundle, run `lime build ios`.
+
+To compile and launch an iOS application with one command, run `lime test ios`. The app will run on a device connected to your computer with USB. Add the `-simulator` option to target the iOS simulator included with Xcode instead of a device.
 
 > _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
