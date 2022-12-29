@@ -28,7 +28,7 @@ To build an AIR app targeting Android, add the `-android` option. This will pack
 
 To build an AIR app targeting iOS, add the `-ios` option. This will package an _.ipa_ file.
 
-to build an AIR app for either Android or iOS to test in the AIR Debug Launcher (ADL) instead of on the device, add the `-air-simulator` option to skip packaging the _.apk_ or _.ipa_ file.
+To build an AIR app for either Android or iOS, but test it in the AIR Debug Launcher (ADL) instead a device, add the `-air-simulator` option to skip packaging the _.apk_ or _.ipa_ file.
 
 When targeting AIR for iOS, specify the `-appstore` option to create a build to be submitted to the iOS App Store. Alternatively, specify the `-adhoc` option for ad hoc distribution to specific devices outside of the App Store.
 
