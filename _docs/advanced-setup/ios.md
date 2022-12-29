@@ -14,7 +14,7 @@ In order to build applications for iOS, you must have a current version of Xcode
 
 You can find Xcode in the macOS App Store.
 
-Before you can build for a device, you will also need to connect your device and make sure that you have valid developer certificates set up in Xcode, and that you have provisioned the device.
+Before you can build for a device, you will also need to connect your device to your computer with USB. Then, make sure that you have valid developer certificates set up in Xcode, and that you have provisioned the device.
 
 > Due to the restrictive nature of Apple's developer tools, building iOS apps is supported on computers running macOS only. iOS apps cannot be built from Windows or Linux. There are currently no plans to support iOS development from non-macOS host systems at this time. However, you can technically use the AIR target to build iOS apps on Windows. If you are interested in contributing a stable way to develop C++ iOS applications from other host systems, please open a topic on the forums to discuss your implementation plans.
 
