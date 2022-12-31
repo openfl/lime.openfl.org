@@ -42,6 +42,36 @@ To compile and launch an Android application with one command, run `lime test an
 
 > _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
+### Code Signing
+
+During development, Android builds will automatically use a self-signed certificate. To distribute an Android app, you must specify [code signing](https://developer.android.com/studio/publish/app-signing) options. These may be added to a `<certificate/>` element in your _project.xml_ file. You may need to add the `if="android"` attribute, if your app targets multiple platforms.
+
+Specify the `path` and `alias` attributes for your certificate.
+
+```xml
+<certificate path="path/to/keystore.p12" alias="1" if="android"/>
+```
+
+> _Need to know which aliases are included in your certificate?_ Open a terminal, and run the following command to see the entries:
+>
+> ```sh
+> keytool -list -v -keystore path/to/keystore.p12
+> ```
+>
+> If the `keytool` command is not available on the system path, you may be able to find it in a Java JDK.
+
+You should **not** save a keystore password in your _project.xml_ file because it is a serious security risk. It is technically allowed, though.
+
+```xml
+<!-- you should NOT specify the password like this -->
+<certificate path="path/to/keystore.p12" alias="1" password="hunter2" if="android"/>
+```
+
+Instead, you have two options.
+
+1) Specify the password on the command line. Example: `--certificate-password=hunter2`
+2) Don't specify the password, and wait for the build to request it automatically.
+
 ## Forums
 
 If you encounter any problems when setting up Lime for Android, please visit the [forums](http://community.openfl.org/c/help).
