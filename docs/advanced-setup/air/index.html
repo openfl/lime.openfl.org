@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/air/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-12-30T21:21:37-08:00" />
+<meta property="article:published_time" content="2022-12-30T22:21:43-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup AIR" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-30T21:21:37-08:00","datePublished":"2022-12-30T21:21:37-08:00","description":"Adobe AIR is a cross-platform framework used by a wide range of applications and games on desktop and mobile. AIR can run on Windows, macOS, Linux, iOS, and Android. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See The future of Adobe AIR and HARMAN’s AIR SDK Website for more details.","headline":"Setup AIR","url":"https://lime.openfl.org/docs/advanced-setup/air/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2022-12-30T22:21:43-08:00","datePublished":"2022-12-30T22:21:43-08:00","description":"Adobe AIR is a cross-platform framework used by a wide range of applications and games on desktop and mobile. AIR can run on Windows, macOS, Linux, iOS, and Android. While AIR was originally created by Adobe, it is currently maintained with active development of new features by HARMAN. See The future of Adobe AIR and HARMAN’s AIR SDK Website for more details.","headline":"Setup AIR","url":"https://lime.openfl.org/docs/advanced-setup/air/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -217,9 +217,9 @@
 
 <h2 id="build--run">Build &amp; Run</h2>
 
-<p>To compile an Adobe AIR application package, run <code class="language-plaintext highlighter-rouge">lime build air</code>. Add the <code class="language-plaintext highlighter-rouge">-debug</code> option to create a build that can connect to a SWF debugger. Add the <code class="language-plaintext highlighter-rouge">-release</code> option to create a release build.</p>
+<p>To compile an Adobe AIR application, run <code class="language-plaintext highlighter-rouge">lime build air</code>. Add the <code class="language-plaintext highlighter-rouge">-debug</code> option to create a build that can connect to a SWF debugger. Add the <code class="language-plaintext highlighter-rouge">-release</code> option to create a release build.</p>
 
-<p>To compile and launch an Adobe AIR application package with one command, run <code class="language-plaintext highlighter-rouge">lime test air</code>. The application will run on your computer using the AIR Debug Launcher (ADL).</p>
+<p>To compile and launch an Adobe AIR application with one command, run <code class="language-plaintext highlighter-rouge">lime test air</code>. The application will run on your computer using the AIR Debug Launcher (ADL).</p>
 
 <p>To build an AIR app targeting Android, add the <code class="language-plaintext highlighter-rouge">-android</code> option. This will package an <em>.apk</em> file.</p>
 
@@ -228,6 +228,37 @@
 <p>To build an AIR app for either Android or iOS, but test it in the AIR Debug Launcher (ADL) instead a device, add the <code class="language-plaintext highlighter-rouge">-air-simulator</code> option to skip packaging the <em>.apk</em> or <em>.ipa</em> file.</p>
 
 <p>When targeting AIR for iOS, specify the <code class="language-plaintext highlighter-rouge">-appstore</code> option to create a build to be submitted to the iOS App Store. Alternatively, specify the <code class="language-plaintext highlighter-rouge">-adhoc</code> option for ad hoc distribution to specific devices outside of the App Store.</p>
+
+<h3 id="code-signing">Code Signing</h3>
+
+<p>During development, AIR builds will automatically use a self-signed certificate. To distribute AIR apps, you must specify <a href="https://help.adobe.com/en_US/air/build/WS5b3ccc516d4fbf351e63e3d118666ade46-7f72.html">code signing</a> options. Code signing options may may be added to a <code class="language-plaintext highlighter-rouge">&lt;certificate/&gt;</code> element in your <a href="../../project-files/xml-format/"><em>project.xml</em></a> file. You may need to add the <code class="language-plaintext highlighter-rouge">if="air"</code> attribute, if your app targets any other platforms besides AIR.</p>
+
+<p>To use a specific certificate file, specify the <code class="language-plaintext highlighter-rouge">path</code> attribute.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;certificate</span> <span class="na">path=</span><span class="s">"path/to/keystore.p12"</span> <span class="na">if=</span><span class="s">"air"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>You should <strong>not</strong> save a keystore password in your <a href="../../project-files/xml-format/"><em>project.xml</em></a> file because it is a serious security risk. It is technically allowed, though.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- you should NOT specify the password like this --&gt;</span>
+<span class="nt">&lt;certificate</span> <span class="na">path=</span><span class="s">"path/to/keystore.p12"</span> <span class="na">password=</span><span class="s">"hunter2"</span> <span class="na">if=</span><span class="s">"air"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Instead, you have two options.</p>
+
+<ol>
+  <li>
+    <p>Specify the password on the command line. Example: <code class="language-plaintext highlighter-rouge">--certificate-password=hunter2</code></p>
+  </li>
+  <li>
+    <p>Don’t specify the password, and wait for the build to request it automatically.</p>
+  </li>
+</ol>
+
+<p>Instead of using a certificate file, developers on macOS may sign iOS and macOS apps using credentials stored in their Keychain.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;certificate</span> <span class="na">type=</span><span class="s">"KeychainStore"</span> <span class="na">alias=</span><span class="s">"Apple Development: Team Name (XXXXXXXXXX)"</span> <span class="na">if=</span><span class="s">"air ios"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h2 id="using-swc-libraries">Using SWC libraries</h2>
 
