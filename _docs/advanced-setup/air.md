@@ -22,9 +22,9 @@ lime config AIR_SDK path/to/air/sdk
 
 ## Build & Run
 
-To compile an Adobe AIR application package, run `lime build air`. Add the `-debug` option to create a build that can connect to a SWF debugger. Add the `-release` option to create a release build.
+To compile an Adobe AIR application, run `lime build air`. Add the `-debug` option to create a build that can connect to a SWF debugger. Add the `-release` option to create a release build.
 
-To compile and launch an Adobe AIR application package with one command, run `lime test air`. The application will run on your computer using the AIR Debug Launcher (ADL).
+To compile and launch an Adobe AIR application with one command, run `lime test air`. The application will run on your computer using the AIR Debug Launcher (ADL).
 
 To build an AIR app targeting Android, add the `-android` option. This will package an _.apk_ file.
 
@@ -33,6 +33,35 @@ To build an AIR app targeting iOS, add the `-ios` option. This will package an _
 To build an AIR app for either Android or iOS, but test it in the AIR Debug Launcher (ADL) instead a device, add the `-air-simulator` option to skip packaging the _.apk_ or _.ipa_ file.
 
 When targeting AIR for iOS, specify the `-appstore` option to create a build to be submitted to the iOS App Store. Alternatively, specify the `-adhoc` option for ad hoc distribution to specific devices outside of the App Store.
+
+### Code Signing
+
+During development, AIR builds will automatically use a self-signed certificate. To distribute AIR apps, you must specify [code signing](https://help.adobe.com/en_US/air/build/WS5b3ccc516d4fbf351e63e3d118666ade46-7f72.html) options. Code signing options may may be added to a `<certificate/>` element in your [_project.xml_](../../project-files/xml-format/) file. You may need to add the `if="air"` attribute, if your app targets any other platforms besides AIR.
+
+To use a specific certificate file, specify the `path` attribute.
+
+```xml
+<certificate path="path/to/keystore.p12" if="air"/>
+```
+
+You should **not** save a keystore password in your [_project.xml_](../../project-files/xml-format/) file because it is a serious security risk. It is technically allowed, though.
+
+```xml
+<!-- you should NOT specify the password like this -->
+<certificate path="path/to/keystore.p12" password="hunter2" if="air"/>
+```
+
+Instead, you have two options.
+
+1. Specify the password on the command line. Example: `--certificate-password=hunter2`
+
+2. Don't specify the password, and wait for the build to request it automatically.
+
+Instead of using a certificate file, developers on macOS may sign iOS and macOS apps using credentials stored in their Keychain.
+
+```xml
+<certificate type="KeychainStore" alias="Apple Development: Team Name (XXXXXXXXXX)" if="air ios"/>
+```
 
 ## Using SWC libraries
 
