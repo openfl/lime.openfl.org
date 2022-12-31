@@ -63,6 +63,12 @@ Instead of using a certificate file, developers on macOS may sign iOS and macOS 
 <certificate type="KeychainStore" alias="Apple Development: Team Name (XXXXXXXXXX)" if="air ios"/>
 ```
 
+## Packaging for distribution
+
+For projects targeting mobile, `lime build air -android` and `lime build air -ios` compile the _.swf_, copy all necessary assets, and package the Adobe AIR app as either _.apk_ or _.ipa_ for distribution to app stores. However, when targeting desktop, `lime build air` compiles the _.swf_ file and copies assets only. This is enough for debugging in the AIR Debug Launcher (ADL), but it is not enough to distribute the app to users.
+
+To package an Adobe AIR desktop app for distrubution, run `lime build air` and then run `lime deploy air`.
+
 ## Using SWC libraries
 
 To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe's `-swf-lib` command line option. For instance, you can add it to your [_project.xml_](../../project-files/xml-format/) file using the [`<haxeflag/>`](../../project-files/xml-format/#haxeflag) element.
