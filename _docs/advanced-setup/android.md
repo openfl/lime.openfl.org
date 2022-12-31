@@ -52,7 +52,7 @@ Specify the `path` and `alias` attributes for your certificate.
 <certificate path="path/to/keystore.p12" alias="1" if="android"/>
 ```
 
-> ### Need to know which aliases are included in your certificate?
+> **Need to know which aliases are included in your certificate?**
 > 
 > Open a terminal, and run the following command to list the keystore entries, including alias names:
 >
@@ -71,9 +71,9 @@ You should **not** save a keystore password in your [_project.xml_](../../projec
 
 Instead, you have two options.
 
-1) Specify the password on the command line. Example: `--certificate-password=hunter2`
+1. Specify the password on the command line. Example: `--certificate-password=hunter2`
 
-2) Don't specify the password, and wait for the build to request it automatically.
+2. Don't specify the password, and wait for the build to request it automatically.
 
 ## Forums
 
