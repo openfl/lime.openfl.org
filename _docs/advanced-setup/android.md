@@ -44,7 +44,7 @@ To compile and launch an Android application with one command, run `lime test an
 
 ### Code Signing
 
-During development, Android builds will automatically use a self-signed certificate. To distribute an Android app, you must specify [code signing](https://developer.android.com/studio/publish/app-signing) options. These may be added to a `<certificate/>` element in your _project.xml_ file. You may need to add the `if="android"` attribute, if your app targets multiple platforms.
+During development, Android builds will automatically use a self-signed certificate. To distribute an Android app, you must specify [code signing](https://developer.android.com/studio/publish/app-signing) options. These may be added to a `<certificate/>` element in your [_project.xml_](../../project-files/xml-format/) file. You may need to add the `if="android"` attribute, if your app targets multiple platforms.
 
 Specify the `path` and `alias` attributes for your certificate.
 
@@ -62,7 +62,7 @@ Specify the `path` and `alias` attributes for your certificate.
 >
 > If the **keytool** command is not available on the system path, you may be able to find it in a Java JDK.
 
-You should **not** save a keystore password in your _project.xml_ file because it is a serious security risk. It is technically allowed, though.
+You should **not** save a keystore password in your [_project.xml_](../../project-files/xml-format/) file because it is a serious security risk. It is technically allowed, though.
 
 ```xml
 <!-- you should NOT specify the password like this -->

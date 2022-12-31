@@ -30,7 +30,7 @@ Specify the `-appstore` option to create a build to be submitted to the iOS App 
 
 ### Code Signing
 
-To compile for iOS, you must specify [code signing](https://developer.apple.com/support/code-signing/) options. These may be added to a `<config:ios/>` element in your _project.xml_ file.
+To compile for iOS, you must specify [code signing](https://developer.apple.com/support/code-signing/) options. These may be added to a `<config:ios/>` element in your [_project.xml_](../../project-files/xml-format/) file.
 
 To specify your Apple Developer [Team ID](https://developer.apple.com/help/account/manage-your-team/locate-your-team-id/), add the `team-id` attribute.
 
