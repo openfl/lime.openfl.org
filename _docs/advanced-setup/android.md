@@ -44,7 +44,7 @@ To compile and launch an Android application with one command, run `lime test an
 
 ### Code Signing
 
-During development, Android builds will automatically use a self-signed certificate. To distribute an Android app, you must specify [code signing](https://developer.android.com/studio/publish/app-signing) options. These may be added to a `<certificate/>` element in your [_project.xml_](../../project-files/xml-format/) file. You may need to add the `if="android"` attribute, if your app targets multiple platforms.
+During development, Android builds will automatically use a self-signed certificate. To distribute an Android app, you must specify [code signing](https://developer.android.com/studio/publish/app-signing) options. These may be added to a `<certificate/>` element in your [_project.xml_](../../project-files/xml-format/) file. You may need to add the `if="android"` attribute, if your app targets any other platforms besides Android.
 
 Specify the `path` and `alias` attributes for your certificate.
 
