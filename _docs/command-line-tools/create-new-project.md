@@ -53,10 +53,8 @@ Here is a sample Haxe project file:
 import lime.project.*;
 
 class Project extends HXProject {
-
     public function new () {
-
-        super ();
+        super();
 
         meta = { title: "My Project", packageName: "com.mycompany.myproject", version: "1.0.0", company: "My Company" };
         app = { main: "Main", path: "Export", file: "MyProject" };
@@ -68,9 +66,7 @@ class Project extends HXProject {
         includeAssets ("Assets", "assets", [ "*" ], [ "lime.svg" ]);
 
         icons.push (new Icon ("Assets/lime.svg"));
-
    }
-
 }
 ```
 
@@ -90,12 +86,8 @@ package;
 import openfl.display.Sprite;
 
 class Main extends Sprite {
-
     public function new () {
-
         super ();
-
     }
-
 }
 ```

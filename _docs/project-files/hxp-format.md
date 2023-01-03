@@ -55,31 +55,22 @@ import hxp.*;
 import lime.tools.*;
 
 class Project extends HXProject {
-
     public function new () {
-
-        super ();
+        super();
         
         haxelibs.push(new Haxelib("lime"));
         sources.push("Source");
 
         if (platformType == PlatformType.WEB) {
-
             window.width = 800;
             window.height = 600;
-
         }
 
         var iOSSimulator = (target == Platform.IOS && targetFlags.exists ("simulator"));
-
         if (iOSSimulator) {
-
             trace ("Targeting the iOS simulator");
-
         }
-
     }
-
 }
 ```
 
