@@ -21,13 +21,11 @@ import hxp.*;
 import lime.tools.*;
 
 class Project extends HXProject {
-    
-    public function new () {
+    public function new() {
+        super();
         
-        super ();
-        
-        haxelibs.push (new Haxelib ("lime"));
-        sources.push ("Source");
+        haxelibs.push(new Haxelib("lime"));
+        sources.push("Source");
         
         // Other code goes here!
         
@@ -55,7 +53,7 @@ import hxp.*;
 import lime.tools.*;
 
 class Project extends HXProject {
-    public function new () {
+    public function new() {
         super();
         
         haxelibs.push(new Haxelib("lime"));
@@ -66,9 +64,9 @@ class Project extends HXProject {
             window.height = 600;
         }
 
-        var iOSSimulator = (target == Platform.IOS && targetFlags.exists ("simulator"));
+        var iOSSimulator = (target == Platform.IOS && targetFlags.exists("simulator"));
         if (iOSSimulator) {
-            trace ("Targeting the iOS simulator");
+            trace("Targeting the iOS simulator");
         }
     }
 }

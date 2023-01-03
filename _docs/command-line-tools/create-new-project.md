@@ -53,19 +53,19 @@ Here is a sample Haxe project file:
 import lime.project.*;
 
 class Project extends HXProject {
-    public function new () {
+    public function new() {
         super();
 
         meta = { title: "My Project", packageName: "com.mycompany.myproject", version: "1.0.0", company: "My Company" };
         app = { main: "Main", path: "Export", file: "MyProject" };
 
-        sources.push ("Source");
+        sources.push("Source");
 
-        haxelibs.push (new Haxelib ("lime"));
+        haxelibs.push(new Haxelib("lime"));
 
-        includeAssets ("Assets", "assets", [ "*" ], [ "lime.svg" ]);
+        includeAssets("Assets", "assets", ["*"], ["lime.svg"]);
 
-        icons.push (new Icon ("Assets/lime.svg"));
+        icons.push(new Icon("Assets/lime.svg"));
    }
 }
 ```
@@ -86,8 +86,8 @@ package;
 import openfl.display.Sprite;
 
 class Main extends Sprite {
-    public function new () {
-        super ();
+    public function new() {
+        super();
     }
 }
 ```
