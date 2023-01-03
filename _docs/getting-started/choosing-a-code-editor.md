@@ -2,7 +2,7 @@
 title: Choosing a Code Editor
 ---
 
-Once Lime has been installed, it is helpful to choose an integrated development environment (IDE) with good support for Haxe and Lime development.
+Once Lime or OpenFL has been installed, it is helpful to choose an integrated development environment (IDE) with good support for Haxe and Lime development.
 
 Although you can write code using even a simple text editor, a quality IDE can provide code completion (code hints), shortcuts to build and test your projects, and other tools to give you a great coding experience.
 

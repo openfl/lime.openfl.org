@@ -4,7 +4,7 @@ title: XML Format
 
 ## Overview
 
-Usually a simple project file is all you need to build projects using Lime, but it can be extended based on your needs. Here is a reference of what you can do.
+Usually a simple project file is all you need to build projects using Lime or OpenFL, but it can be extended based on your needs. Here is a reference of what you can do.
 
 ### XML Schema
 
