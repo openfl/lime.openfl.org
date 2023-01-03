@@ -1,5 +1,6 @@
-- title: Getting Started
+- title: Introduction
   docs:
+  - index
   - getting-started/choosing-a-code-editor
   - getting-started/targets
 
