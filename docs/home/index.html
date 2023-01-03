@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/home/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-01-03T12:45:02-08:00" />
+<meta property="article:published_time" content="2023-01-03T13:36:46-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Getting Started" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-01-03T12:45:02-08:00","datePublished":"2023-01-03T12:45:02-08:00","description":"Install Haxe","headline":"Getting Started","url":"https://lime.openfl.org/docs/home/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-01-03T13:36:46-08:00","datePublished":"2023-01-03T13:36:46-08:00","description":"Install Haxe","headline":"Getting Started","url":"https://lime.openfl.org/docs/home/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -87,11 +87,34 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
-          Command-Line Tools
+          Getting Started
         </a>
       </h4>
     </div>
     <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/docs/getting-started/choosing-a-code-editor/">Choosing a Code Editor</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/getting-started/targets/">Targets</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+          Command-Line Tools
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -113,12 +136,12 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
           Project Files
         </a>
       </h4>
     </div>
-    <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -136,12 +159,12 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
           Advanced Setup
         </a>
       </h4>
     </div>
-    <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <ul class="list-group">
         
           
@@ -217,7 +240,7 @@ haxelib run lime setup
 
 <h2 id="install-a-code-editor">Install a Code Editor</h2>
 
-<p>We recommend <a href="https://code.visualstudio.com">Visual Studio Code</a>, using the <a href="https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension">Lime Extension</a>, but many other code editors are also compatible with Haxe development.</p>
+<p>We recommend <a href="https://code.visualstudio.com">Visual Studio Code</a>, using the <a href="https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension">Lime Extension</a>, but many <a href="./choosing-a-code-editor">other code editors</a> are also compatible with Haxe development.</p>
 
 <h2 id="run-a-sample">Run a Sample</h2>
 
@@ -237,7 +260,9 @@ lime <span class="nb">test </span>flash
 
 <h2 id="use-additional-platforms">Use Additional Platforms</h2>
 
-<p>Some platforms require some setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:</p>
+<p>Lime and OpenFL support many <a href="./targets/">target platforms and operating systems</a>, including native C++ apps on Windows, macOS, Android, and iOS, HTML5 on the web or as an app with Electron, the HashLink virtual machine, Adobe AIR, and more.</p>
+
+<p>Some target platforms require extra setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime setup windows
 lime setup linux
@@ -260,6 +285,12 @@ lime setup ios
 
 
 
+
+  
+  
+
+  
+  
 
   
   
