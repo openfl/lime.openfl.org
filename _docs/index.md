@@ -27,7 +27,7 @@ lime
 
 ## Install a Code Editor
 
-We recommend [Visual Studio Code](https://code.visualstudio.com), using the [Lime Extension](https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension), but many other code editors are also compatible with Haxe development.
+We recommend [Visual Studio Code](https://code.visualstudio.com), using the [Lime Extension](https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension), but many [other code editors](./choosing-a-code-editor) are also compatible with Haxe development.
 
 
 ## Run a Sample

@@ -6,9 +6,15 @@ Once Lime has been installed, it is helpful to choose an integrated development 
 
 Although you can write code using even a simple text editor, a quality IDE can provide code completion (code hints), shortcuts to build and test your projects, and other tools to give you a great coding experience.
 
+## Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com) is a flexible code editor with support for Windows, macOS and Linux, and is recommended for most developers. It is lightweight compared to some other editors (similar to Sublime Text), but is a mature open-source editor with support for our custom [Lime extension](https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension), providing code completion and simplifying testing projects built with Lime or OpenFL.
+
+Visual Studio Code does not require project files. Using the Lime extension, you can **Open Folder** for any Lime or OpenFL project in order to enable support for code completion and other features.
+
 ## FlashDevelop
 
-[FlashDevelop](http://www.flashdevelop.org) is one of the strongest IDEs for Haxe and Lime development. If you are a Windows user (and perhaps if you are not), we recommend that you try FlashDevelop first to get a feel for what an integrated environment looks like. Many developers prefer FlashDevelop.
+[FlashDevelop](http://www.flashdevelop.org) is another excellent IDEs for Haxe and Lime development. If you are a Windows user (and perhaps if you are not), we recommend that you try FlashDevelop first to get a feel for what an integrated environment looks like. Many developers prefer FlashDevelop.
 
 Lime includes FlashDevelop project files when you use the "lime create" command for convenience. FlashDevelop is free and open-source.
 
