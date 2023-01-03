@@ -22,7 +22,7 @@ An XML project file will generally remain compatible with the command-line tools
 
 ### Project XML
 
-You can call an XML project file "project.lime" or "project.xml", or technically any file name that you prefer, although the command-line tools search for *.lime then *.xml files when running commands that do not specify the project file name.
+You can call an XML project file )project.xml_ or _project.lime_, or technically any file name that you prefer, although the command-line tools search for _.lime_ then _.xml_ files when running commands that do not specify the project file name.
 
 Here is an example of a project XML file:
 

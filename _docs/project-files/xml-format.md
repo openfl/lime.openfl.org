@@ -83,7 +83,7 @@ You can include more than one copy of each tag, so do not worry about putting it
 
 ### include.xml
 
-If you create a haxelib, you can add "include.xml" to the top-level directory. The build tools will automatically add the contents of the file to the user's project. You can use this to add binary dependencies, additional classpaths, etc.
+If you create a haxelib, you can add _include.xml_ to the top-level directory. The build tools will automatically add the contents of the file to the user's project. You can use this to add binary dependencies, additional classpaths, etc.
 
 ## XML Tag Glossary
 
@@ -448,7 +448,7 @@ You can also use `template` for this purpose.
 
 **The default template**
 
-The launch storyboard feature uses Haxe templates and your project.xml configuration to generate an Xcode storyboard file. Lime includes one default storyboard template `splash.storyboard`, which can be configured with the following options.
+The launch storyboard feature uses Haxe templates and your _project.xml_ configuration to generate an Xcode storyboard file. Lime includes one default storyboard template `splash.storyboard`, which can be configured with the following options.
 
 ```xml
 <launchStoryboard template="splash.storyboard" assetsPath="Images/splash"
