@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/home/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-01-03T14:37:19-08:00" />
+<meta property="article:published_time" content="2023-01-03T14:41:13-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Getting Started" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-01-03T14:37:19-08:00","datePublished":"2023-01-03T14:37:19-08:00","description":"Install Haxe","headline":"Getting Started","url":"https://lime.openfl.org/docs/home/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-01-03T14:41:13-08:00","datePublished":"2023-01-03T14:41:13-08:00","description":"Install Haxe","headline":"Getting Started","url":"https://lime.openfl.org/docs/home/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -229,13 +229,13 @@
 
 <p>Next, open a command-prompt (Windows) or terminal (macOS/Linux) and run the following commands:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>haxelib <span class="nb">install </span>lime
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>haxelib <span class="nb">install </span>lime
 haxelib run lime setup
 </code></pre></div></div>
 
 <p>To confirm that Lime is installed and working properly, try running the “lime” command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime
 </code></pre></div></div>
 
 <h2 id="install-a-code-editor">Install a Code Editor</h2>
@@ -246,7 +246,7 @@ haxelib run lime setup
 
 <p>Lime includes some simple sample projects to help you get started. For example, the “SimpleImage” sample illustrates an example of rendering graphics for multiple platforms and renderers:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime create SimpleImage
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime create SimpleImage
 <span class="nb">cd </span>SimpleImage
 lime <span class="nb">test </span>html5
 lime <span class="nb">test </span>html5 <span class="nt">-Dcanvas</span>
@@ -264,7 +264,7 @@ lime <span class="nb">test </span>flash
 
 <p>Some target platforms require extra setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime setup windows
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime setup windows
 lime setup linux
 lime setup mac
 lime setup android
