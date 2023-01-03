@@ -50,7 +50,9 @@ Lime will use a OpenGL-based renderer by default, but attempts to fallback to a 
 
 ## Use Additional Platforms
 
-Some platforms require some setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:
+Lime and OpenFL support many [target platforms and operating systems](./targets/), including native C++ apps on Windows, macOS, Android, and iOS, HTML5 on the web or as an app with Electron, the HashLink virtual machine, Adobe AIR, and more.
+
+Some target platforms require extra setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:
 
 ```bash
 lime setup windows

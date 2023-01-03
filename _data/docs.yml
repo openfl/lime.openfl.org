@@ -1,3 +1,8 @@
+- title: Getting Started
+  docs:
+  - getting-started/choosing-a-code-editor
+  - getting-started/targets
+
 - title: Command-Line Tools
   docs:
   - command-line-tools/basic-commands
