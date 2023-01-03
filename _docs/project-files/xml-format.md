@@ -236,9 +236,11 @@ For example, use `<config:android />` tags to set Android-specific values:
 
 ```xml
 <config:android install-location="preferExternal" />
-<config:android permission="com.android.vending.BILLING" />
+<config:android permission="android.permission.INTERNET" />
 <config:android target-sdk-version="16" />
 ```
+
+A complete list of Android permissions can be found at [Android: `Manifest.permission` API Reference](https://developer.android.com/reference/android/Manifest.permission.html).
 
 Use `<config:ios />` tags to set iOS-specific values when compiling. The `deployment` attribute can set the minimum iOS version you wish to target. The `prerendered-icon` attribute can help control the style of your icon.
 
