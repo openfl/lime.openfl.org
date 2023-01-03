@@ -13,14 +13,14 @@ If you have not already, install [Haxe](https://haxe.org/download/) for your cur
 
 Next, open a command-prompt (Windows) or terminal (macOS/Linux) and run the following commands:
 
-```bash
+```sh
 haxelib install lime
 haxelib run lime setup
 ```
 
 To confirm that Lime is installed and working properly, try running the "lime" command:
 
-```bash
+```sh
 lime
 ```
 
@@ -34,7 +34,7 @@ We recommend [Visual Studio Code](https://code.visualstudio.com), using the [Lim
 
 Lime includes some simple sample projects to help you get started. For example, the "SimpleImage" sample illustrates an example of rendering graphics for multiple platforms and renderers:
 
-```bash
+```sh
 lime create SimpleImage
 cd SimpleImage
 lime test html5
@@ -54,7 +54,7 @@ Lime and OpenFL support many [target platforms and operating systems](../getting
 
 Some target platforms require extra setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:
 
-```bash
+```sh
 lime setup windows
 lime setup linux
 lime setup mac

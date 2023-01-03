@@ -4,17 +4,17 @@ title: HXP Format
 
 ## Overview
 
-The \*.hxp format is based upon Haxe, it mirrors the internal project format used within Lime tools. There is a lot of flexibility and power that can come from using an \*.hxp project, but be aware that as the Lime tools evolve, the specification may change slightly.
+The _.hxp_ format is based upon Haxe, it mirrors the internal project format used within Lime tools. There is a lot of flexibility and power that can come from using an _.hxp_ project, but be aware that as the Lime tools evolve, the specification may change slightly.
 
 Using the HXP format requires the `hxp` haxelib:
 
-```bash
+```sh
 haxelib install hxp
 ```
 
 ### Structure
 
-The basic structure of an \*.hxp project looks like this:
+The basic structure of an _.hxp_ project looks like this:
 
 ```haxe
 import hxp.*;
