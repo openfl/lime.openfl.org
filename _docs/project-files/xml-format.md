@@ -369,6 +369,24 @@ You can also specify a version, if you prefer:
 <haxelib name="actuate" version="1.0.0" />
 ```
 
+Every library is mandatory unless otherwise is specified. An optional library is ignored instead of throwing an error if it is not found.
+
+```xml
+<haxelib name="actuate" optional="true" />
+```
+
+Include local libraries with `path` attribute. This works for true haxe libraries (given directory contains valid `haxelib.json` file) as well as for directories with some source code.
+
+```xml
+<haxelib name="actuate" path="C:\mylibs\actuate" />
+```
+
+Set custom path to haxelib itself with `repository` attribute. Be aware that such repository must contain Lime (and OpenFl) library!
+
+```xml
+<haxelib repository="./local-libs" />
+```
+
 
 
 
