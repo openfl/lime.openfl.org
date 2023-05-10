@@ -381,7 +381,7 @@ Include local libraries with `path` attribute. This works for true haxe librarie
 <haxelib name="actuate" path="C:\mylibs\actuate" />
 ```
 
-Set custom path to haxelib itself with `repository` attribute. Be aware that such repository must contain Lime (and OpenFl) library!
+Set custom path to haxelib libraries with `repository` attribute (under the hood it sets `HAXELIB_PATH` environment variable). Be aware that such path must contain Lime (and OpenFl) library!
 
 ```xml
 <haxelib repository="./local-libs" />
