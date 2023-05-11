@@ -34,6 +34,38 @@ To use an external JavaScript library with Lime, you need [Haxe externs](https:/
 
 Members of the Haxe community have already created open source externs for a number of popular JavaScript libraries, so be sure to search [Haxelib](https://lib.haxe.org/search) or [Github](https://github.com/search) to see if JS externs exist for your library before you try to create your own.
 
+### Adding dependencies
+
+The way you add external libraries can vary. Some Haxe externs are configured to use with Lime out of the box (like [haxe-simple-peer](https://github.com/ixiagames/haxe-simple-peer)), so you just use it with `<haxelib name="simple-peer" />`. Other externs may require to include appropriate js dependencies by you. There are three ways for doing so:
+
+1. Ship the library with your project as a separate file:
+
+    ```xml
+    <dependency path="js-libs/someLibrary.js" />
+    ```
+
+    `js-libs/someLibrary.js` file will be copied to `lib` directory of the compiled project. You can change the dependency export path with this config:
+
+    ```xml
+    <config:html5 dependency-path="newDirName" />
+    ```
+  
+2. Embed the library:
+  
+    ```xml
+    <dependency path="js-libs/someLibrary.js" embed="true"/>
+    ```
+
+    The content of `js-libs/someLibrary.js` will be embedded into compiled application's `.js` file.
+
+3. Add remote link to the library:
+
+    ```xml
+    <dependency name="https://unpkg.com/simple-peer@5.9.0/simplepeer.min.js" />
+    ```
+    
+    The resulted `index.html` will have an appropriate `<script>` tag.
+
 ## Forums
 
 If you encounter any problems when setting up Lime for HTML5, please visit the [forums](http://community.openfl.org/c/help).
