@@ -36,7 +36,7 @@ Members of the Haxe community have already created open source externs for a num
 
 ### Adding dependencies
 
-The way you add external libraries can vary. Some Haxe externs are configured to use with Lime out of the box (like [haxe-simple-peer](https://github.com/ixiagames/haxe-simple-peer)), so you just use it with `<haxelib name="simple-peer" />`. Other externs may require to include appropriate js dependencies by you. There are three ways for doing so:
+To actually use external JS libraries you must include them in `Project.xml`. There are three options:
 
 1. Ship the library with your project as a separate file:
 
@@ -44,10 +44,10 @@ The way you add external libraries can vary. Some Haxe externs are configured to
     <dependency path="js-libs/someLibrary.js" />
     ```
 
-    `js-libs/someLibrary.js` file will be copied to `lib` directory of the compiled project. You can change the dependency export path with this config:
+    `js-libs/someLibrary.js` file will be copied to `lib` directory of the compiled project. You can change the dependency export path (e.g. from `lib` to `js`) with this config:
 
     ```xml
-    <config:html5 dependency-path="newDirName" />
+    <config:html5 dependency-path="js" />
     ```
   
 2. Embed the library:
@@ -65,6 +65,14 @@ The way you add external libraries can vary. Some Haxe externs are configured to
     ```
     
     The resulted `index.html` will have an appropriate `<script>` tag.
+
+### `index.html` template
+
+Another possible way of adding JS files is to link them directly inside your custom `index.html` template. With this you must [configure](../../project-files/xml-format/#template) `Poject.xml` to use a custom template and probably handle copying JS files to the project export directory by yourself. Similar to `<dependency />` but less convenient.
+
+### `include.xml`
+
+Some Haxe externs are configured to use with Lime out of the box, like [haxe-simple-peer](https://github.com/ixiagames/haxe-simple-peer). You just include it with `<haxelib name="simple-peer" />` and that's all. This works because it has [include.xml](../../project-files/xml-format/#includexml) with `<dependency />` tag so Lime knows how to include the external `simplepeer.min.js` file.
 
 ## Forums
 
