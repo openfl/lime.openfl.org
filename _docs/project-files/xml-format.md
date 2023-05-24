@@ -100,11 +100,9 @@ The `<app />` tag sets values important to building your project, including the 
 
 ### architecture 
 
-Use `<architecture />` tags to set or exclude Android-specific architectures. These can be `ARMv7`, `ARMv6`, `ARMv5` and `X86`.
+Use `<architecture />` tags to set or exclude target-specific architectures. Depending on the target, values can include `arm64`, `armv7`, `armv7s`, `armv6`, `armv5`, `x86`, and `x64`.
 
-By default the only architecture built will be `ARMv7`.
-
-For example, if you want to enable `ARMv6` and disable `ARMv7` you would set the `<architecture />` tag to:
+By default, the only architecture built for Android will be `armv7`. For example, if you want to enable `armv6` and disable `armv7` you would set the `<architecture />` tag to:
 
 ```xml
 <architecture name="armv6" exclude="armv7" if="android" />
