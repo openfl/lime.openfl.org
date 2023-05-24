@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>XML Format | Lime</title>
-<meta name="generator" content="Jekyll v3.9.2" />
+<meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="XML Format" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Overview" />
@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-01-03T15:07:17-08:00" />
+<meta property="article:published_time" content="2023-05-24T08:25:37-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XML Format" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-01-03T15:07:17-08:00","datePublished":"2023-01-03T15:07:17-08:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-05-24T08:25:37-07:00","datePublished":"2023-05-24T08:25:37-07:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -314,11 +314,9 @@
 
 <h3 id="architecture">architecture</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;architecture /&gt;</code> tags to set or exclude Android-specific architectures. These can be <code class="language-plaintext highlighter-rouge">ARMv7</code>, <code class="language-plaintext highlighter-rouge">ARMv6</code>, <code class="language-plaintext highlighter-rouge">ARMv5</code> and <code class="language-plaintext highlighter-rouge">X86</code>.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;architecture /&gt;</code> tags to set or exclude target-specific architectures. Depending on the target, values can include <code class="language-plaintext highlighter-rouge">arm64</code>, <code class="language-plaintext highlighter-rouge">armv7</code>, <code class="language-plaintext highlighter-rouge">armv7s</code>, <code class="language-plaintext highlighter-rouge">armv6</code>, <code class="language-plaintext highlighter-rouge">armv5</code>, <code class="language-plaintext highlighter-rouge">x86</code>, and <code class="language-plaintext highlighter-rouge">x64</code>.</p>
 
-<p>By default the only architecture built will be <code class="language-plaintext highlighter-rouge">ARMv7</code>.</p>
-
-<p>For example, if you want to enable <code class="language-plaintext highlighter-rouge">ARMv6</code> and disable <code class="language-plaintext highlighter-rouge">ARMv7</code> you would set the <code class="language-plaintext highlighter-rouge">&lt;architecture /&gt;</code> tag to:</p>
+<p>By default, the only architecture built for Android will be <code class="language-plaintext highlighter-rouge">armv7</code>. For example, if you want to enable <code class="language-plaintext highlighter-rouge">armv6</code> and disable <code class="language-plaintext highlighter-rouge">armv7</code> you would set the <code class="language-plaintext highlighter-rouge">&lt;architecture /&gt;</code> tag to:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;architecture</span> <span class="na">name=</span><span class="s">"armv6"</span> <span class="na">exclude=</span><span class="s">"armv7"</span> <span class="na">if=</span><span class="s">"android"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
