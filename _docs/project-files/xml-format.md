@@ -27,49 +27,49 @@ First, every node in the project file format supports `if` and `unless` attribut
  * ios, android, windows, mac, linux or html5
  * cpp, neko, flash or js
 
-You can `<set />` or `<unset />` values for conditional logic:
+You can [`<set />`](#set) or [`<define />`](#define) values for conditional logic:
 
 ```xml
 <set name="red" />
 <window background="#FF0000" if="red" />
+
+<define name="fullscreen" />
+<window fullscreen="true" if="fullscreen" />
 ```
 
-This can also be used to pass special values:
+Both also support a `value` attribute, which can be retrieved later using the `${}` syntax.
 
 ```xml
 <set name="color" value="#FF0000" if="red" />
-<set name="color" value="#0000FF" if="blue" />
+<define name="color" value="#0000FF" if="blue" />
 
 <window background="${color}" if="color" />
 ```
 
-You can use these values in your [templates](#template) like this: `::SET_COLOR::`
-
-Similarly, you can `<define />` or `<undefine />` values which are also passed to Haxe.
-
-```xml
-<define name="red" />
-<window background="#FF0000" if="red" />
-```
-
-```haxe
-#if red
-trace ("Background is red");
-#end
-```
-
-You can use these values in your [templates](#template) like this: `::DEFINE_RED::` (`::SET_RED::` also works).
-
-You can add defines using the command-line as well:
+You can also check values that were defined on the command line:
 
 ```sh
-lime test flash -Ddefine
+lime test flash -Dblue
+```
+
+```xml
+<window background="#0000FF" if="blue" />
 ```
 
 If you need to have multiple values in a conditional, spaces imply an "and" and vertical bars imply an "or", like this:
 
 ```xml
 <window width="640" height="480" if="define define2" unless="define3 || define4" />
+```
+
+### Build info
+
+The `${}` syntax can get information about the build. You can use this data in a condition, print it, or pass it along to Haxe:
+
+```
+<set name="buildOrTest" if="${project.command == build} || ${project.command == test}" />
+<echo value="Building for ${project.target} on a ${project.host} machine" if="buildOrTest" />
+<define name="projectDirectory" value="${project.workingDirectory}" />
 ```
 
 ### Duplicates
@@ -94,6 +94,12 @@ The `<app />` tag sets values important to building your project, including the 
 ```xml
 <app main="com.example.MyApplication" file="MyApplication" path="Export" preloader="CustomPreloader" />
 <app swf-version="11" />
+```
+
+You can retrieve this information later:
+
+```xml
+<echo value="App info: ${app.file} ${app.path}" />
 ```
 
 
@@ -189,6 +195,12 @@ iOS does not use a certificate `path` and `password`, but instead uses a `team-i
 <certificate team-id="SK12FH34" />
 ```
 
+You can retrieve this information later:
+
+```xml
+<echo value="Certificate info: ${keystore.path} ${keystore.alias}" />
+```
+
 
 
 
@@ -247,17 +259,26 @@ Use `<config:ios />` tags to set iOS-specific values when compiling. The `deploy
 <config:ios prerendered-icon="false" />
 ```
 
+You can retrieve this information later:
+
+```xml
+<echo value="Android config info: ${config.android.target-sdk-version} ${config.android.minimum-sdk-version}" />
+<echo value="iOS config info: ${config.ios.compiler} ${config.ios.deployment}" />
+```
+
 
 
 
 ### define 
 
-Similar to [`<set />`](#set) tag, use `<define />` to also pass values to Haxe. See the [Conditionals](#conditionals) section above.
+Sets a value to be used later. See the [Conditionals](#conditionals) section above.
 
 ```xml
-<define name="myDefineFlag" />
+<define name="color" value="blue" />
+<define name="custom-value" />
 ```
 
+These values will be available in Haxe and [templates](#template) using the syntax `::DEFINE_custom_value::`. Hyphens are converted to underscores in both cases.
 
 
 
@@ -585,6 +606,11 @@ Use `<meta />` tags to add information about your application, which usually wil
 <meta title="My Application" package="com.example.myapplication" version="1.0.0" company="My Company" />
 ```
 
+You can retrieve this information later:
+
+```xml
+<echo value="Metadata: ${meta.title} ${meta.version}" />
+```
 
 
 ### module 
@@ -700,15 +726,18 @@ The `<section />` tag is used to group other tags together. This is usually most
 Use `<set />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above.
 
 ```xml
-<set name="red" />
+<set name="color" value="red" />
+<set name="custom-value" />
 ```
+
+These values will be available in [templates](#template) using the syntax `::SET_custom_value::`. (Hyphens are converted to underscores.)
 
 
 
 
 ### setenv 
 
-Use `<setenv />` tags to set environment variables:
+Use `<setenv />` tags to set environment variables. See the [Conditionals](#Conditionals) section above.
 
 ```xml
 <setenv name="GLOBAL_DEFINE" />
@@ -825,6 +854,12 @@ By default, mobile platforms use a window width and height of 0, which is a spec
 ```
 
 The `orientation` value expects either "portrait" or "landscape" ... the default is "auto" which allows the operating system to decide which orientation to use.
+
+You can retrieve this information later:
+
+```xml
+<echo value="Window info: ${window.fps} ${window.allowShaders}" />
+```
 
 
 
