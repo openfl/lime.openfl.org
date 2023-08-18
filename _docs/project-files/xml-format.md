@@ -271,7 +271,7 @@ You can retrieve this information later:
 
 ### define 
 
-Sets a value to be used later. See the [Conditionals](#conditionals) section above.
+Use `<define />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above.
 
 ```xml
 <define name="color" value="blue" />
