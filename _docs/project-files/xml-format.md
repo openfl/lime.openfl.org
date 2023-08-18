@@ -271,7 +271,7 @@ You can retrieve this information later:
 
 ### define 
 
-Use `<define />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above.
+Use `<define />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above, and see [`<undefine />`](#undefine) to remove a defined value.
 
 ```xml
 <define name="color" value="blue" />
@@ -723,7 +723,7 @@ The `<section />` tag is used to group other tags together. This is usually most
 
 ### set 
 
-Use `<set />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above.
+Use `<set />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above, and see [`<unset />`](#unset) to remove a set value.
 
 ```xml
 <set name="color" value="red" />
