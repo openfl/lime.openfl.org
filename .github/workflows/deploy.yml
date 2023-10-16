@@ -10,11 +10,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+
+    - uses: actions/checkout@v3
+      with:
+        repository: openfl/lime
+        path: _lime-git
+        ref: 8.1.0
+
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
         bundler-cache: true
+
+    - uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: 4.2.5
+
+    - name: Set HAXEPATH
+      run: |
+        echo "HAXEPATH=$HAXE_STD_PATH/.." >> $GITHUB_ENV
+
+    - name: Install Haxe dependencies
+      run: |
+        haxelib install dox 1.6.0
+        haxelib dev lime _lime-git
+
+    - name: Build docs
+      working-directory: _lime-git/docs
+      run: |
+        haxe build.hxml
+
+    - name: Copy docs
+      run: |
+        mkdir api
+        cp -R _lime-git/docs/pages api
 
     # - name: Install dependencies
     #   run: |
