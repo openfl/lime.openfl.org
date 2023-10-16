@@ -44,7 +44,7 @@ jobs:
     - name: Copy docs
       run: |
         mkdir api
-        cp -R _lime-git/docs/pages/ api
+        cp -a _lime-git/docs/pages/. api/
 
     # - name: Install dependencies
     #   run: |
