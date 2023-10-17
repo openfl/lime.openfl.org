@@ -280,7 +280,7 @@ Use `<define />` tags to set variables for conditional logic. See the [Condition
 <define name="custom-value" />
 ```
 
-These values will be available in Haxe and [templates](#template) using the syntax `::DEFINE_custom_value::`. Hyphens are converted to underscores in both cases.
+These values will be available in Haxe and in [templates](#template). For templates, use the syntax `::DEFINE_custom_value::`. Hyphens are converted to underscores in both cases.
 
 
 
