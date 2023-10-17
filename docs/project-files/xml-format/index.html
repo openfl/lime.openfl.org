@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-16T13:24:40-07:00" />
+<meta property="article:published_time" content="2023-10-17T11:24:42-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XML Format" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-10-16T13:24:40-07:00","datePublished":"2023-10-16T13:24:40-07:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-10-17T11:24:42-07:00","datePublished":"2023-10-17T11:24:42-07:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -251,43 +251,45 @@
   <li>cpp, neko, flash or js</li>
 </ul>
 
-<p>You can <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;unset /&gt;</code> values for conditional logic:</p>
+<p>You can <a href="#set"><code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code></a> or <a href="#define"><code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code></a> values for conditional logic:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"#FF0000"</span> <span class="na">if=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"fullscreen"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;window</span> <span class="na">fullscreen=</span><span class="s">"true"</span> <span class="na">if=</span><span class="s">"fullscreen"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>This can also be used to pass special values:</p>
+<p>Both also support a <code class="language-plaintext highlighter-rouge">value</code> attribute, which can be retrieved later using the <code class="language-plaintext highlighter-rouge">${}</code> syntax.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"#FF0000"</span> <span class="na">if=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"#0000FF"</span> <span class="na">if=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"#0000FF"</span> <span class="na">if=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span>
 
 <span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"${color}"</span> <span class="na">if=</span><span class="s">"color"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>You can use these values in your <a href="#template">templates</a> like this: <code class="language-plaintext highlighter-rouge">::SET_COLOR::</code></p>
+<p>You can also check values that were defined on the command line:</p>
 
-<p>Similarly, you can <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;undefine /&gt;</code> values which are also passed to Haxe.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"#FF0000"</span> <span class="na">if=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime <span class="nb">test </span>flash <span class="nt">-Dblue</span>
 </code></pre></div></div>
 
-<div class="language-haxe highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="k">if</span> <span class="nx">red</span>
-<span class="kr">trace</span> <span class="p">(</span><span class="s2">"Background is red"</span><span class="p">);</span>
-<span class="cp">#end</span>
-</code></pre></div></div>
-
-<p>You can use these values in your <a href="#template">templates</a> like this: <code class="language-plaintext highlighter-rouge">::DEFINE_RED::</code> (<code class="language-plaintext highlighter-rouge">::SET_RED::</code> also works).</p>
-
-<p>You can add defines using the command-line as well:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime <span class="nb">test </span>flash <span class="nt">-Ddefine</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;window</span> <span class="na">background=</span><span class="s">"#0000FF"</span> <span class="na">if=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>If you need to have multiple values in a conditional, spaces imply an “and” and vertical bars imply an “or”, like this:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;window</span> <span class="na">width=</span><span class="s">"640"</span> <span class="na">height=</span><span class="s">"480"</span> <span class="na">if=</span><span class="s">"define define2"</span> <span class="na">unless=</span><span class="s">"define3 || define4"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>If a value isn’t found, either because it was never set or because of <a href="#unset"><code class="language-plaintext highlighter-rouge">&lt;unset /&gt;</code></a>/<a href="#undefine"><code class="language-plaintext highlighter-rouge">&lt;undefine /&gt;</code></a>, it will be treated as <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<h3 id="build-info">Build info</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">${}</code> syntax can get information about the build. You can use this data in a condition, print it, or pass it along to Haxe:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;set name="buildOrTest" if="${project.command == build} || ${project.command == test}" /&gt;
+&lt;echo value="Building for ${project.target} on a ${project.host} machine" if="buildOrTest" /&gt;
+&lt;define name="projectDirectory" value="${project.workingDirectory}" /&gt;
 </code></pre></div></div>
 
 <h3 id="duplicates">Duplicates</h3>
@@ -310,6 +312,11 @@
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;app</span> <span class="na">main=</span><span class="s">"com.example.MyApplication"</span> <span class="na">file=</span><span class="s">"MyApplication"</span> <span class="na">path=</span><span class="s">"Export"</span> <span class="na">preloader=</span><span class="s">"CustomPreloader"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;app</span> <span class="na">swf-version=</span><span class="s">"11"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>You can retrieve this information later:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"App info: ${app.file} ${app.path}"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="architecture">architecture</h3>
@@ -399,6 +406,11 @@
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;certificate</span> <span class="na">team-id=</span><span class="s">"SK12FH34"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
+<p>You can retrieve this information later:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"Certificate info: ${keystore.path} ${keystore.alias}"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="classpath">classpath</h3>
 
 <p>Same as <a href="#source"><code class="language-plaintext highlighter-rouge">&lt;source/&gt;</code></a>.</p>
@@ -450,12 +462,21 @@
 <span class="nt">&lt;config:ios</span> <span class="na">prerendered-icon=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
+<p>You can retrieve this information later:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"Android config info: ${config.android.target-sdk-version} ${config.android.minimum-sdk-version}"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"iOS config info: ${config.ios.compiler} ${config.ios.deployment}"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="define">define</h3>
 
-<p>Similar to <a href="#set"><code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code></a> tag, use <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> to also pass values to Haxe. See the <a href="#conditionals">Conditionals</a> section above.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> tags to set variables for conditional logic. See the <a href="#Conditionals">Conditionals</a> section above, and see <a href="#undefine"><code class="language-plaintext highlighter-rouge">&lt;undefine /&gt;</code></a> to remove a defined value.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"myDefineFlag"</span> <span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"custom-value"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
+
+<p>These values will be available in Haxe and in <a href="#template">templates</a>. For templates, use the syntax <code class="language-plaintext highlighter-rouge">::DEFINE_custom_value::</code>. Hyphens are converted to underscores in both cases.</p>
 
 <h3 id="dependency">dependency</h3>
 
@@ -720,6 +741,11 @@
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">title=</span><span class="s">"My Application"</span> <span class="na">package=</span><span class="s">"com.example.myapplication"</span> <span class="na">version=</span><span class="s">"1.0.0"</span> <span class="na">company=</span><span class="s">"My Company"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
+<p>You can retrieve this information later:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"Metadata: ${meta.title} ${meta.version}"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="module">module</h3>
 
 <p>More to come.</p>
@@ -799,14 +825,17 @@
 
 <h3 id="set">set</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> tags to set variables for conditional logic. See the <a href="#Conditionals">Conditionals</a> section above.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> tags to set variables for conditional logic. See the <a href="#Conditionals">Conditionals</a> section above, and see <a href="#unset"><code class="language-plaintext highlighter-rouge">&lt;unset /&gt;</code></a> to remove a set value.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"custom-value"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
+
+<p>These values will be available in <a href="#template">templates</a> using the syntax <code class="language-plaintext highlighter-rouge">::SET_custom_value::</code>. (Hyphens are converted to underscores.)</p>
 
 <h3 id="setenv">setenv</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;setenv /&gt;</code> tags to set environment variables:</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;setenv /&gt;</code> tags to set environment variables. See the <a href="#Conditionals">Conditionals</a> section above.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;setenv</span> <span class="na">name=</span><span class="s">"GLOBAL_DEFINE"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
@@ -888,6 +917,11 @@
 </code></pre></div></div>
 
 <p>The <code class="language-plaintext highlighter-rouge">orientation</code> value expects either “portrait” or “landscape” … the default is “auto” which allows the operating system to decide which orientation to use.</p>
+
+<p>You can retrieve this information later:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"Window info: ${window.fps} ${window.allowShaders}"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 </div>
             <p class="text-center">
