@@ -16,13 +16,13 @@ This will create a new directory with the same name as the project by default. I
 
 You can also create a project by hand, you will need a project file and an entry class to get started.
 
-There are two different forms of project files, *.xml or *.hxp, so you can decide which type of project file to use.
+There are two different forms of project files, _*.xml_ or _*.hxp_, so you can decide which type of project file to use.
 
 An XML project file will generally remain compatible with the command-line tools, regardless of the version. However, a Haxe project file can include robust logic, and can call other process as part of the build process... even generate assets dynamically. It is up to you to decide what best matches your taste.
 
 ### Project XML
 
-You can call an XML project file )project.xml_ or _project.lime_, or technically any file name that you prefer, although the command-line tools search for _.lime_ then _.xml_ files when running commands that do not specify the project file name.
+You can call an XML project file _project.xml_ or _project.lime_, or technically any file name that you prefer, although the command-line tools search for _.lime_ then _.xml_ files when running commands that do not specify the project file name.
 
 Here is an example of a project XML file:
 
@@ -45,7 +45,7 @@ This is just the start, you can read more about the full project XML format here
 
 ### Haxe Project
 
-For a Haxe-based project file, use the name of your project file class, with an *.hxp extension, for example, a class called "Project" may have a file called "project.hxp".
+For a Haxe-based project file, use the name of your project file class, with an _*.hxp_ extension, for example, a class called "Project" may have a file called _project.hxp_.
 
 Here is a sample Haxe project file:
 
@@ -76,7 +76,7 @@ You also need a Haxe entry class. This does not need to be very complicated.
 
 "Main" is the default, but you can use any name you want, so long as it is a valid Haxe class. If you specify a different name, you will need to set the `<app main="" />` or `app.main` value in your project file (depending on the type).
 
-You will also want to create it in the source path. For example, if the project includes "Source" as a source path, create "Source/Main.hx" for a class called "Main".
+You will also want to create it in the source path. For example, if the project includes "Source" as a source path, create _Source/Main.hx_ for a class called "Main".
 
 Here is a sample entry class:
 
