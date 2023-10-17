@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/command-line-tools/create-new-project/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-17T11:24:42-07:00" />
+<meta property="article:published_time" content="2023-10-17T12:42:20-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Create New Project" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-10-17T11:24:42-07:00","datePublished":"2023-10-17T11:24:42-07:00","description":"Using the “create” Command","headline":"Create New Project","url":"https://lime.openfl.org/docs/command-line-tools/create-new-project/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2023-10-17T12:42:20-07:00","datePublished":"2023-10-17T12:42:20-07:00","description":"Using the “create” Command","headline":"Create New Project","url":"https://lime.openfl.org/docs/command-line-tools/create-new-project/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -241,13 +241,13 @@
 
 <p>You can also create a project by hand, you will need a project file and an entry class to get started.</p>
 
-<p>There are two different forms of project files, *.xml or *.hxp, so you can decide which type of project file to use.</p>
+<p>There are two different forms of project files, <em>*.xml</em> or <em>*.hxp</em>, so you can decide which type of project file to use.</p>
 
 <p>An XML project file will generally remain compatible with the command-line tools, regardless of the version. However, a Haxe project file can include robust logic, and can call other process as part of the build process… even generate assets dynamically. It is up to you to decide what best matches your taste.</p>
 
 <h3 id="project-xml">Project XML</h3>
 
-<p>You can call an XML project file )project.xml_ or <em>project.lime</em>, or technically any file name that you prefer, although the command-line tools search for <em>.lime</em> then <em>.xml</em> files when running commands that do not specify the project file name.</p>
+<p>You can call an XML project file <em>project.xml</em> or <em>project.lime</em>, or technically any file name that you prefer, although the command-line tools search for <em>.lime</em> then <em>.xml</em> files when running commands that do not specify the project file name.</p>
 
 <p>Here is an example of a project XML file:</p>
 
@@ -271,7 +271,7 @@
 
 <h3 id="haxe-project">Haxe Project</h3>
 
-<p>For a Haxe-based project file, use the name of your project file class, with an *.hxp extension, for example, a class called “Project” may have a file called “project.hxp”.</p>
+<p>For a Haxe-based project file, use the name of your project file class, with an <em>*.hxp</em> extension, for example, a class called “Project” may have a file called <em>project.hxp</em>.</p>
 
 <p>Here is a sample Haxe project file:</p>
 
@@ -301,7 +301,7 @@
 
 <p>“Main” is the default, but you can use any name you want, so long as it is a valid Haxe class. If you specify a different name, you will need to set the <code class="language-plaintext highlighter-rouge">&lt;app main="" /&gt;</code> or <code class="language-plaintext highlighter-rouge">app.main</code> value in your project file (depending on the type).</p>
 
-<p>You will also want to create it in the source path. For example, if the project includes “Source” as a source path, create “Source/Main.hx” for a class called “Main”.</p>
+<p>You will also want to create it in the source path. For example, if the project includes “Source” as a source path, create <em>Source/Main.hx</em> for a class called “Main”.</p>
 
 <p>Here is a sample entry class:</p>
 
