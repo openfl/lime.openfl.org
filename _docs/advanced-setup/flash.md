@@ -16,6 +16,7 @@ There is generally no setup required for the Flash target. However, you will nee
 
  *  [Adobe Flash Player 32 Content Debugger for Windows](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.exe)
  *  [Adobe Flash Player 32 Content Debugger for macOS](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flashplayer_32_sa_debug.dmg)
+ *  [Adobe Flash Player 32 Content Debugger for Linux](https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux_debug.x86_64.tar.gz)
 
 ## Build & Run
 
