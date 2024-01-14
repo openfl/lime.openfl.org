@@ -2,7 +2,7 @@
 title: Setup HTML5
 ---
 
-Lime and OpenFL may be used to create [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) applications and games for web browsers by [compiling to JavaScript](https://haxe.org/manual/target-javascript.html)
+Lime and OpenFL may be used to create [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) applications and games for web browsers by [compiling to JavaScript](https://haxe.org/manual/target-javascript.html).
 
 ## Automatic Install
 
@@ -33,6 +33,46 @@ To compile and start the local development server, but skip launching in a web b
 To use an external JavaScript library with Lime, you need [Haxe externs](https://haxe.org/manual/lf-externs.html). See also [Haxe: Using external JavaScript libraries](https://haxe.org/manual/target-javascript-external-libraries.html).
 
 Members of the Haxe community have already created open source externs for a number of popular JavaScript libraries, so be sure to search [Haxelib](https://lib.haxe.org/search) or [Github](https://github.com/search) to see if JS externs exist for your library before you try to create your own.
+
+### Adding dependencies
+
+To actually use external JS libraries you must include them in _project.xml_. There are three options:
+
+1. Ship the library with your project as a separate file:
+
+    ```xml
+    <dependency path="js-libs/someLibrary.js" />
+    ```
+
+    The _js-libs/someLibrary.js_ file will be copied into the compiled project's _lib_ directory. You can change the dependency export path (e.g. from _lib_ to _js_) with this config:
+
+    ```xml
+    <config:html5 dependency-path="js" />
+    ```
+  
+2. Embed the library:
+  
+    ```xml
+    <dependency path="js-libs/someLibrary.js" embed="true"/>
+    ```
+
+    The content of _js-libs/someLibrary.js_ will be embedded into compiled application's _.js_ file.
+
+3. Add a remote link to the library:
+
+    ```xml
+    <dependency name="https://unpkg.com/simple-peer@5.9.0/simplepeer.min.js" />
+    ```
+    
+    The resulting _index.html_ will have an appropriate `<script>` tag.
+
+### _index.html_ template
+
+Another possible way of adding JS files is to link them directly inside your custom _index.html_ template. With this you must [configure _project.xml_ to use a custom template](../../project-files/xml-format/#template) and probably handle copying JS files to the project export directory by yourself. Similar to `<dependency />` but less convenient.
+
+### _include.xml_
+
+Some Haxe externs support Lime out of the box, like [haxe-simple-peer](https://github.com/ixiagames/haxe-simple-peer). You just include it with `<haxelib name="simple-peer" />` and that's all. This works because it has an [_include.xml_](../../project-files/xml-format/#includexml) file with a `<dependency />` tag so Lime knows how to include the external _simplepeer.min.js_ file.
 
 ## Forums
 
