@@ -384,10 +384,23 @@ Use `<haxelib />` tags to include [Haxe libraries](https://lib.haxe.org):
 <haxelib name="actuate" />
 ```
 
-You can also specify a version, if you prefer:
+You can specify a version or path, if you prefer:
 
 ```xml
-<haxelib name="actuate" version="1.0.0" />
+<haxelib name="actuate" version="1.0.0" /> <!-- Use Actuate 1.0.0, even if a newer version is installed. -->
+<haxelib name="actuate" path="../alt-haxelibs/actuate" /> <!-- Use a version of Actuate from a specific folder, even a folder that Haxelib doesn't know about. -->
+```
+
+By default, an error will be thrown if the requested library isn't installed. You can set `optional` to continue without the library instead.
+
+```xml
+<haxelib name="actuate" optional="true" /> <!-- Use Actuate if available, and don't if not. Haxe code can use `#if actuate` to avoid errors. -->
+```
+
+If you have multiple Haxelib repository folders, you can select one using the `repository` attribute. The folder you select must include a copy of Lime (and OpenFL, if applicable).
+
+```xml
+<haxelib repository="../alt-haxelibs" />
 ```
 
 
