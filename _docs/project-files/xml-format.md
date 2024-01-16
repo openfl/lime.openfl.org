@@ -210,6 +210,7 @@ Use `<config />` tags to set platform-specific values. These targets are current
 - android
 - blackberry
 - console-pc
+- emscripten
 - firefox
 - flash
 - html5
@@ -219,29 +220,20 @@ Use `<config />` tags to set platform-specific values. These targets are current
 - ps3
 - ps4
 - tizen
+- tvos
 - vita
-- windows
+- webassembly
 - webos
 - wiiu
+- windows
 - xbox1
-- emscripten
-- tvos
 
-**One must append a suffix to the tag depending on the platform.**
-
-For example, use `<config:android />` tags to set Android-specific values:
+You must append a suffix to the tag depending on the platform. For a full list of options, see [config](/docs/project-files/config/).
 
 ```xml
 <config:android install-location="preferExternal" />
 <config:android permission="android.permission.INTERNET" />
 <config:android target-sdk-version="16" />
-```
-
-A complete list of Android permissions can be found at [Android: `Manifest.permission` API Reference](https://developer.android.com/reference/android/Manifest.permission.html).
-
-Use `<config:ios />` tags to set iOS-specific values when compiling. The `deployment` attribute can set the minimum iOS version you wish to target. The `prerendered-icon` attribute can help control the style of your icon.
-
-```xml
 <config:ios deployment="5.1" />
 <config:ios prerendered-icon="false" />
 ```
