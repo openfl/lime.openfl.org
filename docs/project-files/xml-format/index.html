@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-01-16T13:47:56-08:00" />
+<meta property="article:published_time" content="2024-01-16T14:03:29-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XML Format" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-01-16T13:47:56-08:00","datePublished":"2024-01-16T13:47:56-08:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-01-16T14:03:29-08:00","datePublished":"2024-01-16T14:03:29-08:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -546,9 +546,20 @@
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>You can also specify a version, if you prefer:</p>
+<p>You can specify a version or path, if you prefer:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="na">version=</span><span class="s">"1.0.0"</span> <span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="na">version=</span><span class="s">"1.0.0"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Use Actuate 1.0.0, even if a newer version is installed. --&gt;</span>
+<span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="na">path=</span><span class="s">"../alt-haxelibs/actuate"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Use a version of Actuate from a specific folder, even a folder that Haxelib doesn't know about. --&gt;</span>
+</code></pre></div></div>
+
+<p>By default, an error will be thrown if the requested library isn’t installed. You can set <code class="language-plaintext highlighter-rouge">optional</code> to continue without the library instead.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">name=</span><span class="s">"actuate"</span> <span class="na">optional=</span><span class="s">"true"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Use Actuate if available, and don't if not. Haxe code can use `#if actuate` to avoid errors. --&gt;</span>
+</code></pre></div></div>
+
+<p>If you have multiple Haxelib repository folders, you can select one using the <code class="language-plaintext highlighter-rouge">repository</code> attribute. The folder you select must include a copy of Lime (and OpenFL, if applicable).</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;haxelib</span> <span class="na">repository=</span><span class="s">"../alt-haxelibs"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="icon">icon</h3>
