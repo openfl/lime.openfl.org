@@ -228,7 +228,7 @@ Use `<config />` tags to set platform-specific values. These targets are current
 - windows
 - xbox1
 
-You must append a suffix to the tag depending on the platform. For a full list of options, see [config](/docs/project-files/config/).
+You must append a suffix to the tag depending on the platform. For a full list of options, see [config](config).
 
 ```xml
 <config:android install-location="preferExternal" />
