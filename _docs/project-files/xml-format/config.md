@@ -66,6 +66,27 @@ These options configure how `lime rebuild` compiles a C++ library project.
 <config:android gradle-build-directory="C:/gradle-builds" />
 ```
 
+Use the following syntax to set [`<application />`](https://developer.android.com/guide/topics/manifest/application-element) and [`<activity />`](https://developer.android.com/guide/topics/manifest/activity-element) values in AndroidManifest.xml.
+
+```xml
+<config:android>
+	<application android:appCategory="game" android:supportsRtl="true" />
+	<activity android:immersive="false" />
+	<activity android:persistableMode="persistAcrossReboots" />
+</config:android>
+
+<config:android>
+	<!-- Repeating an attribute overwrites the previous value. -->
+	<activity android:persistableMode="persistNever" />
+	
+	<!-- ...Even if the previous value was set by Lime. -->
+	<application android:theme="@android:style/Theme.Fullscreen" />
+	
+	<!-- Passing an empty string removes that attribute. -->
+	<application android:appCategory="" />
+</config:android>
+```
+
 ### HTML5
 
 ```xml
