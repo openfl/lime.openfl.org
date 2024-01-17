@@ -546,7 +546,7 @@ To disable preloading on the default library:
 <library name="default" preload="false" />
 ```
 
-To load assets at runtime,:
+To load assets at runtime:
 
 ```haxe
 Assets.loadLibrary ("default").onComplete (function (library) {
