@@ -23,9 +23,9 @@ If you are using an XSD aware XML editor you can use the following declaration t
 
 First, every node in the project file format supports `if` and `unless` attributes. These are conditional values to help you customize your build process, based upon a number of values. Here are some of the default values:
 
- * mobile, desktop or web
- * ios, android, windows, mac, linux or html5
- * cpp, neko, flash or js
+- mobile, desktop or web
+- ios, android, windows, mac, linux or html5
+- cpp, neko, flash or js
 
 You can [`<set />`](#set) or [`<define />`](#define) values for conditional logic:
 
@@ -68,7 +68,7 @@ If a value isn't found, either because it was never set or because of [`<unset /
 
 The `${}` syntax can get information about the build. You can use this data in a condition, print it, or pass it along to Haxe:
 
-```
+```xml
 <set name="buildOrTest" if="${project.command == build} || ${project.command == test}" />
 <echo value="Building for ${project.target} on a ${project.host} machine" if="buildOrTest" />
 <define name="projectDirectory" value="${project.workingDirectory}" />
@@ -89,7 +89,7 @@ If you create a haxelib, you can add _include.xml_ to the top-level directory. T
 
 ## XML Tag Glossary
 
-### app 
+### app
 
 The `<app />` tag sets values important to building your project, including the entry point (main class), the output file directory, or if you want to customize the executable filename or define a custom preloader for a web platform:
 
@@ -104,9 +104,7 @@ You can retrieve this information later:
 <echo value="App info: ${app.file} ${app.path}" />
 ```
 
-
-
-### architecture 
+### architecture
 
 Use `<architecture />` tags to set or exclude target-specific architectures. Depending on the target, values can include `arm64`, `armv7`, `armv7s`, `armv6`, `armv5`, `x86`, and `x64`.
 
@@ -116,10 +114,7 @@ By default, the only architecture built for Android will be `armv7`. For example
 <architecture name="armv6" exclude="armv7" if="android" />
 ```
 
-
-
-
-### assets 
+### assets
 
 Use asset nodes to add resources to your project, available using `lime.Assets`.
 
@@ -137,7 +132,7 @@ You can access it in your application like this:
 var bitmapData = Assets.getBitmapData ("images/MyImage.png");
 ```
 
-The target path will mirror the source path by default, but you also can include a rename attribute, if you wish to use a different target path. The `lime.Assets` class will use the *target* path by default, so using the rename attribute will alter the names you use to reference your files.
+The target path will mirror the source path by default, but you also can include a rename attribute, if you wish to use a different target path. The `lime.Assets` class will use the _target_ path by default, so using the rename attribute will alter the names you use to reference your files.
 
 If you would prefer to set the ID for your asset file yourself, use an "id" attribute. This only applies to asset nodes which point to a file, not a directory path.
 
@@ -149,13 +144,13 @@ The type for each file will be determined automatically, based on each file exte
 
 These are the current types:
 
- * binary
- * font
- * image
- * music
- * sound
- * template
- * text
+- binary
+- font
+- image
+- music
+- sound
+- template
+- text
 
 Some targets can only support playing one music file at a time. You should use "music" for files which are designed to play as background music, and "sound" for all other audio. "binary" and "text" are generic types which are available as a ByteArray or String in your application. Most targets can use them interchangeably.
 
@@ -173,11 +168,7 @@ If an asset is specified as "template", it will not be copied/embedded as an ord
 </assets>
 ```
 
-
-
-
-
-### certificate 
+### certificate
 
 Use `<certificate />` tags to add a keystore for release signing on certain platforms.
 
@@ -203,28 +194,23 @@ You can retrieve this information later:
 <echo value="Certificate info: ${keystore.path} ${keystore.alias}" />
 ```
 
-
-
-
-### classpath 
+### classpath
 
 Same as [`<source/>`](#source).
 
-
-
-### compilerflag 
+### compilerflag
 
 Same as [`<haxeflag/>`](#haxeflag).
 
-
-
-### config 
+### config
 
 Use `<config />` tags to set platform-specific values. These targets are currently supported:
+
 - air
 - android
 - blackberry
 - console-pc
+- emscripten
 - firefox
 - flash
 - html5
@@ -234,29 +220,20 @@ Use `<config />` tags to set platform-specific values. These targets are current
 - ps3
 - ps4
 - tizen
+- tvos
 - vita
-- windows
+- webassembly
 - webos
 - wiiu
+- windows
 - xbox1
-- emscripten
-- tvos
 
-**One must append a suffix to the tag depending on the platform.**
-
-For example, use `<config:android />` tags to set Android-specific values:
+You must append a suffix to the tag depending on the platform. For a full list of options, see [config](config).
 
 ```xml
 <config:android install-location="preferExternal" />
 <config:android permission="android.permission.INTERNET" />
 <config:android target-sdk-version="16" />
-```
-
-A complete list of Android permissions can be found at [Android: `Manifest.permission` API Reference](https://developer.android.com/reference/android/Manifest.permission.html).
-
-Use `<config:ios />` tags to set iOS-specific values when compiling. The `deployment` attribute can set the minimum iOS version you wish to target. The `prerendered-icon` attribute can help control the style of your icon.
-
-```xml
 <config:ios deployment="5.1" />
 <config:ios prerendered-icon="false" />
 ```
@@ -268,12 +245,9 @@ You can retrieve this information later:
 <echo value="iOS config info: ${config.ios.compiler} ${config.ios.deployment}" />
 ```
 
+### define
 
-
-
-### define 
-
-Use `<define />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above, and see [`<undefine />`](#undefine) to remove a defined value.
+Use `<define />` tags to set variables for conditional logic. See the [Conditionals](#conditionals) section above, and see [`<undefine />`](#undefine) to remove a defined value.
 
 ```xml
 <define name="color" value="blue" />
@@ -282,9 +256,7 @@ Use `<define />` tags to set variables for conditional logic. See the [Condition
 
 These values will be available in Haxe and in [templates](#template). For templates, use the syntax `::DEFINE_custom_value::`. Hyphens are converted to underscores in both cases.
 
-
-
-### dependency 
+### dependency
 
 Use `<dependency />` tags to specify native frameworks or references that are required to compile your project, as well as additional libraries you need copied.
 
@@ -306,9 +278,7 @@ When targeting [Adobe AIR](../../advanced-setup/air/), it may be used to add a n
 <dependency name="com.example.MyNativeExtension" path="path/to/com.example.MyNativeExtension.ane" if="air"/>
 ```
 
-
-
-### echo 
+### echo
 
 Prints a specified message to the console.
 
@@ -330,10 +300,7 @@ Or it may be added inside a `<section/>` element:
 </section>
 ```
 
-
-
-
-### error 
+### error
 
 Logs an error with `lime.utils.Log.error()` which by default throws `value` message and stops compilation (if `lime.utils.Log.throwErrors` is set to `true`).
 
@@ -351,10 +318,7 @@ Or it may be added inside a `<section/>` element:
 </section>
 ```
 
-
-
-
-### haxedef 
+### haxedef
 
 Use `<haxedef />` tags to add Haxe defines (similar to using a [`<haxeflag />`](#haxeflag) with "-D"):
 
@@ -362,10 +326,7 @@ Use `<haxedef />` tags to add Haxe defines (similar to using a [`<haxeflag />`](
 <haxedef name="define" />
 ```
 
-
-
-
-### haxeflag 
+### haxeflag
 
 Use `<haxeflag />` tags to add additional [Haxe compiler arguments](https://haxe.org/manual/compiler-usage.html):
 
@@ -373,10 +334,7 @@ Use `<haxeflag />` tags to add additional [Haxe compiler arguments](https://haxe
 <haxeflag name="-dce" value="std" />
 ```
 
-
-
-
-### haxelib 
+### haxelib
 
 Use `<haxelib />` tags to include [Haxe libraries](https://lib.haxe.org):
 
@@ -403,10 +361,7 @@ If you have multiple Haxelib repository folders, you can select one using the `r
 <haxelib repository="../alt-haxelibs" />
 ```
 
-
-
-
-### icon 
+### icon
 
 Use `<icon />` nodes to add icon files to your project. When the command-line tools request icons for a target platform, it will either use an exact size match you have provided, or it will attempt to find the closest match possible and resize. If you include an SVG vector icon, it should prefer this file over resizing bitmap files.
 
@@ -416,10 +371,7 @@ Use `<icon />` nodes to add icon files to your project. When the command-line to
 <icon path="icon.svg" />
 ```
 
-
-
-
-### include 
+### include
 
 Use `<include />` tags to add the tags found in another project file, or to find an _include.xml_ file in the target directory:
 
@@ -428,10 +380,7 @@ Use `<include />` tags to add the tags found in another project file, or to find
 <include path="to/shared/library" />
 ```
 
-
-
-
-### java 
+### java
 
 Use `<java />` tags to add Java classes to the project when targeting Android:
 
@@ -439,10 +388,7 @@ Use `<java />` tags to add Java classes to the project when targeting Android:
 <java path="to/classes" />
 ```
 
-
-
-
-### language 
+### language
 
 Adds a language to the list of supported languages (by default the list is empty).
 
@@ -450,21 +396,15 @@ Adds a language to the list of supported languages (by default the list is empty
 <language name="en-US" />
 ```
 
-
-
-
-### launchImage 
+### launchImage
 
 Sets the path to launch image of the app (image which will be shown at application start up)
 
 ```xml
 <launchImage path="launchImage.png" />
 ```
-	
 
-
-
-### launchStoryboard 
+### launchStoryboard
 
 Sets the launch screen storyboard (useful only for iOS development).
 
@@ -480,7 +420,7 @@ or
 
 You can also use `template` for this purpose.
 
-**The default template**
+#### The default template
 
 The launch storyboard feature uses Haxe templates and your _project.xml_ configuration to generate an Xcode storyboard file. Lime includes one default storyboard template `splash.storyboard`, which can be configured with the following options.
 
@@ -518,7 +458,7 @@ There are three optional attributes, (`portrait`, `landscape` and `ipad`) which 
 
 Finally, you have the `imageset` child elements. For each imageset, lime looks for `{name}.png`, `{name}@2x.png`, and `{name}@3x.png` in the specified `assetsPath`, copying any of those that exist into an Xcode imageset. Most iPhones these days require the @2x or @3x image, while iPads require @2x.
 
-**About templates and custom storyboard**
+#### About templates and custom storyboard
 
 `template`, `assetsPath`, and the `imageset` elements are standard parts of the configuration. All the other attributes listed above are available based on the chosen default template, `splash.storyboard`.
 
@@ -526,17 +466,15 @@ If the default template doesn’t meet your needs, you have two options, but bot
 
 1. Take the storyboard you built in Xcode and put it into your project. In this case, you would use the name or path attribute instead of template, and you would have no template-specific attributes to set, but you would still need to provide the appropriate imagesets.
 
-```xml
-<launchStoryboard path="custom.storyboard" assetsPath="Images/splash">	
-	<imageset name="ipad-splash-sb.png" />
-</launchStoryboard>
-```
+   ```xml
+   <launchStoryboard path="custom.storyboard" assetsPath="Images/splash">	
+   	<imageset name="ipad-splash-sb.png" />
+   </launchStoryboard>
+   ```
 
 2. Using the default template as an example, take the storyboard you built in Xcode and add it to your lime templates. You would use it in the same manner as the default template, but use any attributes you specified instead.
 
-
-
-### library 
+### library
 
 All assets go into the "default" library, but by adding `<library>` tags it is possible to modify the default library and also define additional libraries and load/unload them as needed.
 
@@ -558,7 +496,7 @@ Assets.loadLibrary ("default").onComplete (function (library) {
 });
 ```
 
-**Using Additional Asset Libraries**
+#### Using Additional Asset Libraries
 
 You can easily add assets to libraries other than the "default" library. These are not preloaded by default, unless you add:
 
@@ -576,10 +514,7 @@ Be sure to specify the correct library when retrieving the assets in your code. 
 
 You can also use `Assets.unloadLibrary` when you are doing using those resources.
 
-
-
-
-### log 
+### log
 
 Logs an error (see [`<error/>`](#error)), warning or info message.
 
@@ -598,7 +533,7 @@ The `<log/>` element is often combined with `if` or `unless`.
 ```xml
 <log info="You are using advanced mode. Proceed with caution!" if="advanced_mode"/>
 ```
-	
+
 ```xml
 <log error="Missing this_is_required" unless="this_is_required"/>
 ```
@@ -611,9 +546,7 @@ Or it may be added inside a `<section/>` element:
 </section>
 ```
 
-
-
-### meta 
+### meta
 
 Use `<meta />` tags to add information about your application, which usually will not affect how the application runs, but how it is identified to the target operating system or on an application store:
 
@@ -627,14 +560,11 @@ You can retrieve this information later:
 <echo value="Metadata: ${meta.title} ${meta.version}" />
 ```
 
-
-### module 
+### module
 
 More to come.
 
-
-
-### ndll 
+### ndll
 
 You can use `<ndll />` tags to include native libraries. These are usually located under an "ndll" directory, with additional directories based upon the target platform. Usually an `<ndll />` tag will be included as a part of an extension, and is rare to be used directly:
 
@@ -642,10 +572,7 @@ You can use `<ndll />` tags to include native libraries. These are usually locat
 <ndll name="std" haxelib="hxcpp" />
 ```
 
-
-
-
-### output 
+### output
 
 **Deprecated!** Use the [`<app/>`](#app) element instead.
 
@@ -657,10 +584,7 @@ Can be used for setting app file name, app path and app swf-version:
 <output swf-version="11" />
 ```
 
-
-
-
-### path 
+### path
 
 Use `<path />` tags to add directories to your system's PATH environment variable.
 
@@ -668,10 +592,7 @@ Use `<path />` tags to add directories to your system's PATH environment variabl
 <path value="path/to/add/to/system/PATH" />
 ```
 
-
-
-
-### postbuild 
+### postbuild
 
 Lets you set post-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command.
 
@@ -682,10 +603,7 @@ Lets you set post-build commands such as Haxe code (interpeted by the Haxe inter
 <postbuild cmd="command to run"/>
 ```
 
-
-
-
-### prebuild 
+### prebuild
 
 Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interpreter), a run file command, or a console command:
 
@@ -696,20 +614,15 @@ Lets you set pre-build commands such as Haxe code (interpeted by the Haxe interp
 <prebuild cmd="command to run"/>
 ```
 
-
-
-### preloader 
+### preloader
 
 **Deprecated!** Use [`<app preloader="preloaderClass" />`](#app) instead.
-	
+
 ```xml
 <preloader name="preloaderClass" />
 ```
 
-
-
-
-### sample 
+### sample
 
 In a library that targets Lime, makes a sample available using the `lime create` command.
 
@@ -723,8 +636,7 @@ Then you can use:
 lime create flixel:Arcade
 ```
 
-
-### section 
+### section
 
 The `<section />` tag is used to group other tags together. This is usually most valuable when combined with "if" and/or "unless" logic:
 
@@ -734,11 +646,9 @@ The `<section />` tag is used to group other tags together. This is usually most
 </section>
 ```
 
+### set
 
-
-### set 
-
-Use `<set />` tags to set variables for conditional logic. See the [Conditionals](#Conditionals) section above, and see [`<unset />`](#unset) to remove a set value.
+Use `<set />` tags to set variables for conditional logic. See the [Conditionals](#conditionals) section above, and see [`<unset />`](#unset) to remove a set value.
 
 ```xml
 <set name="color" value="red" />
@@ -747,21 +657,15 @@ Use `<set />` tags to set variables for conditional logic. See the [Conditionals
 
 These values will be available in [templates](#template) using the syntax `::SET_custom_value::`. (Hyphens are converted to underscores.)
 
+### setenv
 
-
-
-### setenv 
-
-Use `<setenv />` tags to set environment variables. See the [Conditionals](#Conditionals) section above.
+Use `<setenv />` tags to set environment variables. See the [Conditionals](#conditionals) section above.
 
 ```xml
 <setenv name="GLOBAL_DEFINE" />
 ```
 
-
-
-
-### source 
+### source
 
 Use `<source />` tags to add Haxe class paths:
 
@@ -771,39 +675,27 @@ Use `<source />` tags to add Haxe class paths:
 
 If you are using `@:file`, `@:bitmap`, `@:sound` or `@:file` tags in your project, be sure that the asset files are available within your Haxe source paths.
 
-
-
-
-### splashscreen 
+### splashscreen
 
 Same as [`<launchimage/>`](#launchimage).
 
-
-
-### ssl 
+### ssl
 
 Not implemented
 
-
-
-### swf 
+### swf
 
 See [`<library/>`](#library).
 
-
-
-### target 
+### target
 
 Lets you redefine the build process for a specific target by running a custom haxelib command. This might be useful if you want to use your own library for building your project, i.e. you know what you're doing and you know how the Lime build system works.
-	
+
 ```xml
 <target name="customTarget" handler="yourHandler" />
 ```
 
-
-
-
-### template 
+### template
 
 Use `<template />` tags to add paths which can override the templates used by the command-line tools.
 
@@ -819,9 +711,7 @@ Otherwise, you can override a single file like this:
 <template path="Assets/index.html" rename="index.php" />
 ```
 
-
-
-### templatepath 
+### templatepath
 
 See [`<template/>`](#template).
 
@@ -829,10 +719,7 @@ See [`<template/>`](#template).
 <templatepath name="path"/>
 ```
 
-
-
-
-### undefine 
+### undefine
 
 Unsets a previously defined flag. See entry for [`<define/>`](#define).
 
@@ -840,22 +727,16 @@ Unsets a previously defined flag. See entry for [`<define/>`](#define).
 <undefine name="red" />
 ```
 
-
-
-
-### unset 
+### unset
 
 Unsets a previously set value. See entry for [`<set/>`](#set).
-	
+
 ```xml
 <set name="red" value="0xff0000" />
 <unset name="red" />
 ```
 
-
-
-
-### window 
+### window
 
 You can use `<window />` tags to control how an application will be initialized. This includes the screen resolution and background color, as well as other options, such as whether hardware should be allowed or display mode flags.
 
@@ -875,6 +756,3 @@ You can retrieve this information later:
 ```xml
 <echo value="Window info: ${window.fps} ${window.allowShaders}" />
 ```
-
-
-
