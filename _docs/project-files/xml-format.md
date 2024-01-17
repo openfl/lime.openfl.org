@@ -204,31 +204,7 @@ Same as [`<haxeflag/>`](#haxeflag).
 
 ### config
 
-Use `<config />` tags to set platform-specific values. These targets are currently supported:
-
-- air
-- android
-- blackberry
-- console-pc
-- emscripten
-- firefox
-- flash
-- html5
-- ios
-- linux
-- mac
-- ps3
-- ps4
-- tizen
-- tvos
-- vita
-- webassembly
-- webos
-- wiiu
-- windows
-- xbox1
-
-You must append a suffix to the tag depending on the platform. For a full list of options, see [config](config).
+Use `<config />` tags to set platform-specific values. See [config options](config) for the full list.
 
 ```xml
 <config:android install-location="preferExternal" />
