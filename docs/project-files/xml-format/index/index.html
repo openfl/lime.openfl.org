@@ -21,19 +21,19 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Overview" />
 <meta property="og:description" content="Overview" />
-<link rel="canonical" href="https://lime.openfl.org/docs/project-files/xml-format/" />
-<meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/" />
+<link rel="canonical" href="https://lime.openfl.org/docs/project-files/xml-format/index/" />
+<meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/index/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-01-16T16:05:09-08:00" />
+<meta property="article:published_time" content="2024-01-16T16:15:51-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XML Format" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-01-16T16:05:09-08:00","datePublished":"2024-01-16T16:05:09-08:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-01-16T16:15:51-08:00","datePublished":"2024-01-16T16:15:51-08:00","description":"Overview","headline":"XML Format","url":"https://lime.openfl.org/docs/project-files/xml-format/index/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://lime.openfl.org/docs/project-files/xml-format/">
+    <link rel="canonical" href="https://lime.openfl.org/docs/project-files/xml-format/index/">
     <link rel="alternate" type="application/rss+xml" title="Lime" href="https://lime.openfl.org/feed.xml" />
 </head>
 
@@ -150,7 +150,7 @@
         
           
           
-          <a class="list-group-item active" href="/docs/project-files/xml-format/">XML Format</a>
+          <a class="list-group-item " href=""></a>
         
           
           
@@ -287,9 +287,9 @@
 
 <p>The <code class="language-plaintext highlighter-rouge">${}</code> syntax can get information about the build. You can use this data in a condition, print it, or pass it along to Haxe:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;set name="buildOrTest" if="${project.command == build} || ${project.command == test}" /&gt;
-&lt;echo value="Building for ${project.target} on a ${project.host} machine" if="buildOrTest" /&gt;
-&lt;define name="projectDirectory" value="${project.workingDirectory}" /&gt;
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"buildOrTest"</span> <span class="na">if=</span><span class="s">"${project.command == build} || ${project.command == test}"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"Building for ${project.target} on a ${project.host} machine"</span> <span class="na">if=</span><span class="s">"buildOrTest"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"projectDirectory"</span> <span class="na">value=</span><span class="s">"${project.workingDirectory}"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="duplicates">Duplicates</h3>
@@ -415,11 +415,13 @@
 <h3 id="config">config</h3>
 
 <p>Use <code class="language-plaintext highlighter-rouge">&lt;config /&gt;</code> tags to set platform-specific values. These targets are currently supported:</p>
+
 <ul>
   <li>air</li>
   <li>android</li>
   <li>blackberry</li>
   <li>console-pc</li>
+  <li>emscripten</li>
   <li>firefox</li>
   <li>flash</li>
   <li>html5</li>
@@ -429,29 +431,21 @@
   <li>ps3</li>
   <li>ps4</li>
   <li>tizen</li>
+  <li>tvos</li>
   <li>vita</li>
-  <li>windows</li>
+  <li>webassembly</li>
   <li>webos</li>
   <li>wiiu</li>
+  <li>windows</li>
   <li>xbox1</li>
-  <li>emscripten</li>
-  <li>tvos</li>
 </ul>
 
-<p><strong>One must append a suffix to the tag depending on the platform.</strong></p>
-
-<p>For example, use <code class="language-plaintext highlighter-rouge">&lt;config:android /&gt;</code> tags to set Android-specific values:</p>
+<p>You must append a suffix to the tag depending on the platform. For a full list of options, see <a href="config">config</a>.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:android</span> <span class="na">install-location=</span><span class="s">"preferExternal"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:android</span> <span class="na">permission=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:android</span> <span class="na">target-sdk-version=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>A complete list of Android permissions can be found at <a href="https://developer.android.com/reference/android/Manifest.permission.html">Android: <code class="language-plaintext highlighter-rouge">Manifest.permission</code> API Reference</a>.</p>
-
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;config:ios /&gt;</code> tags to set iOS-specific values when compiling. The <code class="language-plaintext highlighter-rouge">deployment</code> attribute can set the minimum iOS version you wish to target. The <code class="language-plaintext highlighter-rouge">prerendered-icon</code> attribute can help control the style of your icon.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">deployment=</span><span class="s">"5.1"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">deployment=</span><span class="s">"5.1"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:ios</span> <span class="na">prerendered-icon=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
@@ -463,7 +457,7 @@
 
 <h3 id="define">define</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> tags to set variables for conditional logic. See the <a href="#Conditionals">Conditionals</a> section above, and see <a href="#undefine"><code class="language-plaintext highlighter-rouge">&lt;undefine /&gt;</code></a> to remove a defined value.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;define /&gt;</code> tags to set variables for conditional logic. See the <a href="#conditionals">Conditionals</a> section above, and see <a href="#undefine"><code class="language-plaintext highlighter-rouge">&lt;undefine /&gt;</code></a> to remove a defined value.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;define</span> <span class="na">name=</span><span class="s">"custom-value"</span> <span class="nt">/&gt;</span>
@@ -614,7 +608,7 @@
 
 <p>You can also use <code class="language-plaintext highlighter-rouge">template</code> for this purpose.</p>
 
-<p><strong>The default template</strong></p>
+<h4 id="the-default-template">The default template</h4>
 
 <p>The launch storyboard feature uses Haxe templates and your <em>project.xml</em> configuration to generate an Xcode storyboard file. Lime includes one default storyboard template <code class="language-plaintext highlighter-rouge">splash.storyboard</code>, which can be configured with the following options.</p>
 
@@ -655,23 +649,24 @@
 
 <p>Finally, you have the <code class="language-plaintext highlighter-rouge">imageset</code> child elements. For each imageset, lime looks for <code class="language-plaintext highlighter-rouge">{name}.png</code>, <code class="language-plaintext highlighter-rouge">{name}@2x.png</code>, and <code class="language-plaintext highlighter-rouge">{name}@3x.png</code> in the specified <code class="language-plaintext highlighter-rouge">assetsPath</code>, copying any of those that exist into an Xcode imageset. Most iPhones these days require the @2x or @3x image, while iPads require @2x.</p>
 
-<p><strong>About templates and custom storyboard</strong></p>
+<h4 id="about-templates-and-custom-storyboard">About templates and custom storyboard</h4>
 
 <p><code class="language-plaintext highlighter-rouge">template</code>, <code class="language-plaintext highlighter-rouge">assetsPath</code>, and the <code class="language-plaintext highlighter-rouge">imageset</code> elements are standard parts of the configuration. All the other attributes listed above are available based on the chosen default template, <code class="language-plaintext highlighter-rouge">splash.storyboard</code>.</p>
 
 <p>If the default template doesn’t meet your needs, you have two options, but both require you to open your exported iOS project in Xcode and create your own storyboard.</p>
 
 <ol>
-  <li>Take the storyboard you built in Xcode and put it into your project. In this case, you would use the name or path attribute instead of template, and you would have no template-specific attributes to set, but you would still need to provide the appropriate imagesets.</li>
-</ol>
+  <li>
+    <p>Take the storyboard you built in Xcode and put it into your project. In this case, you would use the name or path attribute instead of template, and you would have no template-specific attributes to set, but you would still need to provide the appropriate imagesets.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;launchStoryboard</span> <span class="na">path=</span><span class="s">"custom.storyboard"</span> <span class="na">assetsPath=</span><span class="s">"Images/splash"</span><span class="nt">&gt;</span>	
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;launchStoryboard</span> <span class="na">path=</span><span class="s">"custom.storyboard"</span> <span class="na">assetsPath=</span><span class="s">"Images/splash"</span><span class="nt">&gt;</span>	
 	<span class="nt">&lt;imageset</span> <span class="na">name=</span><span class="s">"ipad-splash-sb.png"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/launchStoryboard&gt;</span>
-</code></pre></div></div>
-
-<ol>
-  <li>Using the default template as an example, take the storyboard you built in Xcode and add it to your lime templates. You would use it in the same manner as the default template, but use any attributes you specified instead.</li>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Using the default template as an example, take the storyboard you built in Xcode and add it to your lime templates. You would use it in the same manner as the default template, but use any attributes you specified instead.</p>
+  </li>
 </ol>
 
 <h3 id="library">library</h3>
@@ -694,7 +689,7 @@
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p><strong>Using Additional Asset Libraries</strong></p>
+<h4 id="using-additional-asset-libraries">Using Additional Asset Libraries</h4>
 
 <p>You can easily add assets to libraries other than the “default” library. These are not preloaded by default, unless you add:</p>
 
@@ -829,7 +824,7 @@
 
 <h3 id="set">set</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> tags to set variables for conditional logic. See the <a href="#Conditionals">Conditionals</a> section above, and see <a href="#unset"><code class="language-plaintext highlighter-rouge">&lt;unset /&gt;</code></a> to remove a set value.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;set /&gt;</code> tags to set variables for conditional logic. See the <a href="#conditionals">Conditionals</a> section above, and see <a href="#unset"><code class="language-plaintext highlighter-rouge">&lt;unset /&gt;</code></a> to remove a set value.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"color"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"custom-value"</span> <span class="nt">/&gt;</span>
@@ -839,7 +834,7 @@
 
 <h3 id="setenv">setenv</h3>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;setenv /&gt;</code> tags to set environment variables. See the <a href="#Conditionals">Conditionals</a> section above.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">&lt;setenv /&gt;</code> tags to set environment variables. See the <a href="#conditionals">Conditionals</a> section above.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;setenv</span> <span class="na">name=</span><span class="s">"GLOBAL_DEFINE"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
@@ -926,11 +921,10 @@
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;echo</span> <span class="na">value=</span><span class="s">"Window info: ${window.fps} ${window.allowShaders}"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
-
 </div>
             <p class="text-center">
               <br />
-              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/project-files/xml-format.md" class="btn btn-default githubEditButton" role="button">
+              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/project-files/xml-format/index.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a>
             </p>
@@ -961,29 +955,43 @@
 
   
   
-    <ul class="pager">
-      
-        
-        
-        <li class="previous">
-          <a href="/docs/command-line-tools/samples/">
-            <span aria-hidden="true">&larr;</span> Previous
-          </a>
-        </li>
-      
 
-      
-        
-        
-        <li class="next">
-          <a href="/docs/project-files/hxp-format/">
-            Next <span aria-hidden="true">&rarr;</span>
-          </a>
-        </li>
-      
-    </div>
-    <div class="clear"></div>
-    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
 
         </div>
 
