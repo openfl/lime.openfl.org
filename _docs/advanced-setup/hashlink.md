@@ -6,13 +6,13 @@ title: Setup HashLink
 
 ## Automatic Install
 
-There is no automatic setup available for HashLink.
+HashLink is included in Lime, and no additional setup is necessary to use this version on most platforms.
+
+On macOS specifically, you will have to run `lime setup hashlink` if you want to use the HashLink debugger. However, this step isn't needed simply to compile and run apps.
 
 ## Manual Install
 
-- Donwload latest binary [HashLink release](https://github.com/HaxeFoundation/hashlink/releases)
-- Extract it where you want (e.g. *C:/HashLink*)
-- Run `lime setup hashlink` within your terminal and provide HashLink path (e.g. *C:/HashLink*)
+If building HashLink from source or using a [HashLink release](https://github.com/HaxeFoundation/hashlink/releases) other than the one included in Lime, run `lime setup hashlink` to let Lime know where you put it. To change this path or go back to the bundled version of HashLink, run `lime setup hashlink` again.
 
 ## Build & Run
 
