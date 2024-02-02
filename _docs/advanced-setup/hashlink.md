@@ -10,7 +10,9 @@ There is no automatic setup available for HashLink.
 
 ## Manual Install
 
-There is generally no setup required for the HashLink target.
+- Donwload latest binary [HashLink release](https://github.com/HaxeFoundation/hashlink/releases)
+- Extract it where you want (e.g. *C:/HashLink*)
+- Run `lime setup hashlink` within your terminal and provide HashLink path (e.g. *C:/HashLink*)
 
 ## Build & Run
 
