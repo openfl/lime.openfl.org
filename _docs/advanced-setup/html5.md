@@ -10,7 +10,7 @@ There is no automatic setup available for HTML5.
 
 ## Manual Install
 
-There is generally no setup required for the HTML5 target.
+There is generally no setup required to get started with the HTML5 target. However, to use `-minify` or `-final` option, refer the Java JDK requirement in the [Minification](#minification) section.
 
 ## Build & Run
 
@@ -20,7 +20,9 @@ To compile and launch an HTML5 application with one command, run `lime test html
 
 ### Minification
 
-Adding either the `-minify` option or the `-final` option to your build command will apply more advanced minification to the generated JavaScript. By default, [Closure Compiler](https://developers.google.com/closure/compiler) will be used to minify, but you can specify `-yui` to use [YUI Compressor](https://yui.github.io/yuicompressor/) instead. Both minification tools require Java to be installed.
+Adding either the `-minify` option or the `-final` option to your build command will apply more advanced minification to the generated JavaScript. By default, [Closure Compiler](https://developers.google.com/closure/compiler) will be used to minify, but you can specify `-yui` to use [YUI Compressor](https://yui.github.io/yuicompressor/) instead.
+
+**Note:** Both minification tools require a _Java JDK_ to be installed. A variety of vendors offer free Java OpenJDK builds that work well with Lime and OpenFL. If you're not sure which one to choose, a good option is [Temurin OpenJDK from Adoptium.net](https://adoptium.net/).
 
 ### Launch Options
 

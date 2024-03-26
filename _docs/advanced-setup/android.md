@@ -14,7 +14,9 @@ Similar to standard Android native development, you will need the following inst
 
  * [Android SDK](http://developer.android.com/sdk/index.html)
  * [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
- * [Java JDK](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR)
+ * Java JDK
+
+A variety of vendors offer free Java OpenJDK builds that work well with Lime, OpenFL, and Android. If you're not sure which one to choose, a good option is [Temurin OpenJDK from Adoptium.net](https://adoptium.net/).
 
 After installing the Android SDK, you should install the `Android SDK platform-tools` and `Android API 26` packages from the Android SDK Manager. Gradle requires specific versions of the `Android SDK Build Tools`, and Lime will try to find the latest version installed. You can override this by setting `<config:android build-tools-version="" />` in your project file.
 
