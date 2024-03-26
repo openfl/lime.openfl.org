@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/html5/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-03-13T11:16:25-07:00" />
+<meta property="article:published_time" content="2024-03-26T15:03:02-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup HTML5" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-03-13T11:16:25-07:00","datePublished":"2024-03-13T11:16:25-07:00","description":"Lime and OpenFL may be used to create HTML5 applications and games for web browsers by compiling to JavaScript.","headline":"Setup HTML5","url":"https://lime.openfl.org/docs/advanced-setup/html5/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-03-26T15:03:02-07:00","datePublished":"2024-03-26T15:03:02-07:00","description":"Lime and OpenFL may be used to create HTML5 applications and games for web browsers by compiling to JavaScript.","headline":"Setup HTML5","url":"https://lime.openfl.org/docs/advanced-setup/html5/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -233,7 +233,7 @@
 
 <h2 id="manual-install">Manual Install</h2>
 
-<p>There is generally no setup required for the HTML5 target.</p>
+<p>There is generally no setup required to get started with the HTML5 target. However, to use <code class="language-plaintext highlighter-rouge">-minify</code> or <code class="language-plaintext highlighter-rouge">-final</code> option, refer the Java JDK requirement in the <a href="#minification">Minification</a> section.</p>
 
 <h2 id="build--run">Build &amp; Run</h2>
 
@@ -243,7 +243,9 @@
 
 <h3 id="minification">Minification</h3>
 
-<p>Adding either the <code class="language-plaintext highlighter-rouge">-minify</code> option or the <code class="language-plaintext highlighter-rouge">-final</code> option to your build command will apply more advanced minification to the generated JavaScript. By default, <a href="https://developers.google.com/closure/compiler">Closure Compiler</a> will be used to minify, but you can specify <code class="language-plaintext highlighter-rouge">-yui</code> to use <a href="https://yui.github.io/yuicompressor/">YUI Compressor</a> instead. Both minification tools require Java to be installed.</p>
+<p>Adding either the <code class="language-plaintext highlighter-rouge">-minify</code> option or the <code class="language-plaintext highlighter-rouge">-final</code> option to your build command will apply more advanced minification to the generated JavaScript. By default, <a href="https://developers.google.com/closure/compiler">Closure Compiler</a> will be used to minify, but you can specify <code class="language-plaintext highlighter-rouge">-yui</code> to use <a href="https://yui.github.io/yuicompressor/">YUI Compressor</a> instead.</p>
+
+<p><strong>Note:</strong> Both minification tools require a <em>Java JDK</em> to be installed. A variety of vendors offer free Java OpenJDK builds that work well with Lime and OpenFL. If you’re not sure which one to choose, a good option is <a href="https://adoptium.net/">Temurin OpenJDK from Adoptium.net</a>.</p>
 
 <h3 id="launch-options">Launch Options</h3>
 
