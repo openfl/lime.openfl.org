@@ -230,7 +230,7 @@ Use `<define />` tags to set variables for conditional logic. See the [Condition
 <define name="custom-value" />
 ```
 
-These values will be available in Haxe and in [templates](#template). For templates, use the syntax `::DEFINE_custom_value::`. Hyphens are converted to underscores in both cases.
+These values will be available in Haxe and in [templates](#template). For templates, use the syntax `::DEFINE_CUSTOM_VALUE::`. Hyphens are converted to underscores in both cases.
 
 ### dependency
 
@@ -631,7 +631,7 @@ Use `<set />` tags to set variables for conditional logic. See the [Conditionals
 <set name="custom-value" />
 ```
 
-These values will be available in [templates](#template) using the syntax `::SET_custom_value::`. (Hyphens are converted to underscores.)
+These values will be available in [templates](#template) using the syntax `::SET_CUSTOM_VALUE::`. (Hyphens are converted to underscores.)
 
 ### setenv
 
