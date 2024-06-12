@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/ios/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-05-31T19:05:35-07:00" />
+<meta property="article:published_time" content="2024-06-12T16:02:18-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup iOS" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-05-31T19:05:35-07:00","datePublished":"2024-05-31T19:05:35-07:00","description":"Create native iOS and iPadOS mobile applications with Lime and OpenFL by compiling to C++.","headline":"Setup iOS","url":"https://lime.openfl.org/docs/advanced-setup/ios/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-06-12T16:02:18-07:00","datePublished":"2024-06-12T16:02:18-07:00","description":"Create native iOS and iPadOS mobile applications with Lime and OpenFL by compiling to C++.","headline":"Setup iOS","url":"https://lime.openfl.org/docs/advanced-setup/ios/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -255,6 +255,12 @@
 
 <p>Specify the <code class="language-plaintext highlighter-rouge">-appstore</code> option to create a build to be submitted to the iOS App Store. Alternatively, specify the <code class="language-plaintext highlighter-rouge">-adhoc</code> option for ad hoc distribution to specific devices outside of the App Store. For enterprise distribution within your organization, specify the <code class="language-plaintext highlighter-rouge">-enterprise</code> option.</p>
 
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;config:ios /&gt;</code> element in your <a href="../../project-files/xml-format/"><em>project.xml</em></a> file is used to specify advanced configuration options for iOS. A few of the more commonly-used advanced configuration options for iOS are documented below. For more details about the available advanced options, see <a href="../../project-files/xml-format/config/#ios">Config Values: iOS</a>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;config:cpp /&gt;</code> element in your <a href="../../project-files/xml-format/"><em>project.xml</em></a> file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see <a href="../../project-files/xml-format/config/#c">Config Values: C++</a>.</p>
+
 <h3 id="code-signing">Code Signing</h3>
 
 <p>To compile for iOS, you must specify <a href="https://developer.apple.com/support/code-signing/">code signing</a> options. These may be added to a <code class="language-plaintext highlighter-rouge">&lt;config:ios/&gt;</code> element in your <a href="../../project-files/xml-format/"><em>project.xml</em></a> file.</p>
@@ -276,7 +282,7 @@
 
 <h2 id="forums">Forums</h2>
 
-<p>You should not need to install the Xcode command-line tools. If this is not the case, or if you encounter other problems when setting up Lime for iOS, please visit the <a href="http://community.openfl.org/c/help">forums</a>.</p>
+<p>You should not need to install the Xcode command-line tools. If this is not the case, or if you encounter other problems when setting up Lime for iOS, please visit the <a href="http://community.openfl.org/c/help">forums</a> or <a href="https://discord.gg/tDgq8EE">Discord</a>.</p>
 </div>
             <p class="text-center">
               <br />
