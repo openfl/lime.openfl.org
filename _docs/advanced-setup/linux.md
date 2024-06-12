@@ -30,6 +30,6 @@ To compile and launch a Linux executable with one command, run `lime test linux`
 
 The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see [Config Values: C++](../../project-files/xml-format/config/#c).
 
-## Forums
+## Help & Forums
 
 If you encounter problems setting up Lime to compile on Linux, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

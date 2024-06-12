@@ -80,6 +80,6 @@ Some Haxe externs support Lime out of the box, like [haxe-simple-peer](https://g
 
 The `<config:html5 />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for HTML/JS. For a complete list of these advanced option, see [Config Values: HTML5](../../project-files/xml-format/config/#html5).
 
-## Forums
+## Help & Forums
 
 If you encounter any problems when setting up Lime for HTML5, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

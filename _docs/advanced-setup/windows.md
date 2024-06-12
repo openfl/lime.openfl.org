@@ -32,6 +32,6 @@ To compile and launch a Windows _.exe_ file with one command, run `lime test win
 
 The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see [Config Values: C++](../../project-files/xml-format/config/#c).
 
-## Forums
+## Help & Forums
 
 If you encounter any problems when setting up Lime for targeting Windows, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

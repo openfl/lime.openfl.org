@@ -18,7 +18,7 @@ To compile a Neko application, run `lime build neko`.
 
 To compile and launch a Neko application with one command, run `lime test neko`.
 
-## Forums
+## Help & Forums
 
 If you encounter any problems when setting up Lime for Neko, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
 

@@ -32,6 +32,6 @@ To use an external JavaScript library with Lime, you need [Haxe externs](https:/
 
 Members of the Haxe community have already created open source externs for a number of popular JavaScript libraries, so be sure to search [Haxelib](https://lib.haxe.org/search) or [Github](https://github.com/search) to see if JS externs exist for your library before you try to create your own.
 
-## Forums
+## Help & Forums
 
 If you encounter any problems when setting up Lime for Electron, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

@@ -16,6 +16,6 @@ To test an application in the Firefox OS Simulator, or to push an application to
 
 You can find more information about working with the App Manager [here](https://developer.mozilla.org/en-US/Firefox_OS/Using_the_App_Manager).
 
-## Forums
+## Help & Forums
 
 If you encounter problems setting up Lime to compile for Firefox OS, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

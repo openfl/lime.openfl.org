@@ -26,6 +26,6 @@ Open a command-prompt or terminal and run the following command:
 
 When prompted to automatically download and install the Native SDK, type "n" and press enter. Afterward, it will instead prompt for where it is installed. Type the location of your BlackBerry Native SDK, and press enter.
 
-## Forums
+## Help & Forums
 
 If you encounter any problems when setting up Lime for BlackBerry, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
