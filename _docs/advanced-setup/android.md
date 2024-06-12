@@ -77,6 +77,47 @@ Instead, you have two options.
 
 2. Don't specify the password, and wait for the build to request it automatically.
 
-## Forums
+## Advanced Configuration
 
-If you encounter any problems when setting up Lime for Android, please visit the [forums](http://community.openfl.org/c/help).
+The `<config:android />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for Android. A few of the more commonly-used advanced configuration options for Android are documented below. For more details about the available advanced options, see [Config Values: Android](../../project-files/xml-format/config/#android).
+
+The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see [Config Values: C++](../../project-files/xml-format/config/#c).
+
+### Target and Minimum SDK Versions
+
+If Lime's default values for Android's `targetSdkVersion` and `minSdkVersion` don't meet your project's needs, you can specify custom values in your [_project.xml_](../../project-files/xml-format/) file.
+
+```xml
+<config:android target-sdk-version="23"/>
+```
+
+```xml
+<config:android minimum-sdk-version="14"/>
+```
+
+### Gradle Versions
+
+If Lime's default values for Gradle versions used to build for Android don't meet your project's needs, you can specify custom values in your [_project.xml_](../../project-files/xml-format/) file.
+
+```xml
+<config:android gradle-version="7.4.2" gradle-plugin="7.3.1" />
+```
+
+### Permissions
+
+If Lime's default values for Android permissions don't meet your project's needs, you can specify custom values in your [_project.xml_](../../project-files/xml-format/) file.
+
+```xml
+<config:android permission="android.permission.ACCESS_FINE_LOCATION" />
+```
+
+Use multiple tags to specify more than one permission.
+
+```xml
+<config:android permission="android.permission.INTERNET" />
+<config:android permission="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+## Help * Forums
+
+If you encounter any problems when setting up Lime for Android, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

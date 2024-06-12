@@ -28,4 +28,4 @@ When prompted to automatically download and install the Native SDK, type "n" and
 
 ## Forums
 
-If you encounter any problems when setting up Lime for BlackBerry, please visit the [forums](http://community.openfl.org/c/help).
+If you encounter any problems when setting up Lime for BlackBerry, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

@@ -34,4 +34,4 @@ Members of the Haxe community have already created open source externs for a num
 
 ## Forums
 
-If you encounter any problems when setting up Lime for Electron, please visit the [forums](http://community.openfl.org/c/help).
+If you encounter any problems when setting up Lime for Electron, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

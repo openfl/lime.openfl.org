@@ -28,6 +28,12 @@ To compile and launch an iOS application with one command, run `lime test ios`. 
 
 Specify the `-appstore` option to create a build to be submitted to the iOS App Store. Alternatively, specify the `-adhoc` option for ad hoc distribution to specific devices outside of the App Store. For enterprise distribution within your organization, specify the `-enterprise` option.
 
+## Advanced Configuration
+
+The `<config:ios />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for iOS. A few of the more commonly-used advanced configuration options for iOS are documented below. For more details about the available advanced options, see [Config Values: iOS](../../project-files/xml-format/config/#ios).
+
+The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see [Config Values: C++](../../project-files/xml-format/config/#c).
+
 ### Code Signing
 
 To compile for iOS, you must specify [code signing](https://developer.apple.com/support/code-signing/) options. These may be added to a `<config:ios/>` element in your [_project.xml_](../../project-files/xml-format/) file.
@@ -52,4 +58,4 @@ If you need to manually specify a code signing identity, add the `identity` attr
 
 ## Forums
 
-You should not need to install the Xcode command-line tools. If this is not the case, or if you encounter other problems when setting up Lime for iOS, please visit the [forums](http://community.openfl.org/c/help).
+You should not need to install the Xcode command-line tools. If this is not the case, or if you encounter other problems when setting up Lime for iOS, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

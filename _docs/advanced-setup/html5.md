@@ -76,6 +76,10 @@ Another possible way of adding JS files is to link them directly inside your cus
 
 Some Haxe externs support Lime out of the box, like [haxe-simple-peer](https://github.com/ixiagames/haxe-simple-peer). You just include it with `<haxelib name="simple-peer" />` and that's all. This works because it has an [_include.xml_](../../project-files/xml-format/#includexml) file with a `<dependency />` tag so Lime knows how to include the external _simplepeer.min.js_ file.
 
+## Advanced Configuration
+
+The `<config:html5 />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for HTML/JS. For a complete list of these advanced option, see [Config Values: HTML5](../../project-files/xml-format/config/#html5).
+
 ## Forums
 
-If you encounter any problems when setting up Lime for HTML5, please visit the [forums](http://community.openfl.org/c/help).
+If you encounter any problems when setting up Lime for HTML5, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

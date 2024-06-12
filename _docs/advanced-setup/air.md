@@ -87,6 +87,10 @@ To use _.ane_ native extension files, add each one to your project's native depe
 
 The `name` attribute is the native extension's ID. The `path` attribute is the relative path to the _.ane_ file.
 
+## Advanced Configuration
+
+The `<config:air />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for Adobe AIR. For a complete list of these advanced option, see [Config Values: Adobe AIR](../../project-files/xml-format/config/#adobe-air).
+
 ## Forums
 
-If you encounter any problems when setting up Lime for AIR, please visit the [forums](http://community.openfl.org/c/help).
+If you encounter any problems when setting up Lime for AIR, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

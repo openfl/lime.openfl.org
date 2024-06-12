@@ -22,4 +22,5 @@ When prompted to open the address for the Tizen SDK, type "n" and press enter. A
 
 ## Forums
 
-If you encounter any problems when setting up Lime for Tizen, please visit the [forums](http://community.openfl.org/c/help).
+If you encounter any problems when setting up Lime for Tizen, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
+

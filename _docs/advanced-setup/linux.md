@@ -26,6 +26,10 @@ To compile and launch a Linux executable with one command, run `lime test linux`
 
 > _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
+## Advanced Configuration
+
+The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see [Config Values: C++](../../project-files/xml-format/config/#c).
+
 ## Forums
 
-If you encounter problems setting up Lime to compile on Linux, please visit the [forums](http://community.openfl.org/c/help).
+If you encounter problems setting up Lime to compile on Linux, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).

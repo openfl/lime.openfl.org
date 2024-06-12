@@ -34,4 +34,4 @@ To use a _.swc_ library with Haxe that was compiled from ActionScript, add Haxe'
 
 ## Forums
 
-If you encounter any problems when setting up Lime for Flash, please visit the [forums](http://community.openfl.org/c/help).
+If you encounter any problems when setting up Lime for Flash, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
