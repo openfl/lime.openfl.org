@@ -41,7 +41,7 @@ These options configure how `lime rebuild` compiles a C++ library project.
 <config:air sdk-version="28.0" />
 <config:air profile="extendedDesktop" /> <!-- set a custom AIR device profile -->
 <config:air connect="hostString" /> <!-- connect to a remote debugger at the specified host -->
-<config:air listen="port" /> <!-- listen for a connectionfrom a remote debugger on the specified port  -->
+<config:air listen="port" /> <!-- listen for a connection from a remote debugger on the specified port  -->
 
 <config:ios device="universal" /> <!-- See iOS section. -->
 ```

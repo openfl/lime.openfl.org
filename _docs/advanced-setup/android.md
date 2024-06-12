@@ -118,6 +118,6 @@ Use multiple tags to specify more than one permission.
 <config:android permission="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-## Help * Forums
+## Help & Forums
 
 If you encounter any problems when setting up Lime for Android, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
