@@ -44,6 +44,8 @@ For the renderer process, you can use Lime's regular `html5` target. If you need
 
 Full Electron integration with Limee requires some extra steps, but that's the nature of targeting Electron with _any_ language that can compile to JavaScript, due to Electron's strict design of process separation for security.
 
+For packaging a final app bundle for distribution, you may be able to use tools such as [Electron Forge](https://www.electronforge.io/) or [Electron Builder](https://www.electron.build/).
+
 ## Help & Forums
 
 If you encounter any problems when setting up Lime for Electron, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
