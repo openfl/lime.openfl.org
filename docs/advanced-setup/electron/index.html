@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Setup Electron | Lime</title>
-<meta name="generator" content="Jekyll v3.9.5" />
+<meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Setup Electron" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Electron allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Electron can run on Windows, macOS, and Linux." />
@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/electron/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-06-12T16:08:56-07:00" />
+<meta property="article:published_time" content="2024-07-15T15:33:04-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup Electron" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-06-12T16:08:56-07:00","datePublished":"2024-06-12T16:08:56-07:00","description":"Electron allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Electron can run on Windows, macOS, and Linux.","headline":"Setup Electron","url":"https://lime.openfl.org/docs/advanced-setup/electron/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-07-15T15:33:04-07:00","datePublished":"2024-07-15T15:33:04-07:00","description":"Electron allows developers to build cross-platform desktop apps with JavaScript, HTML, and CSS. Electron can run on Windows, macOS, and Linux.","headline":"Setup Electron","url":"https://lime.openfl.org/docs/advanced-setup/electron/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -253,6 +253,18 @@
 <p>To use an external JavaScript library with Lime, you need <a href="https://haxe.org/manual/lf-externs.html">Haxe externs</a>. See also <a href="https://haxe.org/manual/target-javascript-external-libraries.html">Haxe: Using external JavaScript libraries</a>.</p>
 
 <p>Members of the Haxe community have already created open source externs for a number of popular JavaScript libraries, so be sure to search <a href="https://lib.haxe.org/search">Haxelib</a> or <a href="https://github.com/search">Github</a> to see if JS externs exist for your library before you try to create your own.</p>
+
+<h2 id="electron-processes-and-ipc-with-lime">Electron Processes and IPC with Lime</h2>
+
+<p>Electron is designed to be a <a href="https://www.electronjs.org/docs/latest/tutorial/process-model">multi-process system</a>, with a <em>main</em> process that integrates at a lower-level with the operating system, and a <em>renderer</em> process that displays HTML/CSS/JS like a web browser. For security reasons, the renderer process typically can’t access Electron’s operating system integrations directly, and Electron provides <a href="https://www.electronjs.org/docs/latest/tutorial/ipc">inter-process communication (IPC)</a> facilities to communicate safely between the main process and the renderer process.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">electron</code> target in Lime is not designed to provide deep integration with Electron’s main process or IPC system. Instead, the <code class="language-plaintext highlighter-rouge">electron</code> target is basically a simple variation of the <code class="language-plaintext highlighter-rouge">html5</code> target with some extra templates to quickly get your project running in Electron instead of a web browser. However, this does <strong>not</strong> prevent Lime users from creating more advanced Electron apps that take advantage of Electron’s main process, preload scripts, and IPC.</p>
+
+<p>To build a more advanced Electron app with main and preload scripts, you need to compile them separately from your Lime app. You can still use Haxe for the main and preload scripts (typically, using <em>.hxml</em> files to define compiler options) because Electron APIs are available in Haxe thanks to the <a href="https://lib.haxe.org/p/electron/">electron Haxelib</a>.</p>
+
+<p>For the renderer process, you can use Lime’s regular <code class="language-plaintext highlighter-rouge">html5</code> target. If you need access to functions exposed from a preload script, you can define them by creating custom <a href="https://haxe.org/manual/lf-externs.html">Haxe externs</a>, similar to <a href="https://haxe.org/manual/target-javascript-external-libraries.html">using external JavaScript libraries from Haxe</a>.</p>
+
+<p>Full Electron integration with Limee requires some extra steps, but that’s the nature of targeting Electron with <em>any</em> language that can compile to JavaScript, due to Electron’s strict design of process separation for security.</p>
 
 <h2 id="help--forums">Help &amp; Forums</h2>
 
