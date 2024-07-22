@@ -16,7 +16,7 @@ jobs:
       with:
         repository: openfl/lime
         path: _lime-git
-        ref: 8.1.2
+        ref: 8.1.3
 
     - uses: ruby/setup-ruby@v1
       with:
