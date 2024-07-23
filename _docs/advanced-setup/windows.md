@@ -6,11 +6,7 @@ Create native [Windows](https://developer.microsoft.com/en-us/windows/) desktop 
 
 ## Automatic Install
 
-Open a command-prompt or terminal and run the following command:
-
-```sh
-lime setup windows
-```
+There is no automatic setup available for Windows.
 
 ## Manual Install
 
