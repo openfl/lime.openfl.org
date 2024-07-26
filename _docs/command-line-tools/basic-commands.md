@@ -12,14 +12,16 @@ If you are in the same directory as your project:
 
 You can substitute "neko" for any Lime target, including:
 
- * windows
- * mac
- * linux
- * ios
- * android
- * flash
- * air
- * html5
+ * [windows](../../advanced-setup/windows/)
+ * [mac](../../advanced-setup/macos/)
+ * [linux](../../advanced-setup/linux/)
+ * [ios](../../advanced-setup/ios/)
+ * [android](../../advanced-setup/android/)
+ * [flash](../../advanced-setup/flash/)
+ * [air](../../advanced-setup/air/)
+ * [html5](../../advanced-setup/html5/)
+ * [hl](../../advanced-setup/hashlink/)
+ * [electron](../../advanced-setup/electron/)
 
 Some targets are not available from every host platform. For example, iOS is only available when using macOS.
 
@@ -62,7 +64,7 @@ All of the same flags and targets apply.
 
 The "setup" command can help download and install the dependencies needed to target certain platforms, or to tell the command-line tools where it can find where these tools are installed. For example, the Android SDK and NDK when targeting Android, or installing Visual Studio C++ for Windows.
 
-Follow the pages under the "Advanced Setup" section to setup each platform.
+Follow the pages under the [Platform Setup](../../advanced-setup/) section to setup each platform.
 
 ## lime help
 

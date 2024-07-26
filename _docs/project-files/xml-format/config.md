@@ -18,7 +18,7 @@ The following targets have additional unique options.
 
 ### C++
 
-These options are shared by all targets that use C++, including Android, iOS, Windows, Mac, and Linux.
+The following options are shared by all targets that use C++, including [Android](../../../advanced-setup/android/), [iOS](../../../advanced-setup/ios/), [Windows](../../../advanced-setup/windows/), [macOS](../../../advanced-setup/macos/), and [Linux](../../../advanced-setup/linux/).
 
 ```xml
 <config:cpp requireBuild="true" />
@@ -37,6 +37,8 @@ These options configure how `lime rebuild` compiles a C++ library project.
 
 ### Adobe AIR
 
+The following options are available for [Adobe AIR](../../../advanced-setup/air/) only.
+
 ```xml
 <config:air sdk-version="28.0" />
 <config:air profile="extendedDesktop" /> <!-- set a custom AIR device profile -->
@@ -47,6 +49,8 @@ These options configure how `lime rebuild` compiles a C++ library project.
 ```
 
 ### Android
+
+The following options are available for [Android](../../../advanced-setup/android/) only.
 
 ```xml
 <config:android install-location="auto" />
@@ -71,11 +75,15 @@ These options configure how `lime rebuild` compiles a C++ library project.
 
 ### HTML5
 
+The following options are available for [HTML5](../../../advanced-setup/html5/) only.
+
 ```xml
 <config:html5 dependency-path="lib" />
 ```
 
 ### iOS
+
+The following options are available for [iOS](../../../advanced-setup/ios/) only.
 
 ```xml
 <config:ios device="universal" /> <!-- Other options: "iphone", "ipad" -->
@@ -97,6 +105,8 @@ These options configure how `lime rebuild` compiles a C++ library project.
 
 ### tvOS
 
+The following options are available for tvOS only.
+
 ```xml
 <config:tvos device="appletv" />
 <config:tvos deployment="9.0" />
@@ -111,7 +121,9 @@ These options configure how `lime rebuild` compiles a C++ library project.
 <config:tvos linker-flags="-stdlib=libc++" />
 ```
 
-### Webassembly
+### WebAssembly
+
+The following options are available for WebAssembly only.
 
 ```xml
 <config:webassembly dependency-path="lib" />

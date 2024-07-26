@@ -6,7 +6,7 @@ redirect_from: docs/index.html
 
 ## Install Haxe
 
-If you have not already, install [Haxe](https://haxe.org/download/) for your current platform. Lime supports Windows, macOS and Linux host platforms.
+If you have not already, install [Haxe](https://haxe.org/download/) for your current platform. Lime projects can be built on Windows, macOS and Linux.
 
 
 ## Install Lime
@@ -24,11 +24,9 @@ To confirm that Lime is installed and working properly, try running the "lime" c
 lime
 ```
 
-
 ## Install a Code Editor
 
 We recommend [Visual Studio Code](https://code.visualstudio.com), using the [Lime Extension](https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension), but many [other code editors](../getting-started/choosing-a-code-editor) are also compatible with Haxe development.
-
 
 ## Run a Sample
 
@@ -45,12 +43,16 @@ lime test neko -Dcairo
 lime test flash
 ```
 
-Lime will use a OpenGL-based renderer by default, but attempts to fallback to a software renderer (such as HTML5 canvas or Cairo) when it is unavailable.
-
+Lime will use a hardware-accelerated OpenGL renderer by default, but attempts to fall back to a software renderer (such as the [HTML5 Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) or [Cairo for native 2D Graphics](https://www.cairographics.org/)) when OpenGL is unavailable on the current system. You can add the `-Dcanvas` flag to the `html5` target or the `-Dcairo` flag to native targets to force software rendering.
 
 ## Use Additional Platforms
 
-Lime and OpenFL support many [target platforms and operating systems](../getting-started/targets/), including native C++ apps on Windows, macOS, Linux, Android, and iOS, HTML5 on the web or as an app with Electron, the HashLink virtual machine, Adobe AIR, and more.
+Lime and OpenFL support many [target platforms and operating systems](../getting-started/targets/), including:
+
+- Native C++ desktop apps on [Windows](../advanced-setup/windows/), [macOS](../advanced-setup/macos/), [Linux](../advanced-setup/linux/)
+- Native C++ mobile apps on [Android](../advanced-setup/android/), and [iOS](../advanced-setup/ios/)
+- [HTML5](../advanced-setup/html5/) on the web
+- Using cross-platform runtimes like [Electron](../advanced-setup/electron/), the [HashLink](../advanced-setup/hashlink/) virtual machine, and [Adobe AIR](../advanced-setup/air/)
 
 Some target platforms require extra setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:
 
@@ -62,4 +64,4 @@ lime setup android
 lime setup ios
 ```
 
-Follow the pages under the "Advanced Setup" section for more detailed information to setup each platform.
+Follow the pages under the [Platform Setup](../advanced-setup/) section for more detailed information to setup each platform.

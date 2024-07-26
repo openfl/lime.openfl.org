@@ -1,5 +1,5 @@
 ---
 title: Command-Line Tools
-# redirect because it's a blank page
-redirect_to: /docs/home/
+# redirect to an appropriate sub-page because this is a blank page
+redirect_to: /docs/command-line-tools/basic-commands/
 ---

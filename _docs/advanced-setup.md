@@ -1,5 +1,5 @@
 ---
-title: Advanced Setup
-# redirect because it's a blank page
-redirect_to: /docs/home/
+title: Platform Setup
+# redirect to an appropriate sub-page because this is a blank page
+redirect_to: /docs/advanced-setup/html5/
 ---

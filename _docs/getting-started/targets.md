@@ -10,27 +10,27 @@ lime help build
 
 ## Targets
 
-* air -- Create an Adobe AIR application
-* android -- Create an Android application
+* [air](../../advanced-setup/air/) -- Create an Adobe AIR application
+* [android](../../advanced-setup/android/) -- Create an Android application
 * emscripten -- Create an Emscripten application
-* flash -- Create a Flash SWF application
-* html5 -- Create an HTML5 application
-* ios -- Create an iOS application
-* linux -- Create a Linux application
-* mac -- Create a macOS application
+* [flash](../../advanced-setup/flash/) -- Create a Flash SWF application
+* [html5](../../advanced-setup/html5/) -- Create an HTML5 application
+* [ios](../../advanced-setup/ios/) -- Create an iOS application
+* [linux](../../advanced-setup/linux/) -- Create a Linux application
+* [mac](../../advanced-setup/macos/) -- Create a macOS application
 * tvos -- Create a tvOS application
-* windows -- Create a Windows application
+* [windows](../../advanced-setup/windows/) -- Create a Windows application
 
 ## Target Aliases
 
 * cpp -- Alias for host platform (using -cpp)
-* neko -- Alias for host platform (using -neko)
-* macos -- Alias for mac
+* [neko](../../advanced-setup/neko/) -- Alias for host platform (using -neko)
+* [macos](../../advanced-setup/macos/) -- Alias for mac
 * nodejs -- Alias for host platform (using -nodejs)
 * java -- Alias for host platform (using -java)
 * cs -- Alias for host platform (using -cs)
-* hl/hashlink -- Alias for host platform (using -hl)
+* [hl/hashlink](../../advanced-setup/hashlink/) -- Alias for host platform (using -hl)
 * uwp/winjs -- Alias for windows -uwp
 * rpi/raspberrypi -- Alias for linux -rpi
-* electron -- Alias for html5 -electron
+* [electron](../../advanced-setup/electron/) -- Alias for html5 -electron
 * webassembly/wasm -- Alias for emscripten -webassembly
