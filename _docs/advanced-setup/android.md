@@ -35,21 +35,23 @@ A variety of vendors offer free Java OpenJDK builds that work well with Lime, Op
 
 To install the Android SDK and NDK, using [Android Studio](https://developer.android.com/studio) is recommended. Android Studio contains an **SDK Manager** that allows you to install all of the SDK and NDK components that you need (including the ability to select specific versions, if necessary).
 
-#### API Level
+#### SDK Platforms
 
-In the **SDK Platforms** tab, you should generally be able to install the newest **API Level**.
+In the **SDK Platforms** tab in Android Studio's SDK Manager, you should generally be able to install the newest **API Level**.
 
-> See [Meet Google Play's target API level requirement](https://developer.android.com/google/play/requirements/target-sdk) for details about which API level Google currently requires for new apps and updates.
+_Note:_ See [Meet Google Play's target API level requirement](https://developer.android.com/google/play/requirements/target-sdk) for details about which API levels Google currently requires for new apps and for updates.
 
-In the **SDK Tools** tab, you will need to install several items.
+#### SDK Tools
 
-- You should generally be able to install the neweset **Android SDK Build-Tools**.
+In the **SDK Tools** tab in Android Studio's SDK Manager, you will need to install a few items.
 
-- **NDK (Side by side)** version r21e (21.4.7075529) is currently recommended for Lime.
+You should generally be able to install the newest **Android SDK Build-Tools**.
 
-	> hxcpp 4.3.2 and older on Haxelib do not support newer NDKs than r21e. When the next update after hxcpp 4.3.2 is released, it should support newer NDKs (at least up to NDK version 25).
+**NDK (Side by side)** version r21e (21.4.7075529) is currently recommended for Lime.
 
-- You should generally be able to install the neweset **Android SDK Platform-Tools**.
+> _Warning:_ hxcpp 4.3.2 and older on Haxelib do not support newer NDKs than r21e. When the next update after hxcpp 4.3.2 is released, it should support newer NDKs (at least up to NDK version 25).
+
+You should generally be able to install the newest **Android SDK Platform-Tools**.
 
 #### Configuring Lime for Android development
 
@@ -85,7 +87,7 @@ To compile an Android application bundle, run `lime build android`. Add the `-de
 
 To compile and launch an Android application with one command, run `lime test android`. The app will run on a device connected to your computer with USB.
 
-> _Note:_ You may need to install drivers on your computer for your Android device before you can deploy an app to it.
+> _Note:_ In some cases, you may need to install drivers on your computer for your Android device before you can deploy an app to it.
 
 > _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
