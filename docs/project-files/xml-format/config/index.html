@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/config/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-26T10:20:04-07:00" />
+<meta property="article:published_time" content="2024-07-26T13:25:39-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="config values" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-07-26T10:20:04-07:00","datePublished":"2024-07-26T10:20:04-07:00","description":"Overview","headline":"config values","url":"https://lime.openfl.org/docs/project-files/xml-format/config/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-07-26T13:25:39-07:00","datePublished":"2024-07-26T13:25:39-07:00","description":"Overview","headline":"config values","url":"https://lime.openfl.org/docs/project-files/xml-format/config/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -164,7 +164,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-          Advanced Setup
+          Platform Setup
         </a>
       </h4>
     </div>
@@ -240,7 +240,7 @@
 
 <h3 id="c">C++</h3>
 
-<p>These options are shared by all targets that use C++, including Android, iOS, Windows, Mac, and Linux.</p>
+<p>The following options are shared by all targets that use C++, including <a href="../../../advanced-setup/android/">Android</a>, <a href="../../../advanced-setup/ios/">iOS</a>, <a href="../../../advanced-setup/windows/">Windows</a>, <a href="../../../advanced-setup/macos/">macOS</a>, and <a href="../../../advanced-setup/linux/">Linux</a>.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:cpp</span> <span class="na">requireBuild=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:cpp</span> <span class="na">buildLibrary=</span><span class="s">"hxcpp"</span> <span class="nt">/&gt;</span>
@@ -257,6 +257,8 @@
 
 <h3 id="adobe-air">Adobe AIR</h3>
 
+<p>The following options are available for <a href="../../../advanced-setup/air/">Adobe AIR</a> only.</p>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:air</span> <span class="na">sdk-version=</span><span class="s">"28.0"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:air</span> <span class="na">profile=</span><span class="s">"extendedDesktop"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- set a custom AIR device profile --&gt;</span>
 <span class="nt">&lt;config:air</span> <span class="na">connect=</span><span class="s">"hostString"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- connect to a remote debugger at the specified host --&gt;</span>
@@ -266,6 +268,8 @@
 </code></pre></div></div>
 
 <h3 id="android">Android</h3>
+
+<p>The following options are available for <a href="../../../advanced-setup/android/">Android</a> only.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:android</span> <span class="na">install-location=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:android</span> <span class="na">minimum-sdk-version=</span><span class="s">"21"</span> <span class="nt">/&gt;</span>
@@ -289,10 +293,14 @@
 
 <h3 id="html5">HTML5</h3>
 
+<p>The following options are available for <a href="../../../advanced-setup/html5/">HTML5</a> only.</p>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:html5</span> <span class="na">dependency-path=</span><span class="s">"lib"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="ios">iOS</h3>
+
+<p>The following options are available for <a href="../../../advanced-setup/ios/">iOS</a> only.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">device=</span><span class="s">"universal"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Other options: "iphone", "ipad" --&gt;</span>
 <span class="nt">&lt;config:ios</span> <span class="na">deployment=</span><span class="s">"9.0"</span> <span class="nt">/&gt;</span>
@@ -313,6 +321,8 @@
 
 <h3 id="tvos">tvOS</h3>
 
+<p>The following options are available for tvOS only.</p>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:tvos</span> <span class="na">device=</span><span class="s">"appletv"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:tvos</span> <span class="na">deployment=</span><span class="s">"9.0"</span> <span class="nt">/&gt;</span>
 
@@ -326,7 +336,9 @@
 <span class="nt">&lt;config:tvos</span> <span class="na">linker-flags=</span><span class="s">"-stdlib=libc++"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<h3 id="webassembly">Webassembly</h3>
+<h3 id="webassembly">WebAssembly</h3>
+
+<p>The following options are available for WebAssembly only.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:webassembly</span> <span class="na">dependency-path=</span><span class="s">"lib"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
