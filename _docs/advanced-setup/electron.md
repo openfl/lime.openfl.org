@@ -42,7 +42,7 @@ To build a more advanced Electron app with main and preload scripts, you need to
 
 For the renderer process, you can use Lime's regular `html5` target. If you need access to functions exposed from a preload script, you can define them by creating custom [Haxe externs](https://haxe.org/manual/lf-externs.html), similar to [using external JavaScript libraries from Haxe](https://haxe.org/manual/target-javascript-external-libraries.html).
 
-Full Electron integration with Limee requires some extra steps, but that's the nature of targeting Electron with _any_ language that can compile to JavaScript, due to Electron's strict design of process separation for security.
+Full Electron integration with Lime requires some extra steps, but that's the nature of targeting Electron with _any_ language that can compile to JavaScript, due to Electron's strict design of process separation for security.
 
 For packaging a final app bundle for distribution, you may be able to use tools such as [Electron Forge](https://www.electronforge.io/) or [Electron Builder](https://www.electron.build/).
 
