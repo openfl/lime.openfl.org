@@ -15,7 +15,7 @@
   - project-files/xml-format
   - project-files/hxp-format
 
-- title: Advanced Setup
+- title: Platform Setup
   docs:
   - advanced-setup/windows
   - advanced-setup/macos
