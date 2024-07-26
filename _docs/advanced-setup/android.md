@@ -144,12 +144,12 @@ If Lime's default values for Android's `targetSdkVersion` and `minSdkVersion` do
 
 ### Android Build Tools Version
 
-Gradle requires specific versions of the **Android SDK Build Tools**, and Lime will try to find the latest version installed.
+Gradle requires specific versions of the **Android SDK Build-Tools**, and Lime will try to find the latest version installed.
 
 If Lime's default values for Android's build tools version doesn't meet your project's needs, you can specify a custom value in your [_project.xml_ file](../project-files/xml-format/).
 
 ```xml
-<config:android build-tools-version="" />
+<config:android build-tools-version="35" />
 ```
 
 ### Gradle Versions
