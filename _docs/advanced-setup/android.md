@@ -10,37 +10,82 @@ There is no automatic setup available for Android.
 
 ## Manual Install
 
+> **Warning!** Haxe 4.3 with hxcpp 4.3.2 on Haxelib cannot build working Lime apps for Android. The app builds, but when run on a device, it results in an SDL error about `__atomic_compare_exchange_4` on app startup.
+> 
+> There are two known workarounds:
+> 
+> * Downgrade to Haxe 4.2 and hxcpp 4.2
+> * Install a development build of hxcpp from GitHub to use Haxe 4.3
+>
+> At the time that you are reading this, if there is a newer version of hxcpp than 4.3.2 on Haxelib, you should be able to use that newer version without any of the above workarounds.
+
 Similar to standard Android native development, you will need the following installed:
 
- * [Android SDK](http://developer.android.com/sdk/index.html)
- * [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
  * Java JDK
+ * Android SDK
+ * Android NDK
+
+### Java JDK
+
+JDK version 11 or newer is recommended.
 
 A variety of vendors offer free Java OpenJDK builds that work well with Lime, OpenFL, and Android. If you're not sure which one to choose, a good option is [Temurin OpenJDK from Adoptium.net](https://adoptium.net/).
 
-After installing the Android SDK, you should install the `Android SDK platform-tools` and `Android API 26` packages from the Android SDK Manager. Gradle requires specific versions of the `Android SDK Build Tools`, and Lime will try to find the latest version installed. You can override this by setting `<config:android build-tools-version="" />` in your project file.
+### Android SDK and NDK
 
-Lime uses API 26 to support modern Android features, but is still compatible with API 16 devices. You only need to install the newer API package.
+To install the Android SDK and NDK, using [Android Studio](https://developer.android.com/studio) is recommended. Android Studio contains an **SDK Manager** that allows you to install all of the SDK and NDK components that you need (including the ability to select specific versions, if necessary).
 
-Using the latest HXCPP, and targeting modern Android platforms properly, requires NDK version r15c. Newer versions are not compatible with the release version of HXCPP, but an update is coming soon that will support later releases.
+#### API Level
 
-The Android build tools did not properly support new versions of Java for a long time, but now Java 8 is recommended to work properly with the current Android Gradle build system. Make sure that you have a JDK version installed.
+In the **SDK Platforms** tab, you should generally be able to install the newest **API Level**.
 
-After these tools are installed, Lime still needs to know where they are installed. Open a command-prompt or terminal and run the following command:
+> See [Meet Google Play's target API level requirement](https://developer.android.com/google/play/requirements/target-sdk) for details about which API level Google currently requires for new apps and updates.
+
+In the **SDK Tools** tab, you will need to install several items.
+
+- You should generally be able to install the neweset **Android SDK Build-Tools**.
+
+- **NDK (Side by side)** version r21e (21.4.7075529) is currently recommended for Lime.
+
+	> hxcpp 4.3.2 and older on Haxelib do not support newer NDKs than r21e. When the next update after hxcpp 4.3.2 is released, it should support newer NDKs (at least up to NDK version 25).
+
+- You should generally be able to install the neweset **Android SDK Platform-Tools**.
+
+#### Configuring Lime for Android development
+
+After all of the Android SDK and NDK tools are installed, Lime must be configured with their file system paths. Open a command prompt or terminal, and run the following command:
 
 ```sh
 lime setup android
 ```
 
-When prompted to automatically download and install each component, type "n" and press enter. At the end, the setup process will ask for each location. When prompted, enter the path to where the Android SDK, NDK and other components are installed.
+If prompted to automatically download and install any components, type the letter `n` (for "no") and press Enter. Then, the setup process will ask for the location of each component. When prompted, enter the path to where the Android SDK, NDK and any additional components are installed.
 
-If you intend to use an Android emulator, create an AVD with hardware acceleration that targets Android 4.1 or greater. You may also need to install drivers for your Android device, before you can deploy to it. Note that x86 emulators and devices are supported.
+Typically, when the Android SDK is installed by Android Studio, it is located at a standard location on each platform (specify the appropriate _username_ and _version_, as necessary):
+
+- Windows: _C:\Users\\**username**\AppData\Local\Android\Sdk_
+- macOS: _~/Library/Android/sdk_
+- Linux: _~/Android/Sdk_
+
+Android Studio installs the NDK inside the SDK. The default location for each platform should be similar to below (specify the appropriate _username_ and _version_, as necessary):
+
+- Windows: _C:\Users\\**username**\AppData\Local\Android\Sdk\ndk\\**version**_
+- macOS: _~/Library/Android/sdk/ndk/**version**_
+- Linux: _~/Android/Sdk/ndk/**version**_
+
+The Java JDK may be installed to a variety of locations, depending on the current operating system, and which JDK distribution was selected:
+
+- Windows: Typically, Java is installed somewhere in _C:\Program Files_, such as _C:\Program Files\Java_ or _C:\Program Files\Temurin_.
+- macOS: Run the **/usr/libexec/java_home** command in the Terminal app to find the JDK location.
+- Linux: The location depends on your distribution and package manager.
 
 ## Build & Run
 
 To compile an Android application bundle, run `lime build android`. Add the `-debug` option to create a debug build. Add the `-release` option to create a release build.
 
-To compile and launch an Android application with one command, run `lime test android`. The app will run on a device connected to your computer with USB. Add the `-emulator` option to target the Android emulator included with the Android SDK instead of a device.
+To compile and launch an Android application with one command, run `lime test android`. The app will run on a device connected to your computer with USB.
+
+> _Note:_ You may need to install drivers on your computer for your Android device before you can deploy an app to it.
 
 > _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
@@ -95,6 +140,16 @@ If Lime's default values for Android's `targetSdkVersion` and `minSdkVersion` do
 <config:android minimum-sdk-version="14"/>
 ```
 
+### Android Build Tools Version
+
+Gradle requires specific versions of the **Android SDK Build Tools**, and Lime will try to find the latest version installed.
+
+If Lime's default values for Android's build tools version doesn't meet your project's needs, you can specify a custom value in your [_project.xml_ file](../project-files/xml-format/).
+
+```xml
+<config:android build-tools-version="" />
+```
+
 ### Gradle Versions
 
 If Lime's default values for Gradle versions used to build for Android don't meet your project's needs, you can specify custom values in your [_project.xml_](../../project-files/xml-format/) file.
@@ -117,6 +172,12 @@ Use multiple tags to specify more than one permission.
 <config:android permission="android.permission.INTERNET" />
 <config:android permission="android.permission.ACCESS_NETWORK_STATE" />
 ```
+
+## Android Emulator
+
+If you intend to test with the Android emulator, you create an AVD in **Android Studio** in the **Virtual Device Manager**.
+
+Add the `-emulator` option to your `lime build android` or `lime test android` command to target the Android emulator instead of a device.
 
 ## Help & Forums
 
