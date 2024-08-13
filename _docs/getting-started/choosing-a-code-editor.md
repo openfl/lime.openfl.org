@@ -21,7 +21,7 @@ These extensions will enable code completion, simplify project builds, and make 
 
 To set up vim for Haxe, Lime, and OpenFL:
 
-- Install the [vim-haxe](https://github.com/jdonaldson/vim-haxe) plugin for Haxe syntax highlighting and autocompletion.
+- Install the [vaxe](https://github.com/jdonaldson/vaxe) plugin for Haxe syntax highlighting and autocompletion.
 - Optionally, use [ALE](https://github.com/dense-analysis/ale) for asynchronous linting and completion.
   
 Vim is cross-platform, running on Windows, macOS, and Linux, and is favored by those who appreciate a fast and customizable coding environment.
