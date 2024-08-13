@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Setup Tizen</title>
-    <meta name="description" content="Automatic Install">
+    <title>Choosing a Code Editor</title>
+    <meta name="description" content="After installing Lime or OpenFL, selecting the right integrated development environment (IDE) or code editor can greatly enhance your coding experience. Whil...">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -15,25 +15,25 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Setup Tizen | Lime</title>
+<title>Choosing a Code Editor | Lime</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Setup Tizen" />
+<meta property="og:title" content="Choosing a Code Editor" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Automatic Install" />
-<meta property="og:description" content="Automatic Install" />
-<link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/tizen/" />
-<meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/tizen/" />
+<meta name="description" content="After installing Lime or OpenFL, selecting the right integrated development environment (IDE) or code editor can greatly enhance your coding experience. While you can technically write code with a basic text editor, a quality IDE provides features like code completion, build shortcuts, and debugging tools, which are invaluable for efficient development." />
+<meta property="og:description" content="After installing Lime or OpenFL, selecting the right integrated development environment (IDE) or code editor can greatly enhance your coding experience. While you can technically write code with a basic text editor, a quality IDE provides features like code completion, build shortcuts, and debugging tools, which are invaluable for efficient development." />
+<link rel="canonical" href="https://lime.openfl.org/docs/getting-started/choosing-a-code-editor/" />
+<meta property="og:url" content="https://lime.openfl.org/docs/getting-started/choosing-a-code-editor/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-08-13T07:03:24-07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Setup Tizen" />
+<meta property="twitter:title" content="Choosing a Code Editor" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-08-13T07:03:24-07:00","datePublished":"2024-08-13T07:03:24-07:00","description":"Automatic Install","headline":"Setup Tizen","url":"https://lime.openfl.org/docs/advanced-setup/tizen/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-08-13T07:03:24-07:00","datePublished":"2024-08-13T07:03:24-07:00","description":"After installing Lime or OpenFL, selecting the right integrated development environment (IDE) or code editor can greatly enhance your coding experience. While you can technically write code with a basic text editor, a quality IDE provides features like code completion, build shortcuts, and debugging tools, which are invaluable for efficient development.","headline":"Choosing a Code Editor","url":"https://lime.openfl.org/docs/getting-started/choosing-a-code-editor/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/tizen/">
+    <link rel="canonical" href="https://lime.openfl.org/docs/getting-started/choosing-a-code-editor/">
     <link rel="alternate" type="application/rss+xml" title="Lime" href="https://lime.openfl.org/feed.xml" />
 </head>
 
@@ -100,7 +100,7 @@
         
           
           
-          <a class="list-group-item " href="/docs/getting-started/choosing-a-code-editor/">Choosing a Code Editor</a>
+          <a class="list-group-item active" href="/docs/getting-started/choosing-a-code-editor/">Choosing a Code Editor</a>
         
           
           
@@ -224,37 +224,54 @@
         </div>
 
         <div class="col-md-9">
-            <h1>Setup Tizen</h1>
-            <div id="markdown-content-container"><h2 id="automatic-install">Automatic Install</h2>
+            <h1>Choosing a Code Editor</h1>
+            <div id="markdown-content-container"><p>After installing Lime or OpenFL, selecting the right integrated development environment (IDE) or code editor can greatly enhance your coding experience. While you can technically write code with a basic text editor, a quality IDE provides features like code completion, build shortcuts, and debugging tools, which are invaluable for efficient development.</p>
 
-<p>Open a command-prompt or terminal and run the following command:</p>
+<h2 id="visual-studio-code">Visual Studio Code</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime setup tizen
-</code></pre></div></div>
+<p><a href="https://code.visualstudio.com">Visual Studio Code</a> (VSCode) is a highly recommended code editor for Lime and OpenFL development. It’s a flexible, open-source editor available on Windows, macOS, and Linux. Despite its lightweight design, VSCode offers robust code intelligence for many programming languages.</p>
 
-<h2 id="manual-install">Manual Install</h2>
-
-<p>In order to build applications for Tizen, you will need the Tizen 2.2 SDK installed. Lime uses native C++ to target Tizen, so during the install process, make sure that native components are selected:</p>
+<p>To set up VSCode for Lime and OpenFL:</p>
 
 <ul>
-  <li><a href="https://developer.tizen.org/downloads/tizen-sdk">Tizen SDK</a></li>
+  <li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=nadako.vshaxe">Haxe extension</a>.</li>
+  <li>Add the <a href="https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension">Lime extension</a>.</li>
 </ul>
 
-<p>Open a command-prompt or terminal and run the following command:</p>
+<p>These extensions will enable code completion, simplify project builds, and make debugging more accessible. VSCode does not require its own project files—just use the <strong>Open Folder</strong> option for any Lime or OpenFL project to get started.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime setup tizen
-</code></pre></div></div>
+<h2 id="vim">Vim</h2>
 
-<p>When prompted to open the address for the Tizen SDK, type “n” and press enter. Afterward, it should prompt for where it has been installed. Type the location where you installed the Tizen SDK and press enter.</p>
+<p><a href="https://www.vim.org">vim</a> is a highly configurable text editor built to enable efficient text editing. It’s especially popular among developers who prefer keyboard-centric workflows. While vim is minimalistic in its default form, it can be extended to support Lime and OpenFL development through plugins.</p>
 
-<h2 id="help--forums">Help &amp; Forums</h2>
+<p>To set up vim for Haxe, Lime, and OpenFL:</p>
 
-<p>If you encounter any problems when setting up Lime for Tizen, please visit the <a href="http://community.openfl.org/c/help">forums</a> or <a href="https://discord.gg/tDgq8EE">Discord</a>.</p>
+<ul>
+  <li>Install the <a href="https://github.com/jdonaldson/vim-haxe">vim-haxe</a> plugin for Haxe syntax highlighting and autocompletion.</li>
+  <li>Optionally, use <a href="https://github.com/dense-analysis/ale">ALE</a> for asynchronous linting and completion.</li>
+</ul>
 
+<p>Vim is cross-platform, running on Windows, macOS, and Linux, and is favored by those who appreciate a fast and customizable coding environment.</p>
+
+<h2 id="sublime-text">Sublime Text</h2>
+
+<p><a href="http://www.sublimetext.com">Sublime Text</a> is a lightweight, cross-platform code editor that supports Lime and OpenFL through the <a href="https://github.com/clemos/haxe-sublime-bundle">Haxe Sublime Bundle</a>. Sublime Text works on Windows, macOS, and Linux.</p>
+
+<p>Although Sublime Text doesn’t always offer accurate code completion and lacks traditional project management features, it’s more powerful than a simple text editor. If other editors feel too heavy for your needs, Sublime Text might be the right choice. It’s free to try, with reminders to purchase a license for extended use.</p>
+
+<h2 id="intellij-idea">IntelliJ IDEA</h2>
+
+<p><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> is a robust IDE, primarily known for Java development but increasingly popular within the Haxe community, including use by large teams like TiVo. Both the full and free community editions support the <a href="https://plugins.jetbrains.com/plugin/6873?pr=idea">Haxe plugin</a>.</p>
+
+<p>While the plugin setup can be tricky, IntelliJ IDEA offers a fully native IDE experience on all platforms once configured.</p>
+
+<h2 id="other-options">Other Options</h2>
+
+<p>Other editors, such as up-and-coming Haxe-based editors, are also available. You can explore more options at the <a href="http://haxe.org/documentation/introduction/editors-and-ides.html">Haxe documentation site</a>.</p>
 </div>
             <p class="text-center">
               <br />
-              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/advanced-setup/tizen.md" class="btn btn-default githubEditButton" role="button">
+              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/getting-started/choosing-a-code-editor.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a>
             </p>
@@ -270,58 +287,29 @@
 
   
   
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/home/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
 
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
+      
+        
+        
+        <li class="next">
+          <a href="/docs/getting-started/targets/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+    </div>
+    <div class="clear"></div>
+    
 
         </div>
 
