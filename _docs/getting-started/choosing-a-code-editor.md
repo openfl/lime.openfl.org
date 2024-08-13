@@ -1,4 +1,6 @@
-# Choosing a Code Editor
+---
+title: Choosing a Code Editor
+---
 
 After installing Lime or OpenFL, selecting the right integrated development environment (IDE) or code editor can greatly enhance your coding experience. While you can technically write code with a basic text editor, a quality IDE provides features like code completion, build shortcuts, and debugging tools, which are invaluable for efficient development.
 
