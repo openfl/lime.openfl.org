@@ -1,23 +1,11 @@
-# Jekyll Doc Theme
+Lime.OpenFL.org
+===============
 
-Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
+This is the source for https://lime.openfl.org.
 
-## Running locally
+You can build the site using [Jekyll](https://www.jekyllrb.com). It should work in a Unix environment, either from Linux, macOS or the Ubuntu Bash Shell for Windows. Make sure that Ruby is installed, and install Bundler (`gem install bundler`), then run the following in the openfl.org directory:
 
-You need Ruby and gem before starting, then:
+	bundle install
+	bundle exec jekyll serve
 
-```bash
-# install bundler
-gem install bundler
-
-# clone the project
-git clone https://github.com/aksakalli/jekyll-doc-theme.git
-cd jekyll-doc-theme
-
-# run jekyll with dependencies
-bundle exec jekyll serve
-```
-
-## License
-
-Released under [the MIT license](LICENSE).
+Thanks for using Lime!
