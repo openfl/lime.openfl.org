@@ -175,6 +175,18 @@ Use multiple tags to specify more than one permission.
 <config:android permission="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
+### Build Android App Bundles (AAB) instead of APK
+
+Since August 2021, new apps must provide an [Android App Bundle](https://developer.android.com/guide/app-bundle) to publish on Google Play.
+
+This tag can be used to inform Gradle to build an AAB file:
+
+```xml
+<setenv name="ANDROID_GRADLE_TASK" value=":app:bundleRelease"/>
+```
+
+If the build is successful, the resulting bundle can be found in the android export directory, under `android/bin/app/build/outputs/bundle/release`.
+
 ## Android Emulator
 
 If you intend to test with the Android emulator, you create an AVD in **Android Studio** in the **Virtual Device Manager**.
