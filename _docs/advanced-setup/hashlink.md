@@ -12,7 +12,7 @@ On macOS specifically, you will have to run `lime setup hashlink` if you want to
 
 ## Manual Install
 
-If building HashLink from source or using a [HashLink release](https://github.com/HaxeFoundation/hashlink/releases) other than the one included in Lime, run `lime setup hashlink` to let Lime know where you put it. To change this path or go back to the bundled version of HashLink, run `lime setup hashlink` again.
+If building HashLink from source or using a [HashLink release](https://github.com/HaxeFoundation/hashlink/releases) other than the one included in Lime, run `lime setup hashlink` to let Lime know where you put it. To change this path to a new value, run `lime setup hashlink` again. If you've previously configured a custom path, and you'd like to return to using Lime's bundled version of HashLink, run `lime config remove HL_PATH`.
 
 ## Build & Run
 
