@@ -25,11 +25,11 @@
 <meta property="og:url" content="https://lime.openfl.org/docs/project-files/xml-format/config/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-11-20T09:41:12-08:00" />
+<meta property="article:published_time" content="2024-12-02T15:27:07-08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="config values" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-11-20T09:41:12-08:00","datePublished":"2024-11-20T09:41:12-08:00","description":"Overview","headline":"config values","url":"https://lime.openfl.org/docs/project-files/xml-format/config/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2024-12-02T15:27:07-08:00","datePublished":"2024-12-02T15:27:07-08:00","description":"Overview","headline":"config values","url":"https://lime.openfl.org/docs/project-files/xml-format/config/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -322,17 +322,17 @@
 
 <p>The following options are available for <a href="../../../advanced-setup/ios/">iOS</a> only.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">device=</span><span class="s">"universal"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- Other options: "iphone", "ipad" --&gt;</span>
-<span class="nt">&lt;config:ios</span> <span class="na">deployment=</span><span class="s">"9.0"</span> <span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:ios</span> <span class="na">device=</span><span class="s">"universal"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- supported device types; other options: "iphone", "ipad" --&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">deployment=</span><span class="s">"9.0"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- minimum iOS version to target --&gt;</span>
 
-<span class="nt">&lt;config:ios</span> <span class="na">prerenderedIcon=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">prerenderedIcon=</span><span class="s">"false"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- disable iOS mask and shine effect on icon --&gt;</span>
 
-<span class="nt">&lt;config:ios</span> <span class="na">identity=</span><span class="s">"iPhone Developer"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;config:ios</span> <span class="na">provisioning-profile=</span><span class="s">"12345678-9012-3456-7890-123456789012"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;config:ios</span> <span class="na">team-id=</span><span class="s">"ABCDEFGHIJ"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">identity=</span><span class="s">"iPhone Developer"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- the identity to use for code signing --&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">provisioning-profile=</span><span class="s">"12345678-9012-3456-7890-123456789012"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- the provisioning profile to use for code signing --&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">team-id=</span><span class="s">"ABCDEFGHIJ"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- the team id to use for code signing --&gt;</span>
 
-<span class="nt">&lt;config:ios</span> <span class="na">non-exempt-encryption=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;config:ios</span> <span class="na">allow-insecure-http=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">non-exempt-encryption=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>  <span class="c">&lt;!-- set ITSAppUsesNonExemptEncryption key in Info.plist --&gt;</span>
+<span class="nt">&lt;config:ios</span> <span class="na">allow-insecure-http=</span><span class="s">"*"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- set NSExceptionDomains key in Info.plist --&gt;</span>
 
 <span class="nt">&lt;config:ios</span> <span class="na">enable-bitcode=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:ios</span> <span class="na">compiler=</span><span class="s">"clang"</span> <span class="nt">/&gt;</span>
@@ -343,14 +343,14 @@
 
 <p>The following options are available for tvOS only.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:tvos</span> <span class="na">device=</span><span class="s">"appletv"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;config:tvos</span> <span class="na">deployment=</span><span class="s">"9.0"</span> <span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config:tvos</span> <span class="na">device=</span><span class="s">"appletv"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- supported device types --&gt;</span>
+<span class="nt">&lt;config:tvos</span> <span class="na">deployment=</span><span class="s">"9.0"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- minimum iOS version to target --&gt;</span>
 
-<span class="nt">&lt;config:tvos</span> <span class="na">identity=</span><span class="s">"tvOS Developer"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:tvos</span> <span class="na">identity=</span><span class="s">"tvOS Developer"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- the identity to use for code signing --&gt;</span>
 
-<span class="nt">&lt;config:tvos</span> <span class="na">prerenderedIcon=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:tvos</span> <span class="na">prerenderedIcon=</span><span class="s">"false"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- disable tvOS mask and shine effect on icon --&gt;</span>
 
-<span class="nt">&lt;config:tvos</span> <span class="na">non-exempt-encryption=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config:tvos</span> <span class="na">non-exempt-encryption=</span><span class="s">"true"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- set ITSAppUsesNonExemptEncryption key in Info.plist --&gt;</span>
 
 <span class="nt">&lt;config:tvos</span> <span class="na">compiler=</span><span class="s">"clang"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;config:tvos</span> <span class="na">linker-flags=</span><span class="s">"-stdlib=libc++"</span> <span class="nt">/&gt;</span>
