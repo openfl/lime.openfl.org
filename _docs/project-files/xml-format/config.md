@@ -107,17 +107,17 @@ The following options are available for [HTML5](../../../advanced-setup/html5/) 
 The following options are available for [iOS](../../../advanced-setup/ios/) only.
 
 ```xml
-<config:ios device="universal" /> <!-- Other options: "iphone", "ipad" -->
-<config:ios deployment="9.0" />
+<config:ios device="universal" /> <!-- supported device types; other options: "iphone", "ipad" -->
+<config:ios deployment="9.0" /> <!-- minimum iOS version to target -->
 
-<config:ios prerenderedIcon="false" />
+<config:ios prerenderedIcon="false" /> <!-- disable iOS mask and shine effect on icon -->
 
-<config:ios identity="iPhone Developer" />
-<config:ios provisioning-profile="12345678-9012-3456-7890-123456789012" />
-<config:ios team-id="ABCDEFGHIJ" />
+<config:ios identity="iPhone Developer" /> <!-- the identity to use for code signing -->
+<config:ios provisioning-profile="12345678-9012-3456-7890-123456789012" /> <!-- the provisioning profile to use for code signing -->
+<config:ios team-id="ABCDEFGHIJ" /> <!-- the team id to use for code signing -->
 
-<config:ios non-exempt-encryption="true" />
-<config:ios allow-insecure-http="*" />
+<config:ios non-exempt-encryption="true" />  <!-- set ITSAppUsesNonExemptEncryption key in Info.plist -->
+<config:ios allow-insecure-http="*" /> <!-- set NSExceptionDomains key in Info.plist -->
 
 <config:ios enable-bitcode="false" />
 <config:ios compiler="clang" />
@@ -129,14 +129,14 @@ The following options are available for [iOS](../../../advanced-setup/ios/) only
 The following options are available for tvOS only.
 
 ```xml
-<config:tvos device="appletv" />
-<config:tvos deployment="9.0" />
+<config:tvos device="appletv" /> <!-- supported device types -->
+<config:tvos deployment="9.0" /> <!-- minimum iOS version to target -->
 
-<config:tvos identity="tvOS Developer" />
+<config:tvos identity="tvOS Developer" /> <!-- the identity to use for code signing -->
 
-<config:tvos prerenderedIcon="false" />
+<config:tvos prerenderedIcon="false" /> <!-- disable tvOS mask and shine effect on icon -->
 
-<config:tvos non-exempt-encryption="true" />
+<config:tvos non-exempt-encryption="true" /> <!-- set ITSAppUsesNonExemptEncryption key in Info.plist -->
 
 <config:tvos compiler="clang" />
 <config:tvos linker-flags="-stdlib=libc++" />
