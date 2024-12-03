@@ -175,6 +175,18 @@ Use multiple tags to specify more than one permission.
 <config:android permission="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
+### Gradle Tasks
+
+By default, Lime builds an APK file using the `assembleDebug` or `assembleRelease` task, depending on whether you [provide a certificate file](#code-signing). To build an [Android App Bundle](https://developer.android.com/guide/app-bundle) instead, you can specify the `bundleDebug` or `bundleRelease` task in your [_project.xml_](../../project-files/xml-format/) file.
+
+```xml
+<setenv name="ANDROID_GRADLE_TASK" value="bundleRelease" />
+```
+
+Once built, the AAB file will appear in your export directory, at _android/bin/app/build/outputs/bundle/`[build type]`/app-`[build type]`.aab_.
+
+You can specify other tasks this way as well, or pass additional space-separated arguments.
+
 ## Android Emulator
 
 If you intend to test with the Android emulator, you create an AVD in **Android Studio** in the **Virtual Device Manager**.
