@@ -65,3 +65,8 @@ lime setup ios
 ```
 
 Follow the pages under the [Platform Setup](../advanced-setup/) section for more detailed information to setup each platform.
+
+
+## Problems?
+
+If you have any questions or concerns when you are installing Lime, do not hesitate to visit our friendly [community forums](https://community.openfl.org/c/help) or [Discord server](https://discord.gg/tDgq8EE). Thank you for trying Lime, and please let us help if you have any problems at all.

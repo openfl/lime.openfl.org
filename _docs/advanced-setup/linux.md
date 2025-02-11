@@ -32,4 +32,4 @@ The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-for
 
 ## Help & Forums
 
-If you encounter problems setting up Lime to compile on Linux, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
+If you encounter problems setting up Lime to compile on Linux, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).

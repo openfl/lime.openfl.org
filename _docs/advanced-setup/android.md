@@ -183,4 +183,4 @@ Add the `-emulator` option to your `lime build android` or `lime test android` c
 
 ## Help & Forums
 
-If you encounter any problems when setting up Lime for Android, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
+If you encounter any problems when setting up Lime for Android, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).

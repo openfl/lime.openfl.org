@@ -30,4 +30,4 @@ The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-for
 
 ## Help & Forums
 
-If you encounter any problems when setting up Lime for targeting Windows, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
+If you encounter any problems when setting up Lime for targeting Windows, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).

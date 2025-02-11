@@ -30,4 +30,4 @@ The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-for
 
 ## Help & Forums
 
-You should not need to install the Xcode command-line tools. If this is not the case, or if you encounter other problems when setting up Lime for macOS, please visit the [forums](http://community.openfl.org/c/help) or [Discord](https://discord.gg/tDgq8EE).
+You should not need to install the Xcode command-line tools. If this is not the case, or if you encounter other problems when setting up Lime for macOS, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).
