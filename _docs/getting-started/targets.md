@@ -26,11 +26,7 @@ lime help build
 * cpp -- Alias for host platform (using -cpp)
 * [neko](../../advanced-setup/neko/) -- Alias for host platform (using -neko)
 * [macos](../../advanced-setup/macos/) -- Alias for mac
-* nodejs -- Alias for host platform (using -nodejs)
-* java -- Alias for host platform (using -java)
-* cs -- Alias for host platform (using -cs)
 * [hl/hashlink](../../advanced-setup/hashlink/) -- Alias for host platform (using -hl)
-* uwp/winjs -- Alias for windows -uwp
 * rpi/raspberrypi -- Alias for linux -rpi
 * [electron](../../advanced-setup/electron/) -- Alias for html5 -electron
 * webassembly/wasm -- Alias for emscripten -webassembly
