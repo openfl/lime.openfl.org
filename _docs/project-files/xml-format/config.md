@@ -113,7 +113,7 @@ The following options are available for [iOS](../../../advanced-setup/ios/) only
 <config:ios prerenderedIcon="false" /> <!-- disable iOS mask and shine effect on icon -->
 
 <config:ios identity="iPhone Developer" /> <!-- the identity to use for code signing -->
-<config:ios provisioning-profile="12345678-9012-3456-7890-123456789012" /> <!-- the provisioning profile to use for code signing -->
+<config:ios provisioning-profile="path/to/file.mobileprovision" /> <!-- the provisioning profile to use for code signing -->
 <config:ios team-id="ABCDEFGHIJ" /> <!-- the team id to use for code signing -->
 
 <config:ios non-exempt-encryption="true" />  <!-- set ITSAppUsesNonExemptEncryption key in Info.plist -->
