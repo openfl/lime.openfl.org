@@ -22,11 +22,15 @@ Before you can build for a device, you will also need to connect your device to 
 
 To compile an iOS or iPadOS application bundle, run `lime build ios`. Add the `-debug` option to create a debug build. Add the `-release` option to create a release build.
 
-To compile and launch an iOS application with one command, run `lime test ios`. The app will run on a device connected to your computer with USB. Add the `-simulator` option to target the iOS simulator included with Xcode instead of a device.
+To compile and launch an application on a physical iOS device connected to your computer with USB, run `lime test ios`.
 
-> _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
+> _Note:_ You may need to unlock the connected iOS device before you can install an app. If your iOS device asks, you may also need to tell it that you trust your computer. With some Lime versions, you may also need to launch Xcode on your computer before it will detect your connected iOS device.
+
+If you prefer to test in a simulator instead, run `lime test ios -simulator` to target the iOS simulator included with Xcode instead of a physical device.
 
 Specify the `-appstore` option to create a build to be submitted to the iOS App Store. Alternatively, specify the `-adhoc` option for ad hoc distribution to specific devices outside of the App Store. For enterprise distribution within your organization, specify the `-enterprise` option.
+
+> _Note:_ The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the `-clean` option.
 
 ## Advanced Configuration
 
