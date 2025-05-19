@@ -20,6 +20,7 @@ lime help build
 * [mac](../../advanced-setup/macos/) -- Create a macOS application
 * tvos -- Create a tvOS application
 * [windows](../../advanced-setup/windows/) -- Create a Windows application
+* [webassembly](../../advanced-setup/webassembly/) -- Create a WebAssembly application
 
 ## Target Aliases
 

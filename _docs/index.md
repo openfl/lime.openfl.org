@@ -52,6 +52,7 @@ Lime and OpenFL support many [target platforms and operating systems](../getting
 - Native C++ desktop apps on [Windows](../advanced-setup/windows/), [macOS](../advanced-setup/macos/), [Linux](../advanced-setup/linux/)
 - Native C++ mobile apps on [Android](../advanced-setup/android/), and [iOS](../advanced-setup/ios/)
 - [HTML5](../advanced-setup/html5/) on the web
+- [WebAssembly](../advanced-setup/webassembly/) C++ web apps
 - Using cross-platform runtimes like [Electron](../advanced-setup/electron/), the [HashLink](../advanced-setup/hashlink/) virtual machine, and [Adobe AIR](../advanced-setup/air/)
 
 Some target platforms require extra setup before they will work properly with Lime. After you confirm that things are running properly, you can try configuring a new platform:
@@ -62,6 +63,7 @@ lime setup linux
 lime setup mac
 lime setup android
 lime setup ios
+lime setup webassembly
 ```
 
 Follow the pages under the [Platform Setup](../advanced-setup/) section for more detailed information to setup each platform.
