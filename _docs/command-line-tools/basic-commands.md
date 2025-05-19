@@ -22,6 +22,7 @@ You can substitute "neko" for any Lime target, including:
  * [html5](../../advanced-setup/html5/)
  * [hl](../../advanced-setup/hashlink/)
  * [electron](../../advanced-setup/electron/)
+ * [webassembly](../../advanced-setup/webassembly/)
 
 Some targets are not available from every host platform. For example, iOS is only available when using macOS.
 
