@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Setup Linux</title>
-    <meta name="description" content="Create native Linux desktop applications with Lime and OpenFL by compiling to C++.">
+    <title>Setup WebAssembly</title>
+    <meta name="description" content="Create native WebAssembly web applications with Lime and OpenFL by compiling to C++. WebAssembly is often abbreviated as WASM.">
 
 
     <link rel="stylesheet" href="/css/main.css">
@@ -15,25 +15,25 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Setup Linux | Lime</title>
+<title>Setup WebAssembly | Lime</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Setup Linux" />
+<meta property="og:title" content="Setup WebAssembly" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Create native Linux desktop applications with Lime and OpenFL by compiling to C++." />
-<meta property="og:description" content="Create native Linux desktop applications with Lime and OpenFL by compiling to C++." />
-<link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/linux/" />
-<meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/linux/" />
+<meta name="description" content="Create native WebAssembly web applications with Lime and OpenFL by compiling to C++. WebAssembly is often abbreviated as WASM." />
+<meta property="og:description" content="Create native WebAssembly web applications with Lime and OpenFL by compiling to C++. WebAssembly is often abbreviated as WASM." />
+<link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/webassembly/" />
+<meta property="og:url" content="https://lime.openfl.org/docs/advanced-setup/webassembly/" />
 <meta property="og:site_name" content="Lime" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-05-19T08:54:21-07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Setup Linux" />
+<meta property="twitter:title" content="Setup WebAssembly" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","dateModified":"2025-05-19T08:54:21-07:00","datePublished":"2025-05-19T08:54:21-07:00","description":"Create native Linux desktop applications with Lime and OpenFL by compiling to C++.","headline":"Setup Linux","url":"https://lime.openfl.org/docs/advanced-setup/linux/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","dateModified":"2025-05-19T08:54:21-07:00","datePublished":"2025-05-19T08:54:21-07:00","description":"Create native WebAssembly web applications with Lime and OpenFL by compiling to C++. WebAssembly is often abbreviated as WASM.","headline":"Setup WebAssembly","url":"https://lime.openfl.org/docs/advanced-setup/webassembly/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/linux/">
+    <link rel="canonical" href="https://lime.openfl.org/docs/advanced-setup/webassembly/">
     <link rel="alternate" type="application/rss+xml" title="Lime" href="https://lime.openfl.org/feed.xml" />
 </head>
 
@@ -181,7 +181,7 @@
         
           
           
-          <a class="list-group-item active" href="/docs/advanced-setup/linux/">Setup Linux</a>
+          <a class="list-group-item " href="/docs/advanced-setup/linux/">Setup Linux</a>
         
           
           
@@ -217,7 +217,7 @@
         
           
           
-          <a class="list-group-item " href="/docs/advanced-setup/webassembly/">Setup WebAssembly</a>
+          <a class="list-group-item active" href="/docs/advanced-setup/webassembly/">Setup WebAssembly</a>
         
       </ul>
     </div>
@@ -228,44 +228,39 @@
         </div>
 
         <div class="col-md-9">
-            <h1>Setup Linux</h1>
-            <div id="markdown-content-container"><p>Create native Linux desktop applications with Lime and OpenFL by <a href="https://haxe.org/manual/target-cpp-getting-started.html">compiling to C++</a>.</p>
+            <h1>Setup WebAssembly</h1>
+            <div id="markdown-content-container"><p>Create native <a href="https://webassembly.org/">WebAssembly</a> web applications with Lime and OpenFL by <a href="https://haxe.org/manual/target-cpp-getting-started.html">compiling to C++</a>. WebAssembly is often abbreviated as WASM.</p>
 
 <h2 id="automatic-install">Automatic Install</h2>
 
-<p>There is no automatic setup available for Linux.</p>
+<p>There is no automatic setup available for WebAssembly.</p>
 
 <h2 id="manual-install">Manual Install</h2>
 
-<p>No additional setup is required for most Linux systems.</p>
+<p>In order to build Lime applications using WebAssembly, you must install the Emscripten SDK.</p>
 
-<p>You may need to install <code class="language-plaintext highlighter-rouge">g++</code> if it is not present already, and if you intend to compile 32-bit applications from a 64-bit distribution, you will also want <code class="language-plaintext highlighter-rouge">gcc-multilib</code> and <code class="language-plaintext highlighter-rouge">g++-multilib</code>, or their equivalents.</p>
+<p><a href="https://emscripten.org/docs/getting_started/downloads.html">Download the Emscripten SDK</a></p>
 
-<p>If you build Lime from the source, you will also need <code class="language-plaintext highlighter-rouge">libgl1-mesa-dev</code> and <code class="language-plaintext highlighter-rouge">libglu1-mesa-dev</code>.</p>
+<p>Lime must be configured with the Emscripten SDK’s file system path. Open a command prompt or terminal, and run the following command:</p>
 
-<p>You can only target Linux from a Linux system right now. If you are interested in contributing to cross-desktop builds to Linux, please open a topic on the forums.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime setup emscripten
+</code></pre></div></div>
+
+<p>When prompted, specify the absolute path to the Emscripten SDK.</p>
 
 <h2 id="build--run">Build &amp; Run</h2>
 
-<p>To compile a Linux executable, run <code class="language-plaintext highlighter-rouge">lime build linux</code>. Add the <code class="language-plaintext highlighter-rouge">-debug</code> option to create a build that can connect to the HXCPP debugger. Add the <code class="language-plaintext highlighter-rouge">-release</code> option to create a release build.</p>
+<p>To compile a WebAssembly application, run <code class="language-plaintext highlighter-rouge">lime build WebAssembly</code>. Add the <code class="language-plaintext highlighter-rouge">-debug</code> option to create a debug build. Add the <code class="language-plaintext highlighter-rouge">-release</code> option to create a release build.</p>
 
-<p>To compile and launch a Linux executable with one command, run <code class="language-plaintext highlighter-rouge">lime test linux</code>.</p>
-
-<blockquote>
-  <p><em>Note:</em> The first time that you compile a project for C++, it will take a noticably long time. However, compiling the same project again should be significantly faster because parts of your code that have not changed do not need to be recompiled. To force all of code to be recompiled for C++, use the <code class="language-plaintext highlighter-rouge">-clean</code> option.</p>
-</blockquote>
-
-<h2 id="advanced-configuration">Advanced Configuration</h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">&lt;config:cpp /&gt;</code> element in your <a href="../../project-files/xml-format/"><em>project.xml</em></a> file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see <a href="../../project-files/xml-format/config/#c">Config Values: C++</a>.</p>
+<p>To compile and launch a WebAssembly with one command, run <code class="language-plaintext highlighter-rouge">lime test WebAssembly</code>.</p>
 
 <h2 id="help--forums">Help &amp; Forums</h2>
 
-<p>If you encounter problems setting up Lime to compile on Linux, please visit the <a href="http://community.openfl.org/c/help">community forums</a> or our <a href="https://discord.gg/tDgq8EE">Discord server</a>.</p>
+<p>If you encounter any problems when setting up Lime for WebAssembly, please visit the <a href="http://community.openfl.org/c/help">community forums</a> or our <a href="https://discord.gg/tDgq8EE">Discord server</a>.</p>
 </div>
             <p class="text-center">
               <br />
-              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/advanced-setup/linux.md" class="btn btn-default githubEditButton" role="button">
+              <a target="_blank" href="https://github.com/openfl/lime.openfl.org/blob/master/_docs/advanced-setup/webassembly.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a>
             </p>
@@ -308,22 +303,47 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="pager">
       
         
         
         <li class="previous">
-          <a href="/docs/advanced-setup/macos/">
+          <a href="/docs/advanced-setup/neko/">
             <span aria-hidden="true">&larr;</span> Previous
           </a>
         </li>
       
 
       
-        
-        
-        <li class="next">
-          <a href="/docs/advanced-setup/ios/">
+        <li class="next disabled">
+          <a>
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>
