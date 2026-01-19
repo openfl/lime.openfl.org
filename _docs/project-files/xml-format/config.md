@@ -101,9 +101,9 @@ A similar syntax is also available for setting [gradle properties](https://docs.
 	<!-- <https://docs.gradle.org/current/userguide/config_gradle.html#sec:configuring_jvm_memory> -->
 	<gradle-properties org.gradle.jvmargs='-Xmx512m "-XX:MaxMetaspaceSize=384m"' />
 
-	<!-- More verbose option to avoid escaping quotes -->
+	<!-- A more verbose option to avoid escaping quotes. -->
 	<gradle-properties>
-		<org.gradle.project.myProperty>hello "world"</org.gradle.project.myProperty>
+		<org.gradle.project.myProperty>'hello' "world"</org.gradle.project.myProperty>
 	</gradle-properties>
 </config:android>
 ```
