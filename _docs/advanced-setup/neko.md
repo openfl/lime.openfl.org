@@ -18,6 +18,16 @@ To compile a Neko application, run `lime build neko`.
 
 To compile and launch a Neko application with one command, run `lime test neko`.
 
+## Advanced Configuration
+
+### Cairo rendering
+
+To force software rendering with Cairo instead of OpenGL, add the `-Dcairo` option to your build command.
+
+```sh
+lime build neko -Dcairo
+```
+
 ## Help & Forums
 
 If you encounter any problems when setting up Lime for Neko, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).

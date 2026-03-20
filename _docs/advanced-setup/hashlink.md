@@ -20,6 +20,16 @@ To compile a HashLink application, run `lime build hl`. Add the `-debug` option 
 
 To compile and launch a HashLink application with one command, run `lime test hl`.
 
+## Advanced Configuration
+
+### Cairo rendering
+
+To force software rendering with Cairo instead of OpenGL, add the `-Dcairo` option to your build command.
+
+```sh
+lime build hl -Dcairo
+```
+
 ## Help & Forums
 
 If you encounter any problems when setting up Lime for HashLink, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).
