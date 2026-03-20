@@ -80,6 +80,22 @@ Some Haxe externs support Lime out of the box, like [haxe-simple-peer](https://g
 
 The `<config:html5 />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for HTML/JS. For a complete list of these advanced option, see [Config Values: HTML5](../../project-files/xml-format/config/#html5).
 
+### Canvas rendering
+
+To force software rendering with HTML Canvas instead of WebGL, add the `-Dcanvas` option to your build command.
+
+```sh
+lime build html5 -Dcanvas
+```
+
+### DOM rendering
+
+To force rendering with the HTML DOM instead of WebGL, add the `-Ddom` option to your build command.
+
+```sh
+lime build html5 -Ddom
+```
+
 ## Help & Forums
 
 If you encounter any problems when setting up Lime for HTML5, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).

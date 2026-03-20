@@ -28,6 +28,14 @@ To compile and launch a Windows _.exe_ file with one command, run `lime test win
 
 The `<config:cpp />` element in your [_project.xml_](../../project-files/xml-format/) file is used to specify advanced configuration options for C++. For a complete list of these advanced option, see [Config Values: C++](../../project-files/xml-format/config/#c).
 
+### Cairo rendering
+
+To force software rendering with Cairo instead of OpenGL, add the `-Dcairo` option to your build command.
+
+```sh
+lime build windows -Dcairo
+```
+
 ## Help & Forums
 
 If you encounter any problems when setting up Lime for targeting Windows, please visit the [community forums](http://community.openfl.org/c/help) or our [Discord server](https://discord.gg/tDgq8EE).
