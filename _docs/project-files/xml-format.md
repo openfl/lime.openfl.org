@@ -59,7 +59,7 @@ lime test flash -Dblue
 If you need to have multiple values in a conditional, spaces imply an "and" and vertical bars imply an "or", like this:
 
 ```xml
-<window width="640" height="480" if="define define2" unless="define3 || define4" />
+<window width="640" height="480" if="define || define2" unless="define3 || define4" />
 ```
 
 If a value isn't found, either because it was never set or because of [`<unset />`](#unset)/[`<undefine />`](#undefine), it will be treated as `false`.
