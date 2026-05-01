@@ -296,7 +296,7 @@ Or it may be added inside a `<section/>` element:
 
 ### haxedef
 
-Use `<haxedef />` tags to add Haxe defines (similar to using a [`<haxeflag />`](#haxeflag) with "-D"):
+Use `<haxedef />` tags to add Haxe defines for [conditional compilation](https://haxe.org/manual/lf-condition-compilation.html) (similar to using a [`<haxeflag />`](#haxeflag) with "-D"):
 
 ```xml
 <haxedef name="define" />
