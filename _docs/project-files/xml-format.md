@@ -734,3 +734,9 @@ You can retrieve this information later:
 ```xml
 <echo value="Window info: ${window.fps} ${window.allowShaders}" />
 ```
+
+The `hidden` value, if set to true, will make your application start without opening a desktop window. This is useful when building command line programs using Lime/OpenFL. By default, this value is treated as `false`. The effect of the value in mobile targets and HTML5 is unspecified.
+
+```xml
+<window hidden="true" />
+```
