@@ -51,6 +51,8 @@ You can also add defines when building on the command-line:
 
     lime build neko -Dhello
 
+See [Defines](../../project-files/defines/) for the defines that Lime reads and sets.
+
 ## lime run
 
 Similar to the "build" command, the tools also support "run" to launch your application on the desktop, or to install and launch the application on a connected mobile device, depending on the target.

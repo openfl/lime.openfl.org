@@ -14,6 +14,7 @@
   docs:
   - project-files/xml-format
   - project-files/hxp-format
+  - project-files/defines
 
 - title: Platform Setup
   docs:

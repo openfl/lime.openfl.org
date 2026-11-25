@@ -302,6 +302,8 @@ Use `<haxedef />` tags to add Haxe defines for [conditional compilation](https:/
 <haxedef name="define" />
 ```
 
+See [Defines](../defines/) for the defines that Lime reads and sets.
+
 ### haxeflag
 
 Use `<haxeflag />` tags to add additional [Haxe compiler arguments](https://haxe.org/manual/compiler-usage.html):
