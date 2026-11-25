@@ -41,7 +41,7 @@ In a project file, a condition matches the name exactly as it was written, so us
 <dependency path="lib/extra.js" if="lime-webgl" />
 ```
 
-This page lists the defines that are specific to Lime. Haxe and hxcpp have many more of their own, such as `debug`, `js`, `cpp` and `HXCPP_M64`. See [Global Compiler Flags](https://haxe.org/manual/compiler-usage-flags.html) in the Haxe manual for those.
+This page lists the defines that are specific to Lime. Haxe and hxcpp have many more of their own, such as `debug`, `js`, `cpp` and `HXCPP_M64`. See [Global Compiler Flags](https://haxe.org/manual/compiler-usage-flags.html) in the Haxe manual for those. OpenFL adds defines of its own, listed in [OpenFL Defines](https://www.openfl.org/learn/haxelib/docs/defines/).
 
 Defines marked _Lime 8.4.0_ are not available in earlier versions.
 
