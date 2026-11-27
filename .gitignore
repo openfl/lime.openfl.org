@@ -2,3 +2,5 @@ _site/*
 *.DS_Store*
 .sass-cache
 Gemfile.lock
+# Written by _scripts/releases.py during the build
+_data/releases.json

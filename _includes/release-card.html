@@ -1,0 +1,13 @@
+<div class="panel panel-default release-card">
+    <div class="panel-body">
+        <h3 class="release-title">{{ release.name }} <span class="release-version">{{ release.version }}</span></h3>
+        <p class="release-date">Released {{ release.date | date: "%B %-d, %Y" }}</p>
+        {% if release.summary %}<p class="release-summary">{{ release.summary | escape }}</p>{% endif %}
+        <p class="release-links">
+            <a class="btn btn-primary btn-sm" href="{{ release.changelog }}">Changelog</a>
+            {% if release.announcement %}<a class="btn btn-default btn-sm" href="{{ release.announcement }}">Announcement</a>{% endif %}
+            <a class="btn btn-default btn-sm" href="{{ release.haxelib }}">Haxelib</a>
+            <a class="btn btn-default btn-sm" href="{{ release.all_releases }}">All releases</a>
+        </p>
+    </div>
+</div>
