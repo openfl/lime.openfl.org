@@ -6835,3 +6835,54 @@ body {
 
 .navbar-form .has-feedback .form-control-feedback {
   top: 10px; }
+
+.hero-release {
+  margin-top: 6px;
+  font-size: 16px; }
+
+.hero-release a {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.85); }
+
+.releases-heading {
+  margin-bottom: 24px; }
+
+.release-card .release-title {
+  margin-top: 0; }
+
+.release-card .release-version {
+  color: #2196F3; }
+
+.release-card .release-date {
+  color: #999; }
+
+.release-card .release-links {
+  margin-bottom: 0; }
+
+.release-card .release-links .btn {
+  margin: 0 4px 6px 0; }
+
+.install-commands {
+  font-size: 13px; }
+
+.target-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.target-list li {
+  display: inline-block;
+  margin: 0 4px 8px 0; }
+
+.target-list a {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #ddd;
+  border-radius: 16px; }
+
+.target-list a:hover,
+.target-list a:focus {
+  border-color: #2196F3;
+  text-decoration: none; }

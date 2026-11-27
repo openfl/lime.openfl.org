@@ -78,23 +78,106 @@
 
     <div class="page-content">
         <div class="wrapper">
-            <div class="header-container jumbotron">
+            
+
+<div class="header-container jumbotron">
     <div class="container">
         <h1>Mobile, Desktop, Web and More</h1>
-        <p>Foundational development for almost nearly every platform imaginable from one common codebase.</p>
-        <p><a class="btn btn-primary btn-lg" href="/docs/home/" role="button">Get Started</a></p>
+        <p>A foundation for cross-platform development in Haxe. Write one codebase, and run it on Windows, macOS, Linux, Android, iOS, HTML5 and WebAssembly.</p>
+        <p class="hero-buttons">
+            <a class="btn btn-primary btn-lg" href="/docs/home/" role="button">Get Started</a>
+            <a class="btn btn-default btn-lg" href="/api/" role="button">API Reference</a>
+        </p>
+        
+        <p class="hero-release"><a href="#latest-releases">What's new in Lime 8.3.2</a></p>
+        
     </div>
 </div>
 
 <div class="container">
 
+    
+    <h2 id="latest-releases" class="text-center releases-heading">Latest Releases</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            
+            <div class="panel panel-default release-card">
+    <div class="panel-body">
+        <h3 class="release-title">Lime <span class="release-version">8.3.2</span></h3>
+        <p class="release-date">Released May 13, 2026</p>
+        <p class="release-summary">Various bug fixes</p>
+        <p class="release-links">
+            <a class="btn btn-primary btn-sm" href="https://github.com/openfl/lime/blob/8.3.2/CHANGELOG.md">Changelog</a>
+            <a class="btn btn-default btn-sm" href="https://community.openfl.org/t/openfl-9-5-2-and-lime-8-3-2-release/14494">Announcement</a>
+            <a class="btn btn-default btn-sm" href="https://lib.haxe.org/p/lime/8.3.2/">Haxelib</a>
+            <a class="btn btn-default btn-sm" href="https://github.com/openfl/lime/releases">All releases</a>
+        </p>
+    </div>
+</div>
+
+        </div>
+        <div class="col-sm-6">
+            
+            <div class="panel panel-default release-card">
+    <div class="panel-body">
+        <h3 class="release-title">OpenFL <span class="release-version">9.5.2</span></h3>
+        <p class="release-date">Released May 13, 2026</p>
+        <p class="release-summary">Various bug fixes</p>
+        <p class="release-links">
+            <a class="btn btn-primary btn-sm" href="https://github.com/openfl/openfl/blob/9.5.2/CHANGELOG.md">Changelog</a>
+            <a class="btn btn-default btn-sm" href="https://community.openfl.org/t/openfl-9-5-2-and-lime-8-3-2-release/14494">Announcement</a>
+            <a class="btn btn-default btn-sm" href="https://lib.haxe.org/p/openfl/9.5.2/">Haxelib</a>
+            <a class="btn btn-default btn-sm" href="https://github.com/openfl/openfl/releases">All releases</a>
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <hr>
+    
+
     <div class="row">
         <div class="col-md-7">
-            <h2 class="header-light regular-pad">Practical Development</h2>
-            <p class="lead">Lime is a flexible, lightweight layer for Haxe cross-platform developers. Lime provides a common foundation on native and dynamic targets for window and application life-cycle management, access to rendering and sound, plus many other useful features for cross-platform development.</p>
+            <h2>Practical Development</h2>
+            <p class="lead">Lime is a flexible, lightweight layer for Haxe cross-platform developers. It provides windows and the application life cycle, input, rendering, audio, networking and assets, on native and web targets alike. It is also the foundation of <a href="https://www.openfl.org">OpenFL</a>.</p>
         </div>
         <div class="col-md-5">
-            <img src="img/logonav.png" alt="" class="img-responsive center-block">
+            <img src="/img/logonav.png" alt="Lime logo" class="img-responsive center-block">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Install</h3>
+            <p>With <a href="https://haxe.org/download/">Haxe</a> installed, run these commands to install Lime and try a sample:</p>
+            <pre class="install-commands"><code>haxelib install lime
+haxelib run lime setup
+lime create SimpleImage
+cd SimpleImage
+lime test html5</code></pre>
+            <p><a href="/docs/home/">Read the full setup guide</a></p>
+        </div>
+        <div class="col-md-6">
+            <h3>Targets</h3>
+            <p>Build the same project for each of these targets. Some need extra setup first.</p>
+            <ul class="target-list">
+                <li><a href="/docs/advanced-setup/windows/">Windows</a></li>
+                <li><a href="/docs/advanced-setup/macos/">macOS</a></li>
+                <li><a href="/docs/advanced-setup/linux/">Linux</a></li>
+                <li><a href="/docs/advanced-setup/android/">Android</a></li>
+                <li><a href="/docs/advanced-setup/ios/">iOS</a></li>
+                <li><a href="/docs/advanced-setup/html5/">HTML5</a></li>
+                <li><a href="/docs/advanced-setup/webassembly/">WebAssembly</a></li>
+                <li><a href="/docs/advanced-setup/electron/">Electron</a></li>
+                <li><a href="/docs/advanced-setup/hashlink/">HashLink</a></li>
+                <li><a href="/docs/advanced-setup/neko/">Neko</a></li>
+                <li><a href="/docs/advanced-setup/air/">Adobe AIR</a></li>
+                <li><a href="/docs/advanced-setup/flash/">Flash</a></li>
+            </ul>
         </div>
     </div>
 
@@ -104,23 +187,22 @@
         <div class="col-sm-4">
             <h1 class="text-center"><i class="fa fa-pencil" aria-hidden="true"></i></h1>
             <h3 class="text-center">Single Codebase</h3>
-            <p>Write in the expressive <a href="https://www.haxe.org" target="_blank">Haxe</a> programming language, then compile to native C++, JavaScript and other technologies.
-            </p>
+            <p>Write in the expressive <a href="https://www.haxe.org">Haxe</a> programming language, then compile to native C++, JavaScript and other technologies.</p>
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
             <h3 class="text-center">Powerful Tooling</h3>
-            <p>Lime includes powerful command-line tools that do the heavy-lifting for targeting each supported platform easily.</p>
+            <p>Lime's command-line tools create, build, package and run your project for each target, so one command takes it from source to a running application.</p>
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="fa fa-code-fork" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Open-Source</h3>
-            <p>Everything from the tools to the runtime, even the programming language is open-source, making Lime simple to extend or customize.</p>
+            <h3 class="text-center">Open Source</h3>
+            <p>Everything from the tools to the runtime, and the Haxe language itself, is <a href="https://github.com/openfl/lime">open source</a>, so Lime is simple to extend or customize.</p>
         </div>
     </div>
 
-
 </div>
+
         </div>
     </div>
 
